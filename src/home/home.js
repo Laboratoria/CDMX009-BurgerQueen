@@ -1,6 +1,5 @@
 import React from 'react'
 import pic1 from './pic1.jpeg'
-import style from './style'
 
 function View() {
     return (
