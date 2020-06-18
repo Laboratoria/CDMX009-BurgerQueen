@@ -12,11 +12,8 @@ const Food = ({ }) => {
         fetch(desayunoMenuUrl)
             .then(res => res.json())
             .then(data => {
-                //setDesayunos(data.desayunos);
-                setDesayunos(data.desayunos.map((d) => ({
-                    ...d,
-                    image: d.image.replace(/"/ig, ''),
-                })));
+                setDesayunos(data.desayunos);
+
             })
     }, []);
 
