@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+/* import React, { useState, useEffect } from 'react'
 
 const FoodItem = ({ item, price, image }) => (
     <li>{item} - {price} <img src={image}></img></li>
@@ -33,4 +33,4 @@ const Food = ({ }) => {
 
 export default Food;
 
-
+ */
