@@ -1,10 +1,11 @@
 import React from 'react';
+//import appStyles from '../../appStyles.module.css';
 
 const Cards = () => {
     return (
-        <div className='menu-list section row'>
+        <div className='menu-list section row '>
                 <div className='col s6'>
-                    <div className='card yellow'>
+                    <div className='card'>
                         <div className='card-content'>
                             <span className='card-title'>Menu</span>
                             <p>icono de comida</p>
@@ -14,7 +15,7 @@ const Cards = () => {
                 </div>
 
                 <div className='col s6'>
-                    <div className='card yellow'>
+                    <div className='card'>
                         <div className='card-content'>
                             <span className='card-title'>Menu</span>
                             <p>icono de comida</p>
@@ -25,7 +26,7 @@ const Cards = () => {
 
 
                 <div className='col s6'>
-                    <div className='card yellow'>
+                    <div className='card'>
                         <div className='card-content'>
                             <span className='card-title'>Menu</span>
                             <p>icono de comida</p>
