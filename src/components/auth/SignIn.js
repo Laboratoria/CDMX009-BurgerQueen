@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import bqLogo from '../../img/burgerlogo.svg'
 
 class SignIn extends Component {
     state = {
         email: '',
-        password:''
+        password: ''
     }
     handleChange = (e) => {
         this.setState({
@@ -16,21 +17,31 @@ class SignIn extends Component {
     }
     render() {
         return (
-            <div className='container'>
-                <form onSubmit={this.handleSubmit} className='white'>
-                    <h5 className='grey-text text-darken-3'>Iniciar Sesión</h5>
-                    <div className='input'>
-                        <label htmlFor='email'>Correo</label>
-                        <input type='email' id='email' onChange={this.handleChange}/>
-                    </div>
-                    <div className='input'>
-                        <label htmlFor='password'>Contraseña</label>
-                        <input type='password' id='password' onChange={this.handleChange}/>
-                    </div>
-                    <div className='input'>
-                        <button className='btn pink lighten-1'>Ingresar</button>
-                    </div>
-                </form>
+            <div className='container form-container row'>
+                <div className='col m7 right'>
+                    <form onSubmit={this.handleSubmit} className='signin-form black'>
+                        <div className="logo-burger center-align">
+                            <img src={bqLogo} className='bq-logo' alt='logo'></img>
+                        </div>
+                        <div className='container'>
+                            <h5 className='white-text center-align'>Inicio de Sesión</h5>
+                            <div className='input'>
+                                <label htmlFor='email'>Correo</label>
+                                <input type='email' id='email' onChange={this.handleChange} />
+                            </div>
+                            <div className='input'>
+                                <label htmlFor='password'>Contraseña</label>
+                                <input type='password' id='password' onChange={this.handleChange} />
+                            </div>
+                            <div className='right-align'>
+                                <a href="/" className='new-pass white-text'>Recuperar mi contraseña</a>
+                            </div>
+                        </div>
+                        <div className='input center-align'>
+                            <button className='grey lighten-1 btn-login'>Ingresar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         )
     }

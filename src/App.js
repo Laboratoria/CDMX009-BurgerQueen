@@ -14,7 +14,6 @@ function App() {
         <Route exact path ='/' component={Dashboard} />
         <Route path='/signin' component={SignIn} />
       </Switch>
-      <h1>hola mundo</h1>
     </div>
     </BrowserRouter>
   );
