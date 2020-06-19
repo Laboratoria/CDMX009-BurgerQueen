@@ -8,13 +8,12 @@ import './App.css';
 function App() {
   return (
     <BrowserRouter>
-    <div className="App">
-      <Navbar />
-      <Switch>
-        <Route path ='/' component={Dashboard} />
-      </Switch>
-      <h1>hola mundo</h1>
-    </div>
+      <div className="App">
+        <Navbar />
+        <Switch>
+          <Route path='/' component={Dashboard} />
+        </Switch>
+      </div>
     </BrowserRouter>
   );
 }

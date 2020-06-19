@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import View from './home/home';
 import * as serviceWorker from './serviceWorker';
+import DinnerMenu from './home/dinnerMenu';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <View />
+    <DinnerMenu />
   </React.StrictMode>,
   document.getElementById('root')
 );
