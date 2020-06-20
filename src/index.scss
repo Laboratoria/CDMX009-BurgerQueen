@@ -1,0 +1,59 @@
+@font-face {
+    font-family: font-text;
+    src: url(./fonts/Montserrat/Montserrat-Regular.ttf);
+  }
+
+$pColor: rgb(255,169,2);
+$sColor: #161616;
+
+
+body{
+    background-image: url(./images/background.png);
+    margin-top: 20%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*
+div{
+    border: 1px solid red;
+}*/
+
+.login-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-circle{
+    border-radius: 50%;
+    background-color: $pColor;
+    opacity: 0.8;
+    width: 300px;
+    img{
+        width: 300px;
+    }
+}
+
+.login-input{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;    
+    input{
+        box-sizing: border-box;
+        margin: 7px;
+        padding: 10px;
+        width: 350px;
+        height: 50px;
+        border-radius: 10px;
+        font-size: x-large;
+        border-style: none;
+        font-family: font-text; 
+    }
+
+    #loginBtn{
+        color: $pColor;
+        background-color: $sColor;
+    }
+}

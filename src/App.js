@@ -1,26 +1,52 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logoImage from './images/logoBurgerixtli.png'
+import {useFirebaseApp} from 'reactfire';
+import 'firebase/firestore';
 
-function App() {
+export function Login() {
+
+  const firebase = useFirebaseApp();
+  console.log(firebase);
+
+  function enter(){
+    const userName = document.querySelector('#loginUser');
+    console.log(userName.value);
+    const password = document.querySelector('#loginPsw');
+    console.log(password.value);
+   
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="login-container">
+      <Logo/>
+      <div className='login-input'>
+        <input type="text" 
+        id="loginUser" 
+        name="" 
+        placeholder='User Name'/>
+        <input type="password" 
+        id="loginPsw" name="" 
+        placeholder='Password'/>
+        <input type="button" 
+        id="loginBtn" 
+        value="Enter" 
+        onClick={enter}/>
+      </div>
+    </div>  
   );
 }
 
-export default App;
+function Logo() {
+  return (
+    <div className="logo-circle">
+        <img src={logoImage} className="App-logo" alt="logo" />
+    </div>  
+  );
+}
+
+
+
+
+
+
+

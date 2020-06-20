@@ -1,13 +1,72 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: font-text;
+  src: url(./fonts/Montserrat/Montserrat-Regular.ttf);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-image: url(./images/background.png);
+  margin-top: 20%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+/*
+div{
+    border: 1px solid red;
+}*/
+.login-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo-circle {
+  border-radius: 50%;
+  background-color: #ffa902;
+  opacity: 0.8;
+  width: 300px;
+}
+
+.logo-circle img {
+  width: 300px;
+}
+
+.login-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 40px;
+}
+
+.login-input input {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 7px;
+  padding: 10px;
+  width: 350px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: x-large;
+  border-style: none;
+  font-family: font-text;
+}
+
+.login-input #loginBtn {
+  color: #ffa902;
+  background-color: #161616;
+}
+/*# sourceMappingURL=index.css.map */
