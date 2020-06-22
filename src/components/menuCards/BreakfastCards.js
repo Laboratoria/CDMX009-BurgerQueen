@@ -4,7 +4,7 @@ const FoodItem = ({ item, price, image }) => ( //maquetación de los elementos s
     <div className='menu-list section row'>
         <div className='col s6'>
             <div className='card yellow'>
-                <div class="card-image">
+                <div className="card-image">
                     <img src={image} />
                 </div>
                 <div className='card-content'>
@@ -26,6 +26,7 @@ const BreakfastMenu = ({ }) => {
             .then(res => res.json())//esto es el resultado de fetch y se convierto en JSON
             .then(data => {
                 setDesayunos(data.desayunos);
+                console.log('data desayunos', data.desayunos)
             })
     }, []);
 
