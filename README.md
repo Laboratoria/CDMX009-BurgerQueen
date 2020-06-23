@@ -1,6 +1,6 @@
 # Burger Queen
 
-## Preámbulo
+## Preámbulo//
 
 [React](https://reactjs.org/), [Vue](https://es.vuejs.org/index.html) y [Angular](https://angular.io/)
 son algunos de los _frameworks_ y _librerías_ de JavaScript más utilizados por
