@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import './style.module.css'
 
-const FoodItem = ({ item, price, image }) => ( //maquetación de los elementos sin los datos reales
-    <div className='menu-list section row'>
-        <div className='col s6'>
-            <div className='card yellow'>
-                <div class="card-image">
-                    <img src={image} />
-                </div>
-                <div className='card-content'>
-                    <p>{item}</p>
-                    <p>$ {price}.00  </p>
+
+const FoodItem = ({ item, price, image }) => (
+    <div className='content-cards'>
+        <div className="row">
+            <div className="col m6 general">
+                <div className="my-card" >
+                    <div className="card-img info-product image-food">
+                        <img src={image} />
+                    </div>
+                    <div className="card-content info-product">
+                        <p>{item}</p>
+                        <p>$ {price}.00  </p>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
 )
 
@@ -31,11 +34,10 @@ const BreakfastMenu = ({ }) => {
 
     return (
         <div>
-            <ul>
-                {desayunos.map((d) => (
-                    <FoodItem key={d.id} item={d.item} price={d.price} image={d.image} />
-                ))}
-            </ul>
+            {desayunos.map((d) => (
+                <FoodItem key={d.id} item={d.item} price={d.price} image={d.image} />
+            ))}
+
         </div >
     );
 };
