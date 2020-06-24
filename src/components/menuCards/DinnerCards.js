@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
 const FoodItem = ({ item, price, image }) => ( //Maquetación de los elementos sin los datos reales
-    <div className='menu-list section row'>
-        <div className='col s6'>
+    <div className='menu-list section'>
+        <div className='col m6'>
             <div className='card yellow'>
-                <div className="card-image">
-                    <img src={image} alt='food-img' />
+                <div className="card-image row">
+                    <img src={image} className='col m6' alt='food-img'/>
                 </div>
                 <div className='card-content'>
-                    <p>{item}</p>
+                    <p className='center-align'>{item}</p>
                     <p>$ {price}.00  </p>
                 </div>
             </div>

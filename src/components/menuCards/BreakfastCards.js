@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
-const FoodItem = ({ item, price, image }) => ( //maquetación de los elementos sin los datos reales
-    <div className='menu-list section row'>
-        <div className='col s6'>
-            <div className='card yellow'>
-                <div className="card-image">
-                    <img src={image} />
+const FoodItem = ({ item, price, image, setOrder }) => ( //maquetación de los elementos sin los datos reales
+    
+    <div className='menu-list section'>
+        <div className='col m6'>
+            <div className='card yellow' onClick={() => {setOrder([{item, price, image}])}}>
+                <div className="card-image row">
+                    <img src={image} className='col m6' alt='food-img'/>
                 </div>
                 <div className='card-content'>
-                    <p>{item}</p>
+                    <p className='center-align'>{item}</p>
                     <p>$ {price}.00  </p>
                 </div>
             </div>
@@ -17,7 +18,8 @@ const FoodItem = ({ item, price, image }) => ( //maquetación de los elementos s
     </div>
 )
 
-const BreakfastMenu = ({ }) => {
+const BreakfastMenu = ({ setOrder }) => {
+
     const [desayunos, setDesayunos] = useState([]);
 
     useEffect(() => {
@@ -28,13 +30,15 @@ const BreakfastMenu = ({ }) => {
                 setDesayunos(data.desayunos);
                 console.log('data desayunos', data.desayunos)
             })
-    }, []);
+    }, []
+    );
 
     return (
+        
         <div>
             <ul>
                 {desayunos.map((d) => (
-                    <FoodItem key={d.id} item={d.item} price={d.price} image={d.image} />
+                    <FoodItem key={d.id} item={d.item} price={d.price} image={d.image} setOrder={setOrder}/>
                 ))}
             </ul>
         </div >
