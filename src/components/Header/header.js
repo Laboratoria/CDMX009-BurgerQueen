@@ -1,13 +1,14 @@
 import React from 'react';
 import logo from '../../assets/logo-rocky.png'
+import './styleHeader.scss'
 
 function Header (){
     return (
         <div> 
-            <nav>
-                <button>Ordenar</button>
-                <button>Producción</button>
-                <button>Finalizadas</button>
+            <nav className='nav'>
+                <button className='order'>Ordenar</button>
+                <button className='production'>Producción</button>
+                <button className='finished' >Finalizadas</button>
             </nav>
             <div>
                 <img alt="logo" src={logo}/>
