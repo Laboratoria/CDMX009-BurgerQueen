@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './style.module.css'
 
 const FoodItem = ({ item, price, image, setOrder }) => ( //maquetación de los elementos sin los datos reales
     
@@ -14,7 +15,6 @@ const FoodItem = ({ item, price, image, setOrder }) => ( //maquetación de los e
                 </div>
             </div>
         </div>
-
     </div>
 )
 

@@ -1,44 +1,47 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
+import './style.module.css'
 
-const FoodItem = ({ item, price, image }) => ( //Maquetación de los elementos sin los datos reales
-    <div className='menu-list section'>
-        <div className='col m6'>
-            <div className='card yellow'>
-                <div className="card-image row">
-                    <img src={image} className='col m6' alt='food-img'/>
-                </div>
-                <div className='card-content'>
-                    <p className='center-align'>{item}</p>
-                    <p>$ {price}.00  </p>
+const FoodItem = ({ item, price, image }) => (
+    <div className='content-cards'>
+        <div className="row">
+            <div className="col m6 general">
+                <div className="my-card" >
+                    <div className="card-img info-product image-food">
+                        <img src={image} />
+                    </div>
+                    <div className="card-content info-product">
+                        <p>{item}</p>
+                        <p>$ {price}.00  </p>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
 )
 
-const DinnerMenu = ({ }) => {
-    const [comidas, setComida] = useState([]);
+const DinnerCards = ({ }) => {
+    const [comidas, setDinner] = useState([]);
 
     useEffect(() => {
-        const dinnerMenuUrl = 'https://v2-api.sheety.co/08037a6e719e10abd51ee7fe17bba593/burgerQueenMenu/comidas'
+        const dinnerMenuUrl = 'https://v2-api.sheety.co/08037a6e719e10abd51ee7fe17bba593/burgerQueenMenu/comidas';
         fetch(dinnerMenuUrl)
-            .then(res => res.json())//esto es el resultado de fetch y se convierto en JSON
+            .then(res => res.json())
             .then(data => {
-                setComida(data.comidas);
-                console.log('data comida', data.comidas)
+                setDinner(data.comidas);
             })
     }, []);
 
     return (
         <div>
             <ul>
-                {comidas.map((d) => (
-                    <FoodItem key={d.id} item={d.item} price={d.price} image={d.image} />
+                {comidas.map((optionMenu) => (
+                    <FoodItem key={optionMenu.id} item={optionMenu.item} price={optionMenu.price} image={optionMenu.image} />
                 ))}
             </ul>
         </div >
     );
 };
 
-export default DinnerMenu;
+export default DinnerCards;
+
+
