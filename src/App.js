@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-import './App.css';
-import Header from './components/Header/header';
-import Main from './components/Main/main';
-import Footer from './components/Footer/footer'
-//import { useFirebaseApp } from 'reactfire'
 import Breakfast from './components/Breakfast/Breakfast';
+import Navigation from './components/Nav/Navigation';
+import Routes from './components/Routes'
 
 function App() {
   const menu = [
@@ -29,10 +26,9 @@ function App() {
 
   return (
     <div>
-      <Header /> 
-      <Main />  
-      <Footer /> 
+      <Navigation /> 
       <Breakfast food={food}/>
+      <Routes />
     </div>
   );
 }
