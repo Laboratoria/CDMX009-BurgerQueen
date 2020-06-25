@@ -1,15 +1,17 @@
 @font-face {
     font-family: font-text;
-    src: url(./fonts/Montserrat/Montserrat-Regular.ttf);
+    src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
   }
 
 $pColor: rgb(255,169,2);
 $sColor: #161616;
 
+$radius: 15px;
+
 
 body{
-    background-image: url(./images/background.png);
-    margin-top: 20%;
+    background-image: url(../images/background.png);
+    margin-top: 10%;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -29,7 +31,7 @@ div{
 .logo-circle{
     border-radius: 50%;
     background-color: $pColor;
-    opacity: 0.8;
+    /*opacity: 0.8;*/
     width: 300px;
     img{
         width: 300px;
@@ -46,7 +48,7 @@ div{
         padding: 10px;
         width: 350px;
         height: 50px;
-        border-radius: 10px;
+        border-radius: $radius;
         font-size: x-large;
         border-style: none;
         font-family: font-text; 
