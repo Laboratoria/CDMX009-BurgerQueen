@@ -1,28 +1,22 @@
 import React from 'react';
-// import { withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
 import logo from '../../assets/logo-rocky.png'
 import './StyleNavigation.css'
 
-function Navigation (props){
-    const { history } = props;
+const Navigation = (props) =>{
+    const { history } = props
     return (
         <React.Fragment>
-            <div className="contentHeader"> 
+            <div className="contentHeader">
                 <nav className="navigation">
-                    <button
-                        onClick = { () => history.push('/ordenar')}
-                    >
+                    <button onClick={() => history.push('/')}>
                         Ordenar
                     </button>
-                    <button
-                        onClick = { () => history.push('/produccion')}
-                    >
-                        Producción
+                    <button onClick={() => history.push('/Kitchen')}>
+                        Cocina
                     </button>
-                    <button
-                        onClick = { () => history.push('/finalizadas')}
-                    >
-                        Finalizadas
+                    <button onClick={() => history.push('/Finish')}>
+                        Finalizar
                     </button>
                 </nav>
                 <div className="ContentLogo">
@@ -33,4 +27,4 @@ function Navigation (props){
     )
 }
 
-export default  Navigation
+export default withRouter (Navigation);
