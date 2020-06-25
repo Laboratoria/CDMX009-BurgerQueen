@@ -2,15 +2,19 @@ import React from 'react';
 
 const Breakfast = (props) => {
     const menu = props.food;
-    const cards = menu.map(elem =>(
-        <div>
-            <img src={elem.img} alt={elem.name}/>
-        </div>
-    ));
+    function saveOrder(id){
+        const newOrder = menu.filter(item => item.id === id)
+        console.log(newOrder);
+    }
+      
 
     return (
         <div>
-            {cards}
+            { menu.map(elem => (
+                <div key ={elem.id}>
+                    <img src={elem.img} alt={elem.name} onClick={() => saveOrder(elem.id)} />
+                </div>
+            ))}
         </div>
     )
 }
