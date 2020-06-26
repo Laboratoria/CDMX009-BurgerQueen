@@ -1,25 +1,22 @@
 import React, { useState, useEffect } from 'react'
-import './style.module.css'
 
-const FoodItem = ({ item, price, image }) => (
-    <div className='content-cards'>
-        <div className="row">
-            <div className="col m6 general">
-                <div className="my-card" >
-                    <div className="card-img info-product image-food">
-                        <img src={image} />
-                    </div>
-                    <div className="card-content info-product">
-                        <p>{item}</p>
-                        <p>$ {price}.00  </p>
-                    </div>
+const FoodItem = ({ item, price, image, setOrder }) => (
+    <div className='menu-list section'>
+        <div className='col m6'>
+            <div className='card general' onClick={() => { setOrder({ item, price }) }}>
+                <div className="card-image row ">
+                    <img src={image} className='col m6 img-icon' alt='food-img' />
+                </div>
+                <div className='card-content white-text center-align'>
+                    <p className='' name='item'>{item}</p>
+                    <p name='price'>$ {price}.00  </p>
                 </div>
             </div>
         </div>
     </div>
 )
 
-const DinnerCards = ({ }) => {
+const DinnerCards = ({ setOrder }) => {
     const [comidas, setDinner] = useState([]);
 
     useEffect(() => {
@@ -35,7 +32,7 @@ const DinnerCards = ({ }) => {
         <div>
             <ul>
                 {comidas.map((optionMenu) => (
-                    <FoodItem key={optionMenu.id} item={optionMenu.item} price={optionMenu.price} image={optionMenu.image} />
+                    <FoodItem key={optionMenu.id} item={optionMenu.item} price={optionMenu.price} image={optionMenu.image} setOrder={setOrder} />
                 ))}
             </ul>
         </div >
