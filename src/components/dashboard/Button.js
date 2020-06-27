@@ -11,10 +11,10 @@ const Button = ( { setVisible }  ) => {
                         <button className='dash-btn right white-text' onClick={() => { setVisible(false) }}>Comidas</button>
                     </div>
                     <div className="col s3">
-                        <button className='dash-btn right white-text' onClick={() => { setVisible(false) }}>Comidas</button>
+                        <button className='dash-btn right white-text'>Comidas</button>
                     </div>
                     <div className="col s3">
-                        <button className=' dash-btn right white-text' onClick={() => { setVisible(false) }}>Comidas</button>
+                        <button className=' dash-btn right white-text'>Comidas</button>
                     </div>
                     
                 </div> 

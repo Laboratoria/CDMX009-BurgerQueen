@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
-const FoodItem = ({ item, price, image, setOrder }) => (
+const FoodItem = ({ item, price, image, addOrder }) => (
     <div className='menu-list section'>
         <div className='col m6'>
-            <div className='card general' onClick={() => { setOrder({ item, price }) }}>
+            <div className='card general' onClick={() => { addOrder({ item, price }) }}>
                 <div className="card-image row ">
                     <img src={image} className='col m6 img-icon' alt='food-img' />
                 </div>
@@ -16,7 +16,7 @@ const FoodItem = ({ item, price, image, setOrder }) => (
     </div>
 )
 
-const DinnerCards = ({ setOrder }) => {
+const DinnerCards = ({ addOrder }) => {
     const [comidas, setDinner] = useState([]);
 
     useEffect(() => {
@@ -32,7 +32,7 @@ const DinnerCards = ({ setOrder }) => {
         <div>
             <ul>
                 {comidas.map((optionMenu) => (
-                    <FoodItem key={optionMenu.id} item={optionMenu.item} price={optionMenu.price} image={optionMenu.image} setOrder={setOrder} />
+                    <FoodItem key={optionMenu.id} item={optionMenu.item} price={optionMenu.price} image={optionMenu.image} addOrder={addOrder} />
                 ))}
             </ul>
         </div >

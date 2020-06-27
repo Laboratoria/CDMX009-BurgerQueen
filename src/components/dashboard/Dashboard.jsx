@@ -34,16 +34,17 @@ function Dashboard() {
 
     let addOrder = (products) => {
 /*         setOrder({ ...order, orderProducts: [order.item, product] })*/ //esto hizo carlos
-        setOrder([{ ...order, products}])
+        setOrder([...order, products])
+        console.log('order de addOrder', order)
 }
-    console.log('order de addOrder', order)
+    
 
     return (
         <div className='dashboard'>
             <div className='row'>
                 <Button setVisible={setVisible} visible={visible} />
                 <div className='col s12 m6'>
-                    {visible ? <BreakfastCards addOrder={addOrder} /> : <DinnerCards setOrder={setOrder} />}
+                    {visible ? <BreakfastCards  addOrder={addOrder} /> : <DinnerCards addOrder={addOrder}  />}
                 </div>
                 <div className='col s12 m5 offset-m1'>
                     <ResumeMenu order={order} />
@@ -54,27 +55,3 @@ function Dashboard() {
 }
 
 export default Dashboard;
-
-
-{/* <div className='row'>
-<div className='col m10 right'>
-    <button className='col m5 dash-btn white-text' onClick={() => { setVisible(true) }}>Desayunos</button>
-    <button className='col m5 dash-btn right white-text' onClick={() => { setVisible(false) }}>Comidas</button>
-</div>
-</div> */}
-
-{/* <div className='col m12 center-align'>
-                    <div class="col s3">
-                        <button className='dash-btn white-text' onClick={() => { setVisible(true) }}>Desayunos</button>        </div>
-                    <div class="col s3">
-                        <button className='dash-btn right white-text' onClick={() => { setVisible(false) }}>Comidas</button>
-                    </div>
-                    <div class="col s3">
-                        <button className='dash-btn right white-text' onClick={() => { setVisible(false) }}>Comidas</button>
-                    </div>
-                    <div class="col s3">
-                        <button className=' dash-btn right white-text' onClick={() => { setVisible(false) }}>Comidas</button>
-                    </div>
-                    
-                </div> */} //Van después del row
-
