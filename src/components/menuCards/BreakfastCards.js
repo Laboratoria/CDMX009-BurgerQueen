@@ -5,9 +5,9 @@ import './style.module.css'
 const FoodItem = ({ item, price, image }) => (
     <div className='content-cards'>
         <div className="row">
-            <div className="col m6 general">
+            <div className="col m3 general">
                 <div className="my-card" >
-                    <div className="card-img info-product image-food">
+                    <div className="card-img info-product">
                         <img src={image} />
                     </div>
                     <div className="card-content info-product">
