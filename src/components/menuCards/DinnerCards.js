@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import './style.module.css'
 
 const FoodItem = ({ item, price, image }) => (
     <div className='content-cards'>

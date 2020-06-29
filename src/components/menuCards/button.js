@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Button(props) {
+function ButtonMenu(props) {
     return (
         <div>
             <button type='button' className='btnOption' >{props.name}</button>
@@ -8,4 +8,4 @@ function Button(props) {
     )
 }
 
-export default Button;
+export default ButtonMenu;
