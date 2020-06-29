@@ -17,6 +17,8 @@ function Order(){
 
     const [ OrderOfProducts, setOrderOfProducts ] = useState([]);
 
+    
+
     return (
         <div>
             <p>Hey! soy la ventana en donde vas a ordenar</p>
@@ -24,13 +26,14 @@ function Order(){
                <Experiment
                key = {product.id} 
                food = {product}
-               foods = {products}
-               order = {OrderOfProducts}
+               foods = {products} 
+               ordered = {OrderOfProducts} ////Este es como el carrito
                addProduct = {setOrderOfProducts}
              />
             ))}
-            <PreviewOrder 
-              setOrderOfProducts = {setOrderOfProducts}
+            <PreviewOrder
+              ordered = {OrderOfProducts} ////Este es como el carrito
+              addProduct = {setOrderOfProducts}
             />
         </div>
     )

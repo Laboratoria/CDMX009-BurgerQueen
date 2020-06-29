@@ -1,21 +1,23 @@
 import React from 'react';
 import Experiment from '../experiment/Experiment'
 
-const PreviewOrder = ({setOrderOfProducts}) => {
-    console.log(setOrderOfProducts)
-    return (
+const PreviewOrder = ({ordered, addProduct}) => (
         <div>
         <h2> Preview de apartado orden </h2>
         
-        {setOrderOfProducts.map( elem => (
+        {ordered.length === 0
+        ?
+            <p>No hay elementos en el apartado orden aún</p>
+        : ordered.map( elem => (
             <Experiment 
                 key={elem.id}
-                product={elem}
+                food={elem}
+                ordered={ordered}
+                addProduct={addProduct}
             />
         ))}
         </div>
-    )
-}
+)
 
 
 export default PreviewOrder;
