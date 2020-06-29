@@ -2,6 +2,7 @@ import React from 'react';
 import '../../styles/resume.css';
 
 const ResumeMenu = (props) => {
+
   return (
 
     <div className="card medium resume-card white-text">
@@ -13,13 +14,13 @@ const ResumeMenu = (props) => {
               <p className='col m6'>{a.item}</p>
               <p className='col m1'>1</p>
               <p className='col m1'>${a.price}</p>
-              <p className="material-icons resume-icon col m1">delete</p>
+              <p className="material-icons resume-icon col m1" onClick= {() => {props.deleteOrder(a.id)} }>delete</p>
               <p className="material-icons resume-icon col m1">edit</p>
             </div>
           ))}
 
-
         </div>
+          <span>Total: $ {props.totalPrice}</span>
       </div>
     </div>
 

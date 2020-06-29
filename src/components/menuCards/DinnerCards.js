@@ -31,8 +31,8 @@ const DinnerCards = ({ addOrder }) => {
     return (
         <div>
             <ul>
-                {comidas.map((optionMenu) => (
-                    <FoodItem key={optionMenu.id} item={optionMenu.item} price={optionMenu.price} image={optionMenu.image} addOrder={addOrder} />
+                {comidas.map((d) => (
+                    <FoodItem key={d.id} item={d.item} price={d.price} image={d.image} addOrder={addOrder} />
                 ))}
             </ul>
         </div >

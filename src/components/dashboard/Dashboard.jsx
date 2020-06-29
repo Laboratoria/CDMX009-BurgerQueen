@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import BreakfastCards from '../menuCards/BreakfastCards';
 import DinnerCards from '../menuCards/DinnerCards';
 import ResumeMenu from '../dashboard/ResumeMenu';
@@ -8,8 +9,8 @@ import '../../styles/dashboard.css'
 function Dashboard() {
     const [visible, setVisible] = useState(true);
 
-    const [order, setOrder] = useState([
-        {
+    const [order, setOrder] = useState([])
+/*         {
             table: '',
             food: [
                 //{id:1, comida:"Pollo con gelatina", precio:10, cantidad:3},
@@ -18,7 +19,7 @@ function Dashboard() {
             status: false,
             paid: false
         }
-    ])
+    ]) */
 
     /*     let [bolsa,manipularbolsa]=useState(
             {
@@ -34,9 +35,22 @@ function Dashboard() {
 
     let addOrder = (products) => {
 /*         setOrder({ ...order, orderProducts: [order.item, product] })*/ //esto hizo carlos
+        products.id = uuidv4();
+        
         setOrder([...order, products])
         console.log('order de addOrder', order)
 }
+
+    //Eliminar productos
+    const deleteOrder = (id) => {
+        console.log(id)
+        setOrder(order.filter(products => products.id !== id))
+    }
+
+    //Total Order
+     const totalPrice = order.reduce((acc, curr) => acc + curr.price, 0);
+    console.log(totalPrice);
+  
     
 
     return (
@@ -44,10 +58,10 @@ function Dashboard() {
             <div className='row'>
                 <Button setVisible={setVisible} visible={visible} />
                 <div className='col s12 m6'>
-                    {visible ? <BreakfastCards  addOrder={addOrder} /> : <DinnerCards addOrder={addOrder}  />}
+                    {visible ? <BreakfastCards  addOrder={addOrder} /> : <DinnerCards addOrder={addOrder} />}
                 </div>
                 <div className='col s12 m5 offset-m1'>
-                    <ResumeMenu order={order} />
+                    <ResumeMenu order={order} deleteOrder= {deleteOrder} totalPrice={totalPrice} />
                 </div>
             </div>
         </div>
