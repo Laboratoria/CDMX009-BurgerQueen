@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Experiment from '../components/experiment/Experiment'
+import PreviewOrder from '../components/PreviewOrder/PreviewOrder'
 
 function Order(){
 
@@ -14,6 +15,8 @@ function Order(){
       ]
     )
 
+    const [ OrderOfProducts, setOrderOfProducts ] = useState([]);
+
     return (
         <div>
             <p>Hey! soy la ventana en donde vas a ordenar</p>
@@ -21,8 +24,14 @@ function Order(){
                <Experiment
                key = {product.id} 
                food = {product}
+               foods = {products}
+               order = {OrderOfProducts}
+               addProduct = {setOrderOfProducts}
              />
             ))}
+            <PreviewOrder 
+              setOrderOfProducts = {setOrderOfProducts}
+            />
         </div>
     )
 }
