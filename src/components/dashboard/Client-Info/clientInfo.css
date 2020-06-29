@@ -1,0 +1,28 @@
+form{
+ margin: 20px;
+}
+
+.info-container{
+    background-color: rgba(0,0,0,.7);
+    border-radius: 10px;
+    padding: 5px 20px;
+    color: red;
+}
+
+input{
+    color: white;
+    background-color: transparent;
+}
+
+.btn-submit{
+    background-color: rgba(0,0,0,.7);
+    border-radius: 5px;
+    padding: 5px 20px;
+    border: none;
+    color: white;
+}
+
+.btn-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;}

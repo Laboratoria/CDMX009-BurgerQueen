@@ -5,6 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import './App.css'
 import './dashboard.css'
+import './components/dashboard/Client-Info/clientInfo.css'
 
 ReactDOM.render(
   <React.StrictMode>
