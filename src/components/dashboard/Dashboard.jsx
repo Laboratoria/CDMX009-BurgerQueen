@@ -57,7 +57,7 @@ function Dashboard() {
         <div className='dashboard'>
             <div className='row'>
                 <Button setVisible={setVisible} visible={visible} />
-                <div className='col s12 m6'>
+                <div className='col m6'>
                     {visible ? <BreakfastCards  addOrder={addOrder} /> : <DinnerCards addOrder={addOrder} />}
                 </div>
                 <div className='col s12 m5 offset-m1'>

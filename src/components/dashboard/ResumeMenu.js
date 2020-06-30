@@ -5,7 +5,7 @@ const ResumeMenu = (props) => {
 
   return (
 
-    <div className="card medium resume-card white-text">
+    <div className="resume-card white-text">
       <div className='container'>
         <div className='row'>
           <p className='center-align'>Resumen del pedido</p>
