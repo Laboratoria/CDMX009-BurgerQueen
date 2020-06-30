@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/resume.css';
+import './resume.css';
 
 const ResumeMenu = (props) => {
 
@@ -8,7 +8,7 @@ const ResumeMenu = (props) => {
     <div className="resume-card white-text">
       <div className='container'>
         <div className='row'>
-          <p className='center-align'>Resumen del pedido</p>
+          <p className='center-align resume-title'>Resumen del pedido</p>
           {props.order.map(a => (
             <div>
               <p className='col m6'>{a.item}</p>

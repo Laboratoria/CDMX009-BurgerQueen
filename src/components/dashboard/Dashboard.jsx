@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import BreakfastCards from '../menuCards/BreakfastCards';
-import DinnerCards from '../menuCards/DinnerCards';
+import BreakfastCards from '../dashboard/menuCards/BreakfastCards';
+import DinnerCards from '../dashboard/menuCards/DinnerCards';
 import ResumeMenu from '../dashboard/ResumeMenu';
 import Button from '../dashboard/Button';
-import '../../styles/dashboard.css'
+
 
 function Dashboard() {
     const [visible, setVisible] = useState(true);

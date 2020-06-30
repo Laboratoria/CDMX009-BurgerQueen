@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import './App.css'
+import './dashboard.css'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,5 +16,4 @@ ReactDOM.render(
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-//borré <DinnerMenu />
 serviceWorker.unregister();
