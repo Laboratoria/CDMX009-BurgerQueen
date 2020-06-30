@@ -1,26 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import 'materialize-css/dist/css/materialize.min.css';
 
-const FoodItem = ({ item, price, image }) => (
+const FoodItem = ({ item, price, image , addOrder }) => ( //maquetación de los elementos sin los datos reales
 
-    <div className='content-cards'>
-        <div className="row">
-            <div className="col m3 general">
-                <div className="my-card" >
-                    <div className="card-img info-product">
-                        <img src={image} alt='food' />
-                    </div>
-                    <div className="card-content info-product">
-                        <p>{item}</p>
-                        <p>$ {price}.00  </p>
-                    </div>
+    <div className='menu-list section'>
+        <div className='col m6'>
+            <div className='card general' onClick={() => { addOrder({ item, price }) }}>
+                <div className="card-image row ">
+                    <img src={image} className='col m6 img-icon' alt='food-img' />
+                </div>
+                <div className='card-content white-text center-align'>
+                    <p className='info' name='item'>{item}</p>
+                    <p className='info' name='price'>$ {price}.00  </p>
                 </div>
             </div>
         </div>
     </div>
 )
 
-const BreakfastMenu = ({ }) => {
+const BreakfastMenu = ({ addOrder }) => {
+
     const [desayunos, setDesayunos] = useState([]);
 
     useEffect(() => {
@@ -29,15 +27,19 @@ const BreakfastMenu = ({ }) => {
             .then(res => res.json())//esto es el resultado de fetch y se convierto en JSON
             .then(data => {
                 setDesayunos(data.desayunos);
+                //console.log('data desayunos', data.desayunos)
             })
-    }, []);
+    }, []
+    );
 
     return (
-        <div>
-            {desayunos.map((d) => (
-                <FoodItem key={d.id} item={d.item} price={d.price} image={d.image} />
-            ))}
 
+        <div>
+            <ul>
+                {desayunos.map((d) => (
+                    <FoodItem key={d.id} item={d.item} price={d.price} image={d.image} addOrder={addOrder} />
+                ))}
+            </ul>
         </div >
     );
 };

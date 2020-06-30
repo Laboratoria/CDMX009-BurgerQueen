@@ -70,7 +70,7 @@ const ClientInfoForm = () => {
                         
                     </div>
                     <div className='row client-name'>
-                            <div className='col m4 right test'>
+                            <div className='col m3 right test'>
                                 <div className='info-container client-input'>
                                     <input
                                         placeholder='Cliente'
