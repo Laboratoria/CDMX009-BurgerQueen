@@ -1,6 +1,8 @@
 import React, { Fragment, useState } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
 import { M } from 'materialize-css'
+import '../../../styles/clientInfo.css'
+
 
 
 const ClientInfoForm = () => {
@@ -27,22 +29,10 @@ const ClientInfoForm = () => {
         <Fragment>
             <form className='form-container' onSubmit={enviarDatos}>
                 <div className='row'>
-                    <div className='col m12'>
-                        <div className='info-container'>
-                            <input
-                                placeholder='Ingrese Nombre del cliente'
-                                type='text'
-                                name='nombre'
-                                onChange={handleInputChange}
-                            />
-                        </div>
-                    </div>
-                </div>
-                <div className='row'>
-                    <div className='col m6'>
-                        <div className="btn-dropdown info-container ">
+                    <div className='col m3'>
+                        <div className="btn-dropdown info-container select-number table-number">
                             <select name='numeroMesa' onChange={handleInputChange}>
-                                <option value="" disabled selected>Elige una mesa</option>
+                                <option value="" disabled selected>Nº mesa</option>
                                 <option className='white-text' value="1" >Mesa 1</option>
                                 <option value="2" >Mesa 2</option>
                                 <option value="3" >Mesa 3</option>
@@ -56,10 +46,10 @@ const ClientInfoForm = () => {
                             </select>
                         </div>
                     </div>
-                    <div className='col m6'>
-                        <div className="btn-dropdown info-container ">
+                    <div className='col m3'>
+                        <div className="btn-dropdown info-container select-number person-number">
                             <select name='numeroComensales' onChange={handleInputChange}>
-                                <option value="" disabled selected>Numero de comensales</option>
+                                <option value="" disabled selected>Nº comensales</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -75,14 +65,22 @@ const ClientInfoForm = () => {
                                 <option value="13">13</option>
                                 <option value="14">14</option>
                                 <option value="15">15</option>
-                                <option value="16">16</option>
-                                <option value="17">17</option>
-                                <option value="18">18</option>
-                                <option value="19">19</option>
-                                <option value="20">20</option>
                             </select>
                         </div>
+                        
                     </div>
+                    <div className='row client-name'>
+                            <div className='col m4 right test'>
+                                <div className='info-container client-input'>
+                                    <input
+                                        placeholder='Cliente'
+                                        type='text'
+                                        name='nombre'
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                            </div>
+                        </div>
                 </div>
                 <div className='row btn-container'>
                     <button className='btn-submit' type='submit'>Enviar</button>
