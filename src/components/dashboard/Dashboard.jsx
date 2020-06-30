@@ -5,7 +5,7 @@ import DinnerCards from '../menuCards/DinnerCards';
 import ResumeMenu from '../dashboard/ResumeMenu';
 import Button from '../dashboard/Button';
 import ClientInfoForm from './client-Info/ClientInfo'
-import '../../styles/dashboard.css'
+//import '../dashboard/dashboard.css'
 
 function Dashboard() {
     const [visible, setVisible] = useState(true);

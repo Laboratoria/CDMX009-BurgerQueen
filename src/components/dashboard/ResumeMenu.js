@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/resume.css';
+import './resume.css';
 
 const ResumeMenu = (props) => {
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import ClientInfoForm from './client-Info/ClientInfo'
-import '../../styles/dashboard.css'
+import './dashboard.css'
 
 const Button = ( { setVisible }  ) => {
 

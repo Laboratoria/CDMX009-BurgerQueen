@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
 import { M } from 'materialize-css'
-import '../../../styles/clientInfo.css'
+import '../client-Info/clientInfo.css'
 
 
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import bqLogo from '../../img/burgerlogo.svg'
-import '../../styles/auth.css'
+import '../auth/auth.css'
 
 class SignIn extends Component {
     state = {
