@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Dashboard from './components/dashboard/Dashboard';
 import Orders from './components/orders/Orders'
+import SignIn from './components/auth/SignIn';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path='/' component={Dashboard} />
+          <Route path='/signin' component={SignIn} />
           <Route path='/prueba' component={Orders} />
         </Switch>
       </div>
