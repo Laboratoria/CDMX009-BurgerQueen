@@ -5,10 +5,10 @@ const ResumeMenu = (props) => {
 
   return (
 
-    <div className="card medium resume-card white-text">
+    <div className="resume-card white-text">
       <div className='container'>
         <div className='row'>
-          <p className='center-align'>Resumen del pedido</p>
+          <p className='center-align resume-title'>Resumen del pedido</p>
           {props.order.map(a => (
             <div>
               <p className='col m6'>{a.item}</p>
@@ -20,7 +20,7 @@ const ResumeMenu = (props) => {
           ))}
 
         </div>
-          <span>Total: $ {props.totalPrice}</span>
+          <span className='total-price'>Total: $ {props.totalPrice}</span>
       </div>
     </div>
 

@@ -3,4 +3,14 @@
     background-color: rgba(0,0,0,0.8);
     border-color: none;
     border-radius: 5px;
+    height: 550px;
+}
+
+.total-price{
+    position: fixed;
+  bottom: 100px;
+  font-family: "Nunito Sans", sans-
+}
+.resume-title{
+    padding-top: 30px;
 }

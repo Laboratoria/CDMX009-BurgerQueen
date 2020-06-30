@@ -1,4 +1,6 @@
 import React from 'react';
+import ClientInfoForm from './client-Info/ClientInfo'
+import '../../styles/dashboard.css'
 
 const Button = ( { setVisible }  ) => {
 
@@ -8,15 +10,11 @@ const Button = ( { setVisible }  ) => {
                         <button className='dash-btn white-text' onClick={() => { setVisible(true) }}>Desayunos</button>        
                     </div>
                     <div className="col s3">
-                        <button className='dash-btn right white-text' onClick={() => { setVisible(false) }}>Comidas</button>
+                        <button className='dash-btn food-btn white-text' onClick={() => { setVisible(false) }}>Comidas</button>
                     </div>
-                    <div className="col s3">
-                        <button className='dash-btn right white-text'>Comidas</button>
+                    <div className='col m6 client-info'>
+                        <ClientInfoForm />
                     </div>
-                    <div className="col s3">
-                        <button className=' dash-btn right white-text'>Comidas</button>
-                    </div>
-                    
                 </div> 
     )
 }

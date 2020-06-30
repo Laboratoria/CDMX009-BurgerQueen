@@ -4,6 +4,7 @@ import BreakfastCards from '../menuCards/BreakfastCards';
 import DinnerCards from '../menuCards/DinnerCards';
 import ResumeMenu from '../dashboard/ResumeMenu';
 import Button from '../dashboard/Button';
+import ClientInfoForm from './client-Info/ClientInfo'
 import '../../styles/dashboard.css'
 
 function Dashboard() {
@@ -57,7 +58,7 @@ function Dashboard() {
         <div className='dashboard'>
             <div className='row'>
                 <Button setVisible={setVisible} visible={visible} />
-                <div className='col s12 m6'>
+                <div className='col m6'>
                     {visible ? <BreakfastCards  addOrder={addOrder} /> : <DinnerCards addOrder={addOrder} />}
                 </div>
                 <div className='col s12 m5 offset-m1'>
