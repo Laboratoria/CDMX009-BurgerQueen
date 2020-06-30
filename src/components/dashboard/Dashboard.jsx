@@ -34,7 +34,7 @@ function Dashboard() {
         ) */
 
     let addOrder = (products) => {
-/*         setOrder({ ...order, orderProducts: [order.item, product] })*/ //esto hizo carlos
+/*         setOrder({ ...order, orderProducts: [order.item, product] })*/
         products.id = uuidv4();
         
         setOrder([...order, products])
@@ -49,7 +49,7 @@ function Dashboard() {
 
     //Total Order
      const totalPrice = order.reduce((acc, curr) => acc + curr.price, 0);
-    console.log(totalPrice);
+    //console.log(totalPrice);
   
     
 

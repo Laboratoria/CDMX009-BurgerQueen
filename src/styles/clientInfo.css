@@ -1,11 +1,9 @@
-form{
- margin: 20px;
-}
-
 .info-container{
-    background-color: rgba(0,0,0,.7);
-    border-radius: 10px;
-    padding: 5px 20px;
+    background-color: rgba(0,0,0,.8);
+    border: 1.5px solid #FFFFFF;
+    height: 50px;
+    border-radius: 5px;
+    padding: 5px 7px;
     color: red;
 }
 
@@ -25,4 +23,18 @@ input{
 .btn-container{
     display: flex;
     flex-direction: row;
-    justify-content: center;}
+    justify-content: center;
+}
+.client-input{
+    width: 100px;
+    float: right;
+}
+.select-number{
+    width: 120px;
+}
+.person-number{
+    margin-left: 53%;
+}
+.test{
+    margin-right: 6%;
+}

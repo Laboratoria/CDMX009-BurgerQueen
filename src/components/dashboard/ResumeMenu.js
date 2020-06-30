@@ -20,7 +20,7 @@ const ResumeMenu = (props) => {
           ))}
 
         </div>
-          <span>Total: $ {props.totalPrice}</span>
+          <span className='total-price'>Total: $ {props.totalPrice}</span>
       </div>
     </div>
 

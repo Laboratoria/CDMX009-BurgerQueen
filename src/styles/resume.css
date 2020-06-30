@@ -3,4 +3,13 @@
     background-color: rgba(0,0,0,0.8);
     border-color: none;
     border-radius: 5px;
+    height: 450px;
+}
+
+.total-price{
+/*     position: fixed;
+  bottom: 100px; */
+}
+.resume-title{
+    padding-top: 30px;
 }
