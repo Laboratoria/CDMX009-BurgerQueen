@@ -1,0 +1,27 @@
+/* .dashboard{
+    background-image: url('https://images.unsplash.com/photo-1561758033-7e924f619b47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80');
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    filter: blur(3px);
+    z-index: -1;
+} */
+
+.btnOption{
+    width: 80%;
+    height: 50px;
+    margin: 20px;
+    font-size: 15px;
+    background-color: rgba(0,0,0,.7);
+    border-radius: 10px;
+    padding: 5px 20px;
+    border: none;
+    color: white;
+}
+
+.btnOption:hover{
+    background-color: #FBE677;
+    color: black
+}
