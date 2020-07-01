@@ -1,55 +1,51 @@
 import React, { useState } from 'react';
-import BreakfastCards from './menuCards/BreakfastCards';
-import DinnerCards from './menuCards/DinnerCards';
-import ButtonMenu from './menuCards/ButtonMenu'
-import ClientInfoForm from './Client-Info/ClientInfo';
-import { NavLink } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
+import BreakfastCards from '../dashboard/menuCards/BreakfastCards';
+import DinnerCards from '../dashboard/menuCards/DinnerCards';
+import ResumeMenu from '../dashboard/ResumeMenu';
+import Button from '../dashboard/Button';
 
-function Dashboard() {
 
-    const [datos, setDatos] = useState({
-        nombre: '',
-        numeroMesa: '',
-        numeroComensales: '',
-    })
+function Dashboard({ datos, setDatos }) {
 
     const [visible, setVisible] = useState(true);
+
+
+
+    //const [order, setOrder] = useState([]) 
+
+    let addOrder = (products) => {
+        setDatos({ ...datos, productos: [...datos.productos, products] })
+        products.id = uuidv4();
+
+        //setDatos([...datos.productos, products])
+        console.log('order de addOrder', datos)
+    }
+
+    //Eliminar productos
+    const deleteOrder = (id) => {
+        console.log(id)
+        setDatos(datos.filter(products => products.id !== id))
+    }
+
+    //Total Order
+    //const totalPrice = order.reduce((acc, curr) => acc + curr.price, 0);
+    //console.log(totalPrice);
+
+
+
     return (
-        <div>
-            <ul className='right'>
-                <li><NavLink to='/' className='btn btn-floating blue lighten-2 black-text'>BC</NavLink ></li>
-                <li><NavLink to='/'><span className="material-icons">room_service</span></NavLink></li>
-            </ul>
-            <div className='dashboard'>
-                <div className='row'>
-                    <div className='col m6'>
-                        <div className='col m6'>
-                            <ButtonMenu name='Desayunos' visible={visible} onClick={() => { setVisible(true) }} />
-                        </div>
-                        <div className='col m6'>
-                            <ButtonMenu name='Comidas' visible={visible} onClick={() => { setVisible(false) }} />
-                        </div>
-
-                    </div>
-                    <div className='col m6'>
-                        <ClientInfoForm datos={datos} setDatos={setDatos} />
-                    </div>
+        <div className='dashboard'>
+            <div className='row'>
+                <Button setVisible={setVisible} visible={visible} datos={datos} setDatos={setDatos} />
+                <div className='col m6'>
+                    {visible ? <BreakfastCards addOrder={addOrder} /> : <DinnerCards addOrder={addOrder} />}
                 </div>
-
-                <div className='row'>
-                    <div className='col s12 m6'>
-
-                        {visible ? <BreakfastCards /> : <DinnerCards />}
-
-                    </div>
-                    <div className='col s12 m6 offset-m1'>
-                    </div>
+                <div className='col s12 m5 offset-m1'>
+                    <ResumeMenu datos={datos} setDatos={setDatos} deleteOrder={deleteOrder} />
                 </div>
-                <div className='col'>
-                </div>
-
             </div>
-        </div >
+        </div>
     )
 }
 

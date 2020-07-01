@@ -2,6 +2,8 @@ import React from 'react'
 import pendingIcon from './images/pending.svg';
 import cancelIcon from './images/cancel.svg';
 import readyIcon from './images/ready.svg';
+import './orders.css'
+import ClientInfo from '../dashboard/client-Info/ClientInfo'
 
 
 function Orders({ datos, setDatos }) {

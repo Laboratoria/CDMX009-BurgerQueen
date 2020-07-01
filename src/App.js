@@ -3,13 +3,16 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Dashboard from './components/dashboard/Dashboard.jsx';
 import Orders from './components/orders/Orders'
+import SignIn from './components/auth/SignIn';
 
 function App() {
 
   const [datos, setDatos] = useState({
-    nombre: 'Xel',
-    numeroMesa: '2',
-    numeroComensales: '2',
+    nombre: '',
+    numeroMesa: '',
+    numeroComensales: '',
+    productos: []
+
   })
 
   return (
@@ -17,8 +20,9 @@ function App() {
       <div className="App">
         <Navbar datos={datos} setDatos={setDatos} />
         <Switch>
-          <Route exact path='/' component={Dashboard} />
-          <Route path='/orders' component={Orders} datos={datos} setDatos={setDatos} />
+          <Route exact path='/' render={() => <Dashboard datos={datos} setDatos={setDatos} />} />
+          <Route path='/signin' component={SignIn} />
+          <Route path='/prueba' render={() => <Orders datos={datos} setDatos={setDatos} />} />
         </Switch>
       </div>
     </BrowserRouter>
