@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 
-const Experiment = ({food, ordered, addProduct, foods}) => {
+const Menu = ({food, ordered, addProduct, foods}) => {
     
     const {name, img, id, price} = food;
 
     const SelectProduct = id => {
         const product = foods.filter(elem => elem.id === id)
         addProduct([
-            ...ordered,
+            ...ordered, 
             product[0]
         ]);
     }
@@ -38,4 +38,4 @@ const Experiment = ({food, ordered, addProduct, foods}) => {
         </div>
     )
 }
-export default Experiment;
+export default Menu;
