@@ -1,5 +1,5 @@
 import React from 'react';
-import Experiment from '../experiment/Experiment'
+import Menu from '../Menu/Menu'
 
 const PreviewOrder = ({ordered, addProduct}) => (
         <div>
@@ -9,7 +9,7 @@ const PreviewOrder = ({ordered, addProduct}) => (
         ?
             <p>No hay elementos en el apartado orden aún</p>
         : ordered.map( elem => (
-            <Experiment 
+            <Menu 
                 key={elem.id}
                 food={elem}
                 ordered={ordered}

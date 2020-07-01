@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Experiment from '../components/experiment/Experiment';
-import PreviewOrder from '../components/PreviewOrder/PreviewOrder';
+import Menu from '../components/Menu/Menu'
+import PreviewOrder from '../components/PreviewOrder/PreviewOrder'
 
 function Order(){
 
@@ -33,7 +33,7 @@ function Order(){
         <div>
             <p>Hey! soy la ventana en donde vas a ordenar</p>
             { products.map(product => (
-               <Experiment
+               <Menu
                key = {product.id} 
                food = {product}
                foods = {products} 

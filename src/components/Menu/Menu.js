@@ -1,14 +1,14 @@
 import React, { Fragment, useState } from 'react';
 
-const Experiment = ({food, ordered, addProduct, foods}) => {
+const Menu = ({food, ordered, addProduct, foods}) => {
     
     const {name, img, id, price, quantity} = food;
 
     const SelectProduct = id => {
         const product = foods.filter(elem => elem.id === id)
         addProduct([
-            ...ordered,
-            product[0],
+            ...ordered, 
+            product[0]
         ]);
     }
 
@@ -87,4 +87,4 @@ const Experiment = ({food, ordered, addProduct, foods}) => {
         </div>
     )
 }
-export default Experiment;
+export default Menu;
