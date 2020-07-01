@@ -1,10 +1,12 @@
-import React from 'react';
-import {Login} from './components/Login';
+import React, {useEffect} from 'react';
+import Routes from './components/login/Routes'
+
 
 function App() {
+    
   return (
     <div>
-     <Login/>
+     <Routes/>
     </div>
   );
 }

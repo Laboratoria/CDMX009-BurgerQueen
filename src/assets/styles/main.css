@@ -1,0 +1,48 @@
+@font-face {
+  font-family: font-text;
+  src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+.main-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid black;
+  font-family: font-text;
+}
+
+.nav-btn {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 7px;
+  padding: 10px;
+  width: 150px;
+  height: 50px;
+  border-radius: 15px;
+  font-size: x-large;
+  border-style: none;
+  font-family: font-text;
+}
+
+.nav-logo {
+  border-radius: 50%;
+  background-color: #ffa902;
+  /*opacity: 0.8;*/
+  width: 100px;
+}
+
+.nav-logo img {
+  width: 100px;
+}
+/*# sourceMappingURL=main.css.map */

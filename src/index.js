@@ -1,17 +1,20 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import './styles/index.css';
+//import './styles/index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {FirebaseAppProvider} from 'reactfire';
-import firebaseConfig from './firebase-config'
+//import {FirebaseAppProvider} from 'reactfire';
+//import firebaseConfig from './firebase-config';
+//import firebase from './firebase-config';
+import {BrowserRouter} from 'react-router-dom'
+
+let WithRouter = () => <BrowserRouter><App/></BrowserRouter>
 
 ReactDOM.render(
-  <FirebaseAppProvider firebaseConfig={firebaseConfig}>
-    <Suspense fallback={'Loading...'}>
-      <App/>
-    </Suspense> 
-  </FirebaseAppProvider>,
+  <Suspense fallback={'Loading...'}>
+    <WithRouter/>
+  </Suspense>,
+    
   document.getElementById('root')
 );
 

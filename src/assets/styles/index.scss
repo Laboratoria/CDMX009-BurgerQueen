@@ -8,12 +8,9 @@ $sColor: #161616;
 
 $radius: 15px;
 
-
 body{
-    background-image: url(../images/background.png);
-    margin-top: 10%;
-    background-repeat: no-repeat;
-    background-size: cover;
+    margin: 0;
+    padding:0;
 }
 
 /*
@@ -26,6 +23,12 @@ div{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../images/background.png);
+    /*margin-top: 10%;*/
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .logo-circle{
@@ -33,6 +36,7 @@ div{
     background-color: $pColor;
     /*opacity: 0.8;*/
     width: 300px;
+    
     img{
         width: 300px;
     }
@@ -59,3 +63,4 @@ div{
         background-color: $sColor;
     }
 }
+

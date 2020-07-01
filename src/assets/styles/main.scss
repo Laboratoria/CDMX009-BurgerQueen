@@ -1,0 +1,42 @@
+@font-face {
+    font-family: font-text;
+    src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
+  }
+$backColor:  #F0E8D7;
+$pColor: rgb(255,169,2);
+$sColor: #161616;
+
+$radius: 15px; 
+
+.main-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid black;
+    font-family: font-text;
+}
+
+.nav-btn{
+    box-sizing: border-box;
+    margin: 7px;
+    padding: 10px;
+    width: 150px;
+    height: 50px;
+    border-radius: $radius;
+    font-size: x-large;
+    border-style: none;
+    font-family: font-text; 
+}
+
+.nav-logo{
+    border-radius: 50%;
+    background-color: $pColor;
+    /*opacity: 0.8;*/
+    width: 100px;
+    img{
+        width: 100px;
+    }
+}
