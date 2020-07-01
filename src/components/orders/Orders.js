@@ -6,7 +6,9 @@ import './orders.css'
 import ClientInfo from '../dashboard/client-Info/ClientInfo'
 
 
-function Orders() {
+function Orders({ datos, setDatos }) {
+    console.log(datos, setDatos);
+
     return (
         <div>
             <div className='row order-h2'>
@@ -17,7 +19,7 @@ function Orders() {
                     <div className='post-it'>
                         <div className='text-order-resume'>
                             <div className='table-info'>
-                                <p className='table-info'>Mesa 1</p>
+                                <p className='table-info'>{datos}</p>
                                 <p className='table-info'>10:30 am</p>
                             </div>
                             <div>

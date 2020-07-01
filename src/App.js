@@ -1,10 +1,9 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
-import Dashboard from './components/dashboard/Dashboard';
+import Dashboard from './components/dashboard/Dashboard.jsx';
 import Orders from './components/orders/Orders'
 import SignIn from './components/auth/SignIn';
-
 
 function App() {
 
@@ -14,16 +13,16 @@ function App() {
     numeroComensales: '',
     productos: []
 
-})
+  })
 
   return (
     <BrowserRouter>
       <div className="App">
-        <Navbar />
+        <Navbar datos={datos} setDatos={setDatos} />
         <Switch>
-          <Route exact path='/' render={()=><Dashboard datos={datos} setDatos={setDatos} />} />
+          <Route exact path='/' render={() => <Dashboard datos={datos} setDatos={setDatos} />} />
           <Route path='/signin' component={SignIn} />
-          <Route path='/prueba' render={()=><Orders datos={datos} setDatos={setDatos}/> } />
+          <Route path='/prueba' render={() => <Orders datos={datos} setDatos={setDatos} />} />
         </Switch>
       </div>
     </BrowserRouter>

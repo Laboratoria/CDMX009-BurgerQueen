@@ -4,10 +4,7 @@ import { M } from 'materialize-css'
 import '../client-Info/clientInfo.css'
 
 
-
-const ClientInfoForm = ({datos, setDatos}) => {
-    //console.log('dataClient', datos)
-
+const ClientInfoForm = ({ datos, setDatos }) => {
 
     const handleInputChange = (e) => {
         setDatos({
@@ -63,20 +60,20 @@ const ClientInfoForm = ({datos, setDatos}) => {
                                 <option value="15">15</option>
                             </select>
                         </div>
-                        
+
                     </div>
                     <div className='row client-name'>
-                            <div className='col m3 right test'>
-                                <div className='info-container client-input'>
-                                    <input
-                                        placeholder='Cliente'
-                                        type='text'
-                                        name='nombre'
-                                        onChange={handleInputChange}
-                                    />
-                                </div>
+                        <div className='col m3 right test'>
+                            <div className='info-container client-input'>
+                                <input
+                                    placeholder='Cliente'
+                                    type='text'
+                                    name='nombre'
+                                    onChange={handleInputChange}
+                                />
                             </div>
                         </div>
+                    </div>
                 </div>
                 <div className='row btn-container'>
                     <button className='btn-submit' type='submit'>Enviar</button>
