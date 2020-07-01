@@ -6,62 +6,43 @@ import ResumeMenu from '../dashboard/ResumeMenu';
 import Button from '../dashboard/Button';
 
 
-function Dashboard() {
+function Dashboard({datos,setDatos}) {
+    
     const [visible, setVisible] = useState(true);
 
-    const [order, setOrder] = useState([])
-/*         {
-            table: '',
-            food: [
-                //{id:1, comida:"Pollo con gelatina", precio:10, cantidad:3},
-            ],
-            total: 0,
-            status: false,
-            paid: false
-        }
-    ]) */
+    
 
-    /*     let [bolsa,manipularbolsa]=useState(
-            {
-                cliente:'',
-                productos:[
-                    //{id:1, comida:"Pollo con gelatina", precio:10, cantidad:3},
-                ],
-                total:0,
-                status:false,
-                paid:false
-            }
-        ) */
+    //const [order, setOrder] = useState([]) 
 
     let addOrder = (products) => {
-/*         setOrder({ ...order, orderProducts: [order.item, product] })*/ //esto hizo carlos
-        products.id = uuidv4();
+         setDatos({ ...datos, productos: [...datos.productos, products] })
+        products.id=uuidv4();
         
-        setOrder([...order, products])
-        console.log('order de addOrder', order)
+        //setDatos([...datos.productos, products])
+        console.log('order de addOrder', datos)
 }
 
     //Eliminar productos
-    const deleteOrder = (id) => {
+     const deleteOrder = (id) => {
         console.log(id)
-        setOrder(order.filter(products => products.id !== id))
+        setDatos(datos.filter(products => products.id !== id))
     }
 
     //Total Order
-     const totalPrice = order.reduce((acc, curr) => acc + curr.price, 0);
-    console.log(totalPrice);
+     //const totalPrice = order.reduce((acc, curr) => acc + curr.price, 0);
+    //console.log(totalPrice);
   
     
 
     return (
         <div className='dashboard'>
             <div className='row'>
-                <Button setVisible={setVisible} visible={visible} />
+                <Button setVisible={setVisible} visible={visible} datos={datos} setDatos={setDatos} />
                 <div className='col m6'>
                     {visible ? <BreakfastCards  addOrder={addOrder} /> : <DinnerCards addOrder={addOrder} />}
                 </div>
                 <div className='col s12 m5 offset-m1'>
-                    <ResumeMenu order={order} deleteOrder= {deleteOrder} totalPrice={totalPrice} />
+                    <ResumeMenu datos={datos} setDatos={setDatos} deleteOrder={deleteOrder} />
                 </div>
             </div>
         </div>

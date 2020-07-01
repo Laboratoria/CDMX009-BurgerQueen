@@ -1,17 +1,13 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
 import { M } from 'materialize-css'
 import '../client-Info/clientInfo.css'
 
 
 
-const ClientInfoForm = () => {
+const ClientInfoForm = ({datos, setDatos}) => {
+    //console.log('dataClient', datos)
 
-    const [datos, setDatos] = useState({
-        nombre: '',
-        numeroMesa: '',
-        numeroComensales: '',
-    })
 
     const handleInputChange = (e) => {
         setDatos({
