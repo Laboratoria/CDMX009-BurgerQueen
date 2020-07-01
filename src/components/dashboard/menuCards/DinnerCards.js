@@ -6,7 +6,7 @@ const FoodItem = ({ item, price, image }) => (
             <div className="col m6 general">
                 <div className="my-card" >
                     <div className="card-img info-product">
-                        <img src={image} />
+                        <img src={image} alt='food' />
                     </div>
                     <div className="card-content info-product">
                         <p>{item}</p>
@@ -18,11 +18,11 @@ const FoodItem = ({ item, price, image }) => (
     </div>
 )
 
-const DinnerCards = ({ }) => {
-    const [comidas, setDinner] = useState([]);
+let DinnerCards = ({ }) => {
+    let [comidas, setDinner] = useState([]);
 
     useEffect(() => {
-        const dinnerMenuUrl = 'https://v2-api.sheety.co/08037a6e719e10abd51ee7fe17bba593/burgerQueenMenu/comidas';
+        let dinnerMenuUrl = 'https://v2-api.sheety.co/08037a6e719e10abd51ee7fe17bba593/burgerQueenMenu/comidas';
         fetch(dinnerMenuUrl)
             .then(res => res.json())
             .then(data => {
