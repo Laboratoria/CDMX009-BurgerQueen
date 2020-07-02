@@ -1,9 +1,10 @@
 .resume-card{
-    margin-right: 15%;
     background-color: rgba(0,0,0,0.8);
     border-color: none;
     border-radius: 5px;
     height: 410px;
+    width: 440px;
+    margin-right: 50%;
 }
 
 .resume-title{
@@ -22,7 +23,7 @@ margin-bottom: 0px;
     overflow: scroll;
 }
 .total{
-    width: 344px;
+    width: 440px;
     height: 40px;
     display: flex;
     align-items: center;

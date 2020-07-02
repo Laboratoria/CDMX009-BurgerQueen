@@ -9,7 +9,6 @@ import SignIn from './components/auth/SignIn';
 function App() {
 
   const [datos, setDatos] = useState({
-    nombre: '',
     numeroMesa: '',
     numeroComensales: '',
     productos: []
