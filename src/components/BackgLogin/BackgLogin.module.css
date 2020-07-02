@@ -18,7 +18,6 @@
     border-right: 0px solid transparent;
     border-left: 900px solid transparent;
     border-top: 1020px solid #FFE168;
-
 }
 
 .waiter {
@@ -28,9 +27,24 @@
     top: 574px;
 }
 
-.hatCheff { 
+.hatCheff {
     position: absolute;
     width: 15%;
     left: 528px;
     top: 574px;
 }
+
+.buttonWaiter {
+    position: absolute;
+    width: 230px;
+    height: 60px;
+    left: 194px;
+    top: 780px;
+    background: #ED3367;
+    color: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    font-size: 2.6em;
+}
+
+.buttonChef {}

@@ -9,14 +9,16 @@ import styles from './BackgLogin.module.css'
 const BackgLogin = () => (
     <div className={styles.containerLogin}>
         <div className={styles.triangle}>
-            
-            <img className={styles.burgerLogin} src={BurgerLogin} alt=""/>
 
-            <img className={styles.waiter} src={Waiter} alt=""/>
-            <img className={styles.hatCheff} src={HatCheff} alt=""/>        
-        
+            <img className={styles.burgerLogin} src={BurgerLogin} alt="" />
+
+            <img className={styles.waiter} src={Waiter} alt="" />
+            <img className={styles.hatCheff} src={HatCheff} alt="" />
+            <button className={styles.buttonWaiter}>Mesero</button>
+            <button className={styles.buttonChef}>Cocina</button>
+
         </div>
- 
+
     </div>
 );
 
