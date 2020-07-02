@@ -3,11 +3,23 @@
 }
 
 .post-it{
-    background-image: url('./images/paper.svg');
+    background-color: rgb(255, 240, 102);
     width: 250px;
-    height: 200px;
+    height: 400px;
     margin: 30px;
     padding: 10px;
+}
+
+.list-products{
+    height: 310px;
+}
+.list-products::-webkit-scrollbar {
+    width: 10px;
+}
+
+.list-products::-webkit-scrollbar-thumb{
+    background-color: rgba(0,0, 0, 0.5);
+    border-radius: 2px;
 }
 
 .resume-box{
@@ -23,6 +35,7 @@
     justify-content: space-between;
     font-weight: bolder;
     padding: 0px;
+    margin: 3px;
 }
 
 
@@ -32,6 +45,7 @@
     justify-content: space-between;
     font-weight: bolder;
     color: blue;
+    margin-left: 3px;
 }
 
 .status{
@@ -39,16 +53,23 @@
 }
 
 .chosen-item{
-    padding-top: 0px;
     height: 25px;
+    margin: 0px;
+    padding: 0px 20px;
+
+}
+
+.item{
+    display: flex;
+    justify-content: space-between;
+}
+
+.num-item{
+margin: 0px;
+font-size: 14px;
+margin-top: 2px;
 }
 
 .text-item{
     padding-left: 25px !important;
-}
-
-[type="checkbox"]+span:not(.lever):before, [type="checkbox"]:not(.filled-in)+span:not(.lever):after{
-    width: 15px;
-    height: 15px;
-    margin-top: 5px;
 }
