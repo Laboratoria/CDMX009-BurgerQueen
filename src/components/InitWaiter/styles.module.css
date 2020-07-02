@@ -1,0 +1,32 @@
+.logoSmall {
+    position: absolute;
+    width: 20%;
+    height: auto;
+    left: 16px;
+    top: 18px;
+}
+
+.imgWaiter {
+    position: absolute;
+    width: 13%;
+    height: auto;
+    left: 43px;
+    top: 206px;
+}
+
+.imgCostumer {
+    position: absolute;
+    width: 11%;
+    height: auto;
+    left: 43px;
+    top: 500px;
+}
+
+.imgTable {
+    position: absolute;
+    width: 12%;
+    height: auto;
+    left: 43px;
+    top: 750px;
+}
+
