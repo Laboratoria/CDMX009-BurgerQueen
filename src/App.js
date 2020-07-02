@@ -8,11 +8,10 @@ import SignIn from './components/auth/SignIn';
 function App() {
 
   const [datos, setDatos] = useState({
-    nombre: '',
-    numeroMesa: '',
-    numeroComensales: '',
-    productos: []
-
+    nombre: 'xel',
+    numeroMesa: '12',
+    numeroComensales: '2',
+    productos: ['cafe con leche']
   })
 
   return (
@@ -22,7 +21,7 @@ function App() {
         <Switch>
           <Route exact path='/' render={() => <Dashboard datos={datos} setDatos={setDatos} />} />
           <Route path='/signin' component={SignIn} />
-          <Route path='/prueba' render={() => <Orders datos={datos} setDatos={setDatos} />} />
+          <Route path='/orders' render={() => <Orders datos={datos} setDatos={setDatos} />} />
         </Switch>
       </div>
     </BrowserRouter>
