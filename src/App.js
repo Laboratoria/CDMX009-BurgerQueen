@@ -8,7 +8,7 @@ import {
 
 import Logo from './components/Logo/Logo.js';
 import BackgLogin from './components/BackgLogin';
-import InitWaiters from './components/InitWaiter/index.js'
+import InitWaiters from './components/InitWaiter';
 import './App.css';
 
 function App() {
@@ -26,7 +26,6 @@ function App() {
     </div>
   );
 }
-
 
 
 export default App;
