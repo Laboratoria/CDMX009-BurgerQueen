@@ -8,29 +8,20 @@ import {
 
 import Logo from './components/Logo/Logo.js';
 import BackgLogin from './components/BackgLogin';
-import InitWaiter from './components/InitWaiter'
+import InitWaiters from './components/InitWaiter'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-        <Router>
-
-{/* PAGINA LOGIN */}
-{/*           <Route path="/">
-            <BackgLogin />
-          </Route> */}
-
-{/* PAGINA-1 MESERO */}
-          
-          <Route path="/waiter">
-            <InitWaiter />
-          </Route>
+      <Router>
+        {/* PAGINA LOGIN */}
+        <Route exact path="/" component={BackgLogin} />
 
 
-          </Router>
-      
-
+        {/* PAGINA-1 MESERO */}
+        <Route exact path="/waiter" component={InitWaiters} />
+      </Router>
     </div>
   );
 }
