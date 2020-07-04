@@ -1,11 +1,8 @@
-.body {
-    background-image: url("../../assets/imgs/Triangulo.png");
+body {
+    /* background: url("../../assets/imgs/BgLogin.png") no-repeat top right; */
+    /* background: url("../../assets/imgs/hat-chef.png") no-repeat top right; */
 }
-/* .triangle {
-    width: 74%;
-    height: auto;
 
-} */
 .containerLogin {
     display: flex;
     flex-direction: row;
@@ -17,27 +14,30 @@
     height: auto;
     left: 640px;
     top: -226px;
-    position: fixed;
 }
 
-
-
-.IconWaiter {
-    position: absolute;
-    width: 16%;
-    left: 194px;
-    top: 550px;
+.span.BackgLogin_IconWaiter {
+    background: url("../../assets/imgs/waiter.png") no-repeat top right;
 }
 
 .IconHatCheff {
-    position: absolute;
-    width: 15%;
-    left: 528px;
-    top: 574px;
+    background: url("../../assets/imgs/hat-chef.png");
+}
+
+.azul {
+    border: 5px solid blue;
+}
+
+.naranja {
+    border: 8 px solid orange;
+}
+
+.ancore {
+    border: 10px solid purple;
+    display: flex;
 }
 
 .buttonWaiter {
-    position: absolute;
     width: 230px;
     height: 60px;
     left: 194px;
@@ -51,7 +51,6 @@
 }
 
 .buttonChef {
-    position: absolute;
     width: 230px;
     height: 60px;
     left: 520px;
