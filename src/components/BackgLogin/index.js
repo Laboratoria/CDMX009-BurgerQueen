@@ -9,26 +9,21 @@ const BackgLogin = () => (
     <div className={styles.containerLogin}>
         <Logo />
 
+
         <div className={styles.azul}>
             <div className={styles.naranja}>
 
                 <Link to="/waiter" className={styles.ancore}>
-
-                    <span className={styles.IconWaiter}></span>
-
-
+                    <span className={styles.iconWaiter}></span>
                     <button type="button" className={styles.buttonWaiter}>Mesero</button>
-
                 </Link>
-
             </div>
 
-
-
-            <div>
-                {/* Agregar ruta Link */}
-                <span className={styles.IconHatCheff}></span>
-                <button type="button" className={styles.buttonChef}>Cocina</button>
+            <div className={styles.naranja}>
+                <Link to="/waiter" className={styles.ancore}>
+                    <span className={styles.iconHatCheff}></span>
+                    <button type="button" className={styles.buttonChef}>Cocina</button>
+                </Link>
             </div>
 
         </div>
