@@ -6,16 +6,30 @@ import Kitchen from '../main/Kitchen'
 import Orders from '../main/Orders'
 
 export default function Routes(){
-    let [islogin,setIslogin]=useState(true)
+    let [islogin,setIslogin]=useState(false)
+    let [employee, setEmployee]= useState("Nombre");
+
     return (
         <Switch>
             {islogin===true?
                 <Fragment>
-                <Route exact path="/" component = {Menu} /> 
-                    <Route exact path="/cocina" component = {Kitchen} />
-                    <Route exact path="/ordenes" component = {Orders} />  
+                    <Route exact path="/" render = {() => 
+                        <Menu 
+                        employee={employee}
+                        />} 
+                    /> 
+                    <Route exact path="/cocina" render = {() => 
+                        <Kitchen 
+                        employee={employee}
+                        />} 
+                    />
+                    <Route exact path="/ordenes" render = {() => 
+                        <Orders 
+                        employee={employee}
+                        />} 
+                    />  
                 </Fragment>
-                :<Route exact path="/" render = {() => <Login setIslogin={setIslogin}/>} /> 
+                :<Route exact path="/" render = {() => <Login setIslogin={setIslogin} setEmployee={setEmployee}/>} /> 
             }      
         </Switch>
     )

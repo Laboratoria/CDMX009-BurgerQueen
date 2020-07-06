@@ -2,11 +2,19 @@ import React from 'react';
 import MainNavBar from './MainNavBar';
 
 
-function Kitchen() {
-      
+function Kitchen({employee}) {
+  let statusMenu = "nav-btn";
+  let statusKitchen = "active-btn";
+  let statusOrders = "nav-btn"; 
+    
     return (
-      <div>
-         <MainNavBar/>
+      <div  className="main-container">
+         <MainNavBar 
+         employee={employee}
+         statusMenu={statusMenu}
+         statusKitchen={statusKitchen}
+         statusOrders={statusOrders}  
+         />
          <p>
            Estoy en cocina
          </p>

@@ -7,15 +7,16 @@ import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 import '../../assets/styles/index.css';
 
-export function Login({setIslogin}) {
+export function Login({setIslogin, setEmployee}) {
 
      const[username, setUsername] = useState("");
      const[password, setPassword] = useState(""); 
      const [users, setUsers] = useState([]);
      let history = useHistory();
 
-     let autenticar=()=>{
-      setIslogin(true)
+     let autenticar=(username)=>{
+      setIslogin(true);
+      setEmployee(username);
      }
      /*
     useEffect(()=>{
@@ -40,7 +41,7 @@ export function Login({setIslogin}) {
           console.log(doc.data().name, doc.data().password)
           if (doc.data().name == username && doc.data().password == password ){
             
-            autenticar()
+            autenticar(username)
           }else{
             console.log('no entra');
           }

@@ -1,45 +1,38 @@
 import React,  {useState, useEffect} from 'react';
 import Logo from '../common/Logo'
 import Button from '../common/Button'
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
-let MainNavBar = () => {
+let MainNavBar = ({employee, statusMenu ,statusKitchen, statusOrders}) => {
  
-  const[menu, setMenu] = useState(false);
-  const[kitchen, setKitchen] = useState(false);
-  const[orders, setOrders] = useState(false); 
-  
   useEffect(()=>{
-     console.log(menu, kitchen, orders);
+   
   })
    
     return (
       <nav className="main-nav">
         <Logo className="nav-logo"/>
         <div>
-          <Link to='/'>
+          <NavLink  to='/'>
             <Button 
-            className="nav-btn" 
+            className={statusMenu} 
             value="Menú"
-            onClick={()=>setMenu(true)}  
             />
-          </Link>
-          <Link to='/cocina'>  
+          </NavLink>
+          <NavLink  to='/cocina'>  
             <Button 
-            className="nav-btn" 
+            className={statusKitchen} 
             value="Cocina"
-            onClick={()=>setKitchen(true)}   
             />
-          </Link>
-          <Link to='/ordenes'>  
+          </NavLink>
+          <NavLink  to='/ordenes'>  
             <Button 
-            className="nav-btn" 
+            className={statusOrders} 
             value="Órdenes"
-            onClick={()=>setOrders(true)}   
             />
-          </Link>  
+          </NavLink>  
         </div>
-        <p>Nombre de empleado</p>
+        <p>Empleado: {employee}</p>
         
       </nav>
     );
