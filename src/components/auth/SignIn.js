@@ -1,51 +1,50 @@
-import React, { Component } from 'react'
-import bqLogo from '../../img/burgerlogo.svg'
-import '../auth/auth.css'
+import React, { useState } from 'react';
+import 'firebase/auth';
+import { useFirebaseApp, useUser } from 'reactfire';
+import bqLogo from '../../img/burgerlogo.svg';
+import '../auth/auth.css';
 
-class SignIn extends Component {
-    state = {
-        email: '',
-        password: ''
-    }
-    handleChange = (e) => {
-        this.setState({
-            [e.target.id]: e.target.value
-        })
-    }
-    handleSubmit = (e) => {
+const SignIn = () => {
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const firebase = useFirebaseApp();
+    const user = useUser();
+
+    const submit = async (e, error) => {
         e.preventDefault();
-        console.log(this.state)
+        await firebase.auth().signInWithEmailAndPassword(email, password)
+        console.log(user.email, 'ha iniciado sesión');
     }
-    render() {
+
         return (
             <div className='container form-container row'>
                 <div className='col m7 right'>
-                    <form onSubmit={this.handleSubmit} className='signin-form black'>
+                    <form  className='signin-form'>
                         <div className="logo-burger center-align">
                             <img src={bqLogo} className='bq-logo' alt='logo'></img>
                         </div>
                         <div className='container'>
                             <h5 className='white-text center-align'>Inicio de Sesión</h5>
                             <div className='input'>
-                                <label htmlFor='email'>Correo</label>
-                                <input type='email' id='email' onChange={this.handleChange} />
+                                <label htmlFor='email' >Correo</label>
+                                <input type='email' id='email' onChange={ (e) => setEmail(e.target.value) } />
                             </div>
                             <div className='input'>
                                 <label htmlFor='password'>Contraseña</label>
-                                <input type='password' id='password' onChange={this.handleChange} />
+                                <input type='password' id='password' onChange={ (e) => setPassword(e.target.value) }  />
                             </div>
                             <div className='right-align'>
-                                <a href="/" className='new-pass white-text'>Recuperar mi contraseña</a>
+                                <a href='/' className='new-pass white-text'>Recuperar mi contraseña</a>
                             </div>
                         </div>
                         <div className='input center-align'>
-                            <button className='grey lighten-1 btn-login'>Ingresar</button>
+                            <button className='black btn-login white-text' onClick={submit}>Ingresar</button>
                         </div>
                     </form>
                 </div>
             </div>
         )
     }
-}
-
-export default SignIn
+export default SignIn;

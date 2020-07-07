@@ -26,17 +26,17 @@ body{
   font-style: normal;
   font-weight: 520;
   font-size: 19px;
-  margin-left: 0%;
+  margin-left: 3%
 }
-.active, .dash-btn:hover {
+/* .active, .dash-btn:hover {
     background-color:#FBE677;
     color: black;
-  }
+  } */
 .table-select{
     margin-top: 10%;
 }
 .menu-list{
-    margin-left: 15%;
+    margin-left: 5%;
 }
 .client-info{
     padding-left: 50%;

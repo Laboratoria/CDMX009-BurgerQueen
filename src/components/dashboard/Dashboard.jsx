@@ -4,45 +4,42 @@ import BreakfastCards from '../dashboard/menuCards/BreakfastCards';
 import DinnerCards from '../dashboard/menuCards/DinnerCards';
 import ResumeMenu from '../dashboard/ResumeMenu';
 import Button from '../dashboard/Button';
+import Navbar from '../layout/Navbar';
 
 
 function Dashboard({ datos, setDatos }) {
 
     const [visible, setVisible] = useState(true);
 
-
-
-    //const [order, setOrder] = useState([]) 
-
-    let addOrder = (products) => {
-        setDatos({ ...datos, productos: [...datos.productos, products] })
+    const addOrder = (products) => {
+        setDatos({ ...datos, productos: [...datos.productos, products] });
         products.id = uuidv4();
-
-        //setDatos([...datos.productos, products])
-        console.log('order de addOrder', datos)
+        console.log('order de addOrder', datos);
     }
 
     //Eliminar productos
     const deleteOrder = (id) => {
-        console.log(id)
-        setDatos(datos.filter(products => products.id !== id))
+        let order= datos.productos;
+        setDatos({
+            ...datos,
+            productos: datos.productos.filter(products => products.id !== id)
+        });
     }
-
+    
     //Total Order
-    //const totalPrice = order.reduce((acc, curr) => acc + curr.price, 0);
-    //console.log(totalPrice);
-
-
+    const totalPrice = datos.productos.reduce((acc, curr) => acc + curr.price, 0);
 
     return (
         <div className='dashboard'>
+                <Navbar datos={datos} setDatos={setDatos} />
+
             <div className='row'>
                 <Button setVisible={setVisible} visible={visible} datos={datos} setDatos={setDatos} />
                 <div className='col m6'>
                     {visible ? <BreakfastCards addOrder={addOrder} /> : <DinnerCards addOrder={addOrder} />}
                 </div>
-                <div className='col s12 m5 offset-m1'>
-                    <ResumeMenu datos={datos} setDatos={setDatos} deleteOrder={deleteOrder} />
+                <div className='col s12 m5 offset-m0'>
+                    <ResumeMenu datos={datos} setDatos={setDatos} deleteOrder={deleteOrder} totalPrice={totalPrice} />
                 </div>
             </div>
         </div>
