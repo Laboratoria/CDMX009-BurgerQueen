@@ -6,8 +6,6 @@ import '../client-Info/clientInfo.css'
 
 
 const ClientInfoForm = ({ datos, setDatos }) => {
-    //console.log('dataClient', datos)
-
 
     const handleInputChange = (e) => {
         setDatos({

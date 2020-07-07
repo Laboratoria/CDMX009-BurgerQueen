@@ -1,9 +1,8 @@
 import React from 'react'
-import pendingIcon from './images/pending.svg';
-import cancelIcon from './images/cancel.svg';
-import readyIcon from './images/ready.svg';
 import './orders.css'
-
+import Navbar from '../layout/Navbar'
+import BtnStatus from './BtnStatus'
+import OrderFinished from './OrderFinished'
 
 function Orders({ datos }) {
     const now = new Date();
@@ -12,6 +11,7 @@ function Orders({ datos }) {
     console.log(day)
     return (
         <div className='dashboard'>
+            <Navbar datos={datos} />
             <div className='row order-h2'>
                 <h2 className='white-text'>Mis ordenes</h2>
             </div>
@@ -36,11 +36,9 @@ function Orders({ datos }) {
                                     </form>
                                 </div>
                             </div>
-                            <div className='resume-status'>
-                                <div>
-                                    <img className='status' src={pendingIcon} />
-                                </div>
-                                <p> no pagado</p>
+                            <div>
+                                <BtnStatus />
+                                <OrderFinished />
                             </div>
                         </div>
                     </div>

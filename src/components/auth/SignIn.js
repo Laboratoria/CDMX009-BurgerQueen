@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import 'firebase/auth';
 import { useFirebaseApp, useUser } from 'reactfire';
-import bqLogo from '../../img/burgerlogo.svg';
+import bqLogo from '../BQ/images/logo.svg';
 import '../auth/auth.css';
 
 const SignIn = () => {
@@ -18,10 +18,11 @@ const SignIn = () => {
         console.log(user.email, 'ha iniciado sesión');
     }
 
-        return (
+    return (
+        <div className='initial-image'>
             <div className='container form-container row'>
-                <div className='col m7 right'>
-                    <form  className='signin-form'>
+                <div className='col m7 right '>
+                    <form className='signin-form'>
                         <div className="logo-burger center-align">
                             <img src={bqLogo} className='bq-logo' alt='logo'></img>
                         </div>
@@ -29,11 +30,11 @@ const SignIn = () => {
                             <h5 className='white-text center-align'>Inicio de Sesión</h5>
                             <div className='input'>
                                 <label htmlFor='email' >Correo</label>
-                                <input type='email' id='email' onChange={ (e) => setEmail(e.target.value) } />
+                                <input type='email' id='email' onChange={(e) => setEmail(e.target.value)} />
                             </div>
                             <div className='input'>
                                 <label htmlFor='password'>Contraseña</label>
-                                <input type='password' id='password' onChange={ (e) => setPassword(e.target.value) }  />
+                                <input type='password' id='password' onChange={(e) => setPassword(e.target.value)} />
                             </div>
                             <div className='right-align'>
                                 <a href='/' className='new-pass white-text'>Recuperar mi contraseña</a>
@@ -45,6 +46,7 @@ const SignIn = () => {
                     </form>
                 </div>
             </div>
-        )
-    }
+        </div>
+    )
+}
 export default SignIn;

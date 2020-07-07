@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-const FoodItem = ({ item, id, price, addOrder }) => ( //maquetación de los elementos sin los datos reales
+const FoodItem = ({ item, id, price, addOrder }) => (
     <div className='col m6'>
         <div className='card general' onClick={() => { addOrder({ item, price }) }}>
             <div className="card-image row food-image">

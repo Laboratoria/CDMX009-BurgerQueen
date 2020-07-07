@@ -9,15 +9,11 @@ import 'materialize-css/dist/css/materialize.min.css';
 
 function App() {
 
-  const firebase = useFirebaseApp();
-  //console.log(firebase);
-
   const [datos, setDatos] = useState({
     numeroMesa: '',
     numeroComensales: '',
-    productos: []
-
-})
+    productos: [],
+  })
 
   return (
     <BrowserRouter>

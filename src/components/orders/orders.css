@@ -72,3 +72,8 @@ margin-top: 2px;
 .text-item{
     padding-left: 25px !important;
 }
+
+.list-status{
+    color: black !important;
+    margin: 10px;
+}
