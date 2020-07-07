@@ -12,7 +12,6 @@ function Dashboard({ datos, setDatos }) {
     const [visible, setVisible] = useState(true);
 
     const addOrder = (products) => {
-
         setDatos({ ...datos, productos: [...datos.productos, products] });
         // productos: [ {producto: {id, name, price, img,quantity: 1}, quantity: 1} ]
         products.id = uuidv4();
