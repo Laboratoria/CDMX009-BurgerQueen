@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './menuCards.css'
 
-const FoodItem = ({ item, id, price, addOrder }) => ( //maquetación de los elementos sin los datos reales
-
+const FoodItem = ({ item, id, price, addOrder }) => ( 
     <div className='col m6 space'>
         <div className='card general' onClick={() => { addOrder({ item, price }) }}>
             <div className="card-image row food-image">
@@ -25,7 +24,7 @@ const BreakfastMenu = ({ addOrder }) => {
     useEffect(() => {
         const breakfastMenuUrl = 'https://v2-api.sheety.co/08037a6e719e10abd51ee7fe17bba593/burgerQueenMenu/desayunos'
         fetch(breakfastMenuUrl)
-            .then(res => res.json())//esto es el resultado de fetch y se convierto en JSON
+            .then(res => res.json())
             .then(data => {
                 setDesayunos(data.desayunos);
             })

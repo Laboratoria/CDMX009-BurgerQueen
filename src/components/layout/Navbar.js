@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 //import { Link } from 'react-router-dom';
 import SignedInLinks from './SignedInLinks';
-import bqLogo from '../../img/burgerlogo.svg'
+import bqLogo from '../BQ/images/logo.svg'
 
 class Navbar extends Component {
 

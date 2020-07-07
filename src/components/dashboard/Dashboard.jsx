@@ -13,32 +13,35 @@ function Dashboard({ datos, setDatos }) {
 
     const addOrder = (products) => {
         setDatos({ ...datos, productos: [...datos.productos, products] });
+        // productos: [ {producto: {id, name, price, img,quantity: 1}, quantity: 1} ]
         products.id = uuidv4();
         console.log('order de addOrder', datos);
     }
 
-    //Eliminar productos
     const deleteOrder = (id) => {
         let order = datos.productos;
         setDatos({
             ...datos,
             productos: datos.productos.filter(products => products.id !== id)
         });
-    };
+    }
 
-    //Total Order
     const totalPrice = datos.productos.reduce((acc, curr) => acc + curr.price, 0);
 
     return (
-        <div className='dashboard'>
+        <div>
             <Navbar datos={datos} />
-            <div className='row'>
-                <Button setVisible={setVisible} visible={visible} datos={datos} setDatos={setDatos} />
-                <div className='col m6'>
-                    {visible ? <BreakfastCards addOrder={addOrder} /> : <DinnerCards addOrder={addOrder} />}
-                </div>
-                <div className='col s12 m5 offset-m0'>
-                    <ResumeMenu datos={datos} setDatos={setDatos} deleteOrder={deleteOrder} totalPrice={totalPrice} />
+            <div className='dashboard'>
+
+                <div className='row'>
+                    <Button setVisible={setVisible} visible={visible} datos={datos} setDatos={setDatos} />
+                    <div className='col m6'>
+                        {visible ? <BreakfastCards addOrder={addOrder} /> : <DinnerCards addOrder={addOrder} />}
+                    </div>
+                    <div className='col s12 m5 offset-m0'>
+                        <ResumeMenu datos={datos} setDatos={setDatos} deleteOrder={deleteOrder} totalPrice={totalPrice} />
+                    </div>
+
                 </div>
             </div>
         </div>

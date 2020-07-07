@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import 'firebase/auth';
+import bqLogo from '../BQ/images/logo.svg';
 import firebase from 'firebase';
 import ModalAuth from '../auth/Modal';
-import bqLogo from '../../img/burgerlogo.svg';
 import '../auth/auth.css';
 
 const useUser = () => {

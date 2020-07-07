@@ -14,9 +14,8 @@ function App() {
   const [datos, setDatos] = useState({
     numeroMesa: '',
     numeroComensales: '',
-    productos: []
-
-})
+    productos: [],
+  })
 
   return (
     <BrowserRouter>
