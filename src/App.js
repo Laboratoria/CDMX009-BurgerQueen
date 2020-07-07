@@ -1,12 +1,15 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Navbar from './components/layout/Navbar';
-import Dashboard from './components/dashboard/Dashboard';
+import { useFirebaseApp } from 'reactfire';
+import Dashboard from './components/dashboard/Dashboard.jsx';
 import Orders from './components/orders/Orders'
 import SignIn from './components/auth/SignIn';
-
+import 'materialize-css/dist/css/materialize.min.css';
 
 function App() {
+
+  const firebase = useFirebaseApp();
+  //console.log(firebase);
 
   const [datos, setDatos] = useState({
     numeroMesa: '',
@@ -18,11 +21,10 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Navbar />
         <Switch>
-          <Route exact path='/' render={()=><Dashboard datos={datos} setDatos={setDatos} />} />
+          <Route exact path='/' render={() => <Dashboard datos={datos} setDatos={setDatos} />} />
           <Route path='/signin' component={SignIn} />
-          <Route path='/prueba' render={()=><Orders datos={datos} setDatos={setDatos}/> } />
+          <Route path='/orders' render={() => <Orders datos={datos} setDatos={setDatos} />} />
         </Switch>
       </div>
     </BrowserRouter>

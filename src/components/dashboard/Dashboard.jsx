@@ -4,6 +4,7 @@ import BreakfastCards from '../dashboard/menuCards/BreakfastCards';
 import DinnerCards from '../dashboard/menuCards/DinnerCards';
 import ResumeMenu from '../dashboard/ResumeMenu';
 import Button from '../dashboard/Button';
+import Navbar from '../layout/Navbar';
 
 
 function Dashboard({ datos, setDatos }) {
@@ -18,8 +19,11 @@ function Dashboard({ datos, setDatos }) {
 
     //Eliminar productos
     const deleteOrder = (id) => {
-        console.log(id);
-        //setDatos(datos.productos.filter(products => products.id !== id))
+        let order= datos.productos;
+        setDatos({
+            ...datos,
+            productos: datos.productos.filter(products => products.id !== id)
+        });
     }
     
     //Total Order
@@ -27,6 +31,8 @@ function Dashboard({ datos, setDatos }) {
 
     return (
         <div className='dashboard'>
+                <Navbar datos={datos} setDatos={setDatos} />
+
             <div className='row'>
                 <Button setVisible={setVisible} visible={visible} datos={datos} setDatos={setDatos} />
                 <div className='col m6'>

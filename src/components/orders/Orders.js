@@ -3,10 +3,13 @@ import pendingIcon from './images/pending.svg';
 import cancelIcon from './images/cancel.svg';
 import readyIcon from './images/ready.svg';
 import './orders.css'
-import ClientInfo from '../dashboard/client-Info/ClientInfo'
 
 
-function Orders() {
+function Orders({ datos, setDatos }) {
+    const now = new Date();
+    const time = [now.getHours(), now.getMinutes()];
+    const day = time.join(':');
+    console.log(day)
     return (
         <div>
             <div className='row order-h2'>
@@ -17,142 +20,17 @@ function Orders() {
                     <div className='post-it'>
                         <div className='text-order-resume'>
                             <div className='table-info'>
-                                <p className='table-info'>Mesa 1</p>
-                                <p className='table-info'>10:30 am</p>
+                                <p className='table-info'>Mesa {datos.numeroMesa}</p>
+                                <p className='table-info'>{day}</p>
                             </div>
                             <div>
-                                <div className='col m1'>
+                                <div className='list-products scroll'>
                                     <form action="#">
                                         <p className='chosen-item'>
-                                            <label>
+                                            <label className='item'>
                                                 <input className='box' type="checkbox" />
-                                                <span className='black-text text-item'>Hamburguesa</span>
-                                            </label>
-                                        </p>
-                                        <p className='chosen-item'>
-                                            <label>
-                                                <input className='box' type="checkbox" />
-                                                <span className='black-text text-item'>Hamburguesa</span>
-                                            </label>
-                                        </p>
-                                        <p className='chosen-item'>
-                                            <label>
-                                                <input className='box' type="checkbox" />
-                                                <span className='black-text text-item'>Hamburguesa</span>
-                                            </label>
-                                        </p>
-                                    </form>
-                                </div>
-                            </div>
-                            <div className='resume-status'>
-                                <div>
-                                    <img className='status' src={pendingIcon} />
-                                </div>
-                                <p> no pagado</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='post-it'>
-                        <div className='text-order-resume'>
-                            <div className='table-info'>
-                                <p className='table-info'>Mesa 1</p>
-                                <p className='table-info'>10:30 am</p>
-                            </div>
-                            <div>
-                                <div className='col m1'>
-                                    <form action="#">
-                                        <p className='chosen-item'>
-                                            <label>
-                                                <input className='box' type="checkbox" />
-                                                <span className='black-text text-item'>Hamburguesa</span>
-                                            </label>
-                                        </p>
-                                        <p className='chosen-item'>
-                                            <label>
-                                                <input className='box' type="checkbox" />
-                                                <span className='black-text text-item'>Hamburguesa</span>
-                                            </label>
-                                        </p>
-                                        <p className='chosen-item'>
-                                            <label>
-                                                <input className='box' type="checkbox" />
-                                                <span className='black-text text-item'>Hamburguesa</span>
-                                            </label>
-                                        </p>
-                                    </form>
-                                </div>
-                            </div>
-                            <div className='resume-status'>
-                                <div>
-                                    <img className='status' src={pendingIcon} />
-                                </div>
-                                <p> no pagado</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='post-it'>
-                        <div className='text-order-resume'>
-                            <div className='table-info'>
-                                <p className='table-info'>Mesa 1</p>
-                                <p className='table-info'>10:30 am</p>
-                            </div>
-                            <div>
-                                <div className='col m1'>
-                                    <form action="#">
-                                        <p className='chosen-item'>
-                                            <label>
-                                                <input className='box' type="checkbox" />
-                                                <span className='black-text text-item'>Hamburguesa</span>
-                                            </label>
-                                        </p>
-                                        <p className='chosen-item'>
-                                            <label>
-                                                <input className='box' type="checkbox" />
-                                                <span className='black-text text-item'>Hamburguesa</span>
-                                            </label>
-                                        </p>
-                                        <p className='chosen-item'>
-                                            <label>
-                                                <input className='box' type="checkbox" />
-                                                <span className='black-text text-item'>Hamburguesa</span>
-                                            </label>
-                                        </p>
-                                    </form>
-                                </div>
-                            </div>
-                            <div className='resume-status'>
-                                <div>
-                                    <img className='status' src={pendingIcon} />
-                                </div>
-                                <p> no pagado</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='post-it'>
-                        <div className='text-order-resume'>
-                            <div className='table-info'>
-                                <p className='table-info'>Mesa 1</p>
-                                <p className='table-info'>10:30 am</p>
-                            </div>
-                            <div>
-                                <div className='col m1'>
-                                    <form action="#">
-                                        <p className='chosen-item'>
-                                            <label>
-                                                <input className='box' type="checkbox" />
-                                                <span className='black-text text-item'>Hamburguesa</span>
-                                            </label>
-                                        </p>
-                                        <p className='chosen-item'>
-                                            <label>
-                                                <input className='box' type="checkbox" />
-                                                <span className='black-text text-item'>Hamburguesa</span>
-                                            </label>
-                                        </p>
-                                        <p className='chosen-item'>
-                                            <label>
-                                                <input className='box' type="checkbox" />
-                                                <span className='black-text text-item'>Hamburguesa</span>
+                                                <span className='black-text text-item'>{datos.productos}</span>
+                                                <p className='black-text num-item'>1</p>
                                             </label>
                                         </p>
                                     </form>
@@ -172,4 +50,4 @@ function Orders() {
     )
 }
 
-export default Orders;
+export default Orders; 

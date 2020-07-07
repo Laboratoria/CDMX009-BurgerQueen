@@ -20,7 +20,7 @@ const DinnerCards = ({ addOrder }) => {
     const [comidas, setDinner] = useState([]);
 
     useEffect(() => {
-        const dinnerMenuUrl = 'https://v2-api.sheety.co/08037a6e719e10abd51ee7fe17bba593/burgerQueenMenu/comidas';
+        let dinnerMenuUrl = 'https://v2-api.sheety.co/08037a6e719e10abd51ee7fe17bba593/burgerQueenMenu/comidas';
         fetch(dinnerMenuUrl)
             .then(res => res.json())
             .then(data => {

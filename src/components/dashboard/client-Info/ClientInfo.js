@@ -27,7 +27,7 @@ const ClientInfoForm = ({ datos, setDatos }) => {
                 <div className='row'>
                     <div className='col m6'>
                         <div className="btn-dropdown info-container select-number table-number">
-                            <select name='numeroMesa' onChange={handleInputChange}>
+                            <select name='numeroMesa' onChange={handleInputChange} >
                                 <option value="" disabled selected>Nº mesa</option>
                                 <option className='white-text' value="1" >Mesa 1</option>
                                 <option value="2" >Mesa 2</option>
@@ -78,7 +78,7 @@ const ClientInfoForm = ({ datos, setDatos }) => {
                             </div>
                         </div> */}
                 </div>
-                <div className='row btn-container'>
+                <div className='row div-submit'>
                     <button className='btn-submit' type='submit'>Enviar</button>
                 </div>
             </form>

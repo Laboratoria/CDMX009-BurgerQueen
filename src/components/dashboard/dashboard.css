@@ -28,10 +28,10 @@ body{
   font-size: 19px;
   margin-left: 3%
 }
-.active, .dash-btn:hover {
+/* .active, .dash-btn:hover {
     background-color:#FBE677;
     color: black;
-  }
+  } */
 .table-select{
     margin-top: 10%;
 }
