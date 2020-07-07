@@ -1,0 +1,42 @@
+.headerWrapper{
+    border: 1px solid brown;
+        display: flex;
+    flex-direction: row;
+}
+
+.imgWaiter{
+    border: 1px solid teal;
+}
+
+
+.logoRestD{
+    background: url('../../assets/imgs/Logo_BQ.png') no-repeat;
+    width: 300px;
+    height: auto;
+    max-width: 30%;
+    display:inline-block;
+}
+
+.iconWaiterRestDay{
+    background: url('../../assets/imgs/waiter.png') no-repeat;
+    width: 205px;
+    height: 195px;
+    zoom: 1;
+    display: inline-block;
+}
+
+
+.containerAll{
+    border:1px solid purple;
+    width: 50%;
+    height: auto;
+}
+
+.menuWrapper,.acountWrapper{
+    border: 1px solid red;
+}
+
+.dobleBurger{
+    background-image: url('../../assets/imgs/burger-lunch.jpg');
+}
+
