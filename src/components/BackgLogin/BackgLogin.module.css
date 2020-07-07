@@ -1,0 +1,56 @@
+.containerLogin {
+    background: url("../../assets/imgs/BgLogin.png") no-repeat top right;
+    height: 100vh;
+    width: 100vw;
+}
+
+.iconWaiter {
+    background: url("../../assets/imgs/waiter.png") no-repeat top right;
+    width: 205px;
+    height: 195px;
+    display: inline-block;
+    zoom: 1;
+}
+
+.iconHatCheff {
+    background: url("../../assets/imgs/hat-chef.png");
+    width: 205px;
+    height: 205px;
+    display: inline-block;
+    zoom: 1;
+}
+
+.contentWrapper {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    margin-top: 8%;
+}
+
+.wraperSeccionBottons {
+    text-align: center;
+}
+
+.buttonWaiter {
+    width: 230px;
+    height: 60px;
+    background: #ED3367;
+    color: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    font-size: 2.6em;
+    font-family: 'Amaranth', sans-serif;
+}
+
+.buttonChef {
+    width: 230px;
+    height: 60px;
+    left: 520px;
+    top: 780px;
+    background: #ED3367;
+    color: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    font-size: 2.6em;
+    font-family: 'Amaranth', sans-serif;
+}
