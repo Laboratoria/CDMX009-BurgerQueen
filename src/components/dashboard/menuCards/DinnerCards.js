@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react'
 
-const FoodItem = ({ item, id, price, addOrder }) => (
-    <div className='col m6'>
-        <div className='card general' onClick={() => { addOrder({ item, price }) }}>
+const FoodItem = ({ item, id, price, addOrder }) => ( 
+    <div className='col m6 space'>
+       <div className='card general' onClick={() => { addOrder({ item, price }) }}>
             <div className="card-image row food-image">
-                <img src={`/img/products/${id}.png`} className='col m6 img-icon item' alt='food-img' />
+            <img src={`/img/products/${id}.png`} className='col m6 img-icon item' alt='food-img' />
             </div>
-            <div className='food-name'>
+            <div className='card-content white-text center-align'>
+                <div>
                 <p className='info' name='item'>{item}</p>
                 <p className='info' name='price'>$ {price}.00  </p>
+                </div>
             </div>
         </div>
     </div>

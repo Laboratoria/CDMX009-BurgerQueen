@@ -7,23 +7,25 @@
     
 }
 
-.info-product{
+/* .info-product{
     color: white;
-    display: flex;  /* esto hace que se ponga en el centro */
+    display: flex;  
     flex-direction: column;
     align-items: center;
-}
+} */
 
 
-p{
+/* p{
     margin: 0px;
     padding-top: 3%;
-}
+} */
 
 .food-image{
     margin: 0px !important;
     display: flex;
     justify-content: center;
+    padding-top: 20px;
+    
 }
 
 .item{
@@ -37,5 +39,18 @@ p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+}
+.space{
+    display: flex;
+    justify-content: space-around;
+}
+.card{
+    width: 165px;
+    height: 180px;
+}
+.card-content{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
 }

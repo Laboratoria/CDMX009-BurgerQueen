@@ -5,6 +5,7 @@
     height: 410px;
     width: 440px;
     margin-right: 50%;
+    margin-top: 5%;
     
 }
 
@@ -37,4 +38,11 @@ line-height: 47px;
 }
 .card{
     background-color: rgba(0,0,0,0.8) !important
+}
+.order-info{
+    font-size: 16px;
+}
+.material-icons{
+    font-size: 23px !important;
+    margin-bottom: 5px;
 }

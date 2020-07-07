@@ -1,6 +1,6 @@
 .info-container{
     background-color: rgba(0,0,0,.8);
-    border: 1.5px solid #FFFFFF;
+    border: 1px solid #FFFFFF;
     height: 50px;
     border-radius: 5px;
     padding: 5px 7px;
@@ -14,7 +14,7 @@ input{
 
 .btn-submit{
     background-color: rgba(0,0,0,.7);
-    border: 1.5px solid #FFFFFF;   
+    border: 1px solid #FFFFFF;   
     border-radius: 5px;
     margin-left: 190px;
     width: 100px;
@@ -22,6 +22,7 @@ input{
     color: white;
     font-size: 18px;
     font-weight: 600;
+    margin-top: 6%;
     
 }
 .btn-container{
@@ -33,7 +34,7 @@ input{
     width: 186px;
 }
 .div-submit{
-    position: fixed;
+    position: absolute;
     margin-top: 480px;
     
 }

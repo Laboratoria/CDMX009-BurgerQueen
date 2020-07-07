@@ -41,6 +41,7 @@ function Dashboard({ datos, setDatos }) {
                     <div className='col s12 m5 offset-m0'>
                         <ResumeMenu datos={datos} setDatos={setDatos} deleteOrder={deleteOrder} totalPrice={totalPrice} />
                     </div>
+
                 </div>
             </div>
         </div>
