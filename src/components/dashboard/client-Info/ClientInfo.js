@@ -1,25 +1,28 @@
 import React, { Fragment } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
-import { M } from 'materialize-css'
-import '../client-Info/clientInfo.css'
+import '../client-Info/clientInfo.css';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
-
+toast.configure();
 const ClientInfoForm = ({ datos, setDatos }) => {
-    //console.log('dataClient', datos)
 
-
+    const notify = () => {
+        toast.success('Orden enviada a cocina!');
+    };
     const handleInputChange = (e) => {
         setDatos({
             ...datos,
             [e.target.name]: e.target.value
         });
-    }
-
+    };
     const enviarDatos = (e) => {
         e.preventDefault();
         console.log(datos);
-    }
+        //Aqui va el toast
+        notify();
+    };
 
     return (
         <Fragment>
@@ -65,18 +68,6 @@ const ClientInfoForm = ({ datos, setDatos }) => {
                         </div>
 
                     </div>
-                    {/*                     <div className='row client-name'>
-                            <div className='col m3 right test'>
-                                <div className='info-container client-input'>
-                                    <input
-                                        placeholder='Cliente'
-                                        type='text'
-                                        name='nombre'
-                                        onChange={handleInputChange}
-                                    />
-                                </div>
-                            </div>
-                        </div> */}
                 </div>
                 <div className='row div-submit'>
                     <button className='btn-submit' type='submit'>Enviar</button>

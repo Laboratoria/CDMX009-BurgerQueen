@@ -3,6 +3,7 @@ import pendingIcon from './images/pending.svg';
 import cancelIcon from './images/cancel.svg';
 import readyIcon from './images/ready.svg';
 import './orders.css'
+import Navbar from '../layout/Navbar';
 
 
 function Orders({ datos }) {
@@ -12,6 +13,8 @@ function Orders({ datos }) {
     console.log(day)
     return (
         <div className='dashboard'>
+            <Navbar datos={datos} />
+
             <div className='row order-h2'>
                 <h2 className='white-text'>Mis ordenes</h2>
             </div>
