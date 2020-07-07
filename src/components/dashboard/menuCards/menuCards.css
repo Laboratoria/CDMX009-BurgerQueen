@@ -32,5 +32,22 @@ p{
     padding-top: 3%;
 }
 
+.food-image{
+    margin: 0px !important;
+    display: flex;
+    justify-content: center;
+}
 
+.item{
+    width: 80px !important;
+    margin: 0px !important;
+}
 
+.food-name{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}

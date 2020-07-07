@@ -5,13 +5,13 @@ import readyIcon from './images/ready.svg';
 import './orders.css'
 
 
-function Orders({ datos, setDatos }) {
+function Orders({ datos }) {
     const now = new Date();
     const time = [now.getHours(), now.getMinutes()];
     const day = time.join(':');
     console.log(day)
     return (
-        <div>
+        <div className='dashboard'>
             <div className='row order-h2'>
                 <h2 className='white-text'>Mis ordenes</h2>
             </div>
