@@ -11,11 +11,12 @@
   /* Sign in page */
   .signin-form{
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+    background-color: black;
     border-radius: 5px;
     margin-top: 10%;
   }
   .form-container{
-    margin-top: 6%;
+    padding-top: 10%;
     font-family: 'Raleway';
     font-style: normal;
     font-weight: bold;
@@ -36,16 +37,16 @@
   .btn-login{
     margin-bottom: 20%;
     margin-top: 10%;
-    border: 3px solid #FFFFFF;
+    border: 1.5px solid #FFFFFF;
     box-sizing: border-box;
     border-radius: 5px;
     width: 137px;
     height: 30px;
     font-family: 'Raleway';
     font-style: normal;
-    font-weight: 550;
-    font-size: 19px;
+    font-size: 18px;
     line-height: 35px;
     padding-bottom: 9%;
   }
+
   

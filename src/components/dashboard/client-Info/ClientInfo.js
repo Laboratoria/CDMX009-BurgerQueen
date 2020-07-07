@@ -4,27 +4,30 @@ import { M } from 'materialize-css'
 import '../client-Info/clientInfo.css'
 
 
+
 const ClientInfoForm = ({ datos, setDatos }) => {
+    //console.log('dataClient', datos)
+
 
     const handleInputChange = (e) => {
         setDatos({
             ...datos,
             [e.target.name]: e.target.value
-        })
+        });
     }
 
     const enviarDatos = (e) => {
         e.preventDefault();
-        console.log(datos)
+        console.log(datos);
     }
 
     return (
         <Fragment>
             <form className='form-container' onSubmit={enviarDatos}>
                 <div className='row'>
-                    <div className='col m3'>
+                    <div className='col m6'>
                         <div className="btn-dropdown info-container select-number table-number">
-                            <select name='numeroMesa' onChange={handleInputChange}>
+                            <select name='numeroMesa' onChange={handleInputChange} >
                                 <option value="" disabled selected>Nº mesa</option>
                                 <option className='white-text' value="1" >Mesa 1</option>
                                 <option value="2" >Mesa 2</option>
@@ -39,7 +42,7 @@ const ClientInfoForm = ({ datos, setDatos }) => {
                             </select>
                         </div>
                     </div>
-                    <div className='col m3'>
+                    <div className='col m6'>
                         <div className="btn-dropdown info-container select-number person-number">
                             <select name='numeroComensales' onChange={handleInputChange}>
                                 <option value="" disabled selected>Nº comensales</option>
@@ -62,20 +65,20 @@ const ClientInfoForm = ({ datos, setDatos }) => {
                         </div>
 
                     </div>
-                    <div className='row client-name'>
-                        <div className='col m3 right test'>
-                            <div className='info-container client-input'>
-                                <input
-                                    placeholder='Cliente'
-                                    type='text'
-                                    name='nombre'
-                                    onChange={handleInputChange}
-                                />
+                    {/*                     <div className='row client-name'>
+                            <div className='col m3 right test'>
+                                <div className='info-container client-input'>
+                                    <input
+                                        placeholder='Cliente'
+                                        type='text'
+                                        name='nombre'
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        </div> */}
                 </div>
-                <div className='row btn-container'>
+                <div className='row div-submit'>
                     <button className='btn-submit' type='submit'>Enviar</button>
                 </div>
             </form>
