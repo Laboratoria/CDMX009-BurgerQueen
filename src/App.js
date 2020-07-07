@@ -4,6 +4,7 @@ import Navbar from './components/layout/Navbar';
 import Dashboard from './components/dashboard/Dashboard.jsx';
 import Orders from './components/orders/Orders'
 import SignIn from './components/auth/SignIn';
+import BurgerQueen from './components/BQ/BurgerQueen.jsx'
 
 function App() {
 
@@ -19,8 +20,9 @@ function App() {
       <div className="App">
         <Navbar datos={datos} setDatos={setDatos} />
         <Switch>
-          <Route exact path='/' render={() => <Dashboard datos={datos} setDatos={setDatos} />} />
+          <Route path='/initial' component={BurgerQueen} />
           <Route path='/signin' component={SignIn} />
+          <Route exact path='/' render={() => <Dashboard datos={datos} setDatos={setDatos} />} />
           <Route path='/orders' render={() => <Orders datos={datos} setDatos={setDatos} />} />
         </Switch>
       </div>

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import './menuCards.css'
 
-const FoodItem = ({ item, price, image , addOrder }) => ( //maquetación de los elementos sin los datos reales
-
-    <div className='menu-list section'>
+const FoodItem = ({ item, id, price, addOrder }) => ( //maquetación de los elementos sin los datos reales
+    <div className='container'>
         <div className='col m6'>
             <div className='card general' onClick={() => { addOrder({ item, price }) }}>
-                <div className="card-image row ">
-                    <img src={image} className='col m6 img-icon' alt='food-img' />
+                <div className="card-image row food-image">
+                    <img src={`/img/products/${id}.png`} className='col m6 img-icon item' alt='food-img' />
                 </div>
-                <div className='card-content white-text center-align'>
+                <div className='food-name'>
                     <p className='info' name='item'>{item}</p>
                     <p className='info' name='price'>$ {price}.00  </p>
                 </div>
@@ -36,8 +36,15 @@ const BreakfastMenu = ({ addOrder }) => {
 
         <div>
             <ul>
-                {desayunos.map((d) => (
-                    <FoodItem key={d.id} item={d.item} price={d.price} image={d.image} addOrder={addOrder} />
+                {desayunos.map((desayuno) => (
+                    <FoodItem
+                        key={desayuno.id}
+                        id={desayuno.id}
+                        item={desayuno.item}
+                        price={desayuno.price}
+                        image={desayuno.image}
+                        addOrder={addOrder}
+                    />
                 ))}
             </ul>
         </div >

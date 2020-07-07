@@ -1,0 +1,28 @@
+.initial-image{
+    background-image: url('./images/initial-image.jpg');
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+
+}
+
+/* .title-BQ{
+    font-size: 150px;
+    line-height: 0px;
+    margin-left: 200px;
+    margin-top: 180px;
+} */
+
+.letter-b{
+
+    font-size: 150px;
+    margin: 300px 0px 0px 280px;
+    
+}
+
+.letter-q{
+    font-size: 150px;
+    margin: -80px 0px 0px 370px}
