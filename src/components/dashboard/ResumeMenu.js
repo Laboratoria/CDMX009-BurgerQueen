@@ -6,21 +6,18 @@ const ResumeMenu = ({ datos, totalPrice, deleteOrder }) => {
 
   return (
     <div>
-
       <div className="resume-card white-text scroll">
         <div className='container'>
           <div className='row'>
             <p className='center-align resume-title'>Resumen del pedido</p>
             <div className="divider yellow lighten-2"></div>
             {data.map(a => (
-              <div>
-                <p className='col m6'>{a.item}</p>
+              <div className='order-info'>
+                <p className='col m7'>{a.item}</p>
                 <p className='col m1'>1</p>
                 <p className='col m1'>${a.price}</p>
-                <p className="material-icons resume-icon col m1" onClick={() => { deleteOrder(a.id) }}>delete</p>
-              </div>
-            ))}
-
+                <p className="material-icons resume-icon col m2 right" onClick={() => { deleteOrder(a.id) }}>delete</p></div>
+            ))};
           </div>
         </div>
       </div>
@@ -31,6 +28,5 @@ const ResumeMenu = ({ datos, totalPrice, deleteOrder }) => {
     </div>
   )
 }
-
 
 export default ResumeMenu;

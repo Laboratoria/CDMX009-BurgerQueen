@@ -19,20 +19,19 @@ function Dashboard({ datos, setDatos }) {
 
     //Eliminar productos
     const deleteOrder = (id) => {
-        let order= datos.productos;
+        let order = datos.productos;
         setDatos({
             ...datos,
             productos: datos.productos.filter(products => products.id !== id)
         });
-    }
-    
+    };
+
     //Total Order
     const totalPrice = datos.productos.reduce((acc, curr) => acc + curr.price, 0);
 
     return (
         <div className='dashboard'>
-                <Navbar datos={datos} setDatos={setDatos} />
-
+            <Navbar datos={datos} />
             <div className='row'>
                 <Button setVisible={setVisible} visible={visible} datos={datos} setDatos={setDatos} />
                 <div className='col m6'>

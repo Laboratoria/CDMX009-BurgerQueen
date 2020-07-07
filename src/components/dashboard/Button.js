@@ -12,7 +12,7 @@ const Button = ( { setVisible ,order, setOrder, datos, setDatos }   ) => {
                         <button className='dash-btn food-btn' onClick={() => { setVisible(false) }}>Comidas</button>
                     </div>
                     <div className='col m6 client-info'>
-                        <ClientInfoForm order={order} setOrder={setOrder} datos={datos} setDatos={setDatos}/>
+                        <ClientInfoForm  datos={datos} setDatos={setDatos}/>
                     </div>
                 </div> 
     )

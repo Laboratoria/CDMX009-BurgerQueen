@@ -34,7 +34,7 @@ class Navbar extends Component {
                     </div></li>
                     <li><a href='/' className='white-text'>Menu</a></li>
                     <li><div className="divider yellow lighten-2"></div></li>
-                    <li><a href='/' className='white-text'>Ordenes</a></li>
+                    <li><a href='/orders' className='white-text'>Ordenes</a></li>
                     <li><div className="divider yellow lighten-2"></div></li>
                     <li><a href='/' className='white-text'>Administración</a></li>
                     <li><div className="divider yellow lighten-2"></div></li>
