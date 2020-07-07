@@ -20,8 +20,9 @@ function App() {
 
         <Route exact path="/waiter" component={InitWaiters} />
 
-      </Router>
+        <Route exact path="/login" component={BackgLogin} />
 
+      </Router>
 
     </div>
   );
