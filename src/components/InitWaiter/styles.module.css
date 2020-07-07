@@ -184,10 +184,16 @@
 
 .titleMenu{
     margin: 0;
+    color: #000000;
+    list-style: none;
 }
 
 .footerWaiter{
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.lineLinks {
+    text-decoration: none;
 }

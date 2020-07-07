@@ -6,9 +6,12 @@ import {
   Link
 } from "react-router-dom";
 
-
 import BackgLogin from './components/BackgLogin';
 import InitWaiters from './components/InitWaiter';
+import BreakFast from './components/BreakFast'
+import RestDay from './components/RestDay'
+import WaiterRegister from './components/WaiterRegister'
+
 import './App.css';
 
 function App() {
@@ -21,6 +24,16 @@ function App() {
         <Route exact path="/waiter" component={InitWaiters} />
 
         <Route exact path="/login" component={BackgLogin} />
+        
+        <Route exact path="/breakfast" component={BreakFast} />
+        
+        <Route exact path="/restday" component={RestDay} />
+        
+        <Route exact path="/waiterregister" component={WaiterRegister} />
+        
+
+
+
 
       </Router>
 

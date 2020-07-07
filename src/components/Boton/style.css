@@ -9,7 +9,7 @@
 }
 
 .buttonOutWaiter{
-       width: 170px;
+    width: 170px;
     height: 50px;
     background: #ED3367;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 5px rgba(0, 0, 0, 0.25);
@@ -35,3 +35,19 @@
     border-radius: 10px;
     margin-right: 50px;
 }
+
+.pagina-3-Esther, .pagina-4-Dian, .pagina-5-Esther {
+    align-self: flex-end;
+    width: 170px;
+    height: 50px;
+    background: #ED3367;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 5px rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    font-family: 'Amaranth', sans-serif;
+    font-size: 28px;
+    text-align: center;
+    border-radius: 10px;
+    margin-right: 50px;
+}
+
+

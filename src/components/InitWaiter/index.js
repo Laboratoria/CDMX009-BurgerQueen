@@ -74,15 +74,19 @@ const InitWaiters = () => {
 
         <div className={styles.containerFood}>
 
-          <div className={styles.bgFoodBreak}>
-            <img src={Breakfast} alt="" className={styles.imageFood} />
-            <p className={styles.titleMenu}>Desayunos</p>
-          </div>
+          <Link to="/breakfast" className={styles.lineLinks}>
+            <div className={styles.bgFoodBreak}>
+              <img src={Breakfast} alt="" className={styles.imageFood} />
+              <p className={styles.titleMenu}>Desayunos</p>
+            </div>
+          </Link>
 
-          <div className={styles.bgFoodLunch}>
-            <img src={Lunch} alt="" className={styles.imageFood} />
-            <p className={styles.titleMenu}>Comidas y Cenas</p>
-          </div>
+          <Link to="restday" className={styles.lineLinks}>
+            <div className={styles.bgFoodLunch}>
+              <img src={Lunch} alt="" className={styles.imageFood} />
+              <p className={styles.titleMenu}>Comidas y Cenas</p>
+            </div>
+          </Link>
         </div>
 
       </div>
