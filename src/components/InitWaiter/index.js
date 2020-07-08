@@ -12,6 +12,13 @@ import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
 import Boton from '../Boton/Boton';
 import DateTime from '../DateTime/DateTime';
+import Select from 'react-select';
+
+const options = [
+  { value: 1, label: 'Taco López' },
+  { value: 2, label: 'Regina Phalangee' },
+  { value: 3, label: 'Phoebe Buffay' }
+]
 
 const InitWaiters = () => {
 
@@ -32,7 +39,8 @@ const InitWaiters = () => {
 
           <div className={styles.dataWaiter}>
             <img src={ImgWaiter} className={styles.imgWaiter} alt="" />
-            <input type="text" placeholder="Nombre del Mesero" className={styles.nameWaiter} />
+            <Select options={options} className={styles.nameWaiter} />
+            {/* <input type="text" placeholder="Nombre del Mesero" className={styles.nameWaiter} /> */}
           </div>
 
           <div className={styles.dataCostumer}>

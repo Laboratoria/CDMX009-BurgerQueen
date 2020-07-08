@@ -1,0 +1,73 @@
+.headerWrapper{
+    border: 1px solid brown;
+        display: flex;
+    flex-direction: row;
+}
+
+.imgWaiter{
+    border: 1px solid teal;
+}
+
+
+.logoRestD{
+    background: url('../../assets/imgs/Logo_BQ.png') no-repeat;
+    width: 1836px;
+    height: 844px;
+    max-width: 30%;
+    display:inline-block;
+}
+
+.iconWaiterRestDay{
+    background: url('../../assets/imgs/waiter.png') no-repeat;
+    width: 205px;
+    height: 195px;
+    zoom: 1;
+    display: inline-block;
+}
+
+
+.containerAll{
+    border:1px solid purple;
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+
+.menuWrapper{
+     border: 1px solid red;
+    /* align-self: auto; */
+    /* display: flex; */
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    max-width: 70%;
+}
+
+.firstWrapperFood, .secondWrapperFood{
+    border: 1px solid darkslategrey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.accountWrapper{
+    border: 2px solid red;
+}
+
+.burgersWrapper,.add,.drinks, .additional{
+    background: #FFE168;
+    width: 150px;
+    height: auto;
+    text-align: center;
+}
+
+
+
+.divPint{
+    width: 100%;
+    height: auto;
+}
+
