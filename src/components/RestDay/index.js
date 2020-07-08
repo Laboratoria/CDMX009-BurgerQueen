@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 import DateTime from '../DateTime/DateTime';
 import Select from 'react-select';
 
-import Products from '../Products/Products'
+import Products from '../Products/Products';
 
 const RestDay = () => {
     return (

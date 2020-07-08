@@ -45,26 +45,30 @@ const Products = {
     ],
     "additionalOptions": [
         {
-            value: 4,
+            value: 1,
             label: <ReusableProducts img={OnionRings} text={"Aros de Cebolla"} price={5} />
         },
 
         {
-            value: 4,
+            value: 2,
             label: <ReusableProducts img={Fries} text={"Papas Fritas"} price={5} />
         },
     ],
     "additionals": [
         {
-            value: 4,
+            value: 1,
             label: <ReusableProducts img={Eggs} text={"Huevos"} price={1} />
         },
 
         {
-            value: 4,
+            value: 2,
             label: <ReusableProducts img={Chess} text={"Queso"} price={1} />
         },
+
+
     ]
+
+
 }
 
 export default Products;
