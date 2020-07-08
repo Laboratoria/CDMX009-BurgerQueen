@@ -24,13 +24,13 @@ function App() {
         <Route exact path="/waiter" component={InitWaiters} />
 
         <Route exact path="/login" component={BackgLogin} />
-        
+
         <Route exact path="/breakfast" component={BreakFast} />
-        
+
         <Route exact path="/restday" component={RestDay} />
-        
+
         <Route exact path="/waiterregister" component={WaiterRegister} />
-        
+
 
 
 

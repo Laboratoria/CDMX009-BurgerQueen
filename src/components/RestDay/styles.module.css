@@ -11,8 +11,8 @@
 
 .logoRestD{
     background: url('../../assets/imgs/Logo_BQ.png') no-repeat;
-    width: 300px;
-    height: auto;
+    width: 1836px;
+    height: 844px;
     max-width: 30%;
     display:inline-block;
 }
@@ -30,13 +30,44 @@
     border:1px solid purple;
     width: 50%;
     height: auto;
+    display: flex;
+    flex-direction: row;
+    
 }
 
-.menuWrapper,.acountWrapper{
-    border: 1px solid red;
+
+.menuWrapper{
+     border: 1px solid red;
+    /* align-self: auto; */
+    /* display: flex; */
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    max-width: 70%;
 }
 
-.dobleBurger{
-    background-image: url('../../assets/imgs/burger-lunch.jpg');
+.firstWrapperFood, .secondWrapperFood{
+    border: 1px solid darkslategrey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.accountWrapper{
+    border: 2px solid red;
+}
+
+.burgersWrapper,.add,.drinks, .additional{
+    background: #FFE168;
+    width: 150px;
+    height: auto;
+    text-align: center;
+}
+
+
+
+.divPint{
+    width: 100%;
+    height: auto;
 }
 
