@@ -6,7 +6,7 @@ import Logo from '../Logo/Logo';
 
 const BackgLogin = () => (
     <div className={styles.containerLogin}>
-        <Logo />
+        <Logo nameClass={"logoLogin"} />
         <div className={styles.contentWrapper}>
             <div className={styles.wraperSeccionBottons}>
 

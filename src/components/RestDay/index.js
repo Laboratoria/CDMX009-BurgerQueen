@@ -4,6 +4,7 @@ import Boton from '../Boton/Boton'
 import styles from './styles.module.css';
 import DateTime from '../DateTime/DateTime';
 import Select from 'react-select';
+import Logo from '../Logo/Logo';
 
 import Products from '../Products/Products';
 
@@ -13,11 +14,12 @@ const RestDay = () => {
         <div>
             <div className={styles.headerWrapper}>
                 <div className={styles.logoRestD}>
-                    <span className={styles.logoRestDay}></span>
+                    <Logo nameClass={"logoSmallLunch"} />
                 </div>
-
-                <h2>Desayunos y Cenas</h2>
-                <span className={styles.iconWaiterRestDay}></span>
+                <div className={styles.iconHeader}>
+                    <h2>Desayunos y Cenas</h2>
+                    <span className={styles.iconWaiterRestDay}></span>
+                </div>
             </div>
 
             <div className={styles.containerAll}>
@@ -69,15 +71,30 @@ const RestDay = () => {
                         <p>Agua 750 ml</p>
                         <p>Café Américano</p>
                         <p>Hamburguesa Simple</p>
+                        <p>Agua 750 ml</p>
+                        <p>Café Américano</p>
+                        <p>Hamburguesa Simple</p>
 
                     </div>
                 </div>
 
             </div>
 
-            <Link to="waiterregister">
-                <Boton text={"Ir Pag-5"} allstyles={"pagina-4-Dian"} />
-            </Link>
+
+            <div className={styles.routeButtons}>
+
+                <Link to="waiter">
+                    <Boton text={"Regresar"} allstyles={"buttonOutWaiter"} />
+                </Link>
+
+
+                <Link to="waiterregister">
+                    <Boton text={"Enviar"} allstyles={"pagina-4-Dian"} />
+                </Link>
+
+            </div>
+
+
 
         </div>
     );
