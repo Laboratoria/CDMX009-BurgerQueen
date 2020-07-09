@@ -1,0 +1,78 @@
+.containerTable{
+    border: 2px solid #ED3367;
+    background: #EAEAEA;
+    border-radius: 14px;
+    margin: 10px;
+}
+
+.DateOfOrderWrapprer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30%;
+ 
+}
+
+.firstNumberWrapper,
+.secondNumberWrapper,
+.thirdNumberWrapper{
+    background: #FFFFFF;
+     border: 2px solid #ED3367;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-family: 'Amaranth', sans-serif;
+    padding: 10px;
+    margin: 40px;
+}
+
+
+
+
+.numberTableData,
+.numberPeopleData {
+    width: 80px;
+    height: 60px;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.numberPeople,
+.numberTable {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+
+.positionDate{
+    align-self: flex-end;
+}
+
+.positionData{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.customerOrders{
+   margin: 10px;
+}
+
+.Orders{
+    display: flex;
+    flex-direction: row;
+    font-size: 1.7em;
+    font-weight: 500;
+}
+
+.orbit-container{
+background: green;
+}
+
+

@@ -1,6 +1,5 @@
 .headerWrapper{
-    border: 1px solid brown;
-        display: flex;
+    display: flex;
     flex-direction: row;
 }
 
@@ -46,7 +45,7 @@
 .menuWrapper{
     border: 1px solid red;
     flex-direction: row;
-    width: 50%;
+    width: 60%;
     height: auto;
     
 }
@@ -62,12 +61,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-bottom: 20%;
+     margin-bottom: 20%;
 }
 
 .accountWrapper{
-    width: 50%;
-    
+    width: 40%;
 }
 
 .burgersWrapper,.add,.drinks, .additional{
@@ -82,10 +80,13 @@
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 8px rgba(0, 0, 0, 0.25);
 }
 
-.divPint{
+/* .reusabletab{
     width: 100%;
     height: auto;
-}
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+} */
 
 .routeButtons{
     display: flex;

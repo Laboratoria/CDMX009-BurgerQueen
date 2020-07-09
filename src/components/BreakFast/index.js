@@ -10,7 +10,7 @@ import CoffeMilk from '../../assets/imgs/coffe-milk.jpg';
 import Sandwich from '../../assets/imgs/sandwich.jpg';
 import Juice from '../../assets/imgs/orange-juice.jpg'
 
-import Products from '../Products/Products';
+import ReusableTable from '../ReusableTable/index'
 
 const BreakFast = () => (
 
@@ -58,9 +58,9 @@ const BreakFast = () => (
 
             </div>
             <div className={styles.order}>
-                <DateTime />
+                {/* <DateTime /> */}
 
-                <div className={styles.dataTableLabel}>
+                {/* <div className={styles.dataTableLabel}>
                     <div className={styles.numberTable} >
                         <p> No. Mesa </p>
                         <label htmlFor="">
@@ -74,8 +74,10 @@ const BreakFast = () => (
                     <label htmlFor="">
                         <input type="text" placeholder="No." className={styles.numberPeopleData} />
                     </label>
+                </div> */}
+                <div>
+                    <ReusableTable />
                 </div>
-
 
 
             </div>

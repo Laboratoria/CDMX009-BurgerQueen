@@ -18,7 +18,7 @@ const RestDay = () => {
                     <Logo nameClass={"logoSmallLunch"} />
                 </div>
                 <div className={styles.iconHeader}>
-                    <h2>Desayunos y Cenas</h2>
+                    <h2>Comidas y Cenas</h2>
                     <span className={styles.iconWaiterRestDay}></span>
                 </div>
             </div>
@@ -62,11 +62,10 @@ const RestDay = () => {
                 </div>
 
                 <div className={styles.accountWrapper}>
-                    <div className={styles.divPint}>
-
+                    <div className={styles.reusabletab}>
                         <ReusableTable />
-
                     </div>
+
                 </div>
 
             </div>
