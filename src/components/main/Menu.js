@@ -12,8 +12,9 @@ function Menu({employee}) {
   let statusOrders = "nav-btn";
   let [menuBtn, setMenuBtn] = useState('breakfast')
   let [menuCards, setMenuCards] = useState([]);
-  let products = [];
-
+  let [products, setProducts] = useState([]);
+  let [quantity, setQuantity] = useState(products);
+   
   useEffect(() => {
     
     console.log('renderizo menu');
@@ -30,12 +31,48 @@ function Menu({employee}) {
     fetchData()
   },[menuBtn])
 
-  function addProduct(name){
-    console.log("click!", name);
+  
+  function addProduct(item){
     
-    products.push(name);
-    console.log(products);
+    console.log("click!");
+    
+    
+    
+    if(products.length == 0){
+      setProducts([...products,{
+        name: item.name,
+        number: 1,
+        price: item.price
+      }])
+      
+    }else{
+      let a = products.filter((e) => item.name === e.name);
+      
+      if(a.length ==! 0){
+        
+      quantity.map((e,index)=>{
+          if(e.name === item.name){
+            e.number += 1
+            e.price = item.price*e.number
+                       
+          }
+        })
+       setProducts(quantity); 
+      }else{
+        console.log('no está')
+        setProducts([...products,{
+          name: item.name,
+          number: 1,
+          price: item.price
+        }])
+      }
+
+    }
+    setQuantity(products);
+    console.log('quantity =>', quantity);
   }
+   
+  console.log(products);
   
     return (
       <div className="main-container">
@@ -51,7 +88,7 @@ function Menu({employee}) {
              
              {menuCards.map(item =>
              (<Card
-               onClick={()=> addProduct(item.name)} 
+               onClick={()=> addProduct(item)} 
                name={item.name}
                image={item.image}
                price={item.price}
@@ -60,12 +97,13 @@ function Menu({employee}) {
 
           </div>
           <div className="order-container">
-          {products.forEach(item =>
+          {products.map(item =>
              (<p>
-                algo
-             </p>
+              {item.number}  {item.name}  {item.price}
+              </p>
              )
              )}
+             
           </div>
          </div>
          

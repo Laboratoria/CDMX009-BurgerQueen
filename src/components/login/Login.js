@@ -36,7 +36,7 @@ export function Login({setIslogin, setEmployee}) {
       const fetchData = async () => {
         const db = firebase.firestore();
         const data = await db.collection('users').get()
-        setUsers(data.docs.map(doc => doc.data()))
+        //setUsers(data.docs.map(doc => doc.data()))
         data.docs.map(doc => {
           console.log(doc.data().name, doc.data().password)
           if (doc.data().name == username && doc.data().password == password ){
