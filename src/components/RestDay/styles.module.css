@@ -4,17 +4,25 @@
     flex-direction: row;
 }
 
-.imgWaiter{
-    border: 1px solid teal;
+.logoRestD{
+    width: 30%;
 }
 
+.iconHeader{
+    display: flex;
+    flex-direction: row;
+    font-size: 2.2em;
+    align-items: center;
+}
 
-.logoRestD{
-    background: url('../../assets/imgs/Logo_BQ.png') no-repeat;
-    width: 1836px;
-    height: 844px;
-    max-width: 30%;
-    display:inline-block;
+.iconHeader h2{
+    padding-right: 170px;
+    padding-left: 30px;
+
+} 
+
+.imgWaiter{
+    border: 1px solid teal;
 }
 
 .iconWaiterRestDay{
@@ -27,8 +35,7 @@
 
 
 .containerAll{
-    border:1px solid purple;
-    width: 50%;
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: row;
@@ -37,37 +44,56 @@
 
 
 .menuWrapper{
-     border: 1px solid red;
-    /* align-self: auto; */
-    /* display: flex; */
+    border: 1px solid red;
     flex-direction: row;
-    width: 100%;
+    width: 50%;
     height: auto;
-    max-width: 70%;
+    
 }
 
-.firstWrapperFood, .secondWrapperFood{
-    border: 1px solid darkslategrey;
+.firstWrapperFood{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-bottom: 20%;
+    margin-top: 10%;
+}
+.secondWrapperFood{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 20%;
 }
 
 .accountWrapper{
-    border: 2px solid red;
+    width: 50%;
+    
 }
 
 .burgersWrapper,.add,.drinks, .additional{
     background: #FFE168;
-    width: 150px;
+    width: 260px;
+    padding: 15px;
     height: auto;
     text-align: center;
+    border-radius: 14px;
+    font-size: 1.5em;
+    border: 1px solid hsl(0,0%,20%);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 8px rgba(0, 0, 0, 0.25);
 }
-
-
 
 .divPint{
     width: 100%;
     height: auto;
+}
+
+.routeButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.routeButtons a{
+        align-self: center;
 }
 

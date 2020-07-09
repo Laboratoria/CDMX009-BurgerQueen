@@ -3,8 +3,8 @@ import './style.css';
 
 const ReusableProducts = ({ img, text, price, allStyles }) => {
     return (
-        <div>
-            <img src={img} height="100" width="100px" className={allStyles} />
+        <div className={allStyles}>
+            <img src={img} height="200" width="200px" />
             <p>{text}</p>
             <p>{price}</p>
         </div>
