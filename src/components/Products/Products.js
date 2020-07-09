@@ -15,54 +15,54 @@ const Products = {
     "burgers": [
         {
             value: 1,
-            label: <ReusableProducts img={SimpleBurger} text={"Hamburguesa Simple"} price={10} />
+            label: <ReusableProducts img={SimpleBurger} text={"Hamburguesa Simple"} price={10} allStyles={"containerProduct"} />
         },
 
         {
             value: 2,
-            label: <ReusableProducts img={DobleBurger} text={"Hamburguesa Doble"} price={15} />
+            label: <ReusableProducts img={DobleBurger} text={"Hamburguesa Doble"} price={15} allStyles={"containerProduct"} />
         },
     ],
     "drinks": [
         {
             value: 1,
-            label: <ReusableProducts img={Water} text={"Agua 500ml"} price={5} />
+            label: <ReusableProducts img={Water} text={"Agua 500ml"} price={5} allStyles={"containerProduct"} />
         },
 
         {
             value: 2,
-            label: <ReusableProducts img={Water} text={"Agua 750 ml"} price={7} />
+            label: <ReusableProducts img={Water} text={"Agua 750 ml"} price={7} allStyles={"containerProduct"} />
         },
         {
             value: 3,
-            label: <ReusableProducts img={Cola} text={"Gaseosa 500 ml"} price={7} />
+            label: <ReusableProducts img={Cola} text={"Gaseosa 500 ml"} price={7} allStyles={"containerProduct"} />
         },
 
         {
             value: 4,
-            label: <ReusableProducts img={Cola} text={"Gaseosa 750 ml"} price={10} />
+            label: <ReusableProducts img={Cola} text={"Gaseosa 750 ml"} price={10} allStyles={"containerProduct"} />
         },
     ],
     "additionalOptions": [
         {
             value: 1,
-            label: <ReusableProducts img={OnionRings} text={"Aros de Cebolla"} price={5} />
+            label: <ReusableProducts img={OnionRings} text={"Aros de Cebolla"} price={5} allStyles={"containerProduct"} />
         },
 
         {
             value: 2,
-            label: <ReusableProducts img={Fries} text={"Papas Fritas"} price={5} />
+            label: <ReusableProducts img={Fries} text={"Papas Fritas"} price={5} allStyles={"containerProduct"} />
         },
     ],
     "additionals": [
         {
             value: 1,
-            label: <ReusableProducts img={Eggs} text={"Huevos"} price={1} />
+            label: <ReusableProducts img={Eggs} text={"Huevos"} price={1} allStyles={"containerProduct"} />
         },
 
         {
             value: 2,
-            label: <ReusableProducts img={Chess} text={"Queso"} price={1} />
+            label: <ReusableProducts img={Chess} text={"Queso"} price={1} allStyles={"containerProduct"} />
         },
 
 
