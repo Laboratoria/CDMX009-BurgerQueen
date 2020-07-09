@@ -7,6 +7,7 @@ import Select from 'react-select';
 import Logo from '../Logo/Logo';
 
 import Products from '../Products/Products';
+import ReusableTable from '../ReusableTable/index'
 
 const RestDay = () => {
     return (
@@ -62,18 +63,8 @@ const RestDay = () => {
 
                 <div className={styles.acountWrapper}>
                     <div className={styles.divPint}>
-                        <DateTime />
-                        <h3>ESTO SE QUITA LO </h3>
-                        <h3>PUSE POR RELLENO </h3>
-                        <h2>Aqui va LA TABLA</h2>
-                        <p>Hamburguesa Doble</p>
-                        <p>Gaseosa 500 ml</p>
-                        <p>Agua 750 ml</p>
-                        <p>Café Américano</p>
-                        <p>Hamburguesa Simple</p>
-                        <p>Agua 750 ml</p>
-                        <p>Café Américano</p>
-                        <p>Hamburguesa Simple</p>
+
+                        <ReusableTable />
 
                     </div>
                 </div>
