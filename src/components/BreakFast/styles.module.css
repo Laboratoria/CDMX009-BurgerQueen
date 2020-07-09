@@ -14,7 +14,8 @@
     border: 1px solid pink;
 }
 
-h2 {
+
+.titleBreakfast {
     display: flex;
     align-items: center;
     justify-content: flex-start;
