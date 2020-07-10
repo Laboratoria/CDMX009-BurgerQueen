@@ -62,7 +62,7 @@ const RestDay = () => {
                 </div>
 
                 <div className={styles.accountWrapper}>
-                    <div className={styles.reusabletab}>
+                    <div>
                         <ReusableTable />
                     </div>
 

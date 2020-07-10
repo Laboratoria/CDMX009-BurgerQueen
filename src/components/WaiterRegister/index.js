@@ -8,9 +8,14 @@ const WaiterRegister = () => (
         <h1>Estoy en la vista 5 Esther</h1>
 
         <Link to="waiter">
-        
-        <Boton text={"Regresar"} allstyles={"pagina-5-Esther"} />  
-        </Link>   
+
+            <Boton text={"Regresar"} allstyles={"pagina-5-Esther"} />
+        </Link>
+
+
+        <Link to="waiteraccount">
+            <Boton text={"Editar"} allstyles={"buttonOutWaiter"} />
+        </Link>
 
     </div>
 );
