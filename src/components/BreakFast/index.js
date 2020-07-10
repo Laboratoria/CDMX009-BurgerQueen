@@ -10,7 +10,7 @@ import CoffeMilk from '../../assets/imgs/coffe-milk.jpg';
 import Sandwich from '../../assets/imgs/sandwich.jpg';
 import Juice from '../../assets/imgs/orange-juice.jpg'
 
-import Products from '../Products/Products';
+import ReusableTable from '../ReusableTable/index'
 
 const BreakFast = () => (
 
@@ -19,7 +19,7 @@ const BreakFast = () => (
             <div className={styles.logoBreakFast}>
                 <Logo nameClass={"logoSmallLunch"} />
             </div>
-                <h2>Desayunos</h2>
+            <h2 className={styles.titleBreakfast}>Desayunos</h2>
             <div className={styles.iconHeader}>
                 <span className={styles.iconWaiterBreakFast}></span>
             </div>
@@ -31,40 +31,40 @@ const BreakFast = () => (
                 <div className={styles.breakfast}>
 
                     <div className={styles.bgMenu}>
-                        <img src={Coffe} alt=""/>
-                        <h3>Cafe Americano <br/> $5.00</h3>
+                        <img src={Coffe} alt="" />
+                        <h3>Cafe Americano <br /> $5.00</h3>
                     </div>
 
                     <div className={styles.bgMenu}>
-                        <img src={CoffeMilk} alt=""/>
-                        <h3>Cafe con Leche <br/> $7.00</h3>
+                        <img src={CoffeMilk} alt="" />
+                        <h3>Cafe con Leche <br /> $7.00</h3>
                     </div>
                 </div>
 
                 <div className={styles.breakfast}>
                     <div className={styles.bgMenu}>
-                        <img src={Sandwich} alt=""/>
-                        <h3>Sandwich <br/> $10.00</h3>
+                        <img src={Sandwich} alt="" />
+                        <h3>Sandwich <br /> $10.00</h3>
                     </div>
-                
+
                     <div className={styles.bgMenu}>
-                        <img src={Juice} alt=""/>
-                        <h3>Jugo <br/> $7.00</h3>
+                        <img src={Juice} alt="" />
+                        <h3>Jugo <br /> $7.00</h3>
                     </div>
                 </div>
-                
-              
-                
+
+
+
 
             </div>
             <div className={styles.order}>
-                <DateTime />
+                {/* <DateTime /> */}
 
-                <div className={styles.dataTableLabel}>
+                {/* <div className={styles.dataTableLabel}>
                     <div className={styles.numberTable} >
                         <p> No. Mesa </p>
                         <label htmlFor="">
-                        <input type="text" placeholder="No." className={styles.numberTableData} />
+                            <input type="text" placeholder="No." className={styles.numberTableData} />
                         </label>
                     </div>
                 </div>
@@ -74,9 +74,11 @@ const BreakFast = () => (
                     <label htmlFor="">
                         <input type="text" placeholder="No." className={styles.numberPeopleData} />
                     </label>
+                </div> */}
+                <div>
+                    <ReusableTable />
                 </div>
 
-                
 
             </div>
         </div>
@@ -87,7 +89,7 @@ const BreakFast = () => (
 
         <Link to="waiterregister">
             <Boton text={"Ir Pag-5"} allstyles={"pagina-3-Esther"} />
-        </Link>  
+        </Link>
 
     </div>
 );

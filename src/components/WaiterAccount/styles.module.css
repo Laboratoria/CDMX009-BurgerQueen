@@ -1,0 +1,36 @@
+.headerWrapperAccount{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.logoWaiterAccoun{
+    width: 30%;
+}
+
+.contentDivision{
+    display: flex;
+    flex-direction: row;
+}
+
+.firstDivision{
+    width: 30%;
+    height: auto;
+}
+
+.secondDivision{
+ width: 40%;
+    height: auto;
+}
+
+.thirdDivision{
+     width: 30%;
+    height: auto;
+}
+
+.imageDecoration{
+    background: url('../../assets/imgs/fondo-sartennnnnnnn.png')no-repeat;
+    width: 240px;
+    height: 323px;
+    display: inline-block;
+}

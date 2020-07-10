@@ -8,9 +8,10 @@ import {
 
 import BackgLogin from './components/BackgLogin';
 import InitWaiters from './components/InitWaiter';
-import BreakFast from './components/BreakFast'
-import RestDay from './components/RestDay'
-import WaiterRegister from './components/WaiterRegister'
+import BreakFast from './components/BreakFast';
+import RestDay from './components/RestDay';
+import WaiterRegister from './components/WaiterRegister';
+import WaiterAccount from './components/WaiterAccount';
 
 import './App.css';
 
@@ -30,6 +31,8 @@ function App() {
         <Route exact path="/restday" component={RestDay} />
 
         <Route exact path="/waiterregister" component={WaiterRegister} />
+
+        <Route exact path="/waiteraccount" component={WaiterAccount} />
 
 
 

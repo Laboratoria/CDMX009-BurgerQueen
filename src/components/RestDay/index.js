@@ -7,6 +7,7 @@ import Select from 'react-select';
 import Logo from '../Logo/Logo';
 
 import Products from '../Products/Products';
+import ReusableTable from '../ReusableTable/index'
 
 const RestDay = () => {
     return (
@@ -17,7 +18,7 @@ const RestDay = () => {
                     <Logo nameClass={"logoSmallLunch"} />
                 </div>
                 <div className={styles.iconHeader}>
-                    <h2>Desayunos y Cenas</h2>
+                    <h2>Comidas y Cenas</h2>
                     <span className={styles.iconWaiterRestDay}></span>
                 </div>
             </div>
@@ -60,22 +61,11 @@ const RestDay = () => {
 
                 </div>
 
-                <div className={styles.acountWrapper}>
-                    <div className={styles.divPint}>
-                        <DateTime />
-                        <h3>ESTO SE QUITA LO </h3>
-                        <h3>PUSE POR RELLENO </h3>
-                        <h2>Aqui va LA TABLA</h2>
-                        <p>Hamburguesa Doble</p>
-                        <p>Gaseosa 500 ml</p>
-                        <p>Agua 750 ml</p>
-                        <p>Café Américano</p>
-                        <p>Hamburguesa Simple</p>
-                        <p>Agua 750 ml</p>
-                        <p>Café Américano</p>
-                        <p>Hamburguesa Simple</p>
-
+                <div className={styles.accountWrapper}>
+                    <div>
+                        <ReusableTable />
                     </div>
+
                 </div>
 
             </div>
