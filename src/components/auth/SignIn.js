@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import { firebase } from '../../firebase/firebaseConfig';
@@ -60,11 +61,17 @@ const SignIn = () => {
 
     return (
         <div className='initial-image'>
-            <div className='container form-container row'>
-                <div className='col m7 right'>
-                    <form className='signin-form'>
-                        <div className="logo-burger center-align">
-                            <img src={bqLogo} className='bq-logo' alt='logo'></img>
+        <div className='container form-container row'>
+            <div className='col m7 right'>
+                <form className='signin-form'>
+                    <div className="logo-burger center-align">
+                        <img src={bqLogo} className='bq-logo' alt='logo'></img>
+                    </div>
+                    <div className='container'>
+                        <h5 className='white-text center-align'>Inicio de Sesión</h5>
+                        <div className='input'>
+                            <label htmlFor='email' >Correo</label>
+                            <input type='email' id='email' onChange={(e) => setEmail(e.target.value)} />
                         </div>
                         <div className='container'>
                             <h5 className='white-text center-align'>Inicio de Sesión</h5>
@@ -84,8 +91,11 @@ const SignIn = () => {
                         <div className='input center-align'>
                             <button className='black btn-login white-text' onClick={submit}>Ingresar</button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                    <div className='input center-align'>
+                        <button className='black btn-log-in white-text' onClick={submit}>Ingresar</button>
+                    </div>
+                </form>
             </div>
         </div>
         </div>

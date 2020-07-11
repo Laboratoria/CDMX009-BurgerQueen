@@ -12,7 +12,6 @@ function OrderFinished() {
 
     return (
         <Fragment>
-
             <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Finalizar</a>
 
             <div id="modal1" class="modal scroll">
