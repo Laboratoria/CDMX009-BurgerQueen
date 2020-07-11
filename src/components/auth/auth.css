@@ -19,8 +19,8 @@
   }
   /* Sign in page */
   .signin-form{
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
-    background-color: black;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.8);
+    background-color: rgba(0,0,0,1);
     border-radius: 5px;
     margin-top: 10%;
   }
@@ -43,7 +43,7 @@
   line-height: 23px;
     
   }
-  .btn-login{
+  .btn-log-in{
     margin-bottom: 20%;
     margin-top: 10%;
     border: 1px solid #FFFFFF;
@@ -81,4 +81,13 @@
 }
 .instruction{
   font-size: 17px;
+}
+.toast-success,  .toast-error{
+  border-radius: 5px; 
+  font-size: 15px;
+}
+.toast-resume{
+  background-color: #FBE677 ;
+  border-radius: 5px;
+  font-size: 15px;
 }

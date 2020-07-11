@@ -17,7 +17,6 @@ function App() {
     nuevoTotal: '',
     metodoPagar: '',
   })
-
   return (
     <BrowserRouter>
       <div className="App">
@@ -31,5 +30,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
 export default App; 

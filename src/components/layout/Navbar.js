@@ -1,24 +1,24 @@
+import React from 'react'
+import SignedInLinks from '../layout/SignedInLinks';
+import bqLogo from '../BQ/images/logo.svg';
+import 'firebase/auth';
+import './layout.css';
+import { firebase } from '../../firebase/firebaseConfig';
 
-import React, { Component } from 'react';
-//import { Link } from 'react-router-dom';
-import SignedInLinks from './SignedInLinks';
-import bqLogo from '../BQ/images/logo.svg'
+const Navbar = () => {
 
-class Navbar extends Component {
-
-    componentDidMount() {
-        const M = window.M;
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.sidenav');
-            var instances = M.Sidenav.init(elems, {});
-            return instances;
-        });
+    const logOut = () => {
+        console.log('saliendo...');
+        firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+          }).catch(function(error) {
+            // An error happened.
+          });
     }
 
-    render() {
-        return (
-            <div>
-                <nav className='nav-wrapper black'>
+    return (
+        <div>
+                <nav className='nav-wrapper black bar'>
                     <div className=' left-align'>
                         <div data-target='slide-out' className='sidenav-trigger show-on-large'>
                             <i className='material-icons nav-icon-menu'>menu</i>
@@ -38,11 +38,12 @@ class Navbar extends Component {
                     <li><div className="divider yellow lighten-2"></div></li>
                     <li><a href='/' className='white-text'>Administración</a></li>
                     <li><div className="divider yellow lighten-2"></div></li>
+                    <li><span className='white-text logout' onClick={ () => {logOut()} }>Salir</span></li>
+                    <li><div className="divider yellow lighten-2"></div></li>
 
                 </ul>
             </div>
-        )
-    }
+    )
 }
 
 export default Navbar;

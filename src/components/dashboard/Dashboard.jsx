@@ -11,22 +11,25 @@ function Dashboard({ datos, setDatos }) {
 
     const [visible, setVisible] = useState(true);
 
+    const totalPrice = datos.productos.reduce((acc, curr) => acc + curr.price, 0);
+
     const addOrder = (products) => {
-        setDatos({ ...datos, productos: [...datos.productos, products] });
+        
+        setDatos({ ...datos, productos: [...datos.productos, products], total: totalPrice });
         // productos: [ {producto: {id, name, price, img,quantity: 1}, quantity: 1} ]
         products.id = uuidv4();
-        console.log('order de addOrder', datos);
+
+        //console.log('order de addOrder', datos);
     }
 
     const deleteOrder = (id) => {
-        let order = datos.productos;
         setDatos({
             ...datos,
             productos: datos.productos.filter(products => products.id !== id)
         });
     }
 
-    const totalPrice = datos.productos.reduce((acc, curr) => acc + curr.price, 0);
+    //const totalPrice = datos.productos.reduce((acc, curr) => acc + curr.price, 0);
 
     return (
         <div>

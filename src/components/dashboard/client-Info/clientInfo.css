@@ -4,7 +4,7 @@
     height: 50px;
     border-radius: 5px;
     padding: 5px 7px;
-    margin-top: 1%;
+    margin-top: 15%;
     
 }
 input{
@@ -51,4 +51,7 @@ font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.toast-error{
+    background-color: turquoise;
 }

@@ -1,32 +1,62 @@
 import React, { Fragment } from 'react';
+import { firebase } from '../../../firebase/firebaseConfig';
 import 'materialize-css/dist/css/materialize.min.css';
 import '../client-Info/clientInfo.css';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 toast.configure();
 const ClientInfoForm = ({ datos, setDatos }) => {
 
-    const notify = () => {
-        toast.success('Orden enviada a cocina!');
-    };
     const handleInputChange = (e) => {
+
         setDatos({
             ...datos,
             [e.target.name]: e.target.value
-        });
-    };
-    const enviarDatos = (e) => {
-        e.preventDefault();
-        console.log(datos);
-        //Aqui va el toast
-        notify();
+        })
     };
 
+    const sendData = async (e) => {
+        e.preventDefault();
+        if (!datos.numeroMesa.trim()) {
+            toast.error('Ingresa número de mesa', {
+                className: 'toast-error center-align',
+                hideProgressBar: true
+            });
+            return
+        }
+        if (!datos.numeroComensales.trim()) {
+            toast.error('Ingresa número de comensales', {
+                className: 'toast-error center-align',
+                hideProgressBar: true
+            });
+            return
+        }
+        try {
+            const db = firebase.firestore()
+            const newOrder = {
+                table: datos.numeroMesa,
+                people: datos.numeroComensales,
+                order: datos.productos,
+                payment:'',
+                total: datos.total,
+                date: Date.now()
+            }
+            const data = await db.collection('orders').add(newOrder);
+
+            toast.success('Pedido enviado a cocina!', {
+                className: 'toast-resume black-text center-align',
+                hideProgressBar: true
+            });
+            console.log(datos)
+        }
+        catch (error) {
+            console.log(error);
+        }
+    };
     return (
         <Fragment>
-            <form className='form-container' onSubmit={enviarDatos}>
+            <form className='form-container' onSubmit={sendData}>
                 <div className='row'>
                     <div className='col m6'>
                         <div className="btn-dropdown info-container select-number table-number">
@@ -47,7 +77,7 @@ const ClientInfoForm = ({ datos, setDatos }) => {
                     </div>
                     <div className='col m6'>
                         <div className="btn-dropdown info-container select-number person-number">
-                            <select name='numeroComensales' onChange={handleInputChange}>
+                            <select name='numeroComensales' onChange={handleInputChange} >
                                 <option value="" disabled selected>Nº comensales</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
