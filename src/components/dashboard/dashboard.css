@@ -6,6 +6,7 @@
     background-attachment: fixed;
     background-position: center center;
     background-size: cover; 
+    z-index: -1;
 }
 
 .general{

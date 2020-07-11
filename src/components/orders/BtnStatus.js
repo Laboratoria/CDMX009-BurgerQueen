@@ -1,44 +1,21 @@
-import React, { Fragment } from 'react';
+import React, { Fragment as div } from 'react';
 import pendingIcon from './images/pending.svg';
 /* import cancelIcon from './images/cancel.svg';
 import readyIcon from './images/ready.svg'; */
-import './orders.css'
+import './btn-status.css'
+import { Fragment } from 'react';
+
 
 function BtnStatus() {
     return (
         <Fragment>
-            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">status</a>
-            <div className='row resume-status'>
-                <div id="modal1" class="modal">
-                    <div class="modal-content">
-                        <h4>Status</h4>
-                        <form action="#">
-                            <p>
-                                <label>
-                                    <input name="group1" type="radio" checked />
-                                    <span>pendiente</span>
-                                </label>
-                            </p>
-                            <p>
-                                <label>
-                                    <input name="group1" type="radio" />
-                                    <span>completado</span>
-                                </label>
-                            </p>
-                            <p>
-                                <label>
-                                    <input name="group1" type="radio" />
-                                    <span>cancelado</span>
-                                </label>
-                            </p>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                    </div>
-                </div>
-            </div>
-        </Fragment >
+            <select className="input-field col s12 list-status">
+                <option className='' value="" disabled selected>Status</option>
+                <option value="1">Pendiente</option>
+                <option value="2">Completado</option>
+                <option value="3">Cancelado</option>
+            </select>
+        </Fragment>
     )
 }
 
