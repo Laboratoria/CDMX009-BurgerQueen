@@ -1,70 +1,74 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
+
+import TipOption from './TipOption'
 import pendingIcon from './images/pending.svg';
 /* import cancelIcon from './images/cancel.svg';
 import readyIcon from './images/ready.svg'; */
-import './orders.css'
+import './order-finished.css'
 
 function OrderFinished() {
+
+    const [visible, setVisible] = useState(false);
+
     return (
         <Fragment>
-            <a className="waves-effect waves-light btn modal-trigger" href="#modal2">finalizar</a>
-            <div className='row resume-status'>
-                <div id="modal2" className="modal">
-                    <div className="modal-content">
-                        <h4>resumen del pedido</h4>
-                        <div className="input-field blue col s12">
-                            <select>
-                                <option value="" className='blue' disabled selected>metodo de pago</option>
-                                <option value="1">efectivo</option>
-                                <option value="2">tarjeta de credito</option>
-                                <option value="3">ambos</option>
-                            </select>
 
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Finalizar</a>
+
+            <div id="modal1" class="modal scroll">
+                <div class="modal-content">
+                    <div>
+                        <p className='title-Opt'> Método de pago </p>
+                        <div className=''>
+                            <select className='options'>
+                                <option value="" disabled selected>Elige una opción</option>
+                                <option className='opt' value="1">Efectivo</option>
+                                <option className='opt' value="2">Tarjeta de crédito</option>
+                                <option className='opt' value="3">Tarjeta de regalo</option>
+                            </select>
                         </div>
-                        <p>total:</p>
-                        <p>$350.00</p>
-                        <form action="#">
-                            <h4>agregar propina</h4>
-                            <p>
-                                <label>
-                                    <input name="group1" type="radio" checked />
-                                    <span>si</span>
-                                </label>
-                                <div className="input-field col s12">
-                                    <select>
-                                        <option value="" disabled selected>Choose your option</option>
-                                        <option value="1">10%</option>
-                                        <option value="2">15%</option>
-                                        <option value="3">otro</option>
-                                    </select>
-                                </div>
-                            </p>
-                            <p>total a pagara   </p>
-                            <p>
-                                <label>
-                                    <input name="group1" type="radio" />
-                                    <span>no</span>
-                                </label>
-                            </p>
-                        </form>
-                        <form action="#">
-                            <h4>¿estas segura de finalizar el pedido?</h4>
-                            <p>
-                                <label>
-                                    <input name="group1" type="radio" checked />
-                                    <span>si</span>
-                                </label>
-                            </p>
-                            <p>
-                                <label>
-                                    <input name="group1" type="radio" />
-                                    <span>no</span>
-                                </label>
-                            </p>
-                        </form>
+                        <div>
+                            <p>Total: $200.00</p>
+                        </div>
                     </div>
-                    <div className="modal-footer">
-                        <a href="#!" className="modal-close waves-effect waves-green btn-flat">Agree</a>
+                    <div>
+                        <p className='title-Opt'> Agregar propina</p>
+                        <div className='' >
+                            <select className='options'>
+                                <option value="" disabled selected>Elige una opción</option>
+                                <option className='opt' onClick={() => setVisible(false)}>No</option>
+                                <option className='opt' onClick={() => setVisible(true)}> Si</option>
+                            </select>
+                        </div>
+                        <div>
+                            {
+                                visible ? (<div>no se agrega propina</div>) : (<TipOption />)
+                            }
+                        </div>
+
+                    </div>
+                    <div>
+                        <p className='title-Opt'>Obtener comprobante</p>
+                        <div className=''>
+                            <select className='options'>
+                                <option value="" disabled selected>Elige una opción</option>
+                                <option className='opt' value="1">Si</option>
+                                <option className='opt' value="2">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <p className='title-Opt'>¿Estas segura de finalizar la orden?</p>
+                        <div className=''>
+                            <select className='options'>
+                                <option value="" disabled selected>Elige una opción</option>
+                                <option className='opt' value="1">Si</option>
+                                <option className='opt' value="2">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer btn-accept">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Aceptar</a>
                     </div>
                 </div>
             </div>

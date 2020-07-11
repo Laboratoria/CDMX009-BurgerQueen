@@ -7,12 +7,15 @@ import BurgerQueen from './components/BQ/BurgerQueen.jsx'
 import 'materialize-css/dist/css/materialize.min.css';
 
 function App() {
+
   const [datos, setDatos] = useState({
     numeroMesa: '',
     numeroComensales: '',
     productos: [],
-    total: 0,
-    payment: ''
+    total: '',
+    propina: '',
+    nuevoTotal: '',
+    metodoPagar: '',
   })
   return (
     <BrowserRouter>
