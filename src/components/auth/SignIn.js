@@ -72,13 +72,23 @@ const SignIn = () => {
                             <label htmlFor='email' >Correo</label>
                             <input type='email' id='email' onChange={(e) => setEmail(e.target.value)} />
                         </div>
-                        <div className='input'>
-                            <label htmlFor='password'>Contraseña</label>
-                            <input type='password' id='password' onChange={(e) => setPassword(e.target.value)} />
+                        <div className='container'>
+                            <h5 className='white-text center-align'>Inicio de Sesión</h5>
+                            <div className='input'>
+                                <label htmlFor='email' >Correo</label>
+                                <input type='email' id='email' onChange={(e) => setEmail(e.target.value)} />
+                            </div>
+                            <div className='input'>
+                                <label htmlFor='password'>Contraseña</label>
+                                <input type='password' id='password' onChange={(e) => setPassword(e.target.value)} />
+                            </div>
+                            <div className='right-align'>
+                                <p className='new-pass white-text' onClick={() => { setModalIsOpen(true) }}>Recuperar mi contraseña</p>
+                                <ModalAuth modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} />
+                            </div>
                         </div>
-                        <div className='right-align'>
-                            <p className='new-pass white-text' onClick={() => { setModalIsOpen(true) }}>Recuperar mi contraseña</p>
-                            <ModalAuth modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} />
+                        <div className='input center-align'>
+                            <button className='black btn-login white-text' onClick={submit}>Ingresar</button>
                         </div>
                     </div>
                     <div className='input center-align'>

@@ -4,15 +4,16 @@
 
 .post-it{
     background-color: rgb(255, 240, 102);
-    width: 250px;
+    width: 270px;
     height: 400px;
     margin: 30px;
     padding: 10px;
 }
 
 .list-products{
-    height: 310px;
+    height: 300px;
 }
+
 .list-products::-webkit-scrollbar {
     width: 10px;
 }
@@ -37,7 +38,6 @@
     padding: 0px;
     margin: 3px;
 }
-
 
 .resume-status{
     display: flex !important;
@@ -73,7 +73,8 @@ margin-top: 2px;
     padding-left: 25px !important;
 }
 
-.list-status{
-    color: black !important;
-    margin: 10px;
+.status-order{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }

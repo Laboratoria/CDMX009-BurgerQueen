@@ -3,6 +3,7 @@ import './orders.css'
 import Navbar from '../layout/Navbar'
 import BtnStatus from './BtnStatus'
 import OrderFinished from './OrderFinished'
+import DataModal from './dataModal'
 
 function Orders({ datos }) {
     const now = new Date();
@@ -37,11 +38,12 @@ function Orders({ datos }) {
                                     </form>
                                 </div>
                             </div>
-                            <div>
+                            <div className='status-order'>
                                 <BtnStatus />
                                 <OrderFinished />
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div >

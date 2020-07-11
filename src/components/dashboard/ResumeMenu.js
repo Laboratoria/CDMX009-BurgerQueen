@@ -24,6 +24,7 @@ const ResumeMenu = ({ datos, totalPrice, deleteOrder }) => {
                       <p className="material-icons resume-icon col m2 right" onClick={() => { deleteOrder(a.id) }}>delete</p></div>
                   )))
             }
+
           </div>
         </div>
       </div>
