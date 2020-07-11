@@ -7,12 +7,12 @@ import './orders.css'
 function OrderFinished() {
     return (
         <Fragment>
-            <a class="waves-effect waves-light btn modal-trigger" href="#modal2">finalizar</a>
+            <a className="waves-effect waves-light btn modal-trigger" href="#modal2">finalizar</a>
             <div className='row resume-status'>
-                <div id="modal2" class="modal">
-                    <div class="modal-content">
+                <div id="modal2" className="modal">
+                    <div className="modal-content">
                         <h4>resumen del pedido</h4>
-                        <div class="input-field blue col s12">
+                        <div className="input-field blue col s12">
                             <select>
                                 <option value="" className='blue' disabled selected>metodo de pago</option>
                                 <option value="1">efectivo</option>
@@ -30,7 +30,7 @@ function OrderFinished() {
                                     <input name="group1" type="radio" checked />
                                     <span>si</span>
                                 </label>
-                                <div class="input-field col s12">
+                                <div className="input-field col s12">
                                     <select>
                                         <option value="" disabled selected>Choose your option</option>
                                         <option value="1">10%</option>
@@ -63,8 +63,8 @@ function OrderFinished() {
                             </p>
                         </form>
                     </div>
-                    <div class="modal-footer">
-                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                    <div className="modal-footer">
+                        <a href="#!" className="modal-close waves-effect waves-green btn-flat">Agree</a>
                     </div>
                 </div>
             </div>

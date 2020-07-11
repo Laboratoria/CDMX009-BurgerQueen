@@ -30,7 +30,7 @@ const DinnerCards = ({ addOrder }) => {
 
     return (
 
-        <div>
+        <div className='scroll-cards'>
             <ul>
                 {comidas.map((comida) => (
                     <FoodItem

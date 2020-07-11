@@ -33,7 +33,7 @@ const BreakfastMenu = ({ addOrder }) => {
 
     return (
 
-        <div>
+        <div className='scroll-cards'>
             <ul>
                 {desayunos.map((desayuno) => (
                     <FoodItem
