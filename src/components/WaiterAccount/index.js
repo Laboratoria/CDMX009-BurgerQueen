@@ -1,5 +1,7 @@
 import React from 'react';
 import Logo from '../Logo/Logo';
+import Boton from '../Boton/Boton'
+import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
 import ReusableTable from '../ReusableTable';
 
@@ -28,17 +30,25 @@ const WaiterAccount = () => {
 
                 <div className={styles.thirdDivision}>
                     <div className={styles.printAccount}>
-                        <img src={IconPrintAccount} alt="" />
+                        <img src={IconPrintAccount} alt="" className={styles.printImg} />
+                    </div>
+
+                    <div className={styles.buttonPay}>
+                        <Boton text={"Pagado"} allstyles={"pay"} />
                     </div>
                 </div>
 
             </div>
+            <div className={styles.routeButtonsAccount}>
 
+                <Link to="kitchen">
+                    <Boton text={"Regresar"} allstyles={"return"} />
+                </Link>
+
+                <Boton text={"Inicio"} allstyles={"returnTwo"} />
+
+            </div>
         </div>
-
-
-
-
 
     );
 }

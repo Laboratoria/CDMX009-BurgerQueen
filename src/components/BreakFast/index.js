@@ -53,44 +53,24 @@ const BreakFast = () => (
                     </div>
                 </div>
 
-
-
-
             </div>
+
             <div className={styles.order}>
-                {/* <DateTime /> */}
-
-                {/* <div className={styles.dataTableLabel}>
-                    <div className={styles.numberTable} >
-                        <p> No. Mesa </p>
-                        <label htmlFor="">
-                            <input type="text" placeholder="No." className={styles.numberTableData} />
-                        </label>
-                    </div>
-                </div>
-
-                <div className={styles.numberPeople}>
-                    <p>No. Personas</p>
-                    <label htmlFor="">
-                        <input type="text" placeholder="No." className={styles.numberPeopleData} />
-                    </label>
-                </div> */}
                 <div>
                     <ReusableTable />
                 </div>
-
-
             </div>
         </div>
 
-        <Link to="waiter">
-            <Boton text={"Regresar"} allstyles={"buttonOutWaiter"} />
-        </Link>
+        <div className={styles.routeButtons}>
+            <Link to="waiter">
+                <Boton text={"Regresar"} allstyles={"buttonOutWaiter"} />
+            </Link>
 
-        <Link to="waiterregister">
-            <Boton text={"Ir Pag-5"} allstyles={"pagina-3-Esther"} />
-        </Link>
-
+            <Link to="waiterregister">
+                <Boton text={"Enviar"} allstyles={"sendToKitchen"} />
+            </Link>
+        </div>
     </div>
 );
 

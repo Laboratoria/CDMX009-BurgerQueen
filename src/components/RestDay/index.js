@@ -79,7 +79,7 @@ const RestDay = () => {
 
 
                 <Link to="waiterregister">
-                    <Boton text={"Enviar"} allstyles={"pagina-4-Dian"} />
+                    <Boton text={"Enviar"} allstyles={"sendToKitchen"} />
                 </Link>
 
             </div>
