@@ -2,7 +2,7 @@ import React, { Fragment as div } from 'react';
 import pendingIcon from './images/pending.svg';
 /* import cancelIcon from './images/cancel.svg';
 import readyIcon from './images/ready.svg'; */
-import './btn-status.css'
+//import './btn-status.css'
 import { Fragment } from 'react';
 
 

@@ -33,8 +33,8 @@ function Dashboard({ datos, setDatos }) {
 
     return (
         <div>
-            <Navbar datos={datos} />
             <div className='dashboard'>
+            <Navbar datos={datos} />
                 <div className='row'>
                     <Button setVisible={setVisible} visible={visible} datos={datos} setDatos={setDatos} />
                     <div className='col m6'>
@@ -43,6 +43,7 @@ function Dashboard({ datos, setDatos }) {
                     <div className='col s12 m5 offset-m0'>
                         <ResumeMenu datos={datos} setDatos={setDatos} deleteOrder={deleteOrder} totalPrice={totalPrice} />
                     </div>
+
                 </div>
             </div>
         </div>

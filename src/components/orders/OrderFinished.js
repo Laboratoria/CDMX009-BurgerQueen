@@ -1,14 +1,19 @@
 import React, { Fragment, useState } from 'react';
 
-import TipOption from './TipOption'
+//import TipOption from './TipOption'
 import pendingIcon from './images/pending.svg';
 /* import cancelIcon from './images/cancel.svg';
 import readyIcon from './images/ready.svg'; */
-import './order-finished.css'
+//import './order-finished.css'
 
 function OrderFinished() {
 
     const [visible, setVisible] = useState(false);
+
+    
+
+    
+
 
     return (
         <Fragment>
@@ -41,7 +46,7 @@ function OrderFinished() {
                         </div>
                         <div>
                             {
-                                visible ? (<div>no se agrega propina</div>) : (<TipOption />)
+                                visible ? (<div>no se agrega propina</div>) : (<div>aquí va tip option</div>)
                             }
                         </div>
 

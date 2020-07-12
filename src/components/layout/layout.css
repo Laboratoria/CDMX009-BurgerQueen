@@ -1,6 +1,6 @@
 .bar{
-    position: fixed;
-    z-index: 900;
+/*     position: fixed;
+    z-index: 900; */
 }
 .logout{
     margin-left: 30px;
