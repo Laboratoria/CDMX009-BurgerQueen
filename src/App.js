@@ -12,6 +12,7 @@ import BreakFast from './components/BreakFast';
 import RestDay from './components/RestDay';
 import WaiterRegister from './components/WaiterRegister';
 import WaiterAccount from './components/WaiterAccount';
+import Kitchen from './components/Kitchen';
 
 import './App.css';
 
@@ -34,9 +35,7 @@ function App() {
 
         <Route exact path="/waiteraccount" component={WaiterAccount} />
 
-
-
-
+        <Route exact path="/kitchen" component={Kitchen} />
 
       </Router>
 
