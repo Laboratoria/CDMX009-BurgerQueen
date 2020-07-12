@@ -67,12 +67,6 @@ const SignIn = () => {
                     <div className="logo-burger center-align">
                         <img src={bqLogo} className='bq-logo' alt='logo'></img>
                     </div>
-                    <div className='container'>
-                        <h5 className='white-text center-align'>Inicio de Sesión</h5>
-                        <div className='input'>
-                            <label htmlFor='email' >Correo</label>
-                            <input type='email' id='email' onChange={(e) => setEmail(e.target.value)} />
-                        </div>
                         <div className='container'>
                             <h5 className='white-text center-align'>Inicio de Sesión</h5>
                             <div className='input'>
@@ -88,10 +82,7 @@ const SignIn = () => {
                                 <ModalAuth modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} />
                             </div>
                         </div>
-                        <div className='input center-align'>
-                            <button className='black btn-login white-text' onClick={submit}>Ingresar</button>
-                        </div>
-                    </div>
+
                     <div className='input center-align'>
                         <button className='black btn-log-in white-text' onClick={submit}>Ingresar</button>
                     </div>
