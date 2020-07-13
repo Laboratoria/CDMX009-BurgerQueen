@@ -1,9 +1,9 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
+  //Switch,
   Route,
-  Link
+  //Link
 } from "react-router-dom";
 
 import BackgLogin from './components/BackgLogin';
@@ -25,19 +25,33 @@ function App() {
           <BackgLogin />
         </Route>
 
-        <Route exact path="/waiter" component={InitWaiters} />
+        <Route exact path="/waiter">
+          <InitWaiters />
+        </Route> 
 
-        <Route exact path="/login" component={BackgLogin} />
+        <Route exact path="/login">
+          <BackgLogin />
+        </Route>
 
-        <Route exact path="/breakfast" component={BreakFast} />
+        <Route exact path="/breakfast">
+          <BreakFast />
+        </Route>
 
-        <Route exact path="/restday" component={RestDay} />
+        <Route exact path="/restday">
+          <RestDay />
+        </Route>
 
-        <Route exact path="/waiterregister" component={WaiterRegister} />
+        <Route exact path="/waiterregister">
+          <WaiterRegister />
+        </Route>           
 
-        <Route exact path="/waiteraccount" component={WaiterAccount} />
+        <Route exact path="/waiteraccount">
+          <WaiterAccount />
+        </Route> 
 
-        <Route exact path="/kitchen" component={Kitchen} />
+        <Route exact path="/kitchen">
+          <Kitchen />
+        </Route> 
 
       </Router>
 
