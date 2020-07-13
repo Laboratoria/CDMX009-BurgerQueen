@@ -18,7 +18,7 @@
     height: auto;
 }
 .imageDecoration{
-    background: url(/static/media/fondo-sartennnnnnnn.62d24fda.png)no-repeat;
+    background: url('../../assets/imgs/fondo-sartennnnnnnn.png')no-repeat;
     display: inline-block;
     width: 400px;
     height: 538px;
@@ -33,9 +33,7 @@ height: auto;
     width: 30%;
     height: auto;
     align-self: center;
-    /* align-items: unset; */
     text-align: center;
-    
 }
 
 .printImg{

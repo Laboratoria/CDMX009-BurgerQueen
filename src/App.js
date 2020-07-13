@@ -21,7 +21,9 @@ function App() {
     <div className="App">
       <Router>
 
-        <Route exact path="/" component={BackgLogin} />
+        <Route exact path="/">
+          <BackgLogin />
+        </Route>
 
         <Route exact path="/waiter" component={InitWaiters} />
 
