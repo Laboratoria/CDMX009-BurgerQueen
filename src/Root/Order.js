@@ -1,50 +1,87 @@
 import React, { useState } from 'react';
 import Menu from '../components/Menu/Menu'
-import PreviewOrder from '../components/PreviewOrder/PreviewOrder'
+// import PreviewOrder from '../components/PreviewOrder/PreviewOrder'
+import product from '../data/products';
+
+const uniqid = require('uniqid');
 
 function Order(){
 
-    const [products, setProducts] = useState (
-      [
-        {id:1, name:"Sandwich de jamón y queso", price:5,  img:"https://cutt.ly/eik6Mgu", quantity: 1},
-        {id:2, name:"Agua chica", price:5,  img:"https://cutt.ly/LilqkMQ", quantity: 1},
-        {id:3, name:"Agua mediana", price:7,  img:"https://cutt.ly/7ile1MF", quantity: 1},
-        {id:4, name:"Aros de cebolla", price:5,  img:"https://cutt.ly/iile6sl", quantity: 1},
-        {id:5, name:"Café americano", price:5,  img:"https://cutt.ly/bilry71", quantity: 1},
-        {id:6, name:"Café con leche", price:7,  img:"https://cutt.ly/1ilrhF3", quantity: 1},
-        {id:7, name:"Hamburguesa doble pollo", price:15,  img:"https://cutt.ly/yilrnBm", quantity: 1},
-        {id:8, name:"Hamburguesa doble res", price:15,  img:"aqui", quantity: 1},
-        {id:9, name:"Hamburguesa doble vegetariana", price:15,  img:"aqui", quantity: 1},
-        {id:10, name:"Hamburguesa sencilla pollo", price:10,  img:"aqui", quantity: 1},
-        {id:11, name:"Hamburguesa sencilla res", price:10,  img:"aqui", quantity: 1},
-        {id:12, name:"Hamburguesa sencilla vegetariana", price:10,  img:"aqui", quantity: 1},
-        {id:13, name:"Jugo de frutas", price:7,  img:"aqui", quantity: 1},
-        {id:14, name:"Papas fritas", price:10,  img:"aqui", quantity: 1},
-        {id:15, name:"Refresco chico", price:7,  img:"aqui", quantity: 1},
-        {id:16, name:"refresco mediano", price:10,  img:"aqui", quantity: 1}
-      ]
-    )
+  let [products, setProducts] = useState(product);
+  let [order, setOrder]=useState({
+    nombre:"",
+    total:0,
+    items:[],
+    status:false,
+    pay:false
+  });
 
-    const [ OrderOfProducts, setOrderOfProducts ] = useState([]);
+  //
+    function addProduct(id)  {
+      //esta funcion la vas a dejar de usar
+      product.forEach((elem)=> {
+        if (elem.id === id) {
+          elem.quantity += 1;
+          
+          elem.total = elem.quantity*elem.price;//este procesamiento va en aaItemToOrder
+          setProducts(product)
+        }
+      })
+    }
 
     
+
+    function addItemToOrder (ide){
+      //primero validar order.items para saber si existe un elemento con el mismo id
+      
+      let datos=order.items[0].name 
+      console.log(datos)
+
+      products.forEach((item)=> {
+        //if (item.id === ide){
+          item.quantity += 1;
+          item.total = item.quantity*item.price;
+          setOrder({...order,items:[...order.items, item]})
+        //}
+      })
+      console.log(order.items)
+      //si existe entonce  order.items.quantity +1
+      //si no existe entonces order.items, elemento
+      //Tambien desde aqui puedes manipular order.item.total 
+      // setOrder({...order,items:[...order.items,elemento]})
+    }
+
+
+
+      // function addItems (items, newItem) {
+    //   const found = items.find(product => product.id === newItem.id);
+    //   let newItems = [];
+    //   if (found) {
+    //     found.quantity +=1;
+    //     newItems = items.filter(item => item.id !== found.id);
+    //     newItems.push(found)
+    //   } else {
+    //     newItem.quantity = 1
+    //     newItems.push(newItem)
+    //   }
+
+    //   return newItems;
+    // }
+      
+
 
     return (
         <div>
             <p>Hey! soy la ventana en donde vas a ordenar</p>
-            { products.map(product => (
                <Menu
-               key = {product.id} 
-               food = {product}
-               foods = {products} 
-               ordered = {OrderOfProducts} ////Este es como el carrito
-               addProduct = {setOrderOfProducts}
+               order = {order}
+               addProduct = {addProduct}
+               addItemToOrder={addItemToOrder}
              />
-            ))}
-            <PreviewOrder
+            {/* <PreviewOrder
               ordered = {OrderOfProducts} ////Este es como el carrito
               addProduct = {setOrderOfProducts}
-            />
+            /> */}
         </div>
     )
 }
