@@ -13,9 +13,11 @@ code {
 }
 
 .log{
-  display:flex;
- justify-content:center;
+display:flex;
+justify-content:center;
+ 
 }
+
 .logo{
  position: absolute;
 width: 100%;
@@ -67,7 +69,7 @@ border-radius: 10px;
  width: 55%;
 }
 #desayuno{
- background: #000000;
+background: #000000;
 border-radius: 10px;
  
 font-style: normal;
@@ -79,7 +81,7 @@ line-height: 42px;
 color: #FAA91F;
 }
 #comida{
- background: #000000;
+background: #000000;
 border-radius: 10px;
  
 font-style: normal;
@@ -228,7 +230,8 @@ border-radius: 50px;
   position: absolute;
 width: 30%;
 height: 100px;
-top:210px;
+top:330px;
+left: 200px;
 color: #FAA91F;
   font-family: Roboto Mono;
 font-style: normal;
@@ -245,6 +248,7 @@ border-radius: 10px;
 width: 30%;
 height: 100px;
 top:330px;
+left: 700px;
 color: #FAA91F;
   font-family: Roboto Mono;
 font-style: normal;
@@ -255,3 +259,44 @@ background-color : #000000;
 border-radius: 10px;
 
 }
+
+#cliente{
+background: #000000;
+border-radius: 10px;
+ 
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 42px;
+color: #FAA91F;
+
+position: absolute;
+top: 8px;
+right: 16px;
+font-size: 18px;
+}
+
+
+
+#mesa{
+background: #000000;
+border-radius: 10px;
+ 
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+color: #FAA91F;
+line-height: 42px;
+
+position: absolute;
+top: 60px;
+right: 16px;
+font-size: 18px;
+
+}
+
+
+
+
+
+
