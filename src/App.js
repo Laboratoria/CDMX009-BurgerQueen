@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   //Switch,
@@ -13,10 +13,24 @@ import RestDay from './components/RestDay';
 import WaiterRegister from './components/WaiterRegister';
 import WaiterAccount from './components/WaiterAccount';
 import Kitchen from './components/Kitchen';
+import ReausableTable from './components/ReusableTable';
 
 import './App.css';
 
 function App() {
+  const initialDataClient = {
+    namewaiter: '',
+    nameclient: '',
+    numtable: '',
+    numpeople: ''
+  }
+
+  //funcion para capturar y controlar el estado de los datos de los inputs(cliente) y la orden.
+  const [client, setClient] = useState(initialDataClient);
+
+  const [order, setOrder] = useState(0);
+
+
   return (
     <div className="App">
       <Router>
@@ -26,35 +40,34 @@ function App() {
         </Route>
 
         <Route exact path="/waiter">
-          <InitWaiters />
-        </Route> 
+          <InitWaiters client={client} setClient={setClient} order={order} setOrder={setOrder} />
+        </Route>
 
         <Route exact path="/login">
           <BackgLogin />
         </Route>
 
         <Route exact path="/breakfast">
-          <BreakFast />
+          <BreakFast client={client} setClient={setClient} />
         </Route>
 
         <Route exact path="/restday">
-          <RestDay />
+          <RestDay client={client} setClient={setClient} />
         </Route>
 
         <Route exact path="/waiterregister">
           <WaiterRegister />
-        </Route>           
+        </Route>
 
         <Route exact path="/waiteraccount">
           <WaiterAccount />
-        </Route> 
+        </Route>
 
         <Route exact path="/kitchen">
           <Kitchen />
-        </Route> 
+        </Route>
 
       </Router>
-
     </div>
   );
 }
