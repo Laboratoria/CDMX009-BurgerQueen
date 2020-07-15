@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Boton from '../Boton/Boton'
 import styles from './styles.module.css';
@@ -9,7 +9,7 @@ import Logo from '../Logo/Logo';
 import Products from '../Products/Products';
 import ReusableTable from '../ReusableTable/index'
 
-const RestDay = () => {
+const RestDay = ({ client, setClient }) => {
     return (
 
         <div>
@@ -63,7 +63,7 @@ const RestDay = () => {
 
                 <div className={styles.accountWrapper}>
                     <div>
-                        <ReusableTable />
+                        <ReusableTable client={client} setClient={setClient} />
                     </div>
 
                 </div>

@@ -188,8 +188,23 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-around;
 }
 
 .lineLinks {
     text-decoration: none;
+}
+
+.SaveInformation{
+    width: 200px;
+    height: 70px;
+    background: #ED3367;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 5px rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    font-family: 'Amaranth', sans-serif;
+    font-size: 28px;
+    text-align: center;
+    border-radius: 10px;
+    margin-right: 120px;
+    align-self: center;
 }

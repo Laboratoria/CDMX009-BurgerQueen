@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LogoSmall from '../../assets/imgs/Logo_BQ.png';
 import ImgWaiter from '../../assets/imgs/waiter.png';
 import ImgCostumer from '../../assets/imgs/Costumer.png';
@@ -20,7 +20,26 @@ const options = [
   { value: 3, label: 'Phoebe Buffay' }
 ]
 
-const InitWaiters = () => {
+const InitWaiters = ({ client, setClient, order, setOrder }) => {
+
+  const handleInputsClient = (e) => {
+    const { name, value } = e.target;
+    setClient({ ...client, [name]: value });
+    //console.log(name, value);
+  }
+
+  //funcion para boton ordenar (enviar los datos de los inputs a ??)
+  const handleOrder = (e) => {
+    e.preventDefault();
+    console.log(client);
+    /*     crudDataFB() */
+  }
+
+
+  const numOrder = () => {
+    console.log('me puchas', setOrder);
+    setOrder(order + 1)
+  }
 
   return (
 
@@ -39,7 +58,13 @@ const InitWaiters = () => {
 
           <div className={styles.dataWaiter}>
             <img src={ImgWaiter} className={styles.imgWaiter} alt="" />
-            <Select options={options} className={styles.nameWaiter} />
+            <Select
+              options={options}
+              className={styles.nameWaiter}
+              name="nameWaiter"
+            // onChange={handleInputsClient}
+            />
+
             {/* <input type="text" placeholder="Nombre del Mesero" className={styles.nameWaiter} /> */}
           </div>
 
@@ -47,7 +72,12 @@ const InitWaiters = () => {
             <img src={ImgCostumer} className={styles.imgCostumer} alt="" />
             <div className={styles.dataUtensils}>
               <img src={ImgUtensils} className={styles.imgUtensils} alt="" />
-              <input type="text" placeholder="Ingrese Nombre del Cliente" className={styles.nameCostumer} />
+              <input
+                type="text"
+                placeholder="Ingrese Nombre del Cliente"
+                className={styles.nameCostumer}
+                name="nameclient"
+                onChange={handleInputsClient} />
             </div>
           </div>
 
@@ -58,7 +88,12 @@ const InitWaiters = () => {
               <div className={styles.numberTable} >
                 <p> No. Mesa </p>
                 <label htmlFor="">
-                  <input type="text" placeholder="No." className={styles.numberTableData} />
+                  <input
+                    type="text"
+                    placeholder="No."
+                    className={styles.numberTableData}
+                    name="numtable"
+                    onChange={handleInputsClient} />
                 </label>
               </div>
             </div>
@@ -66,7 +101,12 @@ const InitWaiters = () => {
             <div className={styles.numberPeople}>
               <p>No. Personas</p>
               <label htmlFor="">
-                <input type="text" placeholder="No." className={styles.numberPeopleData} />
+                <input
+                  type="text"
+                  placeholder="No."
+                  className={styles.numberPeopleData}
+                  name="numpeople"
+                  onChange={handleInputsClient} />
               </label>
             </div>
           </div>
@@ -76,13 +116,18 @@ const InitWaiters = () => {
               <Boton text={"Salir"} allstyles={"buttonOutWaiter"} />
             </Link>
 
-            <img src={PeopleFood} className={styles.peopleFood} alt="" />
+            {/* <img src={PeopleFood} className={styles.peopleFood} alt="" /> */}
+
+            <button onClick={handleOrder} className={styles.SaveInformation}>Guardar Datos</button>
+
+
+
           </div>
         </div>
 
         <div className={styles.containerFood}>
 
-          <Link to="/breakfast" className={styles.lineLinks}>
+          <Link to="/breakfast" className={styles.lineLinks} onClick={numOrder}>
             <div className={styles.bgFoodBreak}>
               <img src={Breakfast} alt="" className={styles.imageFood} />
               <p className={styles.titleMenu}>Desayunos</p>
@@ -92,6 +137,9 @@ const InitWaiters = () => {
           <Link to="restday" className={styles.lineLinks}>
             <div className={styles.bgFoodLunch}>
               <img src={Lunch} alt="" className={styles.imageFood} />
+
+
+
               <p className={styles.titleMenu}>Comidas y Cenas</p>
             </div>
           </Link>

@@ -58,7 +58,7 @@ const Kitchen = () => {
                     <Boton text={"Regresar"} allstyles={"return"} />
                 </Link>
 
-                <div className={styles.imageFooter}>
+                <div>
                     <span className={styles.imageDecorationtwo}>
                     </span>
                 </div>
