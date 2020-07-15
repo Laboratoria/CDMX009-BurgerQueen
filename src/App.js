@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import {
-  BrowserRouter as Router,
-  //Switch,
+  // BrowserRouter as Router,
+  Switch,
   Route,
+  HashRouter
   //Link
 } from "react-router-dom";
 
@@ -35,41 +36,42 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
 
-        <Route exact path="/">
-          <BackgLogin />
-        </Route>
+      <HashRouter>
+        <Switch>
+          <Route exact path="/">
+            <BackgLogin />
+          </Route>
 
-        <Route exact path="/waiter">
-          <InitWaiters client={client} setClient={setClient} order={order} setOrder={setOrder} />
-        </Route>
+          <Route exact path="/waiter">
+            <InitWaiters client={client} setClient={setClient} order={order} setOrder={setOrder} />
+          </Route>
 
-        <Route exact path="/login">
-          <BackgLogin />
-        </Route>
+          <Route exact path="/login">
+            <BackgLogin />
+          </Route>
 
-        <Route exact path="/breakfast">
-          <BreakFast client={client} setClient={setClient} />
-        </Route>
+          <Route exact path="/breakfast">
+            <BreakFast client={client} setClient={setClient} />
+          </Route>
 
-        <Route exact path="/restday">
-          <RestDay client={client} setClient={setClient} />
-        </Route>
+          <Route exact path="/restday">
+            <RestDay client={client} setClient={setClient} />
+          </Route>
 
-        <Route exact path="/waiterregister">
-          <WaiterRegister />
-        </Route>
+          <Route exact path="/waiterregister">
+            <WaiterRegister />
+          </Route>
 
-        <Route exact path="/waiteraccount">
-          <WaiterAccount />
-        </Route>
+          <Route exact path="/waiteraccount">
+            <WaiterAccount />
+          </Route>
 
-        <Route exact path="/kitchen">
-          <Kitchen />
-        </Route>
-
-      </Router>
+          <Route exact path="/kitchen">
+            <Kitchen />
+          </Route>
+        </Switch>
+      </HashRouter>
     </div>
   );
 }
