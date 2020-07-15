@@ -17,10 +17,6 @@ const Kitchen = () => {
             </div>
         </div>
 
-
-
-
-
     );
 }
 

@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Stepper from "@kiwicom/orbit-components/lib/Stepper";
 import DateTime from '../DateTime/DateTime';
 import IconDelete from '../../assets/imgs/trash.png';
 import styles from './styles.module.css';
+
 
 import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
 import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
 
 
-const ReusableTable = () => {
+const ReusableTable = ({ client, order }) => {
+
+
+
     return (
         <div className={styles.containerTable}>
 
@@ -19,17 +23,19 @@ const ReusableTable = () => {
                 <div className={styles.positionData}>
                     <div className={styles.numberTable}>
                         <p>No. Mesa</p>
-                        <span className={styles.firstNumberWrapper}>4</span>
+                        <span className={styles.firstNumberWrapper}>{client.numtable}</span>
                     </div>
 
                     <div className={styles.numberPeople}>
                         <p>No. Personas</p>
-                        <span className={styles.firstNumberWrapper}>4</span>
+                        <span className={styles.firstNumberWrapper}>
+                            {client.numpeople}
+                        </span>
                     </div>
 
-                    <div className={styles.numberPeople}>
-                        <p>No. Personas</p>
-                        <span className={styles.firstNumberWrapper}>4</span>
+                    <div className={styles.numberOrder}>
+                        <p>No. Órden</p>
+                        <span className={styles.firstNumberWrapper}>{order}</span>
                     </div>
                 </div>
             </div>
