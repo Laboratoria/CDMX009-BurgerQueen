@@ -33,11 +33,10 @@ const InitWaiters = ({ client, setClient, order, setOrder }) => {
     e.preventDefault();
     console.log(client);
     /*     crudDataFB() */
-  }
-
+  } 
 
   const numOrder = () => {
-    console.log('me puchas', setOrder);
+    console.log('me puchas', order);
     setOrder(order + 1)
   }
 
