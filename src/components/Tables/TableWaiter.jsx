@@ -9,7 +9,7 @@ import './styles.css';
 
 
 
-const TableWaiter = ({ client, order }) => {
+const TableWaiter = ({ client, order, orders }) => {
 
   return ( 
     <div>
@@ -40,16 +40,18 @@ const TableWaiter = ({ client, order }) => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td> {order} </td>
-                    <td> <DateTime /> </td>
-                    <td> {client.numtable} </td>
-                    <td> {client.numpeople} </td>
-                    <td>12:30</td>
-                    <td>14:00</td>
-                    <td>PAGADA</td>
-                </tr>
-                <tr>
+                {orders.map((order, index) => (
+                    <tr key={index}>
+                        <td> {index} </td>
+                        <td> <DateTime /> </td>
+                        <td> {order.numtable} </td>
+                        <td> {order.numpeople} </td>
+                        <td>12:30</td>
+                        <td>14:00</td>
+                        <td>PAGADA</td>
+                    </tr>
+                ))}
+                {/* <tr>
                     <td>124</td>
                     <td>{Date}</td>
                     <td>5</td>
@@ -102,7 +104,7 @@ const TableWaiter = ({ client, order }) => {
                     <td>12:30</td>
                     <td>14:00</td>
                     <td>PAGADA</td>
-                </tr>
+                </tr> */}
                 
 
 

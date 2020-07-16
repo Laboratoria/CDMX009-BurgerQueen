@@ -61,15 +61,15 @@ function App() {
           </Route>
 
           <Route exact path="/waiterregister">
-            <WaiterRegister client={client} setClient={setClient} />
+            <WaiterRegister client={client} setClient={setClient} order={order} setOrder={setOrder} />
           </Route>
 
           <Route exact path="/waiteraccount">
-            <WaiterAccount />
+            <WaiterAccount client={client} setClient={setClient} order={order} setOrder={setOrder} />
           </Route>
 
           <Route exact path="/kitchen">
-            <Kitchen />
+            <Kitchen client={client} setClient={setClient} order={order} setOrder={setOrder} />
           </Route>
         </Switch>
       </HashRouter>

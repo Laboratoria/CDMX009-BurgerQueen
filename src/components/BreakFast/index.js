@@ -16,6 +16,8 @@ import { propTypes } from 'react-bootstrap/esm/Image';
 const BreakFast = ({ client, setClient, order, setOrder }) => {
 
 
+    console.log('Breakfast cliente', client);
+
 
     return (
 
