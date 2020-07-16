@@ -70,7 +70,7 @@ const BreakFast = ({ client, setClient, order, setOrder }) => {
 
             <div className={styles.routeButtons}>
                 <Link to="waiter">
-                    <Boton text={"Regresar"} allstyles={"buttonOutWaiter"} />
+                    <Boton text={"Regresar"} allstyles={"buttonOutWaiterBreack"} />
                 </Link>
 
                 <Link to="waiterregister">

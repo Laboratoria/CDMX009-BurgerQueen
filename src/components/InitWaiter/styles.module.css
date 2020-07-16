@@ -1,5 +1,4 @@
 .headerInitWaiter{
-    margin-bottom: 30px;
     display: flex;
     align-items: center;
 }
@@ -44,6 +43,9 @@
     display: flex;
     align-items: center;
     margin-bottom: 40px;
+    flex-direction: row;
+    justify-content: space-between;
+
 }
 
 .imgWaiter {
@@ -71,8 +73,8 @@
 .imgCostumer {
     width: 22%;
     height: auto;
-    padding-left: 80px;
-    padding-right: 25px;
+    margin-left: 12%;
+    margin-right: 8%;
 }
 
 .nameCostumer {
@@ -95,7 +97,9 @@
 
 .dataTable {
     display: flex;
+    flex-direction: row;
     padding-left: 80px;
+    justify-content: space-between;
 }
 
 .imgTable {
@@ -205,6 +209,4 @@
     font-size: 28px;
     text-align: center;
     border-radius: 10px;
-    margin-right: 120px;
-    align-self: center;
 }

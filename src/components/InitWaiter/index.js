@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import LogoSmall from '../../assets/imgs/Logo_BQ.png';
+import Logo from '../Logo/Logo'
 import ImgWaiter from '../../assets/imgs/waiter.png';
 import ImgCostumer from '../../assets/imgs/Costumer.png';
 import ImgTable from '../../assets/imgs/Table.png';
@@ -45,7 +45,7 @@ const InitWaiters = ({ client, setClient, order, setOrder }) => {
 
     <div>
       <div className={styles.headerInitWaiter}>
-        <img src={LogoSmall} className={styles.logoSmall} alt="" />
+        <Logo nameClass={"logoSmallInitWaiter"} />
         <div className={styles.reg_date}>
           <Boton text={"Registros"} allstyles={"buttonGoRgWaiter "} />
           <DateTime />
