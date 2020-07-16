@@ -1,9 +1,18 @@
 import React from "react"
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
+import Comida from "./Comida"
+import Desayuno from "./Desayuno";
 
 const Meseros =() =>{
     return(
+        <Router>
         <div>
-            <div className="log" >
+            <div className="log">
                 <div className="logo"></div>
                 <div className="logoB"></div>
                 <div className="logoY"></div>
@@ -12,27 +21,40 @@ const Meseros =() =>{
             <div className="content">
                 <div className="menu">
                     <div className="menuBtns">
-                        <button className="button" id="desayuno">Desayuno</button>
-                        <button className="button" id="comida">Comida</button>
+                        <button className="button" id="desayuno"><Link to="/Desayuno">Desayuno</Link></button>
+                        <button className="button" id="comida"><Link to="/Comida">Comida</Link></button>
                     </div>
-                        <div id="datos">
-                        <input className="button" id="cliente" type="text" placeholder="Nombre de cliente"/>
-                        <input className="button" id="mesa"type="text" placeholder="Numero de mesa"/>
-                        </div>
-         
                     <div className="menuDes">
-                        <button className="button" id="cafeA"></button>
-                        <button className="button" id="cafeL"></button>
-                        <button className="button" id="jugo"></button>
-                        <button className="button" id="sandwish"></button>
-                        <button className="button" id="otro">Otro...</button>
+                        <Switch>
+                            <Route path="/Comida">
+                                <Comida />
+                            </Route>
+                            <Route path="/">
+                                <Desayuno />
+                            </Route>
+                        </Switch>
+                    </div>
+                    
+                </div>
+                <div className="ticket">
+                    <div  id="nameUser">
+                        <p className="control has-icons-left has-icons-right">
+                        <input id="cliente"className="input is-info is-warning"  type="text" placeholder="Nombre cliente" />
+                        
+                        </p>
+                    </div>
+                    <div  id="numberUser">
+                        <p className="control has-icons-left has-icons-right">
+                        <input id="mesa" className="input is-info is-warning"  type="text" placeholder="Numero de mesa"/>
+                       
+                        </p>
                     </div>
                 </div>
-                <div className="ticket"></div>
             </div>
         
 
         </div>
+        </Router>
     )
 }
 

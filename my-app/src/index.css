@@ -56,7 +56,7 @@ border-radius:50%;
 }
 .content{
  position: absolute;
- top:200px;
+ top:250px;
  width: 90%;
  left:5%;
  
@@ -64,9 +64,11 @@ background: #FFFFFF;
 border: 10px solid #000000;
 box-sizing: border-box;
 border-radius: 10px;
+display:flex;
+  flex-wrap:wrap;
 }
 .menu{
- width: 55%;
+ width: 50%;
 }
 #desayuno{
 background: #000000;
@@ -92,17 +94,7 @@ line-height: 42px;
 
 color: #FAA91F;
 }
-#cafeA{
- 
-width: 80px;
-height: 80px;
 
-background-image: url("https://cdn2.iconfinder.com/data/icons/coffee-fans-1/512/1-512.png");
- background-repeat: no-repeat;
- background-size: 100px;
- background-position: center;
- background-color: #FAA91F;
-}
 
 #cafeL{
 width: 80px;
@@ -134,7 +126,43 @@ background-image: url("https://static.thenounproject.com/png/13443-200.png");
  background-position: center;
  background-color: #FAA91F;
 }
+#acompanamiento{
+  width: 80px;
+ height: 80px;
+ 
+ background-image: url("https://image.flaticon.com/icons/png/512/129/129247.png");
+   background-repeat: no-repeat;
+   background-size: 60px;
+   background-position: center;
+   background-color: #FAA91F;
+ }
+ #beber{
+   width: 80px;
+ height: 80px;
+ 
+ background-image: url("https://es.seaicons.com/wp-content/uploads/2015/10/Juice-icon1.png");
+   background-repeat: no-repeat;
+   background-size: 65px;
+   background-position: center;
+   background-color: #FAA91F;
+ }
+ #burguers{
+   width: 80px;
+ height: 80px;
+ 
+ background-image: url("https://cdn.onlinewebfonts.com/svg/img_545640.png");
+   background-repeat: no-repeat;
+   background-size: 60px;
+   background-position: center;
+   background-color: #FAA91F;
+ }
 #otro{
+  width: 80px;
+height: 80px;
+ background-color: #FAA91F;
+ font-size: 20px;
+}
+#otro2{
   width: 80px;
 height: 80px;
  background-color: #FAA91F;
@@ -150,6 +178,7 @@ height: 80px;
  display:flex;
  justify-content:center;
  margin-bottom: 5%;
+ margin-top: 5%;
 }
 
 .contentLogin{
@@ -259,44 +288,57 @@ background-color : #000000;
 border-radius: 10px;
 
 }
+.ticket{
+  width: 40%;
+ margin:5%;
+ margin-top:5%;
+ 
+}
 
 #cliente{
-background: #000000;
-border-radius: 10px;
- 
-font-style: normal;
-font-weight: normal;
-font-size: 20px;
-line-height: 42px;
-color: #FAA91F;
-
-position: absolute;
-top: 8px;
-right: 16px;
-font-size: 18px;
-}
-
-
+  background: #000000;
+  border-radius: 10px;
+   
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 42px;
+  color: #FAA91F;
+  
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;}
 
 #mesa{
-background: #000000;
-border-radius: 10px;
- 
-font-style: normal;
-font-weight: normal;
-font-size: 20px;
-color: #FAA91F;
-line-height: 42px;
+  background: #000000;
+  border-radius: 10px;
+   
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  color: #FAA91F;
+  line-height: 42px;
+  
+  position: absolute;
+  top: 60px;
+  right: 16px;
+  font-size: 18px;
+  
+  }
 
-position: absolute;
-top: 60px;
-right: 16px;
-font-size: 18px;
 
+
+.choose{
+  width: 45%;
+  
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 5%;
 }
-
-
-
-
-
-
+#burguerS,#burguerD,#cafeAm,#cafeLe,#aguaC,#aguaG,#gasC,#gasG,#papas,#aros{
+ 
+  margin: 2.5%;
+  width: 200px;
+}
