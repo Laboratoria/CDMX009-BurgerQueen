@@ -5,74 +5,67 @@ import MainNavBar from './MainNavBar';
 import '../../assets/styles/main.css'
 import MenuNavBar from '../main/MenuNavBar'
 import Card from '../main/Card'
+import Ticket from './Ticket';
+
+
+const calcTotal = (products) => products.reduce((sum, curr) => sum + curr.price, 0);
+/*
+const enviarACocina = ({ products }) => {
+  const total = calcTotal(products);
+  return db.coleccion('orders').set({ products, total })
+}*/
 
 function Menu({employee}) {
   let statusMenu = "active-btn";
   let statusKitchen = "nav-btn";
   let statusOrders = "nav-btn";
-  let [menuBtn, setMenuBtn] = useState('breakfast')
+  let [menuBtn, setMenuBtn] = useState('breakfast');
   let [menuCards, setMenuCards] = useState([]);
   let [products, setProducts] = useState([]);
-  let [quantity, setQuantity] = useState(products);
-   
+     
   useEffect(() => {
     
     console.log('renderizo menu');
     const fetchData = async () => {
       const db = firebase.firestore();
       const data = await db.collection(menuBtn).get()
-      /*
-      data.docs.map(doc => {
-        console.log(doc.data());
-       // menuCards.push(doc.data())
-      })*/
       setMenuCards(data.docs.map(doc =>  doc.data()))
     }
     fetchData()
   },[menuBtn])
 
+
   
   function addProduct(item){
-    
-    console.log("click!");
-    
-    
-    
-    if(products.length == 0){
-      setProducts([...products,{
+   
+    // el item ya esta
+    if (products.find((i) => i.name === item.name)) {
+      const newProducts = products.map((item2) => {
+        if (item.name === item2.name ) {
+          return {
+            ...item2,
+            number: item2.number + 1,
+            price: item2.price + item.price
+          }
+        }
+        return item2;
+      })
+      setProducts(newProducts)
+      
+    } else { // hay q agregar al item
+      setProducts((products) => [...products, {
         name: item.name,
         number: 1,
         price: item.price
       }])
       
-    }else{
-      let a = products.filter((e) => item.name === e.name);
-      
-      if(a.length ==! 0){
-        
-      quantity.map((e,index)=>{
-          if(e.name === item.name){
-            e.number += 1
-            e.price = item.price*e.number
-                       
-          }
-        })
-       setProducts(quantity); 
-      }else{
-        console.log('no está')
-        setProducts([...products,{
-          name: item.name,
-          number: 1,
-          price: item.price
-        }])
-      }
-
     }
-    setQuantity(products);
-    console.log('quantity =>', quantity);
+    
+    console.log(products);
   }
-   
-  console.log(products);
+
+ 
+   const total2 = calcTotal(products)
   
     return (
       <div className="main-container">
@@ -97,16 +90,10 @@ function Menu({employee}) {
 
           </div>
           <div className="order-container">
-          {products.map(item =>
-             (<p>
-              {item.number}  {item.name}  {item.price}
-              </p>
-             )
-             )}
-             
+            <Ticket products={products} total={total2}/>
           </div>
          </div>
-         
+             { /*<button onClick={() => enviarACocina({ products, nroMesa })} value="Enviar a cocina" />*/}
       </div>
      
     );

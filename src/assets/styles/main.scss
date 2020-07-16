@@ -15,7 +15,7 @@ $sColor: #161616;
 $radius: 15px; 
 
 /*
-div{
+div, table, td, th, p{
     border: 1px solid black;
 }*/
 
@@ -80,14 +80,16 @@ div{
     display: flex;
     flex-direction: row;
     .cards-container{
-        width: 55%;
+        width: 50%;
+        height: 400px;
         display: flex;
         flex-direction: row;
         justify-content: center;
+        align-items: flex-start;
         flex-wrap: wrap;
     }
     .order-container{
-        width: 45%;
+        width: 50%;
     }
 }
 
@@ -136,6 +138,7 @@ div{
     border: 2px solid $pColor;
     background-color: #E9E6E6;
     margin: 15px;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.4);
     p{
         font-family: font-card;
         font-size: 16px;
@@ -147,5 +150,82 @@ div{
     }
 }
 
+.ticket-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin:  15px 25px 15px 15px;
+    font-family: font-text;
+    font-size: 16px;
+    border-radius: $radius;
+    border: 2px solid $pColor;
+    padding:5px;
+    background-color: #E9E6E6;
+    height: 500px;
+    .ticket-head{
+        display: flex;
+        justify-content: space-around;
+        input{
+            height: 25px;
+            margin:5px;
+            padding: 5px;
+            border-radius: 10px;
+            border-style: none;
+            font-family: font-text;
+            font-size: 16px;
+            opacity: 0.5;
+        }
+        .client-container input{
+            width:200px;
+        }
+        .tab-container input{
+            width:50px;
+        }
+        
+    }
+    .table-container{
+        display: flex;
+        justify-content: center; 
+        overflow: scroll;
+        height: 320px;
+        
+        table{
+            width: 90%;
+            th{
+                text-align: center;  
+            }
+            td{
+                padding:5px 10px;
+                text-align: left;     
+            }
+            
+            input{
+                width: 40px;
+                height: 10px;
+                background-color: red;
+                border-style: none;
+                border-radius: $radius;
+                vertical-align: middle;
+                margin: 0;
+            }
+        }
+    }
+    .total-container{
+        display: flex;
+        justify-content: flex-end; 
+        p{
+            width: 150px;
+            margin-right: 20px;
+            span{
+                font-family: font-card;
+            }
+            
+        }
+    } 
+    .btn-container{
+        display: flex;
+        justify-content: center; 
+    }
+}
 
 
