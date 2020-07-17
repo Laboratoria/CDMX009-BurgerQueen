@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import Logo from '../Logo/Logo'
 import db from '../../firebase';
-import LogoSmall from '../../assets/imgs/Logo_BQ.png';
+// import LogoSmall from '../../assets/imgs/Logo_BQ.png';
 import ImgWaiter from '../../assets/imgs/waiter.png';
 import ImgCostumer from '../../assets/imgs/Costumer.png';
 import ImgTable from '../../assets/imgs/Table.png';
@@ -29,14 +30,14 @@ const InitWaiters = ({ client, setClient, order, setOrder }) => {
     //console.log(name, value);
   }
 
-//funcion para boton ordenar (enviar los datos de los inputs a ??)
+  //funcion para boton ordenar (enviar los datos de los inputs a ??)
   const handleOrder = (e) => {
-  e.preventDefault();
-  db.collection('orders').add(client)
-    .then(() => {
-      console.log('orden guardada en Firestore exitosamente')
-    });
-}
+    e.preventDefault();
+    db.collection('orders').add(client)
+      .then(() => {
+        console.log('orden guardada en Firestore exitosamente')
+      });
+  }
 
   const numOrder = () => {
     console.log('me puchas', order);
@@ -47,7 +48,7 @@ const InitWaiters = ({ client, setClient, order, setOrder }) => {
 
     <div>
       <div className={styles.headerInitWaiter}>
-        <img src={LogoSmall} className={styles.logoSmall} alt="" />
+        <Logo nameClass={"logoSmallInitWaiter"} />
         <div className={styles.reg_date}>
           <Boton text={"Registros"} allstyles={"buttonGoRgWaiter "} />
           <DateTime />
