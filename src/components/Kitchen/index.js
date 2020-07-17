@@ -3,11 +3,12 @@ import Logo from '../Logo/Logo';
 import Boton from '../Boton/Boton';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
-import ReusableTable from '../ReusableTable/index'
+import ReusableTable from '../ReusableTable/index';
 
 import Bell from '../../assets/imgs/cuadrado-bordes.png';
 
-const Kitchen = () => {
+const Kitchen = ({ client, setClient, order, setOrder }) => {
+
     return (
         <div>
             <div className={styles.headerWrapper}>
@@ -21,13 +22,12 @@ const Kitchen = () => {
             </div>
 
             <div className={styles.contentDivision}>
-
                 <div className={styles.firstDivision}>
                     <span className={styles.imageDecoration}></span>
                 </div>
 
                 <div className={styles.secondDivision}>
-                    <ReusableTable />
+                    <ReusableTable client={client} setClient={setClient} order={order} setOrder={setOrder} />
                 </div>
 
                 <div className={styles.thirdDivision}>
@@ -36,7 +36,6 @@ const Kitchen = () => {
                         <p>Hora de Entrada</p>
                         <span className={styles.firstNumberWrapper}>3:50pm</span>
                     </div>
-
 
                     <div className={styles.printAccount}>
                         <img src={Bell} alt="" className={styles.printImg} />
@@ -49,7 +48,6 @@ const Kitchen = () => {
 
                 </div>
             </div>
-
 
 
             <div className={styles.routeButtonsAccount}>

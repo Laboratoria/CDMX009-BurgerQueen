@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Boton from '../Boton/Boton'
-import styles from './styles.module.css';
-import DateTime from '../DateTime/DateTime';
-import Select from 'react-select';
+import React from 'react';
 import Logo from '../Logo/Logo';
-
+import Boton from '../Boton/Boton'
+import { Link } from 'react-router-dom';
+import styles from './styles.module.css';
 import Products from '../Products/Products';
 import ReusableTable from '../ReusableTable/index'
+
+import Select from 'react-select';
+
 
 const RestDay = ({ client, setClient }) => {
     return (
@@ -32,7 +32,6 @@ const RestDay = ({ client, setClient }) => {
                                 <h3>Hamburguesas</h3>
                                 <Select options={Products.burgers} />
                             </div>
-
                         </div>
 
                         <div className={styles.add}>
@@ -50,6 +49,7 @@ const RestDay = ({ client, setClient }) => {
                                 <Select options={Products.drinks} />
                             </div>
                         </div>
+
                         <div className={styles.additional}>
                             <div>
                                 <h3>Extras</h3>
@@ -57,34 +57,24 @@ const RestDay = ({ client, setClient }) => {
                             </div>
                         </div>
                     </div>
-
-
                 </div>
 
                 <div className={styles.accountWrapper}>
                     <div>
                         <ReusableTable client={client} setClient={setClient} />
                     </div>
-
                 </div>
-
             </div>
 
-
             <div className={styles.routeButtons}>
-
                 <Link to="waiter">
                     <Boton text={"Regresar"} allstyles={"buttonOutWaiter"} />
                 </Link>
 
-
                 <Link to="waiterregister">
                     <Boton text={"Enviar"} allstyles={"sendToKitchen"} />
                 </Link>
-
             </div>
-
-
 
         </div>
     );

@@ -1,14 +1,14 @@
 import React from 'react';
 import ReusableProducts from '../ReusableProducts/index';
 
+import Eggs from '../../assets/imgs/eggs.jpg';
+import Cola from '../../assets/imgs/cola.jpg';
+import Fries from '../../assets/imgs/fries.jpg';
+import Chess from '../../assets/imgs/chess.jpg';
+import Water from '../../assets/imgs/water-bottle.jpeg';
+import OnionRings from '../../assets/imgs/onion-rings.jpg';
 import DobleBurger from '../../assets/imgs/doble-burger.jpg';
 import SimpleBurger from '../../assets/imgs/simple-burger.jpg';
-import Water from '../../assets/imgs/water-bottle.jpeg';
-import Cola from '../../assets/imgs/cola.jpg';
-import OnionRings from '../../assets/imgs/onion-rings.jpg';
-import Fries from '../../assets/imgs/fries.jpg';
-import Eggs from '../../assets/imgs/eggs.jpg';
-import Chess from '../../assets/imgs/chess.jpg';
 
 
 const Products = {
@@ -67,7 +67,6 @@ const Products = {
 
 
     ]
-
 
 }
 

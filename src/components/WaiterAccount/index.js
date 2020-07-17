@@ -7,8 +7,7 @@ import ReusableTable from '../ReusableTable';
 
 import IconPrintAccount from '../../assets/imgs/pink-circle.png';
 
-
-const WaiterAccount = () => {
+const WaiterAccount = ({ client, setClient, order, setOrder }) => {
 
     return (
         <div className={styles.containerContent}>
@@ -19,13 +18,12 @@ const WaiterAccount = () => {
             </div>
 
             <div className={styles.contentDivision}>
-
                 <div className={styles.firstDivision}>
                     <span className={styles.imageDecoration}></span>
                 </div>
 
                 <div className={styles.secondDivision}>
-                    <ReusableTable />
+                    <ReusableTable client={client} setClient={setClient} order={order} setOrder={setOrder} />
                 </div>
 
                 <div className={styles.thirdDivision}>
@@ -37,16 +35,13 @@ const WaiterAccount = () => {
                         <Boton text={"Pagado"} allstyles={"pay"} />
                     </div>
                 </div>
-
             </div>
-            <div className={styles.routeButtonsAccount}>
 
+            <div className={styles.routeButtonsAccount}>
                 <Link to="kitchen">
                     <Boton text={"Regresar"} allstyles={"return"} />
                 </Link>
-
                 <Boton text={"Inicio"} allstyles={"returnTwo"} />
-
             </div>
         </div>
 
