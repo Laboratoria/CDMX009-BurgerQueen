@@ -18,6 +18,13 @@ const ClientInfoForm = ({ datos, setDatos }) => {
 
     const sendData = async (e) => {
         e.preventDefault();
+        if (datos.productos < 1 ){
+            toast.error('Ingresa productos a la orden', {
+                className: 'toast-error center-align',
+                hideProgressBar: true
+            });
+            return
+        }
         if (!datos.numeroMesa.trim()) {
             toast.error('Ingresa número de mesa', {
                 className: 'toast-error center-align',

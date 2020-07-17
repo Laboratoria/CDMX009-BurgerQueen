@@ -1,15 +1,17 @@
-import React from 'react'
+import React from 'react';
+import { withRouter } from 'react-router-dom';
 import SignedInLinks from '../layout/SignedInLinks';
 import bqLogo from '../BQ/images/logo.svg';
 import 'firebase/auth';
 import './layout.css';
 import { firebase } from '../../firebase/firebaseConfig';
 
-const Navbar = () => {
+const Navbar = (props) => {
 
     const logOut = () => {
         console.log('saliendo...');
         firebase.auth().signOut().then(function() {
+            props.history.push('/initial');
             // Sign-out successful.
           }).catch(function(error) {
             // An error happened.
@@ -18,7 +20,7 @@ const Navbar = () => {
 
     return (
         <div>
-                <nav className='nav-wrapper black bar'>
+                <nav className='nav-wrapper black bar browser-default'>
                     <div className=' left-align'>
                         <div data-target='slide-out' className='sidenav-trigger show-on-large'>
                             <i className='material-icons nav-icon-menu'>menu</i>
@@ -36,7 +38,7 @@ const Navbar = () => {
                     <li><div className="divider yellow lighten-2"></div></li>
                     <li><a href='/orders' className='white-text'>Ordenes</a></li>
                     <li><div className="divider yellow lighten-2"></div></li>
-                    <li><a href='/' className='white-text'>Administración</a></li>
+                    <li><a href='/admin' className='white-text'>Administración</a></li>
                     <li><div className="divider yellow lighten-2"></div></li>
                     <li><span className='white-text logout' onClick={ () => {logOut()} }>Salir</span></li>
                     <li><div className="divider yellow lighten-2"></div></li>
@@ -46,4 +48,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar;
+export default withRouter(Navbar);

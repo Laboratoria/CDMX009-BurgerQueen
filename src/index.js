@@ -1,15 +1,15 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import 'materialize-css/dist/css/materialize.min.css';
+
 
 
 ReactDOM.render((
 
   <React.StrictMode>
-    <Suspense fallback={'Conectando la app...'}>
       <App />
-    </Suspense>
   </React.StrictMode>
 ), 
 document.getElementById('root'));
