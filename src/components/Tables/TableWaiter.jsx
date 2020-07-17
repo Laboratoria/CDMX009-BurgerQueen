@@ -27,90 +27,33 @@ const TableWaiter = ({ client, order, orders }) => {
         </div>
 
         <div className={styles.table}>
-        <Table striped bordered hover className={styles.tableLines}>
-            <thead>
-                <tr className={styles.columns}>
-                    <th scope="col"> No. <br/> Orden </th>
-                    <th scope="col"> Fecha </th>
-                    <th scope="col"> No. <br/>  Mesa </th>
-                    <th scope="col"> No. <br/> Personas </th>
-                    <th scope="col"> Hora <br/> Entrada </th>
-                    <th scope="col"> Hora <br/> Salida </th>
-                    <th scope="col"> Status </th>
-                </tr>
-            </thead>
-            <tbody>
-                {orders.map((order, index) => (
-                    <tr key={index}>
-                        <td> {index} </td>
-                        <td> <DateTime /> </td>
-                        <td> {order.numtable} </td>
-                        <td> {order.numpeople} </td>
-                        <td>12:30</td>
-                        <td>14:00</td>
-                        <td>PAGADA</td>
+            <Table striped bordered hover className={styles.tableLines}>
+                <thead>
+                    <tr className={styles.columns}>
+                        <th scope="col"> No. <br/> Orden </th>
+                        <th scope="col"> Fecha </th>
+                        <th scope="col"> No. <br/>  Mesa </th>
+                        <th scope="col"> No. <br/> Personas </th>
+                        <th scope="col"> Hora <br/> Entrada </th>
+                        <th scope="col"> Hora <br/> Salida </th>
+                        <th scope="col"> Status </th>
                     </tr>
-                ))}
-                {/* <tr>
-                    <td>124</td>
-                    <td>{Date}</td>
-                    <td>5</td>
-                    <td>4</td>
-                    <td>12:30</td>
-                    <td>14:00</td>
-                    <td>PAGADA</td>
-                </tr>
-                <tr>
-                    <td>125</td>
-                    <td>{Date}</td>
-                    <td>5</td>
-                    <td>4</td>
-                    <td>12:30</td>
-                    <td>14:00</td>
-                    <td>PAGADA</td>
-                </tr>
-                <tr>
-                    <td>126</td>
-                    <td>{Date}</td>
-                    <td>5</td>
-                    <td>4</td>
-                    <td>12:30</td>
-                    <td>14:00</td>
-                    <td>PAGADA</td>
-                </tr>
-                <tr>
-                    <td>127</td>
-                    <td>{Date}</td>
-                    <td>5</td>
-                    <td>4</td>
-                    <td>12:30</td>
-                    <td>14:00</td>
-                    <td>PAGADA</td>
-                </tr>
-                <tr>
-                    <td>123</td>
-                    <td>{Date}</td>
-                    <td>5</td>
-                    <td>4</td>
-                    <td>12:30</td>
-                    <td>14:00</td>
-                    <td>PAGADA</td>
-                </tr>
-                <tr>
-                    <td>123</td>
-                    <td>{Date}</td>
-                    <td>5</td>
-                    <td>4</td>
-                    <td>12:30</td>
-                    <td>14:00</td>
-                    <td>PAGADA</td>
-                </tr> */}
-                
-
-
-
-            </tbody>
-        </Table>
+                </thead>
+                <tbody>
+                    {orders.map((order, index) => (
+                        <tr key={index}>
+                            <td> {index} </td>
+                            <td> <DateTime /> </td>
+                            <td> {order.numtable} </td>
+                            <td> {order.numpeople} </td>
+                            <td>12:30</td>
+                            <td>14:00</td>
+                            <td>PAGADA</td>
+                        </tr>
+                    ))} 
+                    
+                </tbody>
+            </Table>
         </div>
 
         

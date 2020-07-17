@@ -14,7 +14,7 @@ import RestDay from './components/RestDay';
 import WaiterRegister from './components/WaiterRegister';
 import WaiterAccount from './components/WaiterAccount';
 import Kitchen from './components/Kitchen';
-import ReausableTable from './components/ReusableTable';
+//import ReausableTable from './components/ReusableTable';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-bootstrap/dist/react-bootstrap'
 

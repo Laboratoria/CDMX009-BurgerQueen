@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Boton from '../Boton/Boton'
 import styles from './styles.module.css';
-import DateTime from '../DateTime/DateTime';
-import Select from 'react-select';
+//import DateTime from '../DateTime/DateTime';
+//import Select from 'react-select';
 import Logo from '../Logo/Logo';
 import Coffe from '../../assets/imgs/american-coffe.jpg';
 import CoffeMilk from '../../assets/imgs/coffe-milk.jpg';
@@ -11,7 +11,7 @@ import Sandwich from '../../assets/imgs/sandwich.jpg';
 import Juice from '../../assets/imgs/orange-juice.jpg'
 
 import ReusableTable from '../ReusableTable/index'
-import { propTypes } from 'react-bootstrap/esm/Image';
+//import { propTypes } from 'react-bootstrap/esm/Image';
 
 const BreakFast = ({ client, setClient, order, setOrder }) => {
 

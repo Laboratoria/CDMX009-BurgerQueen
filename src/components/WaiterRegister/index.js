@@ -20,13 +20,14 @@ const WaiterRegister = ({ client, setClient, order, setOrder }) => {
         });
  }, []);
 
-;
 
     console.log('Re running component');
 
     useEffect(() => {
         console.log('Count = ', count)
-    }, [count]);   return (
+    }, [count]);   
+    
+    return (
         <Fragment>   
             <button onClick={() => setCount(count+1)}>Counting</button>         
             <TableWaiter 
