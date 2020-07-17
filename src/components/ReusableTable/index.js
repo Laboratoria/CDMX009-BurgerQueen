@@ -1,18 +1,11 @@
-import React, { useState } from 'react';
-import Stepper from "@kiwicom/orbit-components/lib/Stepper";
-import DateTime from '../DateTime/DateTime';
-import IconDelete from '../../assets/imgs/trash.png';
+import React from 'react';
 import styles from './styles.module.css';
+import DateTime from '../DateTime/DateTime';
+import Stepper from "@kiwicom/orbit-components/lib/Stepper";
 
-
-import defaultTheme from "@kiwicom/orbit-components/lib/defaultTheme";
-import { defaultTokens } from "@kiwicom/orbit-design-tokens";
-
-
+import IconDelete from '../../assets/imgs/trash.png';
 
 const ReusableTable = ({ client, order }) => {
-
-
 
     return (
         <div className={styles.containerTable}>
@@ -49,13 +42,11 @@ const ReusableTable = ({ client, order }) => {
                     <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={35} height={"auto"} /></div>
                 </div>
 
-
                 <div className={styles.Orders}>
                     <div className={styles.foofOptions}>Hamburguesa Simple</div>
                     <div className={styles.StepperStateless}><Stepper minValue={0} maxValue={100} /></div>
                     <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={35} height={"auto"} /></div>
                 </div>
-
 
                 <div className={styles.Orders}>
                     <div className={styles.foofOptions}>Café americano</div>
@@ -63,15 +54,12 @@ const ReusableTable = ({ client, order }) => {
                     <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={35} height={"auto"} /></div>
                 </div>
 
-
                 <div className={styles.Orders}>
                     <div className={styles.foofOptions}>Café con leche</div>
                     <div className={styles.StepperStateless}><Stepper minValue={0} maxValue={100} /></div>
                     <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={35} height={"auto"} /></div>
                 </div>
             </div>
-
-
         </div>
     );
 }

@@ -12,13 +12,15 @@
     flex-direction: row;
     font-size: 2.7em;
     align-items: center;
+    margin-right: 50px;
 }
 
 .iconHeader h2{
     padding-right: 190px;
     padding-left: 160px;
     align-self: center;
-
+    font-size: 2em;
+    font-family: 'Amaranth', sans-serif;
 } 
 
 .iconWaiterRestDay{
@@ -27,6 +29,7 @@
     height: 195px;
     zoom: 1;
     display: inline-block;
+    margin-top: 40px;
 }
 
 
