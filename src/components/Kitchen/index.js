@@ -7,7 +7,7 @@ import ReusableTable from '../ReusableTable/index'
 
 import Bell from '../../assets/imgs/cuadrado-bordes.png';
 
-const Kitchen = () => {
+const Kitchen = ({ client, setClient, order, setOrder }) => {
     return (
         <div>
             <div className={styles.headerWrapper}>
@@ -27,7 +27,7 @@ const Kitchen = () => {
                 </div>
 
                 <div className={styles.secondDivision}>
-                    <ReusableTable />
+                    <ReusableTable client={client} setClient={setClient} order={order} setOrder={setOrder} />
                 </div>
 
                 <div className={styles.thirdDivision}>

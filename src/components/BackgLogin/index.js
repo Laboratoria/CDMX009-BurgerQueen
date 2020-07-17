@@ -5,6 +5,7 @@ import styles from './BackgLogin.module.css'
 import Logo from '../Logo/Logo';
 
 const BackgLogin = () => (
+    
     <div className={styles.containerLogin}>
         <Logo nameClass={"logoLogin"} />
         <div className={styles.contentWrapper}>
