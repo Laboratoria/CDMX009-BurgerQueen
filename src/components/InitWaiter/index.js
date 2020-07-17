@@ -32,10 +32,11 @@ const InitWaiters = ({ client, setClient, order, setOrder }) => {
   //funcion para boton ordenar (enviar los datos de los inputs a ??)
   const handleOrder = (e) => {
     e.preventDefault();
-    db.collection('orders').add(client)
-      .then(() => {
+    //db.collection('orders').add(client)
+    console.log('Pruebas sin FB')
+/*       .then(() => {
         console.log('orden guardada en Firestore exitosamente')
-      });
+      }); */
   }
 
   const numOrder = () => {
