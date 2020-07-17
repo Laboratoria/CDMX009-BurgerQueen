@@ -1,6 +1,7 @@
 .headerWrapper{
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .logoRestD{
@@ -12,6 +13,7 @@
     flex-direction: row;
     font-size: 2.2em;
     align-items: center;
+    font-family: 'Amaranth', sans-serif;
 }
 
 .iconHeader h2{

@@ -1,27 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+import Sandwich from '../../assets/imgs/sandwich.jpg';
+import Juice from '../../assets/imgs/orange-juice.jpg';
+import CoffeMilk from '../../assets/imgs/coffe-milk.jpg';
+import Coffe from '../../assets/imgs/american-coffe.jpg';
+
+
+import Logo from '../Logo/Logo';
 import Boton from '../Boton/Boton'
 import styles from './styles.module.css';
-//import DateTime from '../DateTime/DateTime';
-//import Select from 'react-select';
-import Logo from '../Logo/Logo';
-import Coffe from '../../assets/imgs/american-coffe.jpg';
-import CoffeMilk from '../../assets/imgs/coffe-milk.jpg';
-import Sandwich from '../../assets/imgs/sandwich.jpg';
-import Juice from '../../assets/imgs/orange-juice.jpg'
+import ReusableTable from '../ReusableTable/index';
 
-import ReusableTable from '../ReusableTable/index'
-//import { propTypes } from 'react-bootstrap/esm/Image';
 
 const BreakFast = ({ client, setClient, order, setOrder }) => {
 
-
     console.log('Breakfast cliente', client);
-
 
     return (
 
         <div className={styles.breakFastPage}>
+
             <div className={styles.headerWrapper}>
                 <div className={styles.logoBreakFast}>
                     <Logo nameClass={"logoSmallLunch"} />
@@ -34,9 +33,7 @@ const BreakFast = ({ client, setClient, order, setOrder }) => {
 
             <div className={styles.container}>
                 <div className={styles.menuBreakfast}>
-
                     <div className={styles.breakfast}>
-
                         <div className={styles.bgMenu}>
                             <img src={Coffe} alt="" />
                             <h3>Cafe Americano <br /> $5.00</h3>
@@ -53,13 +50,11 @@ const BreakFast = ({ client, setClient, order, setOrder }) => {
                             <img src={Sandwich} alt="" />
                             <h3>Sandwich <br /> $10.00</h3>
                         </div>
-
                         <div className={styles.bgMenu}>
                             <img src={Juice} alt="" />
                             <h3>Jugo <br /> $7.00</h3>
                         </div>
                     </div>
-
                 </div>
 
                 <div className={styles.order}>

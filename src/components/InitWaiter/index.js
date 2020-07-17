@@ -1,20 +1,19 @@
-import React, { useState } from 'react';
-import Logo from '../Logo/Logo'
-import db from '../../firebase';
-// import LogoSmall from '../../assets/imgs/Logo_BQ.png';
-import ImgWaiter from '../../assets/imgs/waiter.png';
-import ImgCostumer from '../../assets/imgs/Costumer.png';
-import ImgTable from '../../assets/imgs/Table.png';
-import ImgUtensils from '../../assets/imgs/Trastes.jpg';
-//import PeopleFood from '../../assets/imgs/people-food.jpg';
-import Breakfast from '../../assets/imgs/coffe-break.png';
-import Lunch from '../../assets/imgs/burger-lunch.jpg';
+import React from 'react';
 
+import ImgTable from '../../assets/imgs/Table.png';
+import ImgWaiter from '../../assets/imgs/waiter.png';
+import Lunch from '../../assets/imgs/burger-lunch.jpg';
+import ImgUtensils from '../../assets/imgs/Trastes.jpg';
+import ImgCostumer from '../../assets/imgs/Costumer.png';
+import Breakfast from '../../assets/imgs/coffe-break.png';
+
+import Logo from '../Logo/Logo';
+import db from '../../firebase';
+import Select from 'react-select';
+import Boton from '../Boton/Boton';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
-import Boton from '../Boton/Boton';
 import DateTime from '../DateTime/DateTime';
-import Select from 'react-select';
 
 const options = [
   { value: 1, label: 'Taco López' },
@@ -68,7 +67,6 @@ const InitWaiters = ({ client, setClient, order, setOrder }) => {
             // onChange={handleInputsClient}
             />
 
-            {/* <input type="text" placeholder="Nombre del Mesero" className={styles.nameWaiter} /> */}
           </div>
 
           <div className={styles.dataCostumer}>
@@ -119,11 +117,7 @@ const InitWaiters = ({ client, setClient, order, setOrder }) => {
               <Boton text={"Salir"} allstyles={"buttonOutWaiter"} />
             </Link>
 
-            {/* <img src={PeopleFood} className={styles.peopleFood} alt="" /> */}
-
             <button onClick={handleOrder} className={styles.SaveInformation}>Guardar Datos</button>
-
-
 
           </div>
         </div>
@@ -140,9 +134,6 @@ const InitWaiters = ({ client, setClient, order, setOrder }) => {
           <Link to="restday" className={styles.lineLinks}>
             <div className={styles.bgFoodLunch}>
               <img src={Lunch} alt="" className={styles.imageFood} />
-
-
-
               <p className={styles.titleMenu}>Comidas y Cenas</p>
             </div>
           </Link>
