@@ -14,13 +14,14 @@ import RestDay from './components/RestDay';
 import WaiterRegister from './components/WaiterRegister';
 import WaiterAccount from './components/WaiterAccount';
 import Kitchen from './components/Kitchen';
-import ReausableTable from './components/ReusableTable';
+//import ReausableTable from './components/ReusableTable';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-bootstrap/dist/react-bootstrap'
 
 import './App.css';
 
 function App() {
+  
   const initialDataClient = {
     namewaiter: '',
     nameclient: '',
@@ -31,7 +32,7 @@ function App() {
   //funcion para capturar y controlar el estado de los datos de los inputs(cliente) y la orden.
   const [client, setClient] = useState(initialDataClient);
 
-  const [order, setOrder] = useState(0);
+  const [order, setOrder] = useState(1);
 
 
   return (
@@ -60,15 +61,15 @@ function App() {
           </Route>
 
           <Route exact path="/waiterregister">
-            <WaiterRegister />
+            <WaiterRegister client={client} setClient={setClient} order={order} setOrder={setOrder} />
           </Route>
 
           <Route exact path="/waiteraccount">
-            <WaiterAccount />
+            <WaiterAccount client={client} setClient={setClient} order={order} setOrder={setOrder} />
           </Route>
 
           <Route exact path="/kitchen">
-            <Kitchen />
+            <Kitchen client={client} setClient={setClient} order={order} setOrder={setOrder} />
           </Route>
         </Switch>
       </HashRouter>

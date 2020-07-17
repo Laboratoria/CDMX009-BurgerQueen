@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import db from '../../firebase';
 import LogoSmall from '../../assets/imgs/Logo_BQ.png';
 import ImgWaiter from '../../assets/imgs/waiter.png';
 import ImgCostumer from '../../assets/imgs/Costumer.png';
 import ImgTable from '../../assets/imgs/Table.png';
 import ImgUtensils from '../../assets/imgs/Trastes.jpg';
-import PeopleFood from '../../assets/imgs/people-food.jpg';
+//import PeopleFood from '../../assets/imgs/people-food.jpg';
 import Breakfast from '../../assets/imgs/coffe-break.png';
 import Lunch from '../../assets/imgs/burger-lunch.jpg';
 
@@ -28,16 +29,17 @@ const InitWaiters = ({ client, setClient, order, setOrder }) => {
     //console.log(name, value);
   }
 
-  //funcion para boton ordenar (enviar los datos de los inputs a ??)
+//funcion para boton ordenar (enviar los datos de los inputs a ??)
   const handleOrder = (e) => {
-    e.preventDefault();
-    console.log(client);
-    /*     crudDataFB() */
-  }
-
+  e.preventDefault();
+  db.collection('orders').add(client)
+    .then(() => {
+      console.log('orden guardada en Firestore exitosamente')
+    });
+}
 
   const numOrder = () => {
-    console.log('me puchas', setOrder);
+    console.log('me puchas', order);
     setOrder(order + 1)
   }
 

@@ -8,7 +8,7 @@ import ReusableTable from '../ReusableTable';
 import IconPrintAccount from '../../assets/imgs/pink-circle.png';
 
 
-const WaiterAccount = () => {
+const WaiterAccount = ({ client, setClient, order, setOrder }) => {
 
     return (
         <div className={styles.containerContent}>
@@ -25,7 +25,7 @@ const WaiterAccount = () => {
                 </div>
 
                 <div className={styles.secondDivision}>
-                    <ReusableTable />
+                    <ReusableTable client={client} setClient={setClient} order={order} setOrder={setOrder} />
                 </div>
 
                 <div className={styles.thirdDivision}>
