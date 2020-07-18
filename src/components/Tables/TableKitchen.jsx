@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../Logo/Logo';
 import Table from 'react-bootstrap/Table';
-import DateTime from '../DateTime/DateTime';
+import DateTime from '../DateTime/DateTables';
 
 import './styles.css';
 import styles from './styles.module.css';
@@ -29,6 +29,7 @@ const TableWaiter = ({ client, order, orders }) => {
                 <Table striped bordered hover className={styles.tableLines}>
                     <thead>
                         <tr className={styles.columns}>
+                            <th scope="col"> Mesero </th>
                             <th scope="col"> No. <br /> Orden </th>
                             <th scope="col"> Fecha </th>
                             <th scope="col"> No. <br />  Mesa </th>
@@ -41,6 +42,7 @@ const TableWaiter = ({ client, order, orders }) => {
                     <tbody>
                         {orders.map((order, index) => (
                             <tr key={index}>
+                                <td> {order.nameWaiter} </td>
                                 <td> {index} </td>
                                 <td> <DateTime /> </td>
                                 <td> {order.numtable} </td>
@@ -50,7 +52,6 @@ const TableWaiter = ({ client, order, orders }) => {
                                 <td>PAGADA</td>
                             </tr>
                         ))}
-
                     </tbody>
                 </Table>
             </div>

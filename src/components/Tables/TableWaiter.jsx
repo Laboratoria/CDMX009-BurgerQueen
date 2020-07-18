@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../Logo/Logo';
 import Table from 'react-bootstrap/Table';
-import DateTime from '../DateTime/DateTime';
+import DateTime from '../DateTime/DateTables';
 
 import './styles.css';
 import styles from './styles.module.css';
