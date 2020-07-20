@@ -32,11 +32,10 @@ const InitWaiters = ({ client, setClient, order, setOrder }) => {
   //funcion para boton ordenar (enviar los datos de los inputs a ??)
   const handleOrder = (e) => {
     e.preventDefault();
-    //db.collection('orders').add(client)
-    console.log('Pruebas sin FB')
-/*       .then(() => {
-        console.log('orden guardada en Firestore exitosamente')
-      }); */
+    db.collection('orders').add(client)
+    .then(() => {
+      console.log('orden guardada en Firestore exitosamente')
+    });
   }
 
   const numOrder = () => {
@@ -132,7 +131,7 @@ const InitWaiters = ({ client, setClient, order, setOrder }) => {
             </div>
           </Link>
 
-          <Link to="restday" className={styles.lineLinks}>
+          <Link to="/restday" className={styles.lineLinks} onClick={numOrder}>
             <div className={styles.bgFoodLunch}>
               <img src={Lunch} alt="" className={styles.imageFood} />
               <p className={styles.titleMenu}>Comidas y Cenas</p>

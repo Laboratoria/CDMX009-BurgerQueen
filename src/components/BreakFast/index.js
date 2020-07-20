@@ -10,7 +10,7 @@ import db from '../../firebase';
 import Logo from '../Logo/Logo';
 import Boton from '../Boton/Boton'
 import styles from './styles.module.css';
-import ReusableTable from '../ReusableTable/index';
+import ReusableTable from '../ReusableTable';
 
 
 const BreakFast = ({ client, setClient, order, setOrder, menubreak, setMenuBreak }) => {

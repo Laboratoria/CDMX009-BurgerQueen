@@ -24,6 +24,7 @@ import './App.css';
 function App() {
   
   const initialDataClient = {
+    numorder: '',
     namewaiter: '',
     nameclient: '',
     numtable: '',
@@ -33,7 +34,7 @@ function App() {
   //funcion para capturar y controlar el estado de los datos de los inputs(cliente) y la orden.
   const [client, setClient] = useState(initialDataClient);
 
-  const [order, setOrder] = useState(1);
+  const [order, setOrder] = useState(0);
 
 
   return (
