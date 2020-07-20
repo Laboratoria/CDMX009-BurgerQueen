@@ -5,52 +5,52 @@
     padding: 3% !important;
     font-size: 15px;
     
-}
-
-/* .info-product{
+    }
+    
+    /* .info-product{
     color: white;
-    display: flex;  
+    display: flex; 
     flex-direction: column;
     align-items: center;
-} */
-
-
-/* p{
+    } */
+    
+    
+    /* p{
     margin: 0px;
     padding-top: 3%;
-} */
-
-.food-image{
+    } */
+    
+    .food-image{
     margin: 0px !important;
     display: flex;
     justify-content: center;
     padding-top: 20px;
     
-}
-
-.item{
+    }
+    
+    .item{
     width: 80px !important;
     margin: 0px !important;
-}
-
-.food-name{
+    }
+    
+    .food-name{
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.space{
+    }
+    .space{
     display: flex;
     justify-content: space-around;
-}
-.card{
+    }
+    .card{
     width: 165px;
     height: 180px;
-}
-.card-content{
+    }
+    .card-content{
     width: 100%;
     height: 80px;
     display: flex;
     align-items: center;
-}
+    } 

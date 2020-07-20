@@ -1,5 +1,5 @@
+import React, { useState, useCallback } from 'react';
 
-import React, { useState, useCallback, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import { firebase } from '../../firebase/firebaseConfig';
 import ModalAuth from '../auth/Modal';
@@ -17,16 +17,16 @@ const SignIn = (props) => {
     const submit = async (e) => {
         e.preventDefault();
         try {
-            login()
+            login();
         }
         catch (err) {
-            console.log(err)
+            console.log(err);
         }
     };
 
     const login = useCallback(async () => {
         try {
-            const res = await firebase.auth().signInWithEmailAndPassword(email, password)
+            const res = await firebase.auth().signInWithEmailAndPassword(email, password);
             console.log(res);
             props.history.push('/');
         } catch (error) {
@@ -68,7 +68,8 @@ const SignIn = (props) => {
 
     },
         [email, password, props.history],
-    )
+    );
+
     return (
         <div className='initial-image'>
             <div className='container form-container row'>
@@ -88,7 +89,7 @@ const SignIn = (props) => {
                                 <input type='password' id='password' onChange={(e) => setPassword(e.target.value)} />
                             </div>
                             <div className='right-align'>
-                                <p className='new-pass white-text' onClick={() => { setModalIsOpen(true) }}>Recuperar mi contraseña</p>
+                                <p className='new-pass white-text' onClick={() => { setModalIsOpen(true); }}>Recuperar mi contraseña</p>
                                 <ModalAuth modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} />
                             </div>
                         </div>
@@ -100,6 +101,7 @@ const SignIn = (props) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 export default withRouter(SignIn);
+

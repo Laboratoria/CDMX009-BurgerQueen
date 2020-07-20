@@ -1,9 +1,9 @@
 import React from 'react';
 import './resume.css';
 
-const ResumeMenu = ({ datos, totalPrice, deleteOrder }) => {
+const ResumeMenu = ({ addOrder, datos, totalPrice, deleteOrder }) => {
   let data = datos.productos;
-  
+
   return (
     <div>
       <div className="resume-card white-text scroll">
@@ -19,9 +19,14 @@ const ResumeMenu = ({ datos, totalPrice, deleteOrder }) => {
                   data.map((a, index) => (
                     <div className='order-info' key={index}>
                       <p className='col m7'>{a.item}</p>
-                      <p className='col m1'>1</p>
+                      <div>
+                        <button type='button' onClick={() => addOrder(a, a.quantity + 1)}>+</button>
+                        <p className='col m1'>{a.quantity}</p>
+                        <button type='button' onClick={() => addOrder(a, a.quantity - 1)}>-</button>
+
+                      </div>
                       <p className='col m1'>${a.price}</p>
-                      <p className="material-icons resume-icon col m2 right" onClick={() => { deleteOrder(a.id) }}>delete</p></div>
+                      <p className="material-icons resume-icon col m2 right" onClick={() => { deleteOrder(a.id); }}>delete</p></div>
                   )))
             }
           </div>
@@ -29,10 +34,10 @@ const ResumeMenu = ({ datos, totalPrice, deleteOrder }) => {
       </div>
       <div className='card total'>
         <div>
-          <span className='total-price white-text'>TOTAL: $ {totalPrice}</span>
+          <span className='total-price white-text'>TOTAL: $ {datos.total}</span>
         </div></div>
     </div>
-  )
-}
+  );
+};
 
 export default ResumeMenu;
