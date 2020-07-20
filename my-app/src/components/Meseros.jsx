@@ -8,7 +8,7 @@ import {
 import Comida from "./Comida"
 import Desayuno from "./Desayuno";
 
-const Meseros =() =>{
+const Meseros =({addOrderItems}) =>{
     return(
         <Router>
         <div>
@@ -30,7 +30,7 @@ const Meseros =() =>{
                                 <Comida />
                             </Route>
                             <Route path="/">
-                                <Desayuno />
+                                <Desayuno  addOrderItems={addOrderItems} />
                             </Route>
                         </Switch>
                     </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 
 import {
   BrowserRouter as Router,
@@ -12,7 +12,17 @@ import Login from "./components/Login"
 import Meseros from "./components/Meseros"
 
 
+
 function App() {
+  let [order,setOrder]=useState({
+    cliente:"",
+    items:[],
+    status:"",
+  })
+
+  function addOrderItems(product){
+    setOrder({...order,items:{...order.items,product}})
+  }
   return (
     <div className="App">
       <Router>
@@ -26,7 +36,7 @@ function App() {
             <Home />
           </Route>
           <Route path="/Meseros">
-            <Meseros />
+            <Meseros addOrderItems={addOrderItems} />
           </Route>
           <Route path="/">
             <Login />
