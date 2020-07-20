@@ -1,10 +1,5 @@
-import React, { Fragment as div } from 'react';
-import pendingIcon from './images/pending.svg';
-/* import cancelIcon from './images/cancel.svg';
-import readyIcon from './images/ready.svg'; */
-//import './btn-status.css'
-import { Fragment } from 'react';
-
+import React, { Fragment } from 'react';
+import './btn-status.css'
 
 function BtnStatus() {
     return (

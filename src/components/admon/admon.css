@@ -1,0 +1,31 @@
+.admon-bkg{
+    background-color: rgb(19, 17, 17);
+    min-height: 100vh;
+}
+
+.table-container{
+    background-color: white;
+    margin: 5%;
+    padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+.header-table{
+    font-weight: bold;
+}
+
+.title-table{
+    text-align: center;
+    width: 20%;
+}
+
+.btn-details-orders{
+    background-color: #FBE677;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    padding: 5% 15%;
+}
