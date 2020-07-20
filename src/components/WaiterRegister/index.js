@@ -31,6 +31,7 @@ const WaiterRegister = ({ client, setClient, order, setOrder }) => {
             />
 
             <div className={styles.butons}>
+                <div className={styles.butons1}>
                 <Link to="waiter">
                     <Boton text={"Regresar"} allstyles={"buttonOutWaiter"} />
                 </Link>
@@ -38,6 +39,7 @@ const WaiterRegister = ({ client, setClient, order, setOrder }) => {
                 <Link to="waiter">
                     <Boton text={"Inicio"} allstyles={"buttonOutWaiter"} />
                 </Link>
+                </div>
 
                 <Link to="waiteraccount">
                     <Boton text={"Editar"} allstyles={"buttonOutWaiter"} />
