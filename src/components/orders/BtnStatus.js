@@ -1,4 +1,4 @@
-import React, { Fragment as div } from 'react';
+import React from 'react';
 import pendingIcon from './images/pending.svg';
 /* import cancelIcon from './images/cancel.svg';
 import readyIcon from './images/ready.svg'; */
@@ -6,16 +6,16 @@ import readyIcon from './images/ready.svg'; */
 import { Fragment } from 'react';
 
 
-function BtnStatus() {
+const BtnStatus = () => {
     return (
-        <Fragment>
-            <select className="input-field col s12 list-status">
+        <div>hiiiiiiiiiiiiiii
+           <select className="input-field col s12 list-status">
                 <option className='' value="" disabled selected>Status</option>
                 <option value="1">Pendiente</option>
                 <option value="2">Completado</option>
                 <option value="3">Cancelado</option>
-            </select>
-        </Fragment>
+            </select> 
+        </div>
     )
 }
 

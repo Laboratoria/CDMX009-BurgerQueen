@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import './auth.css'
 
-Modal.setAppElement('#root');
+//Modal.setAppElement('#root');
 const ModalAuth = ({ modalIsOpen, setModalIsOpen }) => {
 
   return (
