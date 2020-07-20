@@ -3,7 +3,7 @@ import Logo from '../Logo/Logo';
 import Boton from '../Boton/Boton';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
-import ReusableTable from '../ReusableTable/index';
+import KitchenTable from '../ReusableTable/kitchenTable';
 
 import Bell from '../../assets/imgs/cuadrado-bordes.png';
 
@@ -27,7 +27,7 @@ const Kitchen = ({ client, setClient, order, setOrder }) => {
                 </div>
 
                 <div className={styles.secondDivision}>
-                    <ReusableTable client={client} setClient={setClient} order={order} setOrder={setOrder} />
+                    <KitchenTable client={client} setClient={setClient} order={order} setOrder={setOrder} />
                 </div>
 
                 <div className={styles.thirdDivision}>
@@ -52,7 +52,7 @@ const Kitchen = ({ client, setClient, order, setOrder }) => {
 
             <div className={styles.routeButtonsAccount}>
 
-                <Link to="waiter">
+                <Link to="kitchenregister">
                     <Boton text={"Regresar"} allstyles={"return"} />
                 </Link>
 

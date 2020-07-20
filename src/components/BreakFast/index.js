@@ -88,11 +88,11 @@ const BreakFast = ({ client, setClient, order, setOrder, menubreak, setMenuBreak
                 </div>
 
                 <div className={styles.order}>
-                    <div>
+                    
                         <ReusableTable client={client} setClient={setClient} order={order} setOrder={setOrder} 
                         menubreak={menubreak} setMenuBreak={setMenuBreak}
                         />
-                    </div>
+                    
                 </div>
             </div>
 
