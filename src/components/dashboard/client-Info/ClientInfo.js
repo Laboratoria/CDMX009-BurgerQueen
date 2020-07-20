@@ -49,7 +49,7 @@ const ClientInfoForm = ({ datos, setDatos }) => {
                 total: datos.total,
                 date: Date.now()
             }
-            const data = await db.collection('orders').add(newOrder);
+            await db.collection('orders').add(newOrder);
 
             toast.success('Pedido enviado a cocina!', {
                 className: 'toast-resume black-text center-align',

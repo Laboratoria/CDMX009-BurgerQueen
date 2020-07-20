@@ -1,7 +1,6 @@
 import React,  { useEffect, useState } from 'react'
 import './orders.css'
 import Navbar from '../layout/Navbar'
-import BtnStatus from './BtnStatus'
 import OrderFinished from './OrderFinished'
 import { firebase } from '../../firebase/firebaseConfig';
 
@@ -22,7 +21,6 @@ export function useOrder() {
     }, [])
     return order;
     } 
-
 
 function Orders({ datos }) {
     const order = useOrder();
@@ -54,8 +52,6 @@ function Orders({ datos }) {
                                         </div>
                                         <div>
                                         <div className='list-products scroll'>
-
-
                                         {item.order.map(a => (                                    
                                                 <form action="#">
                                                     <p className='chosen-item'>
@@ -69,14 +65,11 @@ function Orders({ datos }) {
                                                 </form>
                                            ))  }
                                             </div>
-
                                         </div>
                                         <div>
                                             <div className='green'>
                                             <div>    <OrderFinished /></div>
                                             <div></div>
-                                            
-   
                                             </div>
                                         </div>
                                     </div>

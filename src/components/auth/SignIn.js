@@ -1,5 +1,5 @@
 
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import { withRouter } from 'react-router-dom';
 import { firebase } from '../../firebase/firebaseConfig';
 import ModalAuth from '../auth/Modal';

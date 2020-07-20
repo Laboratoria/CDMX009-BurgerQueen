@@ -33,7 +33,8 @@ const Navbar = (props) => {
                     <li><div className="logo-burger center-align">
                         <img src={bqLogo} className='bq-logo' alt='logo'></img>
                         <p className='yellow-text'>Burger Queen</p>
-                    </div></li>
+                    </div>
+                    </li>
                     <li><a href='/' className='white-text'>Menu</a></li>
                     <li><div className="divider yellow lighten-2"></div></li>
                     <li><a href='/orders' className='white-text'>Ordenes</a></li>

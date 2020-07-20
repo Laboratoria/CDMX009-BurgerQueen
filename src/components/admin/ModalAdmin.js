@@ -55,7 +55,7 @@ const ModalAdmin = ( { user, setUser } ) => {
                 })
         }
     },
-        [newPass, newEmail, newName],
+        [newPass, newEmail, newName, setUser, user, newWork],
     )
 
     return (

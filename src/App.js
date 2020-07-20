@@ -12,7 +12,7 @@ function App() {
 
   //const [firebaseUser, setFirebaseUser] = useState(false);
   const [loading, setLoading] = useState(false);
-
+  
   useEffect (() => {
     setLoading(true);
     const unsuscribe = firebase.auth().onAuthStateChanged(user => {
