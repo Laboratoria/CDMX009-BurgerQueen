@@ -1,20 +1,21 @@
 import React from 'react';
-import Menu from '../Menu/Menu'
 
-const PreviewOrder = ({ordered, addProduct}) => (
+const PreviewOrder = ({order}) => (
+    
         <div>
         <h2> Preview de apartado orden </h2>
         
-        {ordered.length === 0
+        
+        {order.items.length === 0
         ?
             <p>No hay elementos en el apartado orden aún</p>
-        : ordered.map( elem => (
-            <Menu 
-                key={elem.id}
-                food={elem}
-                ordered={ordered}
-                addProduct={addProduct}
-            />
+        : order.items.map( elem => ( 
+                <div key={elem.id}>
+                    <div>{elem.quantity} {elem.nameProduct} </div>
+                    {/* <div> {elem.quantity*elem.price} </div> */}
+
+                </div>
+                
         ))}
         </div>
 )
