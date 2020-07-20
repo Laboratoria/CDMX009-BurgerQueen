@@ -1,23 +1,17 @@
 import React, { Fragment, useState } from 'react';
+import TipOption from './TipOption';
+import './order-finished.css';
 
-//import TipOption from './TipOption'
-import pendingIcon from './images/pending.svg';
-/* import cancelIcon from './images/cancel.svg';
-import readyIcon from './images/ready.svg'; */
-//import './order-finished.css'
 
-function OrderFinished() {
+function OrderFinished({ orderFinished }) {
+    const [visible, setVisible] = useState(true);
 
-    const [visible, setVisible] = useState(false);
-
-    
-
-    
-
+    const sendOrderFinished = () => {
+        console.log('actualizar pago y metodo');
+    };
 
     return (
         <Fragment>
-            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Finalizar</a>
 
             <div id="modal1" class="modal scroll">
                 <div class="modal-content">
@@ -32,7 +26,7 @@ function OrderFinished() {
                             </select>
                         </div>
                         <div>
-                            <p>Total: $200.00</p>
+                            <p>Total: {orderFinished.total}</p>
                         </div>
                     </div>
                     <div>
@@ -40,16 +34,15 @@ function OrderFinished() {
                         <div className='' >
                             <select className='options'>
                                 <option value="" disabled selected>Elige una opción</option>
-                                <option className='opt' onClick={() => setVisible(false)}>No</option>
+                                <option className='opt' onClick={() => setVisible(false)} >No</option>
                                 <option className='opt' onClick={() => setVisible(true)}> Si</option>
                             </select>
                         </div>
                         <div>
                             {
-                                visible ? (<div>no se agrega propina</div>) : (<div>aquí va tip option</div>)
+                                visible ? (<TipOption orderFinished={orderFinished} />) : (<div>no se agrega propina</div>)
                             }
                         </div>
-
                     </div>
                     <div>
                         <p className='title-Opt'>Obtener comprobante</p>
@@ -72,12 +65,13 @@ function OrderFinished() {
                         </div>
                     </div>
                     <div class="modal-footer btn-accept">
-                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Aceptar</a>
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat" onClick={sendOrderFinished}>Aceptar</a>
                     </div>
                 </div>
             </div>
+
         </Fragment >
-    )
+    );
 }
 
 export default OrderFinished;

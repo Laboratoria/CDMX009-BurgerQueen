@@ -13,8 +13,12 @@ const ClientInfoForm = ({ datos, setDatos }) => {
         setDatos({
             ...datos,
             [e.target.name]: e.target.value
-        })
+        });
     };
+
+    const now = new Date();
+    const hour = [now.getHours(), now.getMinutes()].join(':');
+    const date = [now.getDate(), now.getMonth(), now.getFullYear()].join('/');
 
     const sendData = async (e) => {
         e.preventDefault();
@@ -30,32 +34,35 @@ const ClientInfoForm = ({ datos, setDatos }) => {
                 className: 'toast-error center-align',
                 hideProgressBar: true
             });
-            return
+            return;
         }
         if (!datos.numeroComensales.trim()) {
             toast.error('Ingresa número de comensales', {
                 className: 'toast-error center-align',
                 hideProgressBar: true
             });
-            return
+            return;
         }
         try {
-            const db = firebase.firestore()
+            const db = firebase.firestore();
             const newOrder = {
                 table: datos.numeroMesa,
                 people: datos.numeroComensales,
                 order: datos.productos,
-                payment:'',
+                payment: '',
                 total: datos.total,
-                date: Date.now()
-            }
+                date: hour,
+                hour: date,
+                waitTime: 0,
+            };
+
             await db.collection('orders').add(newOrder);
 
             toast.success('Pedido enviado a cocina!', {
                 className: 'toast-resume black-text center-align',
                 hideProgressBar: true
             });
-            console.log(datos)
+            console.log(datos);
         }
         catch (error) {
             console.log(error);
@@ -111,7 +118,7 @@ const ClientInfoForm = ({ datos, setDatos }) => {
                 </div>
             </form>
         </Fragment >
-    )
-}
+    );
+};
 
 export default ClientInfoForm;

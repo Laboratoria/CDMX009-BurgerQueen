@@ -53,9 +53,9 @@
 }
 
 .chosen-item{
-    height: 25px;
     margin: 0px;
     padding: 0px 20px;
+    line-height: 35px;
 }
 
 .item{
@@ -76,4 +76,8 @@ margin-top: 2px;
 .list-status{
     color: black !important;
     margin: 10px;
+}
+
+.edit-image{
+    width: 15px;
 }
