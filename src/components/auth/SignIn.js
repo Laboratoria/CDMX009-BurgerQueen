@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+
 import { withRouter } from 'react-router-dom';
 import { firebase } from '../../firebase/firebaseConfig';
 import ModalAuth from '../auth/Modal';
@@ -68,6 +69,7 @@ const SignIn = (props) => {
     },
         [email, password, props.history],
     );
+
     return (
         <div className='initial-image'>
             <div className='container form-container row'>
@@ -102,3 +104,4 @@ const SignIn = (props) => {
     );
 };
 export default withRouter(SignIn);
+

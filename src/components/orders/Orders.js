@@ -7,10 +7,9 @@ import { firebase } from '../../firebase/firebaseConfig';
 import editImage from './images/edit.svg';
 import Chronometer from '../dashboard/client-Info/Chronometer';
 
-
 export function useOrder() {
     const [order, setOrder] = useState([]);
-
+    
     useEffect(() => {
         firebase
             .firestore()
@@ -24,7 +23,7 @@ export function useOrder() {
             });
     }, []);
     return order;
-}
+    } 
 
 function Orders({ datos }) {
     const order = useOrder();
@@ -47,8 +46,7 @@ function Orders({ datos }) {
         console.log('sirve click', item.id);
     };
 
-
-    return (
+  return (
         <Fragment>
             <div className='dashboard'>
                 <Navbar datos={datos} />
@@ -70,24 +68,28 @@ function Orders({ datos }) {
                                             }
                                         </div>
                                         <div>
-                                            <div className='list-products scroll'>
-                                                {item.order.map(a => (
-                                                    <form action="#">
-                                                        <p className='chosen-item'>
-                                                            <label className='item'>
-                                                                <input className='box' type="checkbox" />
-                                                                <span className='black-text text-item'>{a.item}
-                                                                </span>
-                                                                <p className='black-text num-item'>1</p>
-                                                            </label>
-                                                        </p>
-                                                    </form>
-                                                ))}
+                                        <div className='list-products scroll'>
+
+
+                                        {item.order.map(a => (                                    
+                                                <form action="#">
+                                                    <p className='chosen-item'>
+                                                        <label className='item'>
+                                                            <input className='box' type="checkbox" />
+                                                            <span className='black-text text-item'>{a.item}
+                                                            </span>
+                                                            <p className='black-text num-item'>1</p>
+                                                        </label>
+                                                    </p>
+                                                </form>
+                                           ))  }
                                             </div>
+
                                         </div>
                                         <div>
                                             <button className="waves-effect waves-light btn modal-trigger" href="#modal1" onClick={() => finishedOrder(item)} >Finalizar</button>
                                             <div>
+
 
                                             </div>
                                         </div>
@@ -105,3 +107,4 @@ function Orders({ datos }) {
     );
 }
 export default Orders;  
+

@@ -69,8 +69,9 @@ export default BreakfastMenu;
             .then(res => res.json())
             .then(data => {
                 setDesayunos(data.desayunos);
+                //console.log(data.desayunos)
             })
-    }, []
+    }, [desayunos, setDesayunos]
     );
 
     return (

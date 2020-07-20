@@ -4,6 +4,7 @@ import DinnerCards from '../dashboard/menuCards/DinnerCards';
 import ResumeMenu from '../dashboard/ResumeMenu';
 import Button from '../dashboard/Button';
 import Navbar from '../layout/Navbar';
+import { firebase } from '../../firebase/firebaseConfig';
 
 function Dashboard({ datos, setDatos }) {
 
