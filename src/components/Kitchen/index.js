@@ -52,7 +52,7 @@ const Kitchen = ({ client, setClient, order, setOrder }) => {
 
             <div className={styles.routeButtonsAccount}>
 
-                <Link to="waiter">
+                <Link to="kitchenregister">
                     <Boton text={"Regresar"} allstyles={"return"} />
                 </Link>
 

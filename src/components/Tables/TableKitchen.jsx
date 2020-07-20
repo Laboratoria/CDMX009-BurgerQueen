@@ -1,9 +1,11 @@
 import React from 'react';
 import Logo from '../Logo/Logo';
+import Boton from '../Boton/Boton'
+import { Link } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
 import DateTime from '../DateTime/DateTables';
 
-import './styles.css';
+
 import styles from './styles.module.css';
 
 const TableWaiter = ({ client, order, orders }) => {
@@ -49,7 +51,11 @@ const TableWaiter = ({ client, order, orders }) => {
                                 <td> {order.numpeople} </td>
                                 <td>12:30</td>
                                 <td>14:00</td>
-                                <td>PAGADA</td>
+                                <td>
+                                    <Link to="kitchen">
+                                        <Boton text={"Ver"} allstyles={"buttonKitchenTable"} />
+                                    </Link>
+                                </td>
                             </tr>
                         ))}
                     </tbody>

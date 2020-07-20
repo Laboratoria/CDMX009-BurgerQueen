@@ -3,7 +3,6 @@ import Logo from '../Logo/Logo';
 import Table from 'react-bootstrap/Table';
 import DateTime from '../DateTime/DateTables';
 
-import './styles.css';
 import styles from './styles.module.css';
 
 const TableWaiter = ({ client, order, orders }) => {

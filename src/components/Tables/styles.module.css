@@ -54,7 +54,14 @@
   color: #212529;
   text-align: center;
   margin: 10px auto;
+  margin-bottom: 30px;
   border: 1px solid tomato;
+  height: 650px;
+  overflow-y: scroll;
+
+  font-size: 1.6em;
+  font-family: 'Amaranth', sans-serif;
+
 
 }
 
