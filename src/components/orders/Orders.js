@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Fragment } from 'react'
 import './orders.css'
 import Navbar from '../layout/Navbar'
-import BtnStatus from './BtnStatus'
+import EditOrder from './EditOrder'
 import OrderFinished from './OrderFinished'
 import { firebase } from '../../firebase/firebaseConfig';
+import editImage from './images/edit.svg'
+
 
 export function useOrder() {
     const [order, setOrder] = useState([]);
@@ -25,35 +27,47 @@ export function useOrder() {
 
 function Orders({ datos }) {
     const order = useOrder();
-    console.log('es order:', order)
+    const [orderFinished, setOrderFinished] = useState({
+        table: '',
+        people: '',
+        order: '',
+        payment: '',
+        total: '',
+        date: '',
+    })
 
-    const now = new Date();
-    const time = [now.getHours(), now.getMinutes()];
-    const day = time.join(':');
-    console.log(day)
+    const finishedOrder = (item) => {
+        setOrderFinished(item);
+    }
+
+    const editBtn = (item) => {
+        console.log('sirve click', item.id);
+    }
+
     return (
-        <div>
-            <Navbar datos={datos} />
+        <Fragment>
             <div className='dashboard'>
+                <Navbar datos={datos} />
                 <div className='row order-h2'>
                     <h2 className='white-text'>Mis ordenes</h2>
                 </div>
                 <div >
                     {
                         order.map(item => (
-                            <div className='col m12 resume-box'>
+                            <div className='col m12 resume-box' key={item.id} >
                                 <div className='post-it'>
                                     <div className='text-order-resume'>
                                         <div className='table-info'>
                                             <p className='table-info'>Mesa {item.table}</p>
                                             <p className='table-info'>{item.date}</p>
+                                            <img src={editImage} onClick={() => { editBtn(item) }} className="waves-effect waves-light btn modal-trigger" href="#modal2" />
                                         </div>
                                         <div>
                                             <div className='list-products scroll'>
                                                 {item.order.map(a => (
                                                     <form action="#">
-                                                        <p className='chosen-item'>
-                                                            <label className='item'>
+                                                        <p className='chosen-item' key={a.id}>
+                                                            <label className='item-otro'>
                                                                 <input className='box' type="checkbox" />
                                                                 <span className='black-text text-item'>{a.item}
                                                                 </span>
@@ -65,17 +79,22 @@ function Orders({ datos }) {
                                             </div>
                                         </div>
                                         <div>
-                                            <BtnStatus />
-                                            <OrderFinished />
+                                            <button className="waves-effect waves-light btn modal-trigger" href="#modal1" onClick={() => finishedOrder(item)} >Finalizar</button>
+                                            <div>
+
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         ))
                     }
+                    <OrderFinished orderFinished={orderFinished} setOrderFinished={setOrderFinished} />
+                    <EditOrder />
                 </div>
             </div>
-        </div>
+        </Fragment >
+
     )
 }
 export default Orders; 

@@ -16,6 +16,9 @@ const ClientInfoForm = ({ datos, setDatos }) => {
         })
     };
 
+    const now = new Date();
+    const time = [now.getHours(), now.getMinutes()].join(':');
+
     const sendData = async (e) => {
         e.preventDefault();
         if (!datos.numeroMesa.trim()) {
@@ -38,9 +41,9 @@ const ClientInfoForm = ({ datos, setDatos }) => {
                 table: datos.numeroMesa,
                 people: datos.numeroComensales,
                 order: datos.productos,
-                payment:'',
+                payment: '',
                 total: datos.total,
-                date: Date.now()
+                date: time
             }
             const data = await db.collection('orders').add(newOrder);
 

@@ -43,6 +43,7 @@ color:#f57f17;
 font-size: 20px;
 }
 .select-wrapper input.select-dropdown{
+    color: white ;
     font-family: 'Raleway';
     font-style: normal;
     font-weight: 520;
@@ -55,3 +56,4 @@ font-size: 20px;
 .toast-error{
     background-color: turquoise;
 }
+
