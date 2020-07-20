@@ -1,6 +1,10 @@
-.butons {
-  
+.butons {  
+  display: flex;  
+  justify-content: space-around;
+}
+
+.butons1 {
   display: flex;
-  align-self: flex-end;
-  
+  margin-left: -200px;
+
 }

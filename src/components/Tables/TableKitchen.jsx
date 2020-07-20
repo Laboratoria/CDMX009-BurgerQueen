@@ -17,7 +17,7 @@ const TableWaiter = ({ client, order, orders }) => {
 
                 <div className={styles.titleBreakfast}>
                     <h2>Registro de Ordenes</h2>
-                    <h3>Mesero</h3>
+                    <h3>Cocina</h3>
                 </div>
 
                 <div className={styles.iconHeader}>
@@ -29,6 +29,7 @@ const TableWaiter = ({ client, order, orders }) => {
                 <Table striped bordered hover className={styles.tableLines}>
                     <thead>
                         <tr className={styles.columns}>
+                            <th scope="col"> Mesero </th>
                             <th scope="col"> No. <br /> Orden </th>
                             <th scope="col"> Fecha </th>
                             <th scope="col"> No. <br />  Mesa </th>
@@ -41,6 +42,7 @@ const TableWaiter = ({ client, order, orders }) => {
                     <tbody>
                         {orders.map((order, index) => (
                             <tr key={index}>
+                                <td> {order.nameWaiter} </td>
                                 <td> {index} </td>
                                 <td> <DateTime /> </td>
                                 <td> {order.numtable} </td>
@@ -50,7 +52,6 @@ const TableWaiter = ({ client, order, orders }) => {
                                 <td>PAGADA</td>
                             </tr>
                         ))}
-
                     </tbody>
                 </Table>
             </div>

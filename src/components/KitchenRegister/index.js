@@ -2,11 +2,11 @@ import React, { Fragment, useEffect, useState } from 'react';
 import db from '../../firebase';
 import Boton from '../Boton/Boton'
 import { Link } from 'react-router-dom';
-import TableWaiter from '../Tables/TableWaiter';
+import TableKitche from '../Tables/TableKitchen';
 
 import styles from './styles.module.css';
 
-const WaiterRegister = ({ client, setClient, order, setOrder }) => {
+const KitchenRegister = ({ client, setClient, order, setOrder }) => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const WaiterRegister = ({ client, setClient, order, setOrder }) => {
 
     return (
         <Fragment>
-            <TableWaiter
+            <TableKitche
                 client={client}
                 setClient={setClient}
                 order={order}
@@ -31,15 +31,9 @@ const WaiterRegister = ({ client, setClient, order, setOrder }) => {
             />
 
             <div className={styles.butons}>
-                <div className={styles.butons1}>
                 <Link to="waiter">
                     <Boton text={"Regresar"} allstyles={"buttonOutWaiter"} />
                 </Link>
-
-                <Link to="waiter">
-                    <Boton text={"Inicio"} allstyles={"buttonOutWaiter"} />
-                </Link>
-                </div>
 
                 <Link to="waiteraccount">
                     <Boton text={"Editar"} allstyles={"buttonOutWaiter"} />
@@ -49,4 +43,4 @@ const WaiterRegister = ({ client, setClient, order, setOrder }) => {
     );
 };
 
-export default WaiterRegister;
+export default KitchenRegister;
