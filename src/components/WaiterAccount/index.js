@@ -38,10 +38,13 @@ const WaiterAccount = ({ client, setClient, order, setOrder }) => {
             </div>
 
             <div className={styles.routeButtonsAccount}>
-                <Link to="kitchen">
+                <Link to="waiterregister">
                     <Boton text={"Regresar"} allstyles={"return"} />
                 </Link>
-                <Boton text={"Inicio"} allstyles={"returnTwo"} />
+
+                <Link to="waiter">
+                    <Boton text={"Inicio"} allstyles={"returnTwo"} />
+                </Link>
             </div>
         </div>
 

@@ -6,6 +6,14 @@
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 8px rgba(0, 0, 0, 0.25);
 }
 
+.containerTableKitchen{
+    border: 2px solid #ED3367;
+    background: #FFE168;
+    border-radius: 14px;
+    margin-right: 20px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 8px rgba(0, 0, 0, 0.25);
+}
+
 .DateOfOrderWrapprer{
     display: flex;
     flex-direction: column;
@@ -48,13 +56,16 @@
 }
 
 .positionDate{
-    align-self: flex-end;
+    align-self: center;
+    margin-left: 80px;
+    margin-top: 20px;
 }
 
 .positionData{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-top: 15px;
 }
 
 .customerOrders{
@@ -91,8 +102,25 @@ background-color: #ED3367;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 8px rgba(0, 0, 0, 0.25);
 }
 
-.foofOptions{
+.foodOptions{
     width: 60%;
+}
+
+.foodOptionsKitchen {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 325px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.foodprice {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 80px;
+    text-align: center;
+    margin-left: 30px;
+
 }
 
 .deleteIcon{

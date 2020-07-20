@@ -1,14 +1,12 @@
 import React from 'react';
 import styles from './styles.module.css';
 import DateTime from '../DateTime/DateTime';
-import Stepper from "@kiwicom/orbit-components/lib/Stepper";
 
-import IconDelete from '../../assets/imgs/trash.png';
 
-const ReusableTable = ({ client, order }) => {
+const KitchenTable = ({ client, order }) => {
 
     return (
-        <div className={styles.containerTable}>
+        <div className={styles.containerTableKitchen}>
 
             <div className={styles.DateOfOrderWrapprer}>
                 <div className={styles.positionDate}><DateTime /> </div>
@@ -37,30 +35,26 @@ const ReusableTable = ({ client, order }) => {
 
             <div className={styles.customerOrders}>
                 <div className={styles.Orders}>
-                    <div className={styles.foodOptions}>Café americano</div>
-                    <div className={styles.StepperStateless}><Stepper minValue={0} maxValue={100} /></div>
-                    <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={35} height={"auto"} /></div>
+                    <div className={styles.foodOptionsKitchen}>Café americano</div>
+                    <div className={styles.foodprice}>5</div>
                 </div>
 
                 <div className={styles.Orders}>
-                    <div className={styles.foodOptions}>Hamburguesa Simple</div>
-                    <div className={styles.StepperStateless}><Stepper minValue={0} maxValue={100} /></div>
-                    <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={35} height={"auto"} /></div>
+                    <div className={styles.foodOptionsKitchen}>Hamburguesa Simple</div>
+                    <div className={styles.foodprice}>5</div>
                 </div>
 
                 <div className={styles.Orders}>
-                    <div className={styles.foodOptions}>Café americano</div>
-                    <div className={styles.StepperStateless}><Stepper minValue={0} maxValue={100} /></div>
-                    <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={35} height={"auto"} /></div>
+                    <div className={styles.foodOptionsKitchen}>Café americano</div>
+                    <div className={styles.foodprice}>555</div>
                 </div>
 
                 <div className={styles.Orders}>
-                    <div className={styles.foodOptions}>Café con leche</div>
-                    <div className={styles.StepperStateless}><Stepper minValue={0} maxValue={100} /></div>
-                    <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={35} height={"auto"} /></div>
+                    <div className={styles.foodOptionsKitchen}>Café con leche</div>
+                    <div className={styles.foodprice}>5</div>
                 </div>
             </div>
         </div>
     );
 }
-export default ReusableTable;
+export default KitchenTable;
