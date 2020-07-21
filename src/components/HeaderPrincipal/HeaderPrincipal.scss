@@ -1,0 +1,28 @@
+//Header
+$general-font: 'Nunito', sans-serif;
+$font-header: 'Orbitron', sans-serif;
+$width-header : 100%;
+$height-header: 120px;
+$font-size-header : 40px;
+$white: #FDFFFC;
+$color-header: #3824A0;
+
+
+.header-principal {
+    width: $width-header;
+    height: $height-header;
+    padding-top: 20px;
+    background-color: $color-header;
+    font-family: $font-header;
+    font-size: $font-size-header;
+    color: $white;
+   text-align: center;
+    
+    h1{
+      margin-top: 0;
+      margin-bottom: 0;
+    
+    }
+
+   
+}

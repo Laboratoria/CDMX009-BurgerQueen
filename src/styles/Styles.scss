@@ -1,0 +1,394 @@
+@import 'General'; 
+@import '../components/Header/Header';
+@import '../components/kitchen/Orders/Kitchen'; 
+@import '../components/kitchen/State/ListOrder'; 
+@import '../components/kitchen/Modal/Modal'; 
+body{
+    margin: $margin-body;
+    padding: $padding-body;
+    background-color: $background-body;
+    font-family: $general-font;
+}
+.header-kitchen{
+    background-color: $color-header;
+    width: $width-header;
+    height: 100%;
+    // height: $height-header;
+    /* position: $position-header;  */
+    top: $top-header;
+    left: $left-header;
+    display: grid;
+    grid-template-columns: 2fr 0.5fr;
+    justify-items: end;
+    flex-direction: $direction-kitchen;
+    justify-content: $justify-kitchen;
+    
+    .title-header{
+        font-style: normal;
+        font-weight: bold;
+        text-align: $text-align-center;
+        font-size: $font-size-header;
+        font-family: 'Orbitron', sans-serif;
+    }
+    a{
+        text-decoration: none;
+
+        h1{
+            color: $white;
+          }
+    }
+
+    .div-header2{
+        width: 20%;
+        align-self: center;
+        justify-self: center;
+       
+        i{
+            color: #EB60DD;
+            font-size: 50px;
+        }
+    }
+}
+.div-header1{
+    width: 80%;
+}
+
+.container{
+    margin: $margin-container; 
+    width: $width-container;
+    height: $height-container;
+    margin-top: $margin-container-top;
+
+}
+.title-kitchen{
+    font-family: $general-font;
+    font-size: $title-size; 
+    // font-style: $style;
+    font-weight: $weight;
+    text-align: $text-align-center;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(2 ,1fr);
+    justify-items: center;
+}
+ .container-kitchen{
+    /* display: $display-kitchen; 
+    flex-direction: $direction-kitchen;
+    justify-content: $justify-kitchen;
+    flex-wrap: $wrap-kitchen; */
+    display: grid;
+    grid-template-rows:repeat(10,auto);
+    grid-gap: 30px;
+} 
+/*  .card-padding{
+    display: flex;
+    justify-content: center;
+ width: 50%; 
+}  */
+.card-active{
+    width: 450px;
+    height: $card-height; 
+    top: $card-top; 
+    background-color: $background-active;
+    color: $white; 
+    margin-right: 0;
+    h4{
+        margin:40px 40px 60px 40px;
+        text-align: $text-align-center;
+        height: 0px; 
+    }
+    border: $bordercolor;
+    border-radius: $border-radius;
+    border-width: 7px;
+    font-size: $font-size-card;
+     font-family:'Nunito', sans-serif;
+
+    h5{
+        margin: 0;
+        font-size: 25px;
+    }
+}
+.card-inactive{
+    width: 450px;
+    height: $card-height; 
+    top: $card-top; 
+    background-color: $background-inactive;
+    color: $color-inactive; 
+    padding: 20px;
+    h4{
+        margin:0px 40px 60px 40px;
+        text-align: $text-align-center;
+        height: 0px; 
+       
+    }
+    border-radius: $border-radius;
+    font-size: $font-size-card;
+    font-family:'Nunito', sans-serif;
+
+    h5{
+        margin: 0;
+        font-size: 25px;
+    }
+}
+.list-source{
+    display: $display-kitchen;
+    flex-direction: $display-kitchen;
+    justify-content: $justify-kitchen;
+    flex-wrap: $wrap-kitchen;
+    margin: 10px;
+    
+    
+}
+.list-source2{
+    display: $display-kitchen;
+    flex-direction: $display-kitchen;
+    justify-content: $justify-kitchen;
+    flex-wrap: $wrap-kitchen;
+    margin-top: $cincuenta-pixeles; 
+    height: auto;
+    
+}
+.item1-card{
+    width: $item1-width;
+    font-size: $item-size;
+    padding-left: $item-padding;
+    height: auto; 
+    margin-left: 10px;
+    h5{
+        font-family: $general-font;
+        font-weight: $weight;
+        font-size: 30px;
+    }
+}
+.item2-card{
+    width: $item2-width;
+    font-size: $item-size;
+    text-align:  $text-align-center;
+    height: $trenta-cinco;
+    margin: 10px;
+    h5{
+        margin: 0;
+    }
+}
+.spa{
+    font-size: $spa-size;
+    color:#ADA3E1;
+}
+.item3-card{
+    width: $item3-width;
+  /*   font-size: $item-size; */
+    text-align:  $text-align-center;
+    margin-bottom: 40px;
+
+}
+.button-red{
+    background-color: $red;
+    border-radius: $button-radius;
+    border-color: $red;
+    font-weight: $weight;
+    font-style: $style;
+    font-family: $general-font;
+    color: $white; 
+    width: $button-width;
+    font-size: 30px;
+}
+.button-green{
+    background-color: $green;
+    border-radius: $button-radius;
+    border-color: $green;
+    font-weight: $weight;
+    font-style: $style;
+    font-family: $general-font;
+    color: $white; 
+    width: $button-width;
+    font-size: 30px;
+}
+
+.button-gray{
+    background-color: $gray;
+    border-radius: $button-radius;
+    border-color: $gray;
+    font-weight: $weight;
+    font-style: $style;
+    font-family: $general-font;
+    color: $white;
+    width: $button-width; 
+}
+
+.item2-widtn-kitchem{
+    right: $right;
+    top: $top-delivery; 
+    display: grid;
+    grid-template-rows: repeat(10,auto);
+    
+}
+.headerList{
+    display: $display-kitchen;
+    flex-direction: $direction-kitchen;
+    justify-content: $justify-kitchen;
+    flex-wrap: $wrap-kitchen;
+    border-radius: $diez-pixeles;
+    background-color: $azul-ligh;
+    color: $color-black; 
+}
+.titulo-list{   
+    width: $width-title;
+    height: $height-title; 
+    //top: $card-top; 
+    //background-color: $light-blue;
+    padding-top: $diez-pixeles;
+    text-align: $text-align-center;
+    font-family: $general-font;
+    font-style: $style;
+    font-weight:  $weight;
+    font-size: 30px; 
+}
+.contentList{
+    display: $display-kitchen;
+    flex-direction: $direction-kitchen;
+    justify-content: $justify-kitchen;
+    flex-wrap: $wrap-kitchen;
+    background-color: $transparente;
+}
+.list{   
+    width: $width-title;
+    height: $height-title; 
+    top: $card-top; 
+    text-align: $text-align-center;
+    font-family: $general-font;
+    font-style: $style;
+    font-weight:  $weight;
+    font-size: 30px; 
+    color: $white; 
+    margin-bottom: 10px;
+}
+.icono{
+     color: $red; 
+}
+
+.icon-delivered{
+    color: $green;
+    font-size: 30px;
+}
+
+.list-green{
+    width: $width-status-list;
+    background-color: $green;
+    border-radius: $button-radius;
+    border-color: $green;
+    font-weight: $weight;
+    font-style: $style;
+    font-family: $general-font;
+    font-size: 30px;
+    margin: 0;
+}
+
+.list-orange{
+    width: $width-status-list;
+    background-color: $orange;
+    border-radius: $button-radius;
+    border-color: $green;
+    font-weight: $weight;
+    font-style: $style;
+    font-family: $general-font;
+    font-size: 30px;
+    margin: 0;
+    
+}
+
+.list-edit{   
+    width: $width-title;
+    height: $auto; 
+    top: $card-top; 
+    background-color: $white;
+    text-align: $text-align-center;
+    font-family: $general-font;
+    font-style: $style;
+    font-weight:  $weight;
+}
+
+.container-list{
+    margin: $margin-container; 
+    width: $container-list-width;
+    height: $height-container;
+    margin-top: $margin-container-list;
+
+}
+.container-list-edit{
+    margin: $margin-container; 
+    width: $continer-list-edit-width;
+    height: $height-container;
+    margin-top: $margin-container-list;
+
+}
+
+.modal-background{
+    background-color: rgba(0, 0, 0, .8);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-contenido{
+    background-color: $background-body; 
+    width: $modal-width;
+    padding: $modal-padding;
+    margin: $modal-margin;
+    position: $modal-relative;
+    height: $modal-height;
+    overflow: $modal-overflow;
+    border-style: solid;
+    border-radius: 25px;
+    border-color: #EB60DD;
+    border-width: 7px;
+    
+
+  }
+  .modal{
+    background-color: $modal-trasparent;
+    position: $modal-fixed;
+    top: $modal-top;
+    right: $modal-right;
+    bottom: $modal-bottom;
+    left: $modal-left;  
+  }
+  .title-list{
+    font-family: $general-font;
+    font-size: $size-title; 
+    font-style: $style;
+    font-weight: $weight;
+    text-align: $text-align-center;
+}
+.right{
+    color: $color-gray;
+    line-height: $line-height;
+    font-size: $font-size-c;
+    right: $modal-right;
+    text-align: $text-align-center;
+    top: $modal-top;
+    width: $width-c;
+    text-decoration: $text-decoration;
+    &:hover {
+      color: $color-black;
+    }
+}
+.modal-close {
+    position: $absolute;
+    color: $white;
+    line-height: $line-height;
+    font-size: $font-size-c;
+    right: $modal-right;
+    text-align: $text-align-center;
+    top: $modal-top;
+    width: $width-c;
+    text-decoration: $text-decoration;
+    &:hover {
+      color: $color-black;
+    }
+  }
