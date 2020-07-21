@@ -17,12 +17,13 @@ import WaiterAccount from './components/WaiterAccount';
 import Kitchen from './components/Kitchen';
 //import ReausableTable from './components/ReusableTable';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'react-bootstrap/dist/react-bootstrap'
+import 'react-bootstrap/dist/react-bootstrap';
+import Example from './components/Example';
 
 import './App.css';
 
 function App() {
-  
+
   const initialDataClient = {
     numorder: '',
     namewaiter: '',
@@ -75,7 +76,7 @@ function App() {
           </Route>
 
           <Route exact path="/kitchen">
-            <Kitchen client={client} setClient={setClient} order={order} setOrder={setOrder} />
+            <Example client={client} setClient={setClient} order={order} setOrder={setOrder} />
           </Route>
         </Switch>
       </HashRouter>
