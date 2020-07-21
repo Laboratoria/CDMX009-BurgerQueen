@@ -1,4 +1,4 @@
-.containerTable{
+.containerTable {
     border: 2px solid #ED3367;
     background: #EAEAEA;
     border-radius: 14px;
@@ -6,7 +6,7 @@
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 8px rgba(0, 0, 0, 0.25);
 }
 
-.containerTableKitchen{
+.containerTableKitchen  {
     border: 2px solid #ED3367;
     background: #FFE168;
     border-radius: 14px;
@@ -14,7 +14,7 @@
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 8px rgba(0, 0, 0, 0.25);
 }
 
-.DateOfOrderWrapprer{
+.DateOfOrderWrapprer {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -22,9 +22,15 @@
  
 }
 
+.DateOfclientWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
 .firstNumberWrapper,
 .secondNumberWrapper,
-.thirdNumberWrapper{
+.thirdNumberWrapper {
     background: #FFFFFF;
     border: 2px solid #ED3367;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
@@ -33,6 +39,19 @@
     font-family: 'Amaranth', sans-serif;
     padding: 10px;
     margin: 40px;
+}
+
+.nameClient {
+    background: #FFFFFF;
+    border: 2px solid #ED3367;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-family: 'Amaranth', sans-serif;
+    padding: 10px;
+    width: 200px;
+    height: 54px;
+    margin-left: 30px;
 }
 
 .numberTableData,
@@ -55,20 +74,25 @@
     font-weight: 700;
 }
 
-.positionDate{
+.positionDate {
     align-self: center;
     margin-left: 80px;
     margin-top: 20px;
 }
 
-.positionData{
+.positionDatewaiter {
+    align-self: center;
+    margin-top: 20px;
+}
+
+.positionData {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     margin-top: 15px;
 }
 
-.customerOrders{
+.customerOrders {
     margin: 10px;
     margin: 10px;
     display: flex;
@@ -76,12 +100,12 @@
     padding: 50px 10px;
 }
 
-.separation{
+.separation {
 height: 3px;
 background-color: #ED3367;
 }
 
-.Orders{
+.Orders {
     display: flex;
     flex-direction: row;
     font-size: 1.7em;
@@ -102,7 +126,7 @@ background-color: #ED3367;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 8px rgba(0, 0, 0, 0.25);
 }
 
-.foodOptions{
+.foodOptions {
     width: 60%;
 }
 
@@ -114,6 +138,16 @@ background-color: #ED3367;
     padding-left: 20px;
 }
 
+.foodTotal {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 325px;
+    text-align: left;
+    padding-left: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 .foodprice {
     background: #FFFFFF;
     border-radius: 10px;
@@ -123,7 +157,17 @@ background-color: #ED3367;
 
 }
 
-.deleteIcon{
+.foodTotalPrice {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 80px;
+    text-align: center;
+    margin-left: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.deleteIcon {
     align-self: center;
     width: 20px;
     height: auto;
