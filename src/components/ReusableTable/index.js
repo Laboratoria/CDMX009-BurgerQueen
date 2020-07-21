@@ -28,7 +28,7 @@ const ReusableTable = ({ client, order }) => {
 
                     <div className={styles.numberOrder}>
                         <p>No. Órden</p>
-                        <span className={styles.firstNumberWrapper}>{order}</span>
+                        <span className={styles.firstNumberWrapper}>123</span>
                     </div>
                 </div>
             </div>
@@ -37,25 +37,25 @@ const ReusableTable = ({ client, order }) => {
 
             <div className={styles.customerOrders}>
                 <div className={styles.Orders}>
-                    <div className={styles.foofOptions}>Café americano</div>
+                    <div className={styles.foodOptions}>Café americano</div>
                     <div className={styles.StepperStateless}><Stepper minValue={0} maxValue={100} /></div>
                     <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={35} height={"auto"} /></div>
                 </div>
 
                 <div className={styles.Orders}>
-                    <div className={styles.foofOptions}>Hamburguesa Simple</div>
+                    <div className={styles.foodOptions}>Hamburguesa Simple</div>
                     <div className={styles.StepperStateless}><Stepper minValue={0} maxValue={100} /></div>
                     <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={35} height={"auto"} /></div>
                 </div>
 
                 <div className={styles.Orders}>
-                    <div className={styles.foofOptions}>Café americano</div>
+                    <div className={styles.foodOptions}>Café americano</div>
                     <div className={styles.StepperStateless}><Stepper minValue={0} maxValue={100} /></div>
                     <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={35} height={"auto"} /></div>
                 </div>
 
                 <div className={styles.Orders}>
-                    <div className={styles.foofOptions}>Café con leche</div>
+                    <div className={styles.foodOptions}>Café con leche</div>
                     <div className={styles.StepperStateless}><Stepper minValue={0} maxValue={100} /></div>
                     <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={35} height={"auto"} /></div>
                 </div>

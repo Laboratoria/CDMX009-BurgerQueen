@@ -10,16 +10,15 @@
 
 .iconHeader{
     display: flex;
-    flex-direction: row;
-    font-size: 2.2em;
+    flex-direction: row;    
     align-items: center;
-    font-family: 'Amaranth', sans-serif;
 }
 
 .iconHeader h2{
-    padding-right: 170px;
+    padding-right: 150px;
     padding-left: 30px;
-
+    font-family: 'Amaranth', sans-serif;
+    font-size: 4em;
 } 
 
 

@@ -6,6 +6,7 @@ import styles from './styles.module.css';
 import ReusableTable from '../ReusableTable';
 
 import IconPrintAccount from '../../assets/imgs/pink-circle.png';
+import WaiterTable from '../ReusableTable/WaiterTable';
 
 const WaiterAccount = ({ client, setClient, order, setOrder }) => {
 
@@ -23,7 +24,7 @@ const WaiterAccount = ({ client, setClient, order, setOrder }) => {
                 </div>
 
                 <div className={styles.secondDivision}>
-                    <ReusableTable client={client} setClient={setClient} order={order} setOrder={setOrder} />
+                    <WaiterTable client={client} setClient={setClient} order={order} setOrder={setOrder} />
                 </div>
 
                 <div className={styles.thirdDivision}>
@@ -38,10 +39,13 @@ const WaiterAccount = ({ client, setClient, order, setOrder }) => {
             </div>
 
             <div className={styles.routeButtonsAccount}>
-                <Link to="kitchen">
+                <Link to="waiterregister">
                     <Boton text={"Regresar"} allstyles={"return"} />
                 </Link>
-                <Boton text={"Inicio"} allstyles={"returnTwo"} />
+
+                <Link to="waiter">
+                    <Boton text={"Inicio"} allstyles={"returnTwo"} />
+                </Link>
             </div>
         </div>
 

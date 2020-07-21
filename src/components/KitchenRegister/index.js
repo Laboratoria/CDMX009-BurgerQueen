@@ -31,12 +31,8 @@ const KitchenRegister = ({ client, setClient, order, setOrder }) => {
             />
 
             <div className={styles.butons}>
-                <Link to="waiter">
-                    <Boton text={"Regresar"} allstyles={"buttonOutWaiter"} />
-                </Link>
-
-                <Link to="waiteraccount">
-                    <Boton text={"Editar"} allstyles={"buttonOutWaiter"} />
+                <Link to="login">
+                    <Boton text={"Salir"} allstyles={"buttonOutWaiter"} />
                 </Link>
             </div>
         </Fragment>
