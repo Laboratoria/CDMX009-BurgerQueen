@@ -1,6 +1,9 @@
-body{
-    background-color: #FBE677;
+.bg{
+    background-color: rgb(19, 17, 17);
+    min-height: 100vh;
+    padding-top: 1px;
 }
+
 .table-user{
     margin-top: 5%;
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
@@ -18,7 +21,7 @@ body{
 }
 .add-btn{
     border: 1px solid #FFFFFF;
-    background-color: black;
+    background-color: #FBE677;
     box-sizing: border-box;
     border-radius: 5px;
     width: 170px;

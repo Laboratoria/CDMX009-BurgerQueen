@@ -43,8 +43,8 @@ function Dashboard({ datos, setDatos }) {
     return (
         <div>
             <div className='dashboard'>
-                <Navbar datos={datos} />
-                <div className='row'>
+                 <Navbar datos={datos} />
+               <div className='row'>
                     <Button setVisible={setVisible} visible={visible} datos={datos} setDatos={setDatos} />
                     <div className='col m6'>
                         {visible ? <BreakfastCards addOrder={addOrder} /> : <DinnerCards addOrder={addOrder} />}

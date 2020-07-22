@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import SignedInLinks from '../layout/SignedInLinks';
-import bqLogo from '../BQ/images/logo.svg';
+import bqLogo from '../../img/logo.svg';
 import 'firebase/auth';
 import './layout.css';
 import { firebase } from '../../firebase/firebaseConfig';
@@ -23,7 +23,7 @@ const Navbar = (props) => {
                 <nav className='nav-wrapper black bar browser-default'>
                     <div className=' left-align'>
                         <div data-target='slide-out' className='sidenav-trigger show-on-large'>
-                            <i className='material-icons nav-icon-menu'>menu</i>
+                            <i className='material-icons nav-icon-menu' onClick={() => console.log('navbar')}>menu</i>
                         </div>
                         <SignedInLinks />
                     </div>

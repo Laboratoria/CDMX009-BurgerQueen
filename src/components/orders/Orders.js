@@ -48,10 +48,10 @@ function Orders({ datos }) {
 
   return (
         <Fragment>
-            <div className='dashboard'>
-                <Navbar datos={datos} />
-                <div className='row order-h2'>
-                    <h2 className='white-text'>Mis ordenes</h2>
+            <div className='dash'>
+{/*                 <Navbar datos={datos} />
+ */}                <div className='row order-h2'>
+                    <h2 className='white-text'>Cocina</h2>
                 </div>
                 <div >
                     {

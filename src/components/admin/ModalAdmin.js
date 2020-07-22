@@ -60,7 +60,7 @@ const ModalAdmin = ( { user, setUser } ) => {
 
     return (
         <div className='container'>
-            <a className="waves-effect waves-light btn modal-trigger add-btn add-text" href="#modal1">Agregar</a>
+            <a className="waves-effect waves-light btn modal-trigger add-btn add-text black-text" href="#modal1">Agregar</a>
             <div >
                 <div id="modal1" className="modal black">
                     <div className="modal-content text-font">

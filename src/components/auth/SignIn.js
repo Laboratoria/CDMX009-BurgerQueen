@@ -1,12 +1,10 @@
 import React, { useState, useCallback } from 'react';
-
-import React, { useState, useCallback } from 'react';
 import { withRouter } from 'react-router-dom';
 import { firebase } from '../../firebase/firebaseConfig';
 import ModalAuth from '../auth/Modal';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import bqLogo from '../BQ/images/logo.svg';
+import bqLogo from '../../img/logo.svg';
 import '../auth/auth.css';
 
 const SignIn = (props) => {

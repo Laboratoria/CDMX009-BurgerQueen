@@ -37,14 +37,14 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="App">         
         <Switch>
           <Route path='/initial' component={BurgerQueen} />
-          <Route path='/signin' component={SignIn} />
+          <Route path='/login' component={SignIn} />
           <Route path='/admin' component={Admin} />
           <Route exact path='/' render={() => <Dashboard datos={datos} setDatos={setDatos} />} />
-          <Route path='/orders' render={() => <Orders datos={datos} setDatos={setDatos} />} />
-          <Route path='/admon' component={AllOrders} />
+          <Route path='/kitchen' render={() => <Orders datos={datos} setDatos={setDatos} />} />
+          <Route path='/orders' component={AllOrders} />
         </Switch>
       </div>
     </BrowserRouter>
