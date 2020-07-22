@@ -5,7 +5,7 @@ const FoodItem = ({ item, id, price, quantity, addOrder }) => (
     <div className='col m6 space'>
         <div className='card general' onClick={() => { addOrder({ item, price, id, quantity }); }}>
             <div className="card-image row food-image">
-                <img src={`/img/products/${id}.png`} className='col m6 img-icon item' alt='food-img' />
+                <img src={require('../../../img/products/1.png')} className='col m6 img-icon item' alt='food-img' />
             </div>
             <div className='card-content white-text center-align'>
                 <div>

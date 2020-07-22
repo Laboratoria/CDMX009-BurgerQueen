@@ -15,8 +15,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-toastify": "^6.0.8",
-    "reactfire": "^2.0.0-alpha.3",
-    "serve": "^11.3.2"
+    "reactfire": "^2.0.0-alpha.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -38,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "serve": "^11.3.2"
   }
 }
