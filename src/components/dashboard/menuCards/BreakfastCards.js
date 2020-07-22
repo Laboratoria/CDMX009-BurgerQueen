@@ -58,39 +58,3 @@ const BreakfastMenu = ({ addOrder }) => {
 };
 
 export default BreakfastMenu;
-
-/* const BreakfastMenu = ({ addOrder }) => {
-
-    const [desayunos, setDesayunos] = useState([]);
-
-    useEffect(() => {
-        const breakfastMenuUrl = 'https://v2-api.sheety.co/08037a6e719e10abd51ee7fe17bba593/burgerQueenMenu/desayunos'
-        fetch(breakfastMenuUrl)
-            .then(res => res.json())
-            .then(data => {
-                setDesayunos(data.desayunos);
-                //console.log(data.desayunos)
-            })
-    }, [desayunos, setDesayunos]
-    );
-
-    return (
-
-        <div className='scroll-cards'>
-            <ul>
-                {desayunos.map((desayuno) => (
-                    <FoodItem
-                        key={desayuno.id}
-                        id={desayuno.id}
-                        item={desayuno.item}
-                        price={desayuno.price}
-                        image={desayuno.image}
-                        addOrder={addOrder}
-                    />
-                ))}
-            </ul>
-        </div >
-    );
-};
-
-export default BreakfastMenu; */

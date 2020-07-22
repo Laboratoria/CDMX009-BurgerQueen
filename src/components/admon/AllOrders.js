@@ -1,12 +1,35 @@
-import React from 'react';
-import { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
+import { firebase } from '../../firebase/firebaseConfig';
 import Navbar from '../layout/Navbar';
-import { useOrder } from '../orders/Orders';
 import './admon.css';
 
+export function useAllOrder() {
+    const [allOrder, setAllOrder] = useState([]);
+
+    const date = new Date;
+    const currentDay = [date.getDate(), date.getMonth(), date.getFullYear()].join('/');
+    console.log('ese es el dia', currentDay);
+
+    useEffect(() => {
+        firebase
+            .firestore()
+            .collection('orders')
+            .orderBy('hour', 'desc')
+            .limit(30)
+            .onSnapshot((snapshot) => {
+                const newOrder = snapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+                setAllOrder(newOrder);
+            });
+    }, []);
+    return allOrder;
+}
+
 function AllOrders() {
-    const orders = useOrder();
-    console.log('esto arroja el hook', orders);
+    const orders = useAllOrder();
+
     return (
         <Fragment>
             <div className='admon-bkg'>
@@ -36,7 +59,6 @@ function AllOrders() {
                             </tr>
                         </thead>
                         {orders.map((order) =>
-
                             <tbody key={order.id}>
                                 <tr>
                                     <td className='title-table'>{order.date}</td>
