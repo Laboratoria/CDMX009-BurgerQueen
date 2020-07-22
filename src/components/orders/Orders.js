@@ -48,10 +48,10 @@ function Orders({ datos }) {
 
   return (
         <Fragment>
-            <div className='dashboard'>
-                <Navbar datos={datos} />
-                <div className='row order-h2'>
-                    <h2 className='white-text'>Mis ordenes</h2>
+            <div className='dash'>
+{/*                 <Navbar datos={datos} />
+ */}                <div className='row order-h2'>
+                    <h2 className='white-text'>Cocina</h2>
                 </div>
                 <div >
                     {
@@ -69,8 +69,6 @@ function Orders({ datos }) {
                                         </div>
                                         <div>
                                         <div className='list-products scroll'>
-
-
                                         {item.order.map(a => (                                    
                                                 <form action="#">
                                                     <p className='chosen-item'>
@@ -84,7 +82,6 @@ function Orders({ datos }) {
                                                 </form>
                                            ))  }
                                             </div>
-
                                         </div>
                                         <div>
                                             <button className="waves-effect waves-light btn modal-trigger" href="#modal1" onClick={() => finishedOrder(item)} >Finalizar</button>

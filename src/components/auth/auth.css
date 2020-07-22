@@ -1,12 +1,13 @@
 .initial-image{
-  background-image: url('../BQ/images/initial-image.jpg');
   background-repeat: no-repeat;
   min-height: 100vh;
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
 }
-
+/* body{
+  background-image: url('../../img/initial-image.jpg');
+} */
 .nav-icon-menu{
     margin-left: 30px;
   }

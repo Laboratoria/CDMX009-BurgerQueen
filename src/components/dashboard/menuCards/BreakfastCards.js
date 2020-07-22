@@ -71,13 +71,14 @@ export default BreakfastMenu;
                 setDesayunos(data.desayunos);
                 //console.log(data.desayunos)
             })
-    }, [desayunos, setDesayunos]
+    }, []
     );
 
     return (
 
         <div className='scroll-cards'>
             <ul>
+                <li>
                 {desayunos.map((desayuno) => (
                     <FoodItem
                         key={desayuno.id}
@@ -88,6 +89,7 @@ export default BreakfastMenu;
                         addOrder={addOrder}
                     />
                 ))}
+                </li>
             </ul>
         </div >
     );

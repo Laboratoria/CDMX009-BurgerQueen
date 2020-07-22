@@ -24,13 +24,13 @@ const Admin = () => {
     }, [])
 
     return (
-        <div>
-            <Navbar />
-            <div className='container'>
-                <h1 className='title-admin'>Administrar accesos</h1>
+        <div className='bg'>
+             <Navbar />
+           <div className='container'>
+                <h1 className='title-admin white-text'>Administrar accesos</h1>
                 <div className='row'>
-                    <div className=' table-user'>
-                        <table className='black-text striped'>
+                    <div className=' table-user white'>
+                        <table className='black-text'>
                             <thead>
                                 <tr>
                                     <th>Nombre</th>

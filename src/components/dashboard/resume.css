@@ -46,3 +46,14 @@ line-height: 47px;
     font-size: 23px !important;
     margin-bottom: 5px;
 }
+.btn-quantity{
+    margin-top: 15px;
+}
+.delete-btn{
+    margin-top: 17px;
+}
+.btn-add{
+    background-color: none;
+    background: none;
+    border: none;
+}

@@ -39,6 +39,7 @@ const DinnerCards = ({ addOrder }) => {
 
         <div className='scroll-cards'>
             <ul>
+                <li>
                 {dinner.map((comida) => (
                     <FoodItem
                         key={comida.id}
@@ -49,6 +50,7 @@ const DinnerCards = ({ addOrder }) => {
                         addOrder={addOrder}
                     />
                 ))}
+                </li>
             </ul>
         </div >
     );
