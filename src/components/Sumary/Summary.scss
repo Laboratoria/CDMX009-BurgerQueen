@@ -1,0 +1,62 @@
+$white: #FDFFFC;
+$light-blue : #10ABE0;
+$orange : #FFB400;
+$red: #FC6471;
+$color-header: #190B54;
+$pink: #EB60DD;
+.container-order{
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: 1.6fr 1.8fr;
+    height: 600px;
+    margin: 10px ;
+    justify-items: center;
+    
+    //Order Summary
+        .container-summary{
+        justify-self: start;
+        width: 90%;
+        height: 100%;
+        overflow: scroll;
+        display: grid;
+        grid-template-columns: 2fr 0.3fr 0.6fr 0.8fr 0.4fr;
+        grid-template-rows: repeat(10,90px);
+        justify-items: center;
+        align-items: center;
+        background-color: $color-header;
+        border-style: solid;
+        border-color: $light-blue;
+        border-width: 7px;
+        border-radius: 20px;
+        font-size: 25px;
+        text-align: center;
+
+        p{
+            margin: 0;
+        }
+        .additions{
+            font-size: 25px;
+            color:#9987F2;
+        }
+        
+            .container-arrow-increment{
+                i{
+                    font-size: 60px;
+                    
+                }
+            }
+
+        .icon-delete{
+            color: $red;
+        }
+        }
+       
+        .container-summary::-webkit-scrollbar {
+            width: 9px;
+        }
+        
+        .container-summary::-webkit-scrollbar-thumb {
+            background: $pink;
+            border-radius: 8px;
+        } 
+    }

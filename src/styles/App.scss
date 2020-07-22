@@ -1,0 +1,29 @@
+//Header
+$general-font: 'Nunito', sans-serif;
+$font-header: 'Pacifico', cursive;
+$width-header : 100%;
+$height-header: 85px;
+$font-size-header : 40px;
+$white: #FDFFFC;
+$color-header: #0A2463;
+
+body{
+  margin: 0px;
+  font-family: $general-font;
+}
+
+
+.header {
+  width: $width-header;
+    height: $height-header;
+    background-color: $color-header;
+    font-family: $font-header;
+    font-size: $font-size-header;
+    color: $white;
+    text-align: center;
+    p{
+      margin-top: 0;
+    
+    }
+}
+

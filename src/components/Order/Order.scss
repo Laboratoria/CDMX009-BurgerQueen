@@ -1,0 +1,274 @@
+//Header
+$general-font: 'Heebo', sans-serif;
+$font-header: 'Orbitron', sans-serif;
+$width-header : 100%;
+$height-header: 85px;
+$font-size-header : 80px;
+$white: #FDFFFC;
+$color-header: #170B48;
+
+//View Title
+$font-title: 30px;
+$light-blue : #10ABE0;
+$menu-blue:#DFF8EB;
+
+//Btns
+
+$blue : #3824A0;
+$orange : #FFB400;
+$green: #7EE166;
+$red: #FC6471;
+$btn-heigth: 70px;
+$font-size-btn: 30px;
+$margin-btn: 30px;
+$btn-radius: 20px;
+
+@mixin select {
+    font-size: 30px;
+    height: 50px;
+    background-color: $color-header;
+    border-color: $blue;
+    border-radius: 15px;
+    border-width: 5px;
+    color: $white;
+}
+@mixin btn {
+    border-style: solid;
+    border-color: $blue;
+    background-color: $blue;
+    font-family: $general-font;
+    margin: $margin-btn;
+    height: $btn-heigth;
+    width: 25%;
+    border-radius: $btn-radius;
+    font-size: $font-size-btn;
+    color: $white;
+}
+
+@mixin btn-cancel {
+    border-style: solid;
+    border-radius: $btn-radius;
+    border-width: 7px;
+    font-family: $general-font;
+    color: $white;
+    margin: $margin-btn;
+    height: $btn-heigth;
+    width: 20%;
+    font-size: $font-size-btn;
+    background-color: $color-header;
+}
+
+body{
+  margin: 0px;
+  font-family: $general-font;
+  color: $white;
+}
+
+
+.header-order {
+    padding-top: 40px;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 85px;
+    justify-items: center;
+    width: $width-header;
+    height: $height-header;
+    background-color: $color-header;
+    font-family:$font-header;
+    font-style: normal;
+        font-weight: bold;
+    font-size: $font-size-header;
+    color: $white;
+    a{
+        text-decoration: none;
+
+        p{
+            margin-top: 0;
+            color: $white;
+          }
+    }
+   
+    select{
+       @include select;
+       width: 60%;
+        align-self: center;
+       
+    }
+    i{
+        align-self: end;
+        color: #EB60DD;
+        font-size: 50px;
+    }
+}
+
+
+
+.error-form{
+    border-style: solid;
+    border-color: $red;
+    text-align: center;
+    font-size: 20px;
+    color: $red;       
+}
+
+.container-view{
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+//Selection table, client name
+    .container-client{
+        margin-bottom: 25px;
+        font-size: 25px;
+        
+        input{
+           border-style: solid;
+           border-color: $blue;
+           border-width: 5px;
+           border-radius: 15px;
+           background-color: $color-header;
+           width: 20%;
+           height: 35px;
+           font-size: 30px;
+           color: $white;
+
+          
+        }
+    }
+   
+    .container-tables-summary{
+        height: 90px;
+        display: flex;
+        justify-content: space-between;
+        margin-right: 70px;
+        .container-tables{
+            margin-bottom: 25px;
+            margin-bottom: 25px;
+            font-size: 25px;
+    
+            select{
+           @include select;
+           width: 100%;
+            }
+        }
+
+        .title-summary{
+            display: flex;
+           width: 46%;
+           justify-content: center;
+        }
+        p{
+            margin: 0;
+            font-size: 30px;
+        }
+       
+    }
+
+    
+    //Btns menu
+
+    .container-btns-title{
+        height: 80px;
+        display: flex;
+        align-items: flex-end;
+
+        .container-btns-menu{
+            width: 600px;
+           margin-right: 5px;
+            display: flex;
+            justify-content: center;
+
+            .btn-breakfast{
+                @include btn;
+            }
+        
+            .btn-lunch{
+                @include btn;
+            }
+
+            .btn-select{
+                border-style: solid;
+                border-color: #EB60DD;
+                border-width: 08px;
+            }
+            .btn-no-select{
+                background-color: #9987F2;
+            }
+    
+        }
+
+        
+        .container-titles-summary{
+            /* border-color: $light-blue $light-blue transparent $light-blue;
+            border-style: solid;
+            border-width: 7px;
+            border-radius: 20px; */
+            padding: 15px 15px 0px 15px;
+            display: flex;
+            width: 46%;
+            height: 50px;
+            display: grid;
+            grid-template-columns: 1.8fr 0.8fr 0.8fr 0.3fr;
+           
+
+            .title-summary{
+                display: grid;
+                justify-items: center;
+                align-items: center;
+                grid-template-rows: 50px;
+                width: 100%;
+                height: 50px;
+                background-color: $light-blue;
+                font-size: 25px;
+                color: black;
+            }
+             .title-dish{
+                border-radius: 20px 0px 0px 20px;
+            }
+             .title-empty{
+                border-radius: 0px 20px 20px 0px;
+            }
+        }
+
+        
+    }
+    
+
+    .container-btns-total{
+        display: flex;
+       justify-content: flex-end;
+       margin-right: 25px;
+
+        .btn-send-kitchen{
+            @include btn-cancel;
+            border-color: $green;
+            
+        }
+
+        .btn-cancel-order{
+            @include btn-cancel;
+            border-color: $red;
+            
+           
+        }
+    }
+    
+    @media (min-width:1500px) {
+        .container-titles-summary{
+            /* border-color: $light-blue $light-blue transparent $light-blue;
+            border-style: solid;
+            border-width: 7px;
+            border-radius: 20px; */
+            padding: 15px 15px 0px 15px;
+            display: flex;
+            width: 46%;
+            height: 50px;
+            display: grid;
+            grid-template-columns: 1.8fr 0.8fr 0.8fr 0.3fr;
+            margin-left: 200px;
+        }
+    }
+   
+}
+
+
+

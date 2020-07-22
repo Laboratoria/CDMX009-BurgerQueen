@@ -1,0 +1,93 @@
+$color-header: #190B54;
+$green: #6DCE55;
+$btn-heigth: 60px;
+$font-size-btn: 25px;
+$margin-btn: 30px;
+$btn-radius: 20px;
+$pink:#EB60DD;
+
+@mixin btn-accept {
+    border-style: solid;
+    margin: $margin-btn;
+    height: $btn-heigth;
+    width: 30%;
+    border-radius: $btn-radius;
+    font-size: $font-size-btn;
+}
+
+.modal-container {
+    background-color: rgba(0, 0, 0, .8);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-box {
+    width: 500px;
+    align-self: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: $color-header;
+    border-radius: 6px;
+    border-style: solid;
+    border-radius: 25px;
+    border-color: $pink;
+    border-width: 7px;
+
+    a{
+        display: flex;
+        justify-content: flex-end;
+
+        .icon-close{
+            font-size: 40px;
+            color:white;
+        }
+    }
+    
+
+    h1{
+        margin-top: 0;
+        text-align: center;
+        }
+
+    .cheks{ 
+        margin: 30px;
+        display: grid;
+        grid-template-columns: 0.2fr 2.8fr;
+        justify-content: center;
+        align-items: center;
+
+    
+        label{
+            margin: 10px;
+            font-size: 30px;
+        }
+        input{
+            width: 30px;
+            height: 40px;
+            margin-right: 10px;
+        }
+    }
+
+
+    
+    .container-btn-accept{
+        display: flex;
+        justify-content: center;
+
+        .btn-accept{
+            @include btn-accept;
+            color: white;
+            background-color: $color-header;
+            border-width: 7px;
+            border-color: $green;
+        }
+    }
+    
+}
