@@ -49,3 +49,12 @@
 #modal1 > div{
     display: block;
 }
+
+.end-order{
+    display: flex;
+    flex-direction: column;
+}
+
+.opt{
+    color: black !important;
+}

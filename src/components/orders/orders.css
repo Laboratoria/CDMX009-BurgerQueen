@@ -22,10 +22,11 @@
 }
 
 .list-products{
-    height: 310px;
+    height: 275px;
 }
+
 .list-products::-webkit-scrollbar {
-    width: 10px;
+    width: 2%;
 }
 
 .list-products::-webkit-scrollbar-thumb{
@@ -37,7 +38,11 @@
     display: flex !important;
     flex-wrap: wrap;
     justify-content: left;
-    margin: 0px 40px 0px 50px;
+    margin: 0 4%;
+    padding: 0% 0% 4% 0%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .table-info{
@@ -49,39 +54,33 @@
     margin: 3px;
 }
 
-
-.resume-status{
-    display: flex !important;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    font-weight: bolder;
-    color: blue;
-    margin-left: 3px;
-}
-
-.status{
-    width: 30px;
-}
-
 .chosen-item{
     margin: 0px;
     padding: 0px 20px;
-    line-height: 35px;
+    line-height: 30px;
+    justify-content: space-between;
+
 }
 
 .item{
     display: flex;
     justify-content: space-between;
+    width: 100% !important;
+    height: 40px;
 }
 
 .num-item{
-margin: 0px;
-font-size: 14px;
-margin-top: 2px;
-}
+    margin: 0px;
+    font-size: 14px;
+    margin-top: 2px;
+    }
 
 .text-item{
     padding-left: 25px !important;
+    line-height: 100% !important;
+    display: flex;
+    display: flex !important;
+    align-items: center;
 }
 
 .list-status{
@@ -91,4 +90,25 @@ margin-top: 2px;
 
 .edit-image{
     width: 15px;
+}
+
+.mod-edit{
+    background-color: transparent;
+    border-style: none;
+    width: 25%;
+    box-shadow: none;
+}
+
+.mod-edit:hover{
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.end-btn{
+    background-color: orange;
+}
+
+.end-btn:hover{
+    background-color: orange;
+    box-shadow: none;
 }

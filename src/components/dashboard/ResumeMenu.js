@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './resume.css';
 
-const ResumeMenu = ({ addOrder, datos, totalPrice, deleteOrder }) => {
+const ResumeMenu = ({ addOrder, datos, deleteOrder }) => {
   let data = datos.productos;
 
   return (

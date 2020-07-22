@@ -22,12 +22,12 @@ const ClientInfoForm = ({ datos, setDatos }) => {
 
     const sendData = async (e) => {
         e.preventDefault();
-        if (datos.productos < 1 ){
+        if (datos.productos < 1) {
             toast.error('Ingresa productos a la orden', {
                 className: 'toast-error center-align',
                 hideProgressBar: true
             });
-            return
+            return;
         }
         if (!datos.numeroMesa.trim()) {
             toast.error('Ingresa número de mesa', {
@@ -51,8 +51,8 @@ const ClientInfoForm = ({ datos, setDatos }) => {
                 order: datos.productos,
                 payment: '',
                 total: datos.total,
-                date: hour,
-                hour: date,
+                date: date,
+                hour: hour,
                 waitTime: 0,
             };
 

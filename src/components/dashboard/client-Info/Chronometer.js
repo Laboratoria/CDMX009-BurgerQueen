@@ -32,11 +32,6 @@ const Chronometer = () => {
         }
     };
 
-    const onClearBtnClick = () => {
-        clearInterval(intervalRef.current);
-        setState({ isCounting: false, total: 0 });
-    };
-
     return (
         <section>
             <div className="timer">{minutes} : {Math.floor(total / 1000)} ms</div>
@@ -46,10 +41,6 @@ const Chronometer = () => {
             >
                 {isCounting ? 'STOP' : (total !== 0 ? 'CONTINUE' : 'START')}
             </button>
-
-            <button className="button" onClick={onClearBtnClick}>
-                CLEAR
-        </button>
         </section>
     );
 };

@@ -12,8 +12,6 @@ function Dashboard({ datos, setDatos }) {
     const calculateTotal = (items = []) => items
         .reduce((acc, item) => console.log('calculate', acc, item) || (acc + item.price * item.quantity), 0);
 
-    const totalPrice = calculateTotal();
-
     const addOrder = (product, quantity = 1) => {
         if (datos.productos.find(item => item.id === product.id)) {
             const productos = datos.productos
@@ -50,7 +48,7 @@ function Dashboard({ datos, setDatos }) {
                         {visible ? <BreakfastCards addOrder={addOrder} /> : <DinnerCards addOrder={addOrder} />}
                     </div>
                     <div className='col s12 m5 offset-m0'>
-                        <ResumeMenu addOrder={addOrder} datos={datos} setDatos={setDatos} deleteOrder={deleteOrder} totalPrice={totalPrice} />
+                        <ResumeMenu addOrder={addOrder} datos={datos} setDatos={setDatos} deleteOrder={deleteOrder} />
                     </div>
                 </div>
             </div>
