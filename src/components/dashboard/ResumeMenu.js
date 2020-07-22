@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './resume.css';
 
 const ResumeMenu = ({ addOrder, datos, deleteOrder }) => {
@@ -19,14 +19,24 @@ const ResumeMenu = ({ addOrder, datos, deleteOrder }) => {
                   data.map((a, index) => (
                     <div className='order-info' key={index}>
                       <p className='col m7'>{a.item}</p>
-                      <div>
-                        <button type='button' onClick={() => addOrder(a, a.quantity + 1)}>+</button>
-                        <p className='col m1'>{a.quantity}</p>
-                        <button type='button' onClick={() => addOrder(a, a.quantity - 1)}>-</button>
-
+                      <div className='red'>
+                        <div className='col m1'>
+                          <span class="material-icons btn-quantity" onClick={() => addOrder(a, a.quantity + 1)}>add</span>
+                        </div>
+                        <div className='col m1'>
+                          <p>{a.quantity}</p>
+                        </div>
+                        <div className=' col m1'>
+                          {
+                            a.quantity > 1 ? (
+                              <span class="material-icons btn-quantity" onClick={() => addOrder(a, a.quantity - 1)}>remove</span>
+                            ) : null
+                          }
+                        </div>
                       </div>
                       <p className='col m1'>${a.price}</p>
-                      <p className="material-icons resume-icon col m2 right" onClick={() => { deleteOrder(a.id); }}>delete</p></div>
+                      <p className="material-icons resume-icon col m1 right delete-btn" onClick={() => { deleteOrder(a.id); }}>delete</p>
+                    </div>
                   )))
             }
           </div>

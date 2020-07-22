@@ -4,7 +4,6 @@ import DinnerCards from '../dashboard/menuCards/DinnerCards';
 import ResumeMenu from '../dashboard/ResumeMenu';
 import Button from '../dashboard/Button';
 import Navbar from '../layout/Navbar';
-import { firebase } from '../../firebase/firebaseConfig';
 
 function Dashboard({ datos, setDatos }) {
 
@@ -42,8 +41,8 @@ function Dashboard({ datos, setDatos }) {
     return (
         <div>
             <div className='dashboard'>
-                <Navbar datos={datos} />
-                <div className='row'>
+                 <Navbar datos={datos} />
+               <div className='row'>
                     <Button setVisible={setVisible} visible={visible} datos={datos} setDatos={setDatos} />
                     <div className='col m6'>
                         {visible ? <BreakfastCards addOrder={addOrder} /> : <DinnerCards addOrder={addOrder} />}

@@ -1,42 +1,19 @@
 .initial-image{
-    background-image: url('./images/initial-image.jpg');
+    background-image: url('../../img/initial-image.jpg');
     background-repeat: no-repeat;
     min-height: 100vh;
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
 }
-
 .logo{
-    width: 280px;
-    position: relative;
-    left: 685px;
-    top: 345px;
-}
-
-.letter-b{
-    font-size: 115px;
-    font-weight: bold;
-    position: absolute;
-    left: 360px;
-    top: 365px;
-    padding: 0px;
-    font-family: 'Raleway';
-}
-
-.letter-q{
-    font-size: 115px;
-    font-weight: bold;
-    padding: 0px;
-    position: absolute;
-    font-family: 'Raleway';
-    left: 435px;
-    top: 480px;
+    width: 610px;
+    height: 300px;
+    margin-top: 350px;
+    margin-left: 330px;
 }
 
 .btn-login{
-    margin: 0px;
-    padding: 0px;
     background-color: rgba(0,0,0,0.1);
     color: white;
     border-radius: 5px;
@@ -45,7 +22,6 @@
     height: 50px;
     font-family: 'Raleway';
     font-size: 25px;
+    margin-right: 90px;
     position: relative;
-    left: 525px;
-    top: 410px;
 }

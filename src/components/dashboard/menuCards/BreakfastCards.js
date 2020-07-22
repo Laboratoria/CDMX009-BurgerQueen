@@ -41,6 +41,7 @@ const BreakfastMenu = ({ addOrder }) => {
 
         <div className='scroll-cards'>
             <ul>
+                <li>
                 {desayunos.map((desayuno) => (
                     <FoodItem
                         key={desayuno.id}
@@ -52,9 +53,10 @@ const BreakfastMenu = ({ addOrder }) => {
                         addOrder={addOrder}
                     />
                 ))}
+                </li>
             </ul>
         </div >
     );
 };
-
 export default BreakfastMenu;
+

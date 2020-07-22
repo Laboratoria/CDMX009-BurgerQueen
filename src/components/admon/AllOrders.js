@@ -32,23 +32,24 @@ function AllOrders() {
 
     return (
         <Fragment>
+            <Navbar />
             <div className='admon-bkg'>
-                <Navbar />
-                <div className='row order-h2'>
-                    <h2 className='white-text'>Ordenes</h2>
-                </div>
+                <div className='container'>
+                {/*                 <Navbar />
+ */}                        <h1 className='title-admin white-text'>Ordenes Totales</h1>
+
                 <div>
-                    <p className='white-text'>Filtrar las ordernes por:</p>
                     <div class="input-field col s12">
                         <select>
-                            <option value="" disabled selected>Elige una opción</option>
+                            <option value="" disabled selected>Filtrar ordenes:</option>
                             <option value="1">Mesero</option>
                             <option value="2">Fecha</option>
                         </select>
                     </div>
                 </div>
+                <div className='table-elements'>
                 <div className='table-container'>
-                    <table>
+                    <table className='table-elements'>
                         <thead>
                             <tr className='header-table'>
                                 <th className='title-table'>Fecha y hora</th>
@@ -72,6 +73,8 @@ function AllOrders() {
                             </tbody>
                         )}
                     </table>
+                </div>
+                </div>
                 </div>
             </div>
         </Fragment>

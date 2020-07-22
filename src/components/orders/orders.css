@@ -1,3 +1,14 @@
+.dash{
+    background-image: url('https://images.unsplash.com/photo-1561758033-7e924f619b47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80');
+    /*     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),  url('https://images.unsplash.com/photo-1561758033-7e924f619b47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80'); */
+        background-repeat: no-repeat;
+        min-height: 91.5vh;
+        background-attachment: fixed;
+        background-position: center center;
+        background-size: cover; 
+        padding-top: 1px;
+}
+
 .order-h2{
     margin: 60px 0px 20px 70px;
 }
