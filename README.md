@@ -1,6 +1,8 @@
-# Burger Queen
+# Burguer Queen
 
 Aplicación creada para un pequeño restaurante de hamburguesas, el cual requiere tomar pedidos usando una tablet y enviarlos a cocina para que se preparen de manera ordenada y eficiente.
+
+Proyecto propuesto por Laboratoria, creado con React, Html5, Sass y como backend, Firebase. Desarrollado por [Lizeth Rivera](https://github.com/LizethRivera04) y [Elizabeth Flores](https://github.com/ElizaFlores11), teniendo como principales retos el aprendizaje de un framework (React), generar una PWA y mantener datos sin conexión.
 
 
 ## Características
@@ -35,6 +37,19 @@ Aplicación creada para un pequeño restaurante de hamburguesas, el cual requier
 ## Nota
 
 Para visualizar el proyecto puedes ingresar al siguiente enlace https://burguerqueen-f6391.web.app/ y probarlo en una tablet, usando el simulador de Chrome o en modo desktop.
+
+En caso de clonar el repositorio, necesitarás tener mínimo Node v.8.10 y npm v.5.6 instalados en tu computadora y ejecutar los siguientes comandos:
+
+##### `npm start`
+Ejecuta la aplicación en modo de desarrollo, al abrir http://localhost:3000 podrás visualizarlo en el navegador.
+
+##### `npm test`
+Se ejecutarán los test relacionados con los últimos archivos modificados.
+
+##### `npm run build`
+Corre este comando cuando estés listo para desplegar la app a producción, se creará una carpeta build que contendrá una compilación optimizada del proyecto
+
+
 
 ![Principal](img/BQ1.JPG)
 ![Waiter1](img/BQ3.JPG)

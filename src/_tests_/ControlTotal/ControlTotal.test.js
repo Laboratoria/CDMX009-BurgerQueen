@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import ControlTotal from './ControlTotal'
+import ControlTotal from '../../components/ControlTotal/ControlTotal'
 
 
 let props = {

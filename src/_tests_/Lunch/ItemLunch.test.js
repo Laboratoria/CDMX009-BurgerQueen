@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import ItemLunch from './ItemLunch'
+import ItemLunch from '../../components/Lunch/ItemLunch'
 
 
 it('should render image ', () => {

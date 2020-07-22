@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, fireEvent, getByTestId } from '@testing-library/react'
-import Summary from './Summary'
-import Extras from './Extras'
+import Summary from '../../components/Sumary/Summary'
+import Extras from '../../components/Sumary/Extras'
 
 
 let props = {
@@ -41,6 +41,8 @@ it('should not check de input', () => {
     expect(checkbox.checked).toEqual(false)
 })
 
+
+
 /* it('should delete product', () => {
     const { getAllByTestId, getByText, debug } = render(<Summary  {...props} />)
     const iconDelete = getAllByTestId('iconDelete')
@@ -50,25 +52,6 @@ it('should not check de input', () => {
     //expect(getByText('Café americano')).not.toBeInTheDocument()
 }) */
 
-/* it('should check de input', () => {
-    let props = {
-        order: {
-            items: [
-                { id: 5, idItem: 0, dish: "Hamburguesa simple", price: 10, addittions: [], quantity: 1 },
-                { id: 6, idItem: 0, dish: "Hamburguesa doble", price: 15, addittions: [], quantity: 1 }]
-        },
-        setOrder: jest.fn(),
-        breakfasts: [
-            { id: 1, dish: "Café con leche", price: 7, quantity: 1 },
-            { id: 2, dish: "Café americano", price: 5, quantity: 1 }],
-        lunchs: [{ id: 7, dish: "Papas fritas", price: 5, quantity: 1 },
-        { id: 8, dish: "Aros de cebolla", price: 5, quantity: 1 }]
-    }
-    const { getByTestId, debug } = render(<Extras {...props} />)
-    const checkbox = getByTestId("chicken")
-    fireEvent.click(checkbox)
-    debug()
-    expect(checkbox.checked).toEqual(true)
-})  */
+
 
 

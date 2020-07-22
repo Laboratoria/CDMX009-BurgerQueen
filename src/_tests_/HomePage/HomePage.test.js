@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import HomePage from './HomePage'
+import HomePage from '../../components/HomePage/HomePage'
 
 it('should render an image', () => {
     const { queryByRole, debug } = render(<HomePage />)

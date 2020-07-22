@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
-import Order from './Order'
+import Order from '../../components/Order/Order'
 
 describe('should render Order', () => {
     let props = {
