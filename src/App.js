@@ -7,17 +7,17 @@ import {
   //Link
 } from "react-router-dom";
 
+import RestDay from './components/RestDay';
+import Kitchen from './components/Kitchen';
+import BreakFast from './components/BreakFast';
 import BackgLogin from './components/BackgLogin';
 import InitWaiters from './components/InitWaiter';
-import BreakFast from './components/BreakFast';
-import RestDay from './components/RestDay';
+import WaiterAccount from './components/WaiterAccount';
 import WaiterRegister from './components/WaiterRegister';
 import KitchenRegister from './components/KitchenRegister';
-import WaiterAccount from './components/WaiterAccount';
-import Kitchen from './components/Kitchen';
-//import ReausableTable from './components/ReusableTable';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import 'react-bootstrap/dist/react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 
@@ -28,13 +28,69 @@ function App() {
     namewaiter: '',
     nameclient: '',
     numtable: '',
-    numpeople: ''
+    numpeople: '',
+    items: {
+      id: 1,
+      name: 'Cafe Americano',
+      price: 5.00,
+      total: 125.00
+    },
+
+    items: {
+      id: 2,
+      name: 'Cafe con Leche',
+      price: 7.00,
+      total: 125.00
+    },
+    items: {
+      id: 3,
+      name: 'Sandwich',
+      price: 7.00,
+      total: 125.00
+    },
+    items: {
+      id: 4,
+      name: 'Jugo',
+      price: 10.00,
+      total: 125.00
+    }
   }
 
-  //funcion para capturar y controlar el estado de los datos de los inputs(cliente) y la orden.
+  /*   const addItem = (product, quantity = 1) => {
+  } /
+
+  // forma declarativa 
+/   const calculateTotal = (items) => items.reduce((total, item) => total + item.quantity * item.price, 0) */
+  // forma imperativa
+  // const calculateTotal = (items) => 
+  // {
+  //   let total = 0
+
+  //   items.forEach(item => {
+  //     total = total + item.quantity * item.price
+  //   })
+
+  //   return total;
+  // }
+
+
+//FUNCION PARA BORRAR ITEMS
+/*     const deleteItem = (productId) => {
+    const items = order.items.filter(item => item.id !== productId)
+    setOrder({ ...order, items, total: calculateTotal(items) })
+  } */
+
+
+//funcion para capturar y controlar el estado de los datos de los inputs(cliente) y la orden.
   const [client, setClient] = useState(initialDataClient);
 
-  const [order, setOrder] = useState(0);
+  const [order, setOrder] = useState({
+    items:[]
+  });
+
+  let addItemToOrder = (product) => {
+    setOrder({...order, items:[...order.items, product]})
+  }
 
 
   return (

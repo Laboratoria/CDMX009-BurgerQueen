@@ -13,7 +13,7 @@ import styles from './styles.module.css';
 import ReusableTable from '../ReusableTable';
 
 
-const BreakFast = ({ client, setClient, order, setOrder, menubreak, setMenuBreak }) => {
+const BreakFast = ({ client, setClient, order, setOrder }) => {
 
 /*     const handleButtonsBreak = (e) => {  //VA EN EL ONCHANGE
         const { name, value } = e.target;
@@ -23,11 +23,7 @@ const BreakFast = ({ client, setClient, order, setOrder, menubreak, setMenuBreak
 
     const handleOrderBreak = (e) => {  //VA EN EL ONCLICK
         e.preventDefault();
-        console.log('Agregar cafe');
-        db.collection('orders').add(menubreak)
-          .then(() => {
-            console.log('orden guardada en Firestore exitosamente')
-          });
+        console.log('Agrega Platillo Breakfast');
     }
 
     return (
@@ -89,8 +85,7 @@ const BreakFast = ({ client, setClient, order, setOrder, menubreak, setMenuBreak
 
                 <div className={styles.order}>
                     
-                        <ReusableTable client={client} setClient={setClient} order={order} setOrder={setOrder} 
-                        menubreak={menubreak} setMenuBreak={setMenuBreak}
+                        <ReusableTable client={client} setClient={setClient} order={order} setOrder={setOrder}
                         />
                     
                 </div>
