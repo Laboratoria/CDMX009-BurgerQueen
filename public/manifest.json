@@ -1,0 +1,31 @@
+{
+  "short_name": "Burguer Queen",
+  "name": "Burguer Queen ",
+  "icons": [
+    {
+      "src": "maskable_iconQueen.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logQueen.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "logQueen192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logQueen512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#3824A0",
+  "background_color": "#190B54"
+}

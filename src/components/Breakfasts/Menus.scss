@@ -1,0 +1,44 @@
+$menu-blue:#190B54;
+$pink: #EB60DD;
+//Menu
+.container-menu{
+    display: grid;
+    column-gap: 20px;
+    row-gap: 30px;
+    grid-template-columns: repeat(2, 250px);
+    grid-template-rows: repeat(3,245px);
+    height: 100%;
+    overflow: scroll;
+    
+    
+    .dish{
+        height: 100%;
+        background-color: $menu-blue;
+        border-style: solid;
+        border-color: #EB60DD;
+        border-width: 5px;
+        border-radius: 20px;
+        text-align: center;
+       
+    }
+
+    .img-menu{
+    margin: 8px;
+    width: 50%;
+    }
+
+    p{
+    margin: 0;
+    font-size: 25px;
+    }
+    
+     .container-menu::-webkit-scrollbar {
+        width: 15px;
+    }
+    
+    .container-menu::-webkit-scrollbar-thumb {
+        background: $pink;
+        border-radius: 8px;
+    }  
+
+}
