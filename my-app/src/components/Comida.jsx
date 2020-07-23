@@ -9,7 +9,7 @@ import Acomp from "./Acomp";
 import Burguer from "./Burguer";
 import Bebida from "./Bebida";
 
-const Comida =() =>{
+const Comida =({ handlerCounter }) =>{
     return(
         <Router>
         <div>
@@ -22,7 +22,7 @@ const Comida =() =>{
             <div className="choose">
                 <Switch>
                     <Route path="/Acomp">
-                        <Acomp />
+                        <Acomp handlerCounter={handlerCounter}/>
                     </Route>
                     <Route path="/Bebida">
                         <Bebida />

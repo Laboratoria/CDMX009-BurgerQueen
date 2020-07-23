@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import {
     BrowserRouter as Router,
     Switch,
@@ -9,6 +9,14 @@ import Comida from "./Comida"
 import Desayuno from "./Desayuno";
 
 const Meseros =() =>{
+
+    // const handleCounter = () => {
+        
+    //     return (
+    //         1+1
+    //     );
+    // };
+
     return(
         <Router>
         <div>
@@ -27,10 +35,10 @@ const Meseros =() =>{
                     <div className="menuDes">
                         <Switch>
                             <Route path="/Comida">
-                                <Comida />
+                                <Comida handlerCounter={handlerCounter}/>
                             </Route>
                             <Route path="/">
-                                <Desayuno />
+                                <Desayuno handlerCounter={handlerCounter}/>
                             </Route>
                         </Switch>
                     </div>

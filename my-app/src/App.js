@@ -13,17 +13,18 @@ import Meseros from "./components/Meseros"
 
 
 
-function App() {
-  let [order,setorder]=useState({
-    nombreCliente:"",
-    status:false,
-    item:[]
-  })
 
-  let setItemToOrder=()=
-  function addItemToOrder(product){
-    setOrder({...order, items:[...order.items, product]}) 
- }
+function App() {
+//   let [order,setorder]=useState({
+//     nombreCliente:"",
+//     status:false,
+//     item:[]
+//   })
+
+//   let setItemToOrder=()=> 
+//   function addItemToOrder(product){
+//     setOrder({...order, items:[...order.items, product]}) 
+//  }
 
   return (
     <div className="App">
