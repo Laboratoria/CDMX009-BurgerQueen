@@ -3,21 +3,21 @@ import './ControlTotal.scss';
 
 const ControlTotal = ({ order, setOrder }) => {
 
-    //Precio y cantidad del producto, incluido el aumento en cantidad de item
+    //Price and quantity from product, include the increase in item quantity
     const priceProducts = order.items.map(product => product.price)
     //console.log(priceProducts);
     const quantityProducts = order.items.map(product => product.quantity)
     //console.log(quantityProducts);
 
-    //Se suman los precios que tenemos en un array
+    //Sum of prices in the array
     let sumPrice = priceProducts.reduce((a, b) => a + b, 0)
     //console.log(sumPrice);
 
-    //Se suman la cant de los productos que tenemos en un array
+    //Sum of quantity of products in the array 
     let sumQuantity = quantityProducts.reduce((a, b) => a + b, 0)
     //console.log(sumQuantity);
 
-    //Se agregan como propiedades del state
+    //Add as properties of state
     if (sumPrice !== 0) {
         order.total = sumPrice
         order.totalProducts = sumQuantity

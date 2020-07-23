@@ -4,14 +4,14 @@ import React from 'react'
 const ItemBreakfast = ({ idItem, img, dish, price, breakfasts, order, setOrder }) => {
 
 
-    //Agregar los items seleccionados al state
+    //Add items selected to state
     const updateBreakfast = (idItem, price) => {
         //console.log(idItem);
-        //Items seleccionados
-        const productSelect = breakfasts.filter(lun => lun.id === idItem)[0]
+        //Items selected
+        const productSelect = breakfasts.filter(lunch => lunch.id === idItem)[0]
         console.log(productSelect);
 
-        //Actualizar state con items seleccionados
+        //Update state with items selected
         setOrder({ ...order, items: [...order.items, productSelect] })
     }
 

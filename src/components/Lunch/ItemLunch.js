@@ -4,22 +4,16 @@ import shortid from 'shortid'
 const ItemLunch = ({ idItem, img, dish, price, lunchs, order, setOrder }) => {
 
     const updateLunchs = (idItem, price) => {
-        //console.log(idItem);
-        //Items seleccionados
-        const productSelect = lunchs.filter(lun => lun.id === idItem)[0]
-        //console.log(productSelect);
-        //console.log(productSelect.idItem);
+        //Items selected
+        const productSelect = lunchs.filter(lunch => lunch.id === idItem)[0]
 
-        //En caso de ser hamburguesa se agrega un id unico para poder agregar extras
+        //In case of burguer add unique id to add additions
         if (productSelect.dish === 'Hamburguesa simple' || productSelect.dish === 'Hamburguesa doble') {
             productSelect.idItem = shortid.generate()
-            console.log(productSelect)
-            console.log(productSelect.idItem);
+
         }
 
-        //Productos en state
-        //const products = order.items.map(product => product)
-        //Actualizar state con items, suma precio
+        //Update state with items, sum price
         setOrder({ ...order, items: [...order.items, productSelect] })
 
     }
