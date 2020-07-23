@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,aAAa,AAAC,CACV,MAAM,CAAE,KAAK,CAAG",
+    "mappings": "AAAA,AAAA,kBAAkB,AAAC,CACf,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,KAAK,CACb,UAAU,CAAE,MAAM,CAAG,AAEzB,AAAA,aAAa,AAAC,CACV,MAAM,CAAE,KAAK,CAAG",
     "sources": [
         "../src/components/Menu/menu.sass"
     ],

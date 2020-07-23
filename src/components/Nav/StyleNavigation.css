@@ -6,8 +6,6 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
 }
 
 .navigation button {
@@ -17,7 +15,7 @@
 }
 
 .ContentLogo {
-  margin-left: 550px;
+  margin-left: 600px;
 }
 
 .logo {

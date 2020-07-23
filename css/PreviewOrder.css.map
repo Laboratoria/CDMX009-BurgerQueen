@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,eAAe,AAAC,CACZ,gBAAgB,CAAE,OAAO,CACzB,KAAK,CAAE,OAAO,CAAG",
+    "sources": [
+        "../src/components/PreviewOrder/PreviewOrder.sass"
+    ],
+    "names": [],
+    "file": "PreviewOrder.css"
+}

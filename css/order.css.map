@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,mBAAmB,AAAC,CAChB,OAAO,CAAE,IAAI,CACb,SAAS,CAAE,IAAI,CAAG,AAEtB,AAAA,kBAAkB,AAAC,CACf,WAAW,CAAE,IAAI,CAAG,AAExB,AAAA,eAAe,AAAC,CACZ,WAAW,CAAE,IAAI,CAAG",
+    "sources": [
+        "../src/Root/order.sass"
+    ],
+    "names": [],
+    "file": "order.css"
+}
