@@ -49,7 +49,7 @@ const ReusableTable = ({ client, order }) => {
                 </div>
 
                 <div className={styles.Orders}>
-                    <div className={styles.foodOptions}>Café americano</div>
+                    <div className={styles.foodOptions}>cafe con leche</div>
                     <div className={styles.StepperStateless}><Stepper minValue={0} maxValue={100} /></div>
                     <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={35} height={"auto"} /></div>
                 </div>
