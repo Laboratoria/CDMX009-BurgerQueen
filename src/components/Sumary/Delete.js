@@ -4,13 +4,13 @@ import React from 'react'
 const Delete = ({ idItem, order, setOrder }) => {
 
     const removeProductSummary = (id) => {
-        //console.log(id);
 
-        //Array con items sin incluir en el que se dio eliminar
+
+        //Array with items within add the item who click delete
         const products = order.items.filter(product => product.id !== id)
-        //console.log(products);
 
-        //Se actualiza el state con items elimando el seleccionado, restando el precio de item selec al total, actualización de total de productos
+
+        //Update state with the item selected to delete
         setOrder({ ...order, items: [products][0] })
 
     }

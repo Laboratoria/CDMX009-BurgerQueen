@@ -1,28 +1,28 @@
 import React, { Fragment, useState } from 'react';
+import { saveOrderBD } from '../../firebase/firebase-config'
+import { Link, BrowserRouter } from "react-router-dom";
+
 import Summary from '../Sumary/Summary.js'
 import Breakfast from '../Breakfasts/Breakfast.js'
 import Lunch from '../Lunch/Lunch.js'
 import ControlTotal from '../ControlTotal/ControlTotal.js'
 import Modal from '../Kitchen/Modal/Modal';
 import Extras from '../Sumary/Extras.js'
-import { saveOrderBD } from '../../firebase/firebase-config'
-import { Link, BrowserRouter } from "react-router-dom";
-
 import './Order.scss';
 
 const Order = ({ saveOrders, orders, breakfasts, lunchs, order, setOrder }) => {
 
-    //Se muestra error en caso de que no se hayan llenado los campos(selects,name)
+    //Show error in case the fields are not completed (selects,name)
     const [error, setError] = useState(false)
     //Destructuring state order
     const { waiter, client, table, items, totalProducts, total } = order
 
-    //Empieza en tru porque la 1a vez que inicia la aplicac queremos que se muestre el menu desayuno
+    //Start tru the first time that the application start, and show breakfast menu
     const [showMenu, setMenu] = useState(true)
     const [listModal, updateModal] = useState(false);
 
 
-    //Func que cambia el state showMenu en caso de dar click en Comida
+    //Func that change state showMenu in click 
     const changeMenu = (e) => {
         let btnLunch = document.querySelector('#btnLunch')
         let btnBreakfast = document.querySelector('#btnBreakfast')
@@ -60,11 +60,7 @@ const Order = ({ saveOrders, orders, breakfasts, lunchs, order, setOrder }) => {
         }
         setError(false)
         order.date = new Date()
-        /* order.products = productsBreakfast
-        console.log(order); */
 
-        //DEBE ENVIARSE A FIREBASE ------------------------------------------->
-        //saveOrders([...orders, order])
         saveOrderBD(order)
 
         //Clean inputs
@@ -120,8 +116,6 @@ const Order = ({ saveOrders, orders, breakfasts, lunchs, order, setOrder }) => {
                     <p>Burguer Queen</p>
                 </Link>
 
-                {/* <a><i class="fas fa-hamburger"></i></a> */}
-                {/* <a><i class="fas fa-concierge-bell"></i></a> */}
                 <i className="fa fa-bell"
                     onClick={() => showModal('m')}
                 ></i>
@@ -197,7 +191,7 @@ const Order = ({ saveOrders, orders, breakfasts, lunchs, order, setOrder }) => {
                 </div>
 
                 {/* Container Menu */}
-                {/* if para mostrar los dos menus dependiendo del btn al que se le de click */}
+                {/* if, that show the menu depends the click */}
                 <div className="container-order">
                     <div className="container-menu ">
                         {showMenu ? (

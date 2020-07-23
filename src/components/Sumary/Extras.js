@@ -5,82 +5,75 @@ const Extras = ({ onClose, order, setOrder, idItem }) => {
 
     const saveChecks = (e) => {
         console.log(idItem);
-        //console.log(e);
-        //Aditamento(chicken,meat,egg,etc)
+
+        //Additions(chicken,meat,egg,etc)
         let addittion = e.target.value
-        //Devuelve true si el checkbox está seleccionado
+        //Return true if checkbox is selected
         let targetChecked = e.target.checked
         //let check = document.querySelector(`#${addittion}`).checked
 
-        //Encontrando el índice del item en el state order
+        //Found itme´s index in state order
         const indexItem = order.items.findIndex(elem => elem.idItem === idItem)
         console.log(indexItem);
-        //Accediendo a la propiedad addittions del item
+        //Access to property addittions of item
         let newAddittion = [...order.items]
-        //Se hace una copia de addittions del item con el index que tiene en el array de order.items y se agrega la nueva addittion
+        //We do a copy of addittions of item with its index in the array order.items and add the new addition
         newAddittion[indexItem] = { ...newAddittion[indexItem], addittions: [...order.items[indexItem].addittions, addittion] }
 
-        //Condición en caso de que se haya checkeado casilla y es dif de egg y chesse
+        //Condition if check = true and if is different of egg and chesse
         if (targetChecked && addittion !== 'egg' && addittion !== 'chesse') {
             console.log(addittion);
             setOrder({ ...order, items: newAddittion })
             return
 
-            //Condición en caso de que se haya checkeado casilla y es igual a egg o chesse
+            //Condition if check = true and if is equal of egg and chesse
         } if (targetChecked && addittion === 'egg' || targetChecked && addittion === 'chesse') {
             console.log(addittion);
             let newAddittion = [...order.items]
-            //Se hace una copia de los aditamentos en addittions: y se agrega el nuevo aditamento
+            //We do a copy of additions in addittions: and add the new addition
             newAddittion[indexItem] = { ...newAddittion[indexItem], addittions: [...order.items[indexItem].addittions, addittion], price: order.items[indexItem].price + 1 }
             setOrder({ ...order, items: newAddittion })
             return
 
-            //Condición en caso de que se haya quitado el check de casilla y es dif a egg o chesse
+            //Condition in case of let´s move check and is different to egg or chesse
         } if (targetChecked !== true && addittion !== 'egg' && addittion !== 'chesse') {
             console.log(targetChecked);
             console.log(addittion);
 
-            //Accedemos a los addittions del item con su index
+            //Access to addittions of item with its index
             const productaddittion = order.items.map(product => product.addittions)[indexItem]
-            console.log(productaddittion);
-            //Extraemos un array sin el aditamento
-            const extras = productaddittion.filter(product => product !== addittion)
-            console.log(extras);
 
-            //Nos ubicamos en addittions del item para posterior actualizar el state con el nuevo array
+            //We extract an array within addition
+            const extras = productaddittion.filter(product => product !== addittion)
+
+            //We are located in addittions of item to update the state with the new array
             let newAddittion = [...order.items]
             newAddittion[indexItem] = { ...newAddittion[indexItem], addittions: extras }
             setOrder({ ...order, items: newAddittion })
             return
 
         }
-        //Condición en caso de que se haya quitado el check de casilla y es igual a egg o chesse
+        //Condition in case of let´s move check and is equal to egg or chesse
         if (targetChecked !== true && addittion === 'egg' || targetChecked !== true && addittion === 'chesse') {
             console.log(targetChecked);
             console.log(addittion);
-            //Precio de producto con aditamento huevo o queso
+            //Price of product with addition egg or cheese
             const priceProductaddittion = order.items.map(product => product.price)[indexItem]
             console.log(priceProductaddittion);
-            //Accedemos a los addittions del item con su index
+            //Access to addittions of item with its index
             const productaddittion = order.items.map(product => product.addittions)[indexItem]
             console.log(productaddittion);
-            //Extraemos un array sin el aditamento
+            //We extract an array within addition
             const extras = productaddittion.filter(product => product !== addittion)
             console.log(extras);
 
-            //Nos ubicamos en addittions del item para posterior actualizar el state con el nuevo array
+            //We are located in addittions of item to update the state with new array
             let newAddittion = [...order.items]
             //newAddittion[indexItem] = { ...newAddittion[indexItem], addittions: extras, price: priceProductaddittion - 1 }
             newAddittion[indexItem] = { ...newAddittion[indexItem], addittions: extras, price: order.items[indexItem].price - 1 }
             setOrder({ ...order, items: newAddittion })
             return
-            //Accedemos a los addittions del item con su index
-            /*  let arrAddittions = [...order.items]
-             arrAddittions[indexItem] = [...arrAddittions[indexItem].addittions]
-             console.log(arrAddittions);
-             //Sacamos un nuevo array sin el elem que quitamos del check
-             const extras = arrAddittions[indexItem].filter(product => product !== addittion)
-             console.log(extras); */
+
         }
     }
 
@@ -156,7 +149,7 @@ const Extras = ({ onClose, order, setOrder, idItem }) => {
         </div>
 
     )
-    //1er param: que queremos renderizar, 2do: donde queremos que se renderice
+    //1er param: what we want render, 2do: where we want it render
     return ReactDOM.createPortal(node, document.querySelector('#modalAdditions'))
 }
 

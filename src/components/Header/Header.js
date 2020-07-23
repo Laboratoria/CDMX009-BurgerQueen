@@ -14,18 +14,16 @@ const Header = () => {
     return (
         <header className="header-kitchen">
             <div className='div-header1' >
-            <Link to="/">
-                <h1 className='title-header'>
-                    
-                        Burguer Queen
-                    
+                <Link to="/">
+                    <h1 className='title-header'>
 
+                        Burguer Queen
                 </h1>
                 </Link>
             </div>
             <div className='div-header2' >
 
-                <i className="fa fa-bell" 
+                <i className="fa fa-bell"
                     onClick={() => showModal('m')}
                 > </i>
 

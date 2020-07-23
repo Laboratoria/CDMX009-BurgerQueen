@@ -15,4 +15,3 @@ const HeaderPrincipal = () => {
 export default HeaderPrincipal
 
 
-//En extras al poner huevo o queso debe de ser del precio que hay actualmente (dobe-->16 * 2= 32 y no 16+15(precio del item en menu))

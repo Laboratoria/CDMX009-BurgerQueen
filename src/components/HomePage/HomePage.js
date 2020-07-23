@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react'
+import { Link, BrowserRouter } from "react-router-dom";
 import HeaderPrincipal from '../HeaderPrincipal/HeaderPrincipal'
 import './HomePage.scss';
 import Logo from '../../imgs/logQueen.png';
-import { Link, BrowserRouter } from "react-router-dom";
+
 
 const HomePage = () => {
 
@@ -35,8 +36,6 @@ const HomePage = () => {
 
 
             </div>
-
-
 
         </Fragment>
         //</BrowserRouter>

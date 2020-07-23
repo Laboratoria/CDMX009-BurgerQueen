@@ -4,8 +4,6 @@ import './Summary.scss';
 
 const Summary = ({ order, setOrder, breakfasts, lunchs }) => {
 
-
-    // shortid.generate()
     return (
         <Fragment>
 

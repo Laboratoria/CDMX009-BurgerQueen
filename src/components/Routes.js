@@ -1,9 +1,9 @@
 import React from 'react'
+import { Switch, Route } from "react-router-dom";
 import Order from './Order/Order';
 import GeneralKitchen from './Kitchen/Orders/GeneralKitchen';
 import Header from './Header/Header';
 import HomePage from './HomePage/HomePage';
-import { Switch, Route } from "react-router-dom";
 import '../styles/Styles.scss';
 
 const Routes = ({ breakfasts, lunchs, order, setOrder }) => {

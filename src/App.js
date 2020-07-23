@@ -1,4 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
+import { db } from './firebase/firebase-config'
+import Routes from './components/Routes.js';
+
 import coffeMilk from './imgs/coffeMilk.png';
 import coffe from './imgs/coffe.png';
 import sandwich from './imgs/sandwich.png';
@@ -13,8 +16,7 @@ import smallSoda from './imgs/smallSoda.png';
 import bigSoda from './imgs/bigSoda.png';
 
 
-import { db } from './firebase/firebase-config'
-import Routes from './components/Routes.js';
+
 
 function App() {
   const [breakfasts, saveBreakfast] = useState([
@@ -41,25 +43,9 @@ function App() {
     items: [],
     totalProducts: 0,
     total: 0,
-    state: "pending"
+    state: "pending" //options: ready, delivered, pending
   })
 
-  //Where the orders will be saved once the waiter press the btn send kitchen or cancel
-  //const [orders, saveOrders] = useState([])
-
-  //State donde se traen datos de Firebase
-  /* const [downData, setDownData] = useState([])
-
-  useEffect(() => {
-    //const db = firebase.firestore();
-    return db.collection('orders').onSnapshot((snapshot) => {
-      const arrayData = []
-      console.log(snapshot);
-      snapshot.forEach(doc => arrayData.push(({ ...doc.data(), id: doc.id })))
-
-      setDownData(arrayData)
-    })
-  }, []) */
 
 
   return (
