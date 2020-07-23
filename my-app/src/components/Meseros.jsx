@@ -39,28 +39,19 @@ const Meseros =({addOrderItems}) =>{
                 <div className="ticket">
                     <div  id="nameUser">
                         <p className="control has-icons-left has-icons-right">
-                        <input className="input is-info is-warning"  type="text" placeholder="Nombre cliente"/>
-                        <span className="icon is-small is-left">
-                            <i className="fas fa-user-circle"></i>
-                        </span>
-                        <span className="icon is-small is-right">
-                            <i className="fas fa-check"></i>
-                        </span>
+                        <input id="cliente"className="input is-info is-warning"  type="text" placeholder="Nombre cliente" />
+                        
                         </p>
                     </div>
                     <div  id="numberUser">
                         <p className="control has-icons-left has-icons-right">
-                        <input className="input is-info is-warning"  type="number" placeholder="Numero de mesa"/>
-                        <span className="icon is-small is-left">
-                            <i className="fas fa-list"></i>
-                        </span>
-                        <span className="icon is-small is-right">
-                            <i className="fas fa-check"></i>
-                        </span>
+                        <input id="mesa" className="input is-info is-warning"  type="text" placeholder="Numero de mesa"/>
+                       
                         </p>
                     </div>
                 </div>
             </div>
+        
 
         </div>
         </Router>
