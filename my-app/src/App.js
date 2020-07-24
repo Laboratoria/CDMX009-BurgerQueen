@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import {React} from 'react';
 
 import {
   BrowserRouter as Router,
@@ -15,13 +15,24 @@ import Meseros from "./components/Meseros"
 
 
 function App() {
+ 
+//   let [order,setOrder]=useState({
+//     cliente:"",
+//     items:[],
+//     status:"",
+//   })
+
+//   function addOrderItems(product){
+//     setOrder({...order,items:{...order.items,product}})
+//   }
+
 //   let [order,setorder]=useState({
 //     nombreCliente:"",
 //     status:false,
 //     item:[]
 //   })
 
-//   let setItemToOrder=()=> 
+//   let setItemToOrder=()=
 //   function addItemToOrder(product){
 //     setOrder({...order, items:[...order.items, product]}) 
 //  }
@@ -39,7 +50,7 @@ function App() {
             <Home />
           </Route>
           <Route path="/Meseros">
-            <Meseros />
+            <Meseros  /> //addOrderItems={addOrderItems}
           </Route>
           <Route path="/">
             <Login />

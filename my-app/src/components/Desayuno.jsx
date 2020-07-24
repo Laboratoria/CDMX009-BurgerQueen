@@ -7,7 +7,7 @@ import {
   } from "react-router-dom";
 import Cafe from "./Cafe";
 
-const Desayuno =() =>{
+const Desayuno =({addOrderItems}) =>{
     return(
 
         
@@ -29,7 +29,7 @@ const Desayuno =() =>{
             <div className="choose">
                 <Switch>
                     <Route path="/Cafe">
-                        < Cafe/>
+                        <  Cafe addOrderItems={addOrderItems} />
                     </Route>
                 </Switch>
             </div>
