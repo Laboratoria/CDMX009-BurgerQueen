@@ -12,18 +12,7 @@ import { currencyFormatter } from '../../utils'
 
 const BreakFast = ({ client, setClient, order, setOrder, products, addItemToOrder }) => {
 
-    /*     const handleButtonsBreak = (e) => {  //VA EN EL ONCHANGE
-            const { name, value } = e.target;
-            setMenuBreak({ ...menubreak, [name]: value });
-        }
-     */
-
-    const handleOrderBreak = (e) => {  //VA EN EL ONCLICK
-        e.preventDefault();
-
-    }
-
-    console.log('order', client);
+    console.log('aqui está la order', client);
 
     return (
 
@@ -45,7 +34,7 @@ const BreakFast = ({ client, setClient, order, setOrder, products, addItemToOrde
                         <button
                             className={styles.bgMenu}
                             onClick={() => addItemToOrder(product)}
-                            name="coffeblack"
+
                         >
                             <img src={`${process.env.PUBLIC_URL}/images/products/${product.image}`} alt={product.name} />
                             <h3>{product.name} <br />{currencyFormatter.format(product.price)}</h3>
