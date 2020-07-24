@@ -21,39 +21,45 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 
-function App() {
+const products = [
+  {
+    id: 1,
+    name: 'Cafe Americano',
+    price: 5.00,
+    total: 125.00,
+    image: 'american-coffe.jpg'
+  },
+  {
+    id: 2,
+    name: 'Cafe con Leche',
+    price: 7.00,
+    total: 125.00,
+    image: 'coffe-milk.jpg'
+  },
+  {
+    id: 3,
+    name: 'Sandwich',
+    price: 7.00,
+    total: 125.00,
+    image: 'sandwich.jpg'
+  },
+  {
+    id: 4,
+    name: 'Jugo',
+    price: 10.00,
+    total: 125.00,
+    image: 'orange-juice.jpg'
+  }
+]
 
+function App() {
   const initialDataClient = {
     numorder: '',
     namewaiter: '',
     nameclient: '',
     numtable: '',
     numpeople: '',
-    items: {
-      id: 1,
-      name: 'Cafe Americano',
-      price: 5.00,
-      total: 125.00
-    },
-
-    items: {
-      id: 2,
-      name: 'Cafe con Leche',
-      price: 7.00,
-      total: 125.00
-    },
-    items: {
-      id: 3,
-      name: 'Sandwich',
-      price: 7.00,
-      total: 125.00
-    },
-    items: {
-      id: 4,
-      name: 'Jugo',
-      price: 10.00,
-      total: 125.00
-    }
+    items: []
   }
 
   /*   const addItem = (product, quantity = 1) => {
@@ -74,22 +80,37 @@ function App() {
   // }
 
 
-//FUNCION PARA BORRAR ITEMS
-/*     const deleteItem = (productId) => {
-    const items = order.items.filter(item => item.id !== productId)
-    setOrder({ ...order, items, total: calculateTotal(items) })
-  } */
+  //FUNCION PARA BORRAR ITEMS
+  /*     const deleteItem = (productId) => {
+      const items = order.items.filter(item => item.id !== productId)
+      setOrder({ ...order, items, total: calculateTotal(items) })
+    } */
 
 
-//funcion para capturar y controlar el estado de los datos de los inputs(cliente) y la orden.
+  //funcion para capturar y controlar el estado de los datos de los inputs(cliente) y la orden.
   const [client, setClient] = useState(initialDataClient);
 
   const [order, setOrder] = useState({
-    items:[]
+    items: []
   });
 
-  let addItemToOrder = (product) => {
-    setOrder({...order, items:[...order.items, product]})
+  const addItemToOrder = (product) => {
+    let newItems = []
+
+    if (client.items.length > 0) {
+      newItems = client.items.reduce((acc, item) => {
+        return (item.id === product.id)
+          ? [...acc, { ...item, quantity: item.quantity + 1 }]
+          : [...acc, { ...product, quantity: 1 }]
+      }, [])
+    } else {
+      newItems = [{ ...product, quantity: 1 }]
+    }
+
+    setClient({
+      ...client,
+      items: newItems
+    })
   }
 
 
@@ -111,7 +132,7 @@ function App() {
           </Route>
 
           <Route exact path="/breakfast">
-            <BreakFast client={client} setClient={setClient} />
+            <BreakFast client={client} setClient={setClient} products={products} addItemToOrder={addItemToOrder} order={order} setOrder={setOrder} />
           </Route>
 
           <Route exact path="/restday">
