@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// import Coffe from '../../assets/imgs/american-coffe.jpg';
-
 import db from '../../firebase';
 import Logo from '../Logo/Logo';
 import Boton from '../Boton/Boton'
