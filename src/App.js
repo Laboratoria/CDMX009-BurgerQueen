@@ -62,31 +62,6 @@ function App() {
     items: []
   }
 
-  /*   const addItem = (product, quantity = 1) => {
-  } /
-
-  // forma declarativa 
-/   const calculateTotal = (items) => items.reduce((total, item) => total + item.quantity * item.price, 0) */
-  // forma imperativa
-  // const calculateTotal = (items) => 
-  // {
-  //   let total = 0
-
-  //   items.forEach(item => {
-  //     total = total + item.quantity * item.price
-  //   })
-
-  //   return total;
-  // }
-
-
-  //FUNCION PARA BORRAR ITEMS
-  /*     const deleteItem = (productId) => {
-      const items = order.items.filter(item => item.id !== productId)
-      setOrder({ ...order, items, total: calculateTotal(items) })
-    } */
-
-
   //funcion para capturar y controlar el estado de los datos de los inputs(cliente) y la orden.
   const [client, setClient] = useState(initialDataClient);
 

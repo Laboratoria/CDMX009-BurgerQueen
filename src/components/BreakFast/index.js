@@ -8,7 +8,7 @@ import styles from './styles.module.css';
 import ReusableTable from '../ReusableTable';
 import { currencyFormatter } from '../../utils'
 
-const BreakFast = ({ client, setClient, order, setOrder, products, addItemToOrder }) => {
+const BreakFast = ({ client, setClient, products, addItemToOrder }) => {
 
     console.log('aqui está la order', client);
 
@@ -32,7 +32,6 @@ const BreakFast = ({ client, setClient, order, setOrder, products, addItemToOrde
                         <button
                             className={styles.bgMenu}
                             onClick={() => addItemToOrder(product)}
-
                         >
                             <img src={`${process.env.PUBLIC_URL}/images/products/${product.image}`} alt={product.name} />
                             <h3>{product.name} <br />{currencyFormatter.format(product.price)}</h3>
@@ -42,7 +41,7 @@ const BreakFast = ({ client, setClient, order, setOrder, products, addItemToOrde
 
                 <div className={styles.order}>
 
-                    <ReusableTable client={client} setClient={setClient} order={order} setOrder={setOrder}
+                    <ReusableTable client={client} setClient={setClient} products={products} addItemToOrder={addItemToOrder}
                     />
 
                 </div>
