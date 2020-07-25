@@ -26,7 +26,7 @@ const products = [
     id: 1,
     name: 'Cafe Americano',
     price: 5.00,
-    total: 125.00,
+    total:  0,
     image: 'american-coffe.jpg'
   },
   {
@@ -70,7 +70,7 @@ function App() {
   });
 
   const addItemToOrder = (product) => {
-    let newItems = []
+    let newItems = [];
 
     if (client.items.length > 0) {
       newItems = client.items.reduce((acc, item) => {
@@ -81,6 +81,8 @@ function App() {
     } else {
       newItems = [{ ...product, quantity: 1 }]
     }
+
+    
 
     setClient({
       ...client,
@@ -107,7 +109,7 @@ function App() {
           </Route>
 
           <Route exact path="/breakfast">
-            <BreakFast client={client} setClient={setClient} products={products} addItemToOrder={addItemToOrder} order={order} setOrder={setOrder} />
+            <BreakFast client={client} setClient={setClient} products={products} addItemToOrder={addItemToOrder} /* order={order} setOrder={setOrder} */ />
           </Route>
 
           <Route exact path="/restday">
@@ -115,19 +117,19 @@ function App() {
           </Route>
 
           <Route exact path="/waiterregister">
-            <WaiterRegister client={client} setClient={setClient} order={order} setOrder={setOrder} />
+            <WaiterRegister client={client} setClient={setClient} /* order={order} setOrder={setOrder} */ />
           </Route>
 
           <Route exact path="/kitchenregister">
-            <KitchenRegister client={client} setClient={setClient} order={order} setOrder={setOrder} />
+            <KitchenRegister client={client} setClient={setClient} /* order={order} setOrder={setOrder} */ />
           </Route>
 
           <Route exact path="/waiteraccount">
-            <WaiterAccount client={client} setClient={setClient} order={order} setOrder={setOrder} />
+            <WaiterAccount client={client} setClient={setClient} /* order={order} setOrder={setOrder} */ />
           </Route>
 
           <Route exact path="/kitchen">
-            <Kitchen client={client} setClient={setClient} order={order} setOrder={setOrder} />
+            <Kitchen client={client} setClient={setClient} /* order={order} setOrder={setOrder} */ />
           </Route>
         </Switch>
       </HashRouter>

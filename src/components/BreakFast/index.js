@@ -28,10 +28,11 @@ const BreakFast = ({ client, setClient, products, addItemToOrder }) => {
 
             <div className={styles.container}>
                 <div className={styles.menuBreakfast}>
-                    {products.map(product => (
+                    {products.map((product, index )=> (
                         <button
                             className={styles.bgMenu}
                             onClick={() => addItemToOrder(product)}
+                            key={index}
                         >
                             <img src={`${process.env.PUBLIC_URL}/images/products/${product.image}`} alt={product.name} />
                             <h3>{product.name} <br />{currencyFormatter.format(product.price)}</h3>

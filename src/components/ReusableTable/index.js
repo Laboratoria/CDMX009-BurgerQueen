@@ -6,7 +6,7 @@ import Stepper from "@kiwicom/orbit-components/lib/Stepper";
 import IconDelete from '../../assets/imgs/trash.png';
 
 const ReusableTable = ({ client }) => {
-    console.log(client)
+    //console.log(client)
 
     return (
         <div className={styles.containerTable}>
@@ -40,8 +40,8 @@ const ReusableTable = ({ client }) => {
                 <div className={styles.Orders}>
                     <div className={styles.foodOptions}>
                         {client.items.map(
-                            c =>
-                                <span>{c.name}</span>
+                            (item, index) =>
+                                <span key={index}>{item.name}</span>
                         )}
                     </div>
                     <div className={styles.StepperStateless}><Stepper minValue={0} maxValue={100} /></div>
@@ -50,10 +50,10 @@ const ReusableTable = ({ client }) => {
 
                 <div className={styles.Orders}>
                     <div className={styles.foodOptions}>
-                        {client.items.map(
-                            c =>
-                                <span>{c.name}</span>
-                        )}
+{/*                         {client.items.map(
+                            item =>
+                                <span>{item.name}</span>
+                        )} */}
                     </div>
                     <div className={styles.StepperStateless}><Stepper minValue={0} maxValue={100} /></div>
                     <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={35} height={"auto"} /></div>
@@ -61,10 +61,10 @@ const ReusableTable = ({ client }) => {
 
                 <div className={styles.Orders}>
                     <div className={styles.foodOptions}>
-                        {client.items.map(
+{/*                         {client.items.map(
                             c =>
                                 <span>{c.name}</span>
-                        )}
+                        )} */}
                     </div>
                     <div className={styles.StepperStateless}><Stepper minValue={0} maxValue={100} /></div>
                     <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={35} height={"auto"} /></div>
@@ -72,10 +72,10 @@ const ReusableTable = ({ client }) => {
 
                 <div className={styles.Orders}>
                     <div className={styles.foodOptions}>
-                        {client.items.map(
+{/*                         {client.items.map(
                             c =>
                                 <span>{c.name}</span>
-                        )}
+                        )} */}
                     </div>
                     <div className={styles.StepperStateless}><Stepper minValue={0} maxValue={100} /></div>
                     <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={35} height={"auto"} /></div>
