@@ -2,6 +2,11 @@
 /*     position: fixed;
     z-index: 900; */
 }
+
 .logout{
     margin-left: 30px;
+}
+
+.line-menu{
+    color: tomato;
 }

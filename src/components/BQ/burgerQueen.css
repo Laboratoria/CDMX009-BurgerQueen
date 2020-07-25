@@ -1,16 +1,26 @@
 .initial-image{
-    background-image: url('../../img/initial-image.jpg');
+    background-image: url('../../img/initial-image.PNG');
     background-repeat: no-repeat;
     min-height: 100vh;
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
 }
+
+.initial-image-blur{
+    background-image: url('../../img/initial-image-blur.PNG');
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+
 .logo{
-    width: 610px;
-    height: 300px;
-    margin-top: 350px;
-    margin-left: 330px;
+    width: 570px;
+    position: relative;
+    top: 400px;
+    left: 384px;
 }
 
 .btn-login{
@@ -22,6 +32,7 @@
     height: 50px;
     font-family: 'Raleway';
     font-size: 25px;
-    margin-right: 90px;
     position: relative;
+    top: 360px;
+    right: 75px;
 }

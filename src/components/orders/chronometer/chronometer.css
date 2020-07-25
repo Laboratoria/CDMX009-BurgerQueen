@@ -1,0 +1,22 @@
+.chronometer{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 6px;
+}
+
+.btns-chrm{
+    display: flex;
+    justify-content: space-between;
+    width: 160px;
+    margin-left: 15px;
+}
+
+.btn-opt-chrm{
+    background-color: rgba(255, 170, 13, 0.479);
+    border-radius: 2px;
+    border-style: none;
+}
+
+.btn-opt-chrm:hover{
+    background-color: rgb(255, 170, 13);
+}

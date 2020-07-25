@@ -4,17 +4,15 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'materialize-css/dist/css/materialize.min.css';
 
-
-
 ReactDOM.render((
 
   <React.StrictMode>
-      <App />
+    <App />
   </React.StrictMode>
-), 
-document.getElementById('root'));
+),
+  document.getElementById('root'));
 
-serviceWorker.unregister();
+serviceWorker.register();
 
 
 
@@ -33,7 +31,7 @@ serviceWorker.unregister();
       </Suspense>
     </FirebaseAppProvider>
   </React.StrictMode>
-), 
+),
 document.getElementById('root'));
 
 serviceWorker.unregister(); */

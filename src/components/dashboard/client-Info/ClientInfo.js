@@ -54,6 +54,7 @@ const ClientInfoForm = ({ datos, setDatos }) => {
                 date: date,
                 hour: hour,
                 waitTime: 0,
+                status: 'pendiente'
             };
 
             await db.collection('orders').add(newOrder);

@@ -1,11 +1,11 @@
 .dashboard{
-    background-image: url('https://images.unsplash.com/photo-1561758033-7e924f619b47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80');
-/*     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),  url('https://images.unsplash.com/photo-1561758033-7e924f619b47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80'); */
+    background-image: url('../../img/dashboard-image-blur.PNG');
     background-repeat: no-repeat;
-    min-height: 91.5vh;
+    min-height: 100vh;
     background-attachment: fixed;
     background-position: center center;
     background-size: cover; 
+    background-color: black;
 }
 
 .general{
@@ -13,19 +13,20 @@
     border-color: none;
     border-radius: 5px;
 }
+
 .dash-btn{
     margin-top: 15%;
     border: 1px solid #FFFFFF;
     background-color: rgba(0,0,0,0.8);
     color: white;
     border-radius: 5px;
-    width: 186px;
+    width: 168px;
     height: 50px;
     font-family: 'Raleway';
     font-style: normal;
     font-weight: 520;
     font-size: 19px;
-    margin-left: 3%
+    margin-right: 4%;
 }
 
 .dash-btn:hover {
