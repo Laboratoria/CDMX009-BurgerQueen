@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './resume.css';
 
 const ResumeMenu = ({ addOrder, datos, deleteOrder }) => {
@@ -21,7 +21,7 @@ const ResumeMenu = ({ addOrder, datos, deleteOrder }) => {
                       <p className='col m7'>{a.item}</p>
                       <div className='red'>
                         <div className='col m1'>
-                          <span class="material-icons btn-quantity" onClick={() => addOrder(a, a.quantity + 1)}>add</span>
+                          <span className="material-icons btn-quantity" onClick={() => addOrder(a, a.quantity + 1)}>add</span>
                         </div>
                         <div className='col m1'>
                           <p>{a.quantity}</p>
@@ -29,7 +29,7 @@ const ResumeMenu = ({ addOrder, datos, deleteOrder }) => {
                         <div className=' col m1'>
                           {
                             a.quantity > 1 ? (
-                              <span class="material-icons btn-quantity" onClick={() => addOrder(a, a.quantity - 1)}>remove</span>
+                              <span className="material-icons btn-quantity" onClick={() => addOrder(a, a.quantity - 1)}>remove</span>
                             ) : null
                           }
                         </div>

@@ -60,7 +60,7 @@ function OrderFinished({ orderFinished }) {
                             <p>
                                 <label>
                                     <input name="group1" type="radio" checked onClick={() => { newTotalCalculated(1); }} />
-                                    <span className='total-order-finished'>10%</span>
+                                    <span className='total-order-finished'>No</span>
                                 </label>
                             </p>
                             <p>

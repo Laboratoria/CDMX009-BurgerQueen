@@ -9,7 +9,7 @@ export function useAllOrder() {
 
     const date = new Date;
     const currentDay = [date.getDate(), date.getMonth(), date.getFullYear()].join('/');
-    console.log('ese es el dia', currentDay);
+    //console.log('ese es el dia', currentDay);
 
     useEffect(() => {
         firebase

@@ -59,4 +59,3 @@ const BreakfastMenu = ({ addOrder }) => {
     );
 };
 export default BreakfastMenu;
-
