@@ -159,7 +159,7 @@ function EditOrder({ orderSelected }) {
                 </div>
                 <div className='btn-accept-edit'>
                     <button className='btn-accept'>
-                        <a href="#!" class="modal-close waves-effect waves-green btn-flat" onClick={allItemsOrdered}>Aceptar</a>
+                        <a href="#!" class="modal-close waves-effect waves-yellow btn-flat" onClick={allItemsOrdered}>Aceptar</a>
                     </button>
                 </div>
             </div>
