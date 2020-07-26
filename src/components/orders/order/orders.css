@@ -1,12 +1,11 @@
-.dash{
-    background-image: url('https://images.unsplash.com/photo-1561758033-7e924f619b47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80');
-    /*     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)),  url('https://images.unsplash.com/photo-1561758033-7e924f619b47?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80'); */
-        background-repeat: no-repeat;
-        min-height: 100vh;
-        background-attachment: fixed;
-        background-position: center center;
-        background-size: cover; 
-        padding-top: 1px;
+.bck-imag-orders{
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),  url('../../../img/dashboard-image-blur.PNG');
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover; 
+    background-color: black;
 }
 
 .order-h2{
@@ -22,7 +21,8 @@
 }
 
 .list-products{
-    height: 275px;
+    height: 260px;
+    padding-top: 10px;
 }
 
 .list-products::-webkit-scrollbar {
@@ -49,6 +49,7 @@
     display: flex !important;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     font-weight: bolder;
     padding: 0px;
     margin: 3px;
@@ -62,7 +63,7 @@
 
 }
 
-.item{
+.item-ordered{
     display: flex;
     justify-content: space-between;
     width: 100% !important;
@@ -95,7 +96,7 @@
 .mod-edit{
     background-color: transparent;
     border-style: none;
-    width: 25%;
+    width: 22%;
     box-shadow: none;
 }
 
@@ -105,13 +106,27 @@
 }
 
 .end-btn{
-    background-color: orange;
+    background-color: red;
 }
 
 .end-btn:hover{
-    background-color: orange;
+    background-color: red;
     box-shadow: none;
 }
+
+.btn-opt-order{
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-change-status{
+    background-color: orange;   
+}
+
+.btn-change-status:hover{
+    background-color: orange; 
+}
+  
 .kitchen{
     font-family: 'Raleway';
     font-style: normal;

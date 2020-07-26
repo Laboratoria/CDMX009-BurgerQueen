@@ -1,23 +1,25 @@
 import React, { useEffect, useState, Fragment } from 'react';
 import './orders.css';
-import Navbar from '../layout/Navbar';
-import EditOrder from './EditOrder';
-import OrderFinished from './OrderFinished';
-import { firebase } from '../../firebase/firebaseConfig';
-import editImage from './images/edit.svg';
+import Navbar from '../../layout/Navbar';
+import EditOrder from '../edit-order/EditOrder';
+import OrderFinished from '../order-finished/OrderFinished';
+import { firebase } from '../../../firebase/firebaseConfig';
+import editImage from '../images/edit.svg';
+import Chronometer from '../chronometer/Chronometer';
+import BtnStatus from '../status/BtnStatus';
 
 export function useOrder() {
     const [order, setOrder] = useState([]);
 
     const date = new Date;
     const currentDay = [date.getDate(), date.getMonth(), date.getFullYear()].join('/');
-    //console.log('ese es el dia', currentDay);
 
     useEffect(() => {
         firebase
             .firestore()
             .collection('orders')
             .where("date", "==", currentDay)
+            .where("endingOrder", "==", 'no')
             .orderBy('hour', 'desc')
             .limit(10)
             .onSnapshot((snapshot) => {
@@ -32,6 +34,7 @@ export function useOrder() {
 }
 
 function Orders({ datos }) {
+
     const order = useOrder();
     const [orderFinished, setOrderFinished] = useState({
         table: '',
@@ -42,6 +45,7 @@ function Orders({ datos }) {
         date: '',
         hour: '',
         deliveryTime: '',
+        status: 'pendiente'
     });
 
     const finishedOrder = (item) => {
@@ -53,19 +57,29 @@ function Orders({ datos }) {
         order: [],
         table: '',
         total: '',
+        people: '',
+        total: '',
+        date: '',
+        hour: '',
+        deliveryTime: '',
+        status: 'pendiente'
     });
 
     const editBtn = (item) => {
         setOrderSelected(item);
     };
 
+    const changeOrder = (item) => {
+        setOrderSelected(item);
+
+    };
 
     return (
         <Fragment>
-            <div className='dash'>
-                 <Navbar />            
-                     <div className='row order-h2'>
-                    <h2 className='white-text kitchen'>Cocina</h2>
+            <div className='bck-imag-orders'>
+                <Navbar datos={datos} />
+                <div className='row order-h2'>
+                    <h2 className='white-text kitchen-title'>Cocina</h2>
                 </div>
                 <div className='resume-box'>
                     {
@@ -74,16 +88,16 @@ function Orders({ datos }) {
                                 <div className='text-order-resume'>
                                     <div className='table-info'>
                                         <p className='table-info'>Mesa {item.table}</p>
-                                        <p className='table-info'>{item.date}</p>
                                         <p className='table-info'>{item.hour}</p>
                                         {<img src={editImage} onClick={() => { editBtn(item); }} alt='edit' className="waves-effect waves-light btn modal-trigger mod-edit" href="#modal2" />}
                                     </div>
+                                    <Chronometer item={item} />
                                     <div>
                                         <div className='list-products scroll'>
                                             {item.order.map(a => (
-                                               <form action="#">
-                                                     <p className='chosen-item'>
-                                                        <label className='item'>
+                                                <form action="#">
+                                                    <p className='chosen-item'>
+                                                        <label className='item-ordered'>
                                                             <input className='box' type="checkbox" />
                                                             <span className='black-text text-item'>{a.item}
                                                             </span>
@@ -94,17 +108,17 @@ function Orders({ datos }) {
                                             ))}
                                         </div>
                                     </div>
-                                    <div>
+                                    <div className='btn-opt-order'>
+                                        <button class="waves-effect waves-light btn modal-trigger  btn-change-status" href="#modal3" onClick={() => changeOrder(item)}>status</button>
                                         <button className="waves-effect waves-light btn modal-trigger end-btn" href="#modal1" onClick={() => finishedOrder(item)} >Finalizar</button>
-                                        <div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         ))
                     }
-                    <OrderFinished orderFinished={orderFinished} setOrderFinished={setOrderFinished} />
-                    <EditOrder orderSelected={orderSelected} setOrderSelected={setOrderSelected} />
+                    <OrderFinished orderFinished={orderFinished} />
+                    <EditOrder orderSelected={orderSelected} />
+                    <BtnStatus orderSelected={orderSelected} />
                 </div>
             </div>
         </Fragment >
