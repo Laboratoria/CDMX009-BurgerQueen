@@ -40,16 +40,16 @@ const DinnerCards = ({ addOrder }) => {
         <div className='scroll-cards'>
             <ul>
                 <li>
-                {dinner.map((comida) => (
-                    <FoodItem
-                        key={comida.id}
-                        id={comida.id}
-                        item={comida.item}
-                        price={comida.price}
-                        image={comida.image}
-                        addOrder={addOrder}
-                    />
-                ))}
+                    {dinner.map((food) => (
+                        <FoodItem
+                            key={food.id}
+                            id={food.id}
+                            item={food.item}
+                            price={food.price}
+                            image={food.image}
+                            addOrder={addOrder}
+                        />
+                    ))}
                 </li>
             </ul>
         </div >

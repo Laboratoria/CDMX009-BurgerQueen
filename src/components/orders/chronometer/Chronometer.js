@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useStopwatch } from 'react-timer-hook';
 import { firebase } from '../../../firebase/firebaseConfig';
 import './chronometer.css';

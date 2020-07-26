@@ -3,16 +3,14 @@
     border-color: white;
     border-radius: 10%;
     padding: 3% !important;
-    font-size: 15px;
-    
-    }
+    font-size: 15px; 
+}
     
  .food-image{
     margin: 0px !important;
     display: flex;
     justify-content: center;
     padding-top: 20px;
-    
 }
     
 .item{
@@ -31,8 +29,9 @@
 .space{
     display: flex;
     justify-content: space-around;
-    }
-    .card{
+}
+
+.card{
     width: 165px;
     height: 180px;
 }
@@ -42,4 +41,4 @@
     height: 80px;
     display: flex;
     align-items: center;
-} 
+}  

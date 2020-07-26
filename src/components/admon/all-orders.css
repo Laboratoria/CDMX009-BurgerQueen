@@ -11,6 +11,7 @@
     flex-wrap: wrap;
     border-radius: 5px;
 }
+
 .table-elements{
     height: 450px;
     overflow: scroll;
@@ -33,3 +34,4 @@
     border-width: 1px;
     padding: 5% 15%;
 }
+
