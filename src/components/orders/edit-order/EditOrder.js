@@ -26,19 +26,7 @@ function EditOrder({ orderSelected }) {
         setFinalOrder({
             ...finalOrder, order: [...finalOrder.order, nuevaOrden]
         });
-
-        /*      const db = firebase.firestore();
-             db
-                 .collection('orders')
-                 .doc(orderSelected.id)
-                 .update({
-                     order: finalOrder.order,
-                     total: orderSelected.total,
-                 });*/
     };
-
-
-    //console.log('esto es finalOrder', finalOrder);
 
     const newProduct = newAdditionToOrder.productos;
 
@@ -64,7 +52,6 @@ function EditOrder({ orderSelected }) {
         }
     };
 
-
     return (
         <Fragment>
             <div id="modal2" className="modal scroll mod-edit-options">
@@ -82,7 +69,6 @@ function EditOrder({ orderSelected }) {
                             </thead>
                             <tbody>
                                 {orderSelected.order.map((item) => (
-
                                     <tr>
                                         <td>
                                             <div className='product-added'>
@@ -128,7 +114,6 @@ function EditOrder({ orderSelected }) {
                                                 <p>${item.price * item.quantity}.00</p>
                                             </td>
                                         </tr>
-
                                     )
                                     )}
                             </tbody>

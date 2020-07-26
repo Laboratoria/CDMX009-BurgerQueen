@@ -1,49 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import BreakfastCards from '../dashboard/menuCards/BreakfastCards';
 import DinnerCards from '../dashboard/menuCards/DinnerCards';
 import ResumeMenu from '../dashboard/resume-menu/ResumeMenu';
 import Button from '../dashboard/Button';
 import Navbar from '../layout/Navbar';
-import { useStopwatch } from 'react-timer-hook';
 
-function Dashboard({ datos, setDatos }) {
-
-
-
-    /*       const {
-              seconds,
-              minutes,
-              isRunning,
-              start,
-              pause,
-          } = useStopwatch({ autoStart: false });
-      
-      
-          return (
-              <div>
-                  <div>
-                      <span>{minutes}</span>:<span>{seconds}</span>
-                  </div>
-                  <p>{isRunning ? 'Running' : 'Not running'}</p>
-                  <button onClick={start}>Start</button>
-                  <button onClick={pause}>Pause</button>
-              </div>
-          );
-      
-   */
-
-
-
-
-
-
-
-
-
-
-
-
-
+function Dashboard({ data, setData }) {
 
     const [visible, setVisible] = useState(true);
 
@@ -51,18 +13,18 @@ function Dashboard({ datos, setDatos }) {
         .reduce((acc, item) => console.log('calculate', acc, item) || (acc + item.price * item.quantity), 0);
 
     const addOrder = (product, quantity = 1) => {
-        if (datos.productos.find(item => item.id === product.id)) {
-            const productos = datos.productos
+        if (data.productos.find(item => item.id === product.id)) {
+            const productos = data.productos
                 .map((item) => item.id === product.id ? { ...item, quantity } : item);
-            setDatos({
-                ...datos,
+            setData({
+                ...data,
                 productos,
                 total: calculateTotal(productos)
             });
         } else {
-            const productos = [...datos.productos, { ...product, quantity }];
-            setDatos({
-                ...datos,
+            const productos = [...data.productos, { ...product, quantity }];
+            setData({
+                ...data,
                 productos,
                 total: calculateTotal(productos)
             });
@@ -70,27 +32,27 @@ function Dashboard({ datos, setDatos }) {
     };
 
     const deleteOrder = (id) => {
-        setDatos({
-            ...datos,
-            productos: datos.productos.filter(products => products.id !== id)
+        setData({
+            ...data,
+            productos: data.productos.filter(products => products.id !== id)
         });
     };
 
     return (
-        <div>
+        <Fragment>
             <div className='dashboard'>
-                <Navbar datos={datos} />
+                <Navbar data={data} />
                 <div className='row'>
-                    <Button setVisible={setVisible} visible={visible} datos={datos} setDatos={setDatos} />
+                    <Button setVisible={setVisible} visible={visible} data={data} setData={setData} />
                     <div className='col m6'>
                         {visible ? <BreakfastCards addOrder={addOrder} /> : <DinnerCards addOrder={addOrder} />}
                     </div>
                     <div className='col s12 m5 offset-m0'>
-                        <ResumeMenu addOrder={addOrder} datos={datos} setDatos={setDatos} deleteOrder={deleteOrder} />
+                        <ResumeMenu addOrder={addOrder} data={data} deleteOrder={deleteOrder} />
                     </div>
                 </div>
             </div>
-        </div>
+        </Fragment>
     );
 };
 

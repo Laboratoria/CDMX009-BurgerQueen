@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Modal from 'react-modal';
-import './auth.css'
+import './auth.css';
 
-//Modal.setAppElement('#root');
 const ModalAuth = ({ modalIsOpen, setModalIsOpen }) => {
 
   return (
-    <div>
+    <Fragment>
       <Modal isOpen={modalIsOpen} >
         <div>
-          <span className="material-icons close" onClick={() => { setModalIsOpen(false) }} >close</span>
+          <span className="material-icons close" onClick={() => { setModalIsOpen(false); }} >close</span>
         </div>
         <div>
           <p className='center-align instruction'>Ingresa tu correo para recuperar tu contraseña</p>
@@ -19,8 +18,8 @@ const ModalAuth = ({ modalIsOpen, setModalIsOpen }) => {
           <button className='send-btn'>Enviar</button>
         </div>
       </Modal>
-    </div>
-  )
+    </Fragment>
+  );
 };
 
 export default ModalAuth;

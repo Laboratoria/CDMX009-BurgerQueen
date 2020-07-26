@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, Fragment } from 'react';
 import { withRouter } from 'react-router-dom';
 import { firebase } from '../../firebase/firebaseConfig';
 import ModalAuth from '../auth/Modal';
@@ -70,36 +70,38 @@ const SignIn = (props) => {
     );
 
     return (
-        <div className='initial-image-blur'>
-            <div className='container form-container row'>
-                <div className='col m7 right'>
-                    <form className='signin-form'>
-                        <div className="logo-burger center-align">
-                            <img src={bqLogo} className='bq-logo' alt='logo'></img>
-                        </div>
-                        <div className='container'>
-                            <h5 className='white-text center-align'>Inicio de Sesión</h5>
-                            <div className='input'>
-                                <label htmlFor='email' >Correo</label>
-                                <input type='email' id='email' onChange={(e) => setEmail(e.target.value)} />
+        <Fragment>
+            <div className='initial-image-blur'>
+                <div className='container form-container row'>
+                    <div className='col m7 right'>
+                        <form className='signin-form'>
+                            <div className="logo-burger center-align">
+                                <img src={bqLogo} className='bq-logo' alt='logo'></img>
                             </div>
-                            <div className='input'>
-                                <label htmlFor='password'>Contraseña</label>
-                                <input type='password' id='password' onChange={(e) => setPassword(e.target.value)} />
+                            <div className='container'>
+                                <h5 className='white-text center-align'>Inicio de Sesión</h5>
+                                <div className='input'>
+                                    <label htmlFor='email' >Correo</label>
+                                    <input type='email' id='email' onChange={(e) => setEmail(e.target.value)} />
+                                </div>
+                                <div className='input'>
+                                    <label htmlFor='password'>Contraseña</label>
+                                    <input type='password' id='password' onChange={(e) => setPassword(e.target.value)} />
+                                </div>
+                                <div className='right-align'>
+                                    <p className='new-pass white-text' onClick={() => { setModalIsOpen(true); }}>Recuperar mi contraseña</p>
+                                    <ModalAuth modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} />
+                                </div>
                             </div>
-                            <div className='right-align'>
-                                <p className='new-pass white-text' onClick={() => { setModalIsOpen(true); }}>Recuperar mi contraseña</p>
-                                <ModalAuth modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} />
-                            </div>
-                        </div>
 
-                        <div className='input center-align'>
-                            <button className='black btn-log-in white-text' data-testid='log-btn' onClick={submit}>Ingresar</button>
-                        </div>
-                    </form>
+                            <div className='input center-align'>
+                                <button className='black btn-log-in white-text' data-testid='log-btn' onClick={submit}>Ingresar</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
+        </Fragment>
     );
 };
 export default withRouter(SignIn);

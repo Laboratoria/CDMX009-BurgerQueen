@@ -52,22 +52,22 @@ describe('Modal input value', () => {
     const searchInput = getByPlaceholderText('Correo');
     fireEvent.change(searchInput, { target: { value: 'juan@burgerqueen.mx' } });
     expect(searchInput.value).toBe('juan@burgerqueen.mx');
-  })
+  });
 });
 
 describe('Renders sign in', () => {
   it('render email label', () => {
-    const { getByText } = render( <SignIn />);
+    const { getByText } = render(<SignIn />);
     const linkElement = getByText('Correo');
     expect(linkElement).toBeInTheDocument();
   });
   it('render password label', () => {
-    const { getByText } = render(<SignIn/>);
+    const { getByText } = render(<SignIn />);
     const linkPassword = getByText('Contraseña');
     expect(linkPassword).toBeInTheDocument();
-  })
+  });
   it('render bq logo', () => {
-    const { getByAltText } = render( <SignIn /> );
+    const { getByAltText } = render(<SignIn />);
     const searchAltText = getByAltText('logo');
     expect(searchAltText).toBeInTheDocument();
   });
@@ -75,15 +75,15 @@ describe('Renders sign in', () => {
 
 describe('Render initial view', () => {
   it('render bq image', () => {
-    const { getByAltText } = render( <BurgerQueen /> );
+    const { getByAltText } = render(<BurgerQueen />);
     const searchAltText = getByAltText('logo');
     expect(searchAltText).toBeInTheDocument();
   });
   it('render button login', () => {
-    const { getByRole } = render(<BurgerQueen/>);
+    const { getByRole } = render(<BurgerQueen />);
     const loginButton = getByRole('button');
     expect(loginButton).toBeInTheDocument();
-  })
+  });
 });
 
 describe('Render client info', () => {
@@ -93,22 +93,3 @@ describe('Render client info', () => {
     expect(text).toBeInTheDocument();
   });
 });
-
-/* global.fetch = jest.fn(() => 
-Promise.resolve({
-  json:() => 
-  Promise.resolve({
-    id: 1,
-    item: "Café americano",
-    price: 5,
-    image: "Aqui va la imagen"
-  })
-})
-)
-
-describe ('cards', () => {
-  it('loads menu data', () => {
-    act(() => render ( <BreakfastMenu /> ));
-    expect(screen.getByText('Café americano')).toBeInTheDocument();
-  });
-}); */

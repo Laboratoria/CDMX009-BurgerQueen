@@ -13,20 +13,16 @@ function App() {
 
   useEffect(() => {
     const unsuscribe = firebase.auth().onAuthStateChanged(user => {
-      console.log('usuario', user);
+      return user;
     });
     return unsuscribe;
   }, []);
 
-
-  const [datos, setDatos] = useState({
+  const [data, setData] = useState({
     numeroMesa: '',
     numeroComensales: '',
     productos: [],
     total: '',
-    propina: '',
-    nuevoTotal: '',
-    metodoPagar: ''
   });
 
   return (
@@ -36,9 +32,9 @@ function App() {
           <Route path='/initial' component={BurgerQueen} />
           <Route path='/login' component={SignIn} />
           <Route path='/admin' component={Admin} />
-          <Route exact path='/' render={() => <Dashboard datos={datos} setDatos={setDatos} />} />
-          <Route path='/kitchen' render={() => <Orders datos={datos} setDatos={setDatos} />} />
-          <Route path='/orders' component={AllOrders} datos={datos} />
+          <Route exact path='/' render={() => <Dashboard data={data} setData={setData} />} />
+          <Route path='/kitchen' render={() => <Orders />} />
+          <Route path='/orders' component={AllOrders} />
         </Switch>
       </div>
     </BrowserRouter>

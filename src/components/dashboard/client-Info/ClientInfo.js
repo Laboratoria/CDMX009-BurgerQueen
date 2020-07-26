@@ -6,12 +6,12 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 toast.configure();
-const ClientInfoForm = ({ datos, setDatos }) => {
+const ClientInfoForm = ({ data, setData }) => {
 
     const handleInputChange = (e) => {
 
-        setDatos({
-            ...datos,
+        setData({
+            ...data,
             [e.target.name]: e.target.value
         });
     };
@@ -22,21 +22,21 @@ const ClientInfoForm = ({ datos, setDatos }) => {
 
     const sendData = async (e) => {
         e.preventDefault();
-        if (datos.productos < 1) {
+        if (data.productos < 1) {
             toast.error('Ingresa productos a la orden', {
                 className: 'toast-error center-align',
                 hideProgressBar: true
             });
             return;
         }
-        if (!datos.numeroMesa.trim()) {
+        if (!data.numeroMesa.trim()) {
             toast.error('Ingresa número de mesa', {
                 className: 'toast-error center-align',
                 hideProgressBar: true
             });
             return;
         }
-        if (!datos.numeroComensales.trim()) {
+        if (!data.numeroComensales.trim()) {
             toast.error('Ingresa número de comensales', {
                 className: 'toast-error center-align',
                 hideProgressBar: true
@@ -46,15 +46,15 @@ const ClientInfoForm = ({ datos, setDatos }) => {
         try {
             const db = firebase.firestore();
             const newOrder = {
-                table: datos.numeroMesa,
-                people: datos.numeroComensales,
-                order: datos.productos,
+                table: data.numeroMesa,
+                people: data.numeroComensales,
+                order: data.productos,
                 payment: '',
-                total: datos.total,
+                total: data.total,
                 date: date,
                 hour: hour,
-                waitTime: 'tiempo en servir la mesa',
-                status: 'pendiente',
+                waitTime: '',
+                status: 'pending',
                 endingOrder: 'no',
             };
 
@@ -64,7 +64,6 @@ const ClientInfoForm = ({ datos, setDatos }) => {
                 className: 'toast-resume black-text center-align',
                 hideProgressBar: true
             });
-            console.log(datos);
         }
         catch (error) {
             console.log(error);

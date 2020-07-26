@@ -11,6 +11,7 @@
     flex-wrap: wrap;
     border-radius: 5px;
 }
+
 .table-elements{
     height: 450px;
     overflow: scroll;

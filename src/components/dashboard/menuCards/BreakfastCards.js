@@ -18,41 +18,41 @@ const FoodItem = ({ item, id, price, quantity, addOrder }) => (
 );
 
 export function useBreakfast() {
-    const [desayunos, setDesayunos] = useState([]);
+    const [breakfast, setBreakfast] = useState([]);
 
     useEffect(() => {
         const breakfastMenuUrl = 'https://v2-api.sheety.co/08037a6e719e10abd51ee7fe17bba593/burgerQueenMenu/desayunos';
         fetch(breakfastMenuUrl)
             .then(res => res.json())
             .then(data => {
-                setDesayunos(data.desayunos);
+                setBreakfast(data.desayunos);
             });
     }, []
     );
-    return desayunos;
+    return breakfast;
 }
 
 
 const BreakfastMenu = ({ addOrder }) => {
 
-    const desayunos = useBreakfast();
+    const breakfast = useBreakfast();
 
     return (
 
         <div className='scroll-cards'>
             <ul>
                 <li>
-                {desayunos.map((desayuno) => (
-                    <FoodItem
-                        key={desayuno.id}
-                        id={desayuno.id}
-                        item={desayuno.item}
-                        price={desayuno.price}
-                        image={desayuno.image}
-                        quantity='1'
-                        addOrder={addOrder}
-                    />
-                ))}
+                    {breakfast.map((breakfastOrder) => (
+                        <FoodItem
+                            key={breakfastOrder.id}
+                            id={breakfastOrder.id}
+                            item={breakfastOrder.item}
+                            price={breakfastOrder.price}
+                            image={breakfastOrder.image}
+                            quantity='1'
+                            addOrder={addOrder}
+                        />
+                    ))}
                 </li>
             </ul>
         </div >

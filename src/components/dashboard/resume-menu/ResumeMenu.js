@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './resume.css';
 
-const ResumeMenu = ({ addOrder, datos, deleteOrder }) => {
-  let data = datos.productos;
+const ResumeMenu = ({ addOrder, data, deleteOrder }) => {
+  let allProducts = data.productos;
 
   return (
-    <div>
+    <Fragment>
       <div className="resume-card white-text scroll">
         <div className='container'>
           <div className='row'>
@@ -14,9 +14,9 @@ const ResumeMenu = ({ addOrder, datos, deleteOrder }) => {
               <div className="divider yellow lighten-2"></div>
             </div>
             {
-              data.length === 0 ? (<p className='center-align products-order'>No hay productos en la orden</p>
+              allProducts.length === 0 ? (<p className='center-align products-order'>No hay productos en la orden</p>
               ) : (
-                  data.map((a, index) => (
+                  allProducts.map((a, index) => (
                     <div className='order-info' key={index}>
                       <p className='col m7'>{a.item}</p>
                       <div className='red'>
@@ -44,9 +44,10 @@ const ResumeMenu = ({ addOrder, datos, deleteOrder }) => {
       </div>
       <div className='card total'>
         <div>
-          <span className='total-price white-text'>TOTAL: $ {datos.total}</span>
-        </div></div>
-    </div>
+          <span className='total-price white-text'>TOTAL: $ {data.total}</span>
+        </div>
+      </div>
+    </Fragment>
   );
 };
 

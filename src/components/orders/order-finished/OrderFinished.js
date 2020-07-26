@@ -37,7 +37,6 @@ function OrderFinished({ orderFinished }) {
 
     return (
         <Fragment>
-
             <div id="modal1" class="modal scroll mod-end-order">
                 <div class="modal-content end-order ">
                     <div>
