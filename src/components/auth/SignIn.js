@@ -93,7 +93,6 @@ const SignIn = (props) => {
                                     <ModalAuth modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} />
                                 </div>
                             </div>
-
                             <div className='input center-align'>
                                 <button className='black btn-log-in white-text' data-testid='log-btn' onClick={submit}>Ingresar</button>
                             </div>
@@ -105,4 +104,5 @@ const SignIn = (props) => {
     );
 };
 export default withRouter(SignIn);
+
 
