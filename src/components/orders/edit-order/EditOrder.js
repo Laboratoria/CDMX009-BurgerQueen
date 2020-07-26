@@ -10,7 +10,6 @@ function EditOrder({ orderSelected }) {
 
     const [finalOrder, setFinalOrder] = useState({
         order: [],
-        payment: '',
         total: '',
     });
 
@@ -19,7 +18,7 @@ function EditOrder({ orderSelected }) {
         total: orderSelected.total,
     });
 
-    const allItemsOrdered = () => {
+    const allItemsOrdered = async () => {
         const previousOrder = orderSelected.order;
         const currentOder = newAdditionToOrder.productos;
         const nuevaOrden = previousOrder.concat(currentOder);
@@ -27,14 +26,19 @@ function EditOrder({ orderSelected }) {
             ...finalOrder, order: [...finalOrder.order, nuevaOrden]
         });
 
-        /*      const db = firebase.firestore();
-             db
-                 .collection('orders')
-                 .doc(orderSelected.id)
-                 .update({
-                     order: finalOrder.order,
-                     total: orderSelected.total,
-                 });*/
+        const calculateTotal = (items = []) => items
+            .reduce((acc, item) => console.log('calculate', acc, item) || (acc + item.price * item.quantity), 0);
+
+        cons;
+
+        /* const db = firebase.firestore();
+        await db
+            .collection('orders')
+            .doc(orderSelected.id)
+            .update({
+                order: finalOrder.order,
+                total: calculateTotal(finalOrder.order),
+            }); */
     };
 
 
