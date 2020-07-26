@@ -11,7 +11,7 @@ export function useOrder() {
 
     const date = new Date;
     const currentDay = [date.getDate(), date.getMonth(), date.getFullYear()].join('/');
-    console.log('ese es el dia', currentDay);
+    //console.log('ese es el dia', currentDay);
 
     useEffect(() => {
         firebase
@@ -63,9 +63,9 @@ function Orders({ datos }) {
     return (
         <Fragment>
             <div className='dash'>
-{/*                 <Navbar datos={datos} />
- */}                <div className='row order-h2'>
-                    <h2 className='white-text'>Cocina</h2>
+                 <Navbar />            
+                     <div className='row order-h2'>
+                    <h2 className='white-text kitchen'>Cocina</h2>
                 </div>
                 <div className='resume-box'>
                     {

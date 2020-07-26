@@ -8,7 +8,7 @@ export function useAllOrder() {
 
     const date = new Date;
     const currentDay = [date.getDate(), date.getMonth(), date.getFullYear()].join('/');
-    console.log('ese es el dia', currentDay);
+    //console.log('ese es el dia', currentDay);
 
     useEffect(() => {
         firebase
@@ -39,7 +39,7 @@ function AllOrders() {
  */}                        <h1 className='title-admin white-text'>Ordenes Totales</h1>
 
                 <div>
-                    <div class="input-field col s12">
+                    <div className="input-field col s12">
                         <select>
                             <option value="" disabled selected>Filtrar ordenes:</option>
                             <option value="1">Mesero</option>

@@ -129,8 +129,8 @@ function EditOrder({ orderSelected }) {
                                 </tr>
                             </table>
                         </div>
-                        <div class="modal-footer btn-accept">
-                            <a href="#!" class="modal-close waves-effect waves-green btn-flat" >Aceptar</a>
+                        <div className="modal-footer btn-accept">
+                            <a href="#!" className="modal-close waves-effect waves-green btn-flat" >Aceptar</a>
                         </div>
                     </div>
                 </div>

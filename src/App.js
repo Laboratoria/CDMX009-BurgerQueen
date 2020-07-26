@@ -12,14 +12,11 @@ import { firebase } from './firebase/firebaseConfig';
 function App() {
 
   //const [firebaseUser, setFirebaseUser] = useState(false);
-  const [loading, setLoading] = useState(false);
   
   useEffect (() => {
-    setLoading(true);
     const unsuscribe = firebase.auth().onAuthStateChanged(user => {
       console.log('usuario', user);
       //setFirebaseUser(user);
-      setLoading(false);
     });
     return unsuscribe;
   }, [])
