@@ -1,12 +1,10 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import './detail-order.css';
 
-function DetailOrders({ }) {
-
+function DetailOrders() {
 
     return (
         <Fragment>
-
             <div id="modal4" class="modal scroll mod-end-order">
                 <div class="modal-content end-order ">
                     <div>
@@ -80,7 +78,6 @@ function DetailOrders({ }) {
                     <button>Imprimir comprobante</button>
                 </div>
             </div>
-
         </Fragment >
     );
 }

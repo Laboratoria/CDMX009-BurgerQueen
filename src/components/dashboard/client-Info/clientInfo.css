@@ -7,6 +7,7 @@
     margin-top: 15%;
     
 }
+
 input{
     color: white;
     background-color: transparent;
@@ -22,26 +23,28 @@ input{
     color: white;
     font-size: 18px;
     font-weight: 600;
-    margin-top: 6%;
-    
+    margin-top: 6%;  
 }
+
 .btn-container{
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
+
 .select-number{
     width: 186px;
 }
+
 .div-submit{
     position: absolute;
-    margin-top: 480px;
-    
+    margin-top: 480px;  
 }
 .dropdown-content li>a, .dropdown-content li>span {
-color:#f57f17;
-font-size: 20px;
+    color:#f57f17;
+    font-size: 20px;
 }
+
 .select-wrapper input.select-dropdown{
     color: white ;
     font-family: 'Raleway';
@@ -53,6 +56,7 @@ font-size: 20px;
     justify-content: center;
     align-items: center;
 }
+
 .toast-error{
     background-color: turquoise;
 }

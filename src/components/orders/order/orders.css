@@ -60,7 +60,6 @@
     padding: 0px 20px;
     line-height: 30px;
     justify-content: space-between;
-
 }
 
 .item-ordered{
@@ -74,7 +73,7 @@
     margin: 0px;
     font-size: 14px;
     margin-top: 2px;
-    }
+}
 
 .text-item{
     padding-left: 25px !important;

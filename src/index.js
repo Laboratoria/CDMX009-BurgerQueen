@@ -13,25 +13,3 @@ ReactDOM.render((
   document.getElementById('root'));
 
 serviceWorker.register();
-
-
-
-
-
-
-
-
-//Firebase 1º
-/* ReactDOM.render((
-
-  <React.StrictMode>
-    <FirebaseAppProvider firebaseConfig={firebaseConfig}>
-      <Suspense fallback={'Conectando la app...'}>
-        <App />
-      </Suspense>
-    </FirebaseAppProvider>
-  </React.StrictMode>
-),
-document.getElementById('root'));
-
-serviceWorker.unregister(); */

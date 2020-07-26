@@ -10,15 +10,18 @@
     border-radius: 5px !important;  
     padding: 30px 30px 30px 30px;
 }
+
 .title-admin{
     font-family: 'Raleway';
     font-style: normal;
     font-weight: bold;
     font-size: 45px;
 }
+
 .add-personal{
     margin-top: 35px;
 }
+
 .add-btn{
     border: 1px solid #FFFFFF;
     background-color: #FBE677;
@@ -32,17 +35,20 @@
     text-transform: initial;
     line-height: 35px;
 }
+
 .add-text{
     font-family: 'Raleway';
     font-style: normal;
     padding-top: 5px;
 }
+
 .register-btn{
     margin-top: 30px;
     display:flex;
     justify-content: center;
     margin-bottom: 20px;
 }
+
 .register-text{
     text-transform: initial;
     border: 1px solid #FFFFFF;
@@ -55,9 +61,11 @@
     font-size: 18px;
     line-height: 35px;
 }
+
 .ipt{
     padding-bottom: 10px !important;
 }
+
 .text-font{
     font-family: 'Raleway' !important;
     font-style: normal !important;

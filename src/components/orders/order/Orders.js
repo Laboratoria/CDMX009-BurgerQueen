@@ -11,7 +11,7 @@ import BtnStatus from '../status/BtnStatus';
 export function useOrder() {
     const [order, setOrder] = useState([]);
 
-    const date = new Date;
+    const date = new Date();
     const currentDay = [date.getDate(), date.getMonth(), date.getFullYear()].join('/');
 
     useEffect(() => {
@@ -29,7 +29,7 @@ export function useOrder() {
                 }));
                 setOrder(newOrder);
             });
-    }, []);
+    }, [currentDay]);
     return order;
 }
 
@@ -58,7 +58,6 @@ function Orders({ datos }) {
         table: '',
         total: '',
         people: '',
-        total: '',
         date: '',
         hour: '',
         deliveryTime: '',
@@ -126,4 +125,5 @@ function Orders({ datos }) {
     );
 }
 export default Orders;
+
 

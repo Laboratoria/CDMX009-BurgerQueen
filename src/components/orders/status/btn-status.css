@@ -1,25 +1,9 @@
-/* .resume-status{
-    display: flex !important;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    font-weight: bolder;
-    color: blue;
-    margin-left: 3px;
-}
-
-.status{
-    width: 30px;
-}
-
 .status-opt{
-}
- */
-
- .status-opt{
     height: 300px;
     top: 30% !important;
     border-radius: 5px;
  }
+ 
 .status-menu{
     width: 100% !important;
     padding: 35px !important;
@@ -43,4 +27,7 @@
 
 .Toastify__toast--dark{
     background-color: orange;
+    color: black;
+    font-family: 'Raleway';
+    text-align: center;
 }
