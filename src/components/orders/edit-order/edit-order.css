@@ -1,0 +1,113 @@
+.mod-edit-options{
+    border-radius: 5px;
+}
+
+.info-table-selected{
+    font-size: x-large;
+    font-weight: bold;
+    font-family: 'Raleway';
+    margin: 3%;
+    padding: 1% 1%; 
+    background-color: #FBE677;
+    border-radius: 10px;
+}
+
+.table-num{
+    margin: 0;
+}
+
+.add-products-order{
+    margin-right: 10px;
+    border-color: gray;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 2px;
+    font-family: 'Raleway';
+    font-size: small;
+} 
+
+.modal-content{
+    display: flex;
+    padding: 0px !important;
+    align-items: stretch;
+    display: flex !important;
+}
+
+.mod-edit-options{
+    width: 90% ;
+    height: 90%;
+    top: 17% !important;
+}
+
+.table-new-items-added th{
+    text-align: center;
+    width: fit-content;
+    background-color: lightgray;
+}
+
+.table-new-items-added td{
+    text-align: center;
+    padding: 0;
+    border-left: 1px solid lightgray;
+}
+
+.btn-add{
+    background-color: transparent;
+    border-style: none;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.btn-add:hover, .btn-delete-item-added:hover{
+    background-color: transparent;
+}
+
+.quanity-product{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.item-text-table{
+    padding: 0 4% 0 10%;
+    text-align: left;
+}
+
+.btn-delete-item-added{
+    background-color: transparent;
+    border-style: none;
+    font-weight: bold;
+    text-align: left;
+    padding: 0 0 0 10%;
+}
+
+.product-added{
+    display: flex;
+    justify-content: left;
+ }
+
+ .resume-items-added{
+     background-color: #FBE677;
+     font-weight: bold;
+     width: 20%;
+ }
+
+ .row-food-opts{
+     display: flex;
+     flex-direction: column;
+ }
+
+.btn-accept{
+    background-color: #FBE677 ;
+    border-style: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: 'Raleway';
+}
+
+.btn-accept-edit{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 7%;
+    margin-bottom: 2%;
+}

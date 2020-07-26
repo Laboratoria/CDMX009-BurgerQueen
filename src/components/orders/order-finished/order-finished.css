@@ -1,0 +1,54 @@
+.mod-end-order{
+    border-radius: 5px !important;
+    width: 500px;
+    top: 17% !important;
+}
+
+.end-order{
+    margin: 10px 0px 20px 30px !important;
+    display: flex !important;
+    flex-direction: column;
+    padding: 7% !important;
+    margin: 0 !important;
+}
+
+.mod-content-edit{
+    margin: 10px 30px 20px 30px !important
+}
+
+.title-opt-end-order{
+    font-size: x-large;
+    font-family: 'Raleway';
+    font-weight: bold;
+    color: orange;
+    margin: 3px 0;
+}
+
+#modal1 > div > div:nth-child(1) > div.opt.text-black > div > input, #modal1 > div > div:nth-child(2) > div:nth-child(2) > div > input, #modal1 > div > div:nth-child(3) > div > div > input, .total-order-finished{
+    color: black;
+    font-size: large;
+    font-weight: normal;
+    font-family: 'Raleway';
+}
+
+[type="radio"]:checked+span:after {
+    transform: scale(1.02);
+    background: orange;
+    border: orange;
+}
+
+.end-edit-order{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 7%;
+    margin-bottom: 2%;
+}
+
+.btn-end-edit-order{
+    background-color: #FBE677 ;
+    border-style: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: 'Raleway';
+}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { firebase } from '../../firebase/firebaseConfig';
 import ModalAdmin from './ModalAdmin';
 import Navbar from '../layout/Navbar';
-import '../admin/admin.css';
+import '../admon/admin.css';
 
 const Admin = () => {
 
@@ -13,20 +13,20 @@ const Admin = () => {
             try {
                 const data = await firebase.firestore().collection('users').get();
                 //console.log(data.docs);
-                const arrayData = data.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+                const arrayData = data.docs.map(doc => ({ id: doc.id, ...doc.data() }));
                 console.log(arrayData);
                 setUser(arrayData); //Todos los usuarios
             } catch (error) {
                 console.log(error);
             }
-        }
+        };
         getUsers();
-    }, [])
+    }, []);
 
     return (
         <div className='bg'>
-             <Navbar />
-           <div className='container'>
+            <Navbar />
+            <div className='container'>
                 <h1 className='title-admin white-text'>Administrar accesos</h1>
                 <div className='row'>
                     <div className=' table-user white'>
@@ -54,13 +54,13 @@ const Admin = () => {
                         </table>
                     </div>
                     <div className='add-personal center-align'>
-{/*                     <button className='add-btn white-text'>Añadir personal</button>
+                        {/*                     <button className='add-btn white-text'>Añadir personal</button>
  */}                    <ModalAdmin user={user} setUser={setUser} />
                     </div>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Admin
+export default Admin;

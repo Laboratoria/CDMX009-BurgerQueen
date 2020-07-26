@@ -70,7 +70,7 @@ const SignIn = (props) => {
     );
 
     return (
-        <div className='initial-image'>
+        <div className='initial-image-blur'>
             <div className='container form-container row'>
                 <div className='col m7 right'>
                     <form className='signin-form'>

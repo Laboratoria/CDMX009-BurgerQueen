@@ -1,11 +1,49 @@
 import React, { useState } from 'react';
 import BreakfastCards from '../dashboard/menuCards/BreakfastCards';
 import DinnerCards from '../dashboard/menuCards/DinnerCards';
-import ResumeMenu from '../dashboard/ResumeMenu';
+import ResumeMenu from '../dashboard/resume-menu/ResumeMenu';
 import Button from '../dashboard/Button';
 import Navbar from '../layout/Navbar';
+import { useStopwatch } from 'react-timer-hook';
 
 function Dashboard({ datos, setDatos }) {
+
+
+
+    /*       const {
+              seconds,
+              minutes,
+              isRunning,
+              start,
+              pause,
+          } = useStopwatch({ autoStart: false });
+      
+      
+          return (
+              <div>
+                  <div>
+                      <span>{minutes}</span>:<span>{seconds}</span>
+                  </div>
+                  <p>{isRunning ? 'Running' : 'Not running'}</p>
+                  <button onClick={start}>Start</button>
+                  <button onClick={pause}>Pause</button>
+              </div>
+          );
+      
+   */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     const [visible, setVisible] = useState(true);
 
@@ -41,8 +79,8 @@ function Dashboard({ datos, setDatos }) {
     return (
         <div>
             <div className='dashboard'>
-                 <Navbar datos={datos} />
-               <div className='row'>
+                <Navbar datos={datos} />
+                <div className='row'>
                     <Button setVisible={setVisible} visible={visible} datos={datos} setDatos={setDatos} />
                     <div className='col m6'>
                         {visible ? <BreakfastCards addOrder={addOrder} /> : <DinnerCards addOrder={addOrder} />}
