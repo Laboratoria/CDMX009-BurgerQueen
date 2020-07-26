@@ -1,6 +1,6 @@
 .initial-image{
-/*     background-image: url('/img/initial-image.jpg');
- */    background-repeat: no-repeat;
+     background-image: url('../../img/initial-image.jpg');
+    background-repeat: no-repeat;
     min-height: 100vh;
     background-attachment: fixed;
     background-position: center center;

@@ -10,7 +10,7 @@ function BurgerQueen() {
             <div className='initial-image'>
                 <img className='logo' src={logo} alt='logo' />
                 <div className='red'>
-                <NavLink to ='/login'><button className='btn-login right'>login</button></NavLink>
+                <a href ='/login'><button className='btn-login right'>login</button></a>
                 </div>
             </div>
         </div>

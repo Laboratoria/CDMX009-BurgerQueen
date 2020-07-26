@@ -13,8 +13,8 @@ function OrderFinished({ orderFinished }) {
     return (
         <Fragment>
 
-            <div id="modal1" class="modal scroll">
-                <div class="modal-content">
+            <div id="modal1" className="modal scroll">
+                <div className="modal-content">
                     <div className='end-order'>
                         <div>
                             <p className='title-Opt'> Método de pago </p>
@@ -55,8 +55,8 @@ function OrderFinished({ orderFinished }) {
                                 </select>
                             </div>
                         </div>
-                        <div class="modal-footer btn-accept">
-                            <a href="#!" class="modal-close waves-effect waves-green btn-flat" onClick={sendOrderFinished}>Aceptar</a>
+                        <div className="modal-footer btn-accept">
+                            <a href="#!" className="modal-close waves-effect waves-green btn-flat" onClick={sendOrderFinished}>Aceptar</a>
                         </div>
                     </div>
                 </div>

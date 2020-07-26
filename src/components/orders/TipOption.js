@@ -19,7 +19,7 @@ function TipOption({ orderFinished }) {
                 </label>
             </p>
             <div className="input-field col s6">
-                <input className='black' placeholder="Otro" id="first_name" type="text" class="validate" onClick={() => setTip()} />
+                <input className='black' placeholder="Otro" id="first_name" type="text" className="validate" onClick={() => setTip()} />
             </div>
             <div>
                 <p>Total incluyendo propina: {(orderFinished.total * tip).toFixed(2)}</p>
