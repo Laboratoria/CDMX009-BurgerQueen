@@ -21,7 +21,6 @@ function Order(){
   }
 
   function addItemToOrder (product){
-    //primero validar order.items para saber si existe un elemento con el mismo id
     let found = order.items.find(({ productId })=> productId === product.id)
     setOrder({
       ...order,
@@ -49,11 +48,31 @@ function Order(){
       items: newItems,
       total: calculateTotal(newItems)
     })
-
   }
 
   function substractItem (itemSubstract){
-    console.log(itemSubstract.productId, itemSubstract.quantity)
+    let found = order.items.find(({ productId })=> productId === itemSubstract.productId)
+    const newItems = order.items.filter(item => item.productId !== itemSubstract.productId)
+    if (found){
+      order.items.map( item => {
+        if (itemSubstract.productId === item.productId){
+          if (item.quantity === 1){
+            setOrder({
+              ...order,
+              items: newItems,
+              total: calculateTotal(newItems)
+            })
+          } else{
+            console.log('Aquí restamos cantindad')
+            setOrder({
+              ...order,
+              quantity:item.quantity-1, 
+              subTotal: itemSubstract.price*item.quantity
+            })
+          }
+        }
+      })
+    }
   }
 
       
