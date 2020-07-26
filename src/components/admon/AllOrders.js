@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react';
 import { firebase } from '../../firebase/firebaseConfig';
 import Navbar from '../layout/Navbar';
 import './all-orders.css';
+import DetailOrders from './detailsOrder';
 
 export function useAllOrder() {
     const [allOrder, setAllOrder] = useState([]);
@@ -30,15 +31,6 @@ export function useAllOrder() {
 function AllOrders() {
     const orders = useAllOrder();
 
-    const [filtro, setFiltro] = useState([]);
-
-    const filterWaiter = () => {
-        const table = orders.filter(item => {
-            return (item.table == '2');
-        });
-        return setFiltro(table);
-    };
-
     return (
         <Fragment>
             <div className='bck-imag-orders'>
@@ -47,27 +39,12 @@ function AllOrders() {
                     <h1 className='title-admin white-text'>Ordenes Totales</h1>
                     <div>
                         <div class="input-field col s12">
-                            <select onChange={filterWaiter}>
+                            <select>
                                 <option value="" disabled selected>Filtrar ordenes:</option>
                                 <option value="1">Mesero</option>
                                 <option value="2">Fecha</option>
                             </select>
                         </div>
-                    </div>
-                    <div>
-                        {filtro.map(item => (
-                            <tbody key={item.id}>
-                                <tr>
-                                    <td className='title-table'>{item.date}</td>
-                                    <td className='title-table'>{item.id}</td>
-                                    <td className='title-table'>Bren Carranco</td>
-                                    <td className='title-table'>${item.total}.00</td>
-                                    <td className='title-table'>
-                                        <button className='btn-details-orders'>Detalles</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        ))}
                     </div>
                     <div className='table-elements'>
                         <div className='table-container'>
@@ -89,7 +66,7 @@ function AllOrders() {
                                             <td className='title-table'>Bren Carranco</td>
                                             <td className='title-table'>${order.total}.00</td>
                                             <td className='title-table'>
-                                                <button className='btn-details-orders'>Detalles</button>
+                                                <button className="waves-effect waves-light btn modal-trigger btn-details-orders" href="#modal4">Detalles</button>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -97,6 +74,7 @@ function AllOrders() {
                             </table>
                         </div>
                     </div>
+                    <DetailOrders />
                 </div>
             </div>
         </Fragment>

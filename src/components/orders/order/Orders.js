@@ -19,6 +19,7 @@ export function useOrder() {
             .firestore()
             .collection('orders')
             .where("date", "==", currentDay)
+            .where("endingOrder", "==", 'no')
             .orderBy('hour', 'desc')
             .limit(10)
             .onSnapshot((snapshot) => {
@@ -90,7 +91,7 @@ function Orders({ datos }) {
                                         <p className='table-info'>{item.hour}</p>
                                         {<img src={editImage} onClick={() => { editBtn(item); }} alt='edit' className="waves-effect waves-light btn modal-trigger mod-edit" href="#modal2" />}
                                     </div>
-                                    <Chronometer />
+                                    <Chronometer item={item} />
                                     <div>
                                         <div className='list-products scroll'>
                                             {item.order.map(a => (

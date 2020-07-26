@@ -1,12 +1,38 @@
 import React, { Fragment, useState } from 'react';
-import TipOption from './TipOption';
+import { firebase } from '../../../firebase/firebaseConfig';
 import './order-finished.css';
 
 function OrderFinished({ orderFinished }) {
-    const [visible, setVisible] = useState(true);
+    const [totalWithTip, setTotalWithTip] = useState(0);
+    const [paymentMethod, setPaymentMethod] = useState('');
 
     const sendOrderFinished = () => {
-        console.log('actualizar pago y metodo');
+        firebase
+            .firestore()
+            .collection('orders')
+            .doc(orderFinished.id)
+            .update({
+                endingOrder: 'si',
+                total: totalWithTip,
+                payment: paymentMethod,
+            })
+            .then(function () {
+                console.log("Document successfully updated!");
+            })
+            .catch(function (error) {
+                console.error("Error updating document: ", error);
+            });
+    };
+
+    const paymentMethodSelected = (e) => {
+        const method = e.target.value;
+        setPaymentMethod(method);
+    };
+    console.log(paymentMethod);
+
+    const newTotalCalculated = (tip) => {
+        const newTotal = tip * orderFinished.total;
+        setTotalWithTip(newTotal.toFixed(2));
     };
 
     return (
@@ -17,11 +43,11 @@ function OrderFinished({ orderFinished }) {
                     <div>
                         <p className='title-opt-end-order'> Método de pago </p>
                         <div className='opt text-black'>
-                            <select className='opt black-text'>
+                            <select className='opt black-text' onChange={paymentMethodSelected}>
                                 <option value="" disabled selected>Elige una opción</option>
-                                <option className='opt text-red' value="1">Efectivo</option>
-                                <option className='opt' value="2">Tarjeta de crédito</option>
-                                <option className='opt' value="3">Tarjeta de regalo</option>
+                                <option className='opt text-red' value="Efectivo">Efectivo</option>
+                                <option className='opt' value="tarjetaCredito" >Tarjeta de crédito</option>
+                                <option className='opt' value="tarjetaDebito">Tarjeta de regalo</option>
                             </select>
                         </div>
                         <div>
@@ -30,18 +56,29 @@ function OrderFinished({ orderFinished }) {
                     </div>
                     <div>
                         <p className='title-opt-end-order'> Agregar propina</p>
-                        <div className='' >
-                            <select className='options'>
-                                <option value="" disabled selected>Elige una opción</option>
-                                <option className='opt' onClick={() => setVisible(false)} >No</option>
-                                <option className='opt' onClick={() => setVisible(true)}> Si</option>
-                            </select>
-                        </div>
-                        <div>
-                            {
-                                visible ? (<TipOption orderFinished={orderFinished} />) : (<div>no se agrega propina</div>)
-                            }
-                        </div>
+                        <form action="#">
+                            <p>
+                                <label>
+                                    <input name="group1" type="radio" checked onClick={() => { newTotalCalculated(1); }} />
+                                    <span className='total-order-finished'>10%</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input name="group1" type="radio" checked onClick={() => { newTotalCalculated(1.10); }} />
+                                    <span className='total-order-finished'>10%</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input name="group1" type="radio" onClick={() => { newTotalCalculated(1.15); }} />
+                                    <span className='total-order-finished'>15%</span>
+                                </label>
+                            </p>
+                            <div>
+                                <p className='total-order-finished'>Total incluyendo propina: {totalWithTip}</p>
+                            </div>
+                        </form>
                     </div>
                     <div>
                         <p className='title-opt-end-order'>Obtener comprobante</p>

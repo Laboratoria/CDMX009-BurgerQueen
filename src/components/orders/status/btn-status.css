@@ -17,7 +17,8 @@
 
  .status-opt{
     height: 300px;
-    top: 30% !important
+    top: 30% !important;
+    border-radius: 5px;
  }
 .status-menu{
     width: 100% !important;

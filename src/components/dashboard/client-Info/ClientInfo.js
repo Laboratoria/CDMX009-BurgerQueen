@@ -53,8 +53,9 @@ const ClientInfoForm = ({ datos, setDatos }) => {
                 total: datos.total,
                 date: date,
                 hour: hour,
-                waitTime: 0,
-                status: 'pendiente'
+                waitTime: 'tiempo en servir la mesa',
+                status: 'pendiente',
+                endingOrder: 'no',
             };
 
             await db.collection('orders').add(newOrder);
