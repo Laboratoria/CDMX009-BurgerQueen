@@ -65,7 +65,7 @@ function AllOrders() {
                                     <tr className='header-table'>
                                         <th className='title-table'>Fecha y hora</th>
                                         <th className='title-table'>No. de orden</th>
-                                        <th className='title-table'>Mesero</th>
+                                        <th className='title-table'>Tiempo de entrega</th>
                                         <th className='title-table'>Total</th>
                                         <th className='title-table'>Orden</th>
                                     </tr>
@@ -75,10 +75,12 @@ function AllOrders() {
                                         <tr>
                                             <td className='title-table'>{order.date}</td>
                                             <td className='title-table'>{order.id}</td>
-                                            <td className='title-table'>Bren Carranco</td>
+                                            <td className='title-table'>{order.waitTime}</td>
                                             <td className='title-table'>${order.total}.00</td>
                                             <td className='title-table'>
-                                                <button className="waves-effect waves-light btn modal-trigger btn-details-orders" href="#modal4" onClick={() => viewReceipt(order)}>Detalles</button>
+                                                <div className=' btn-detail'>
+                                                    <button className="waves-effect waves-light btn modal-trigger btn-details-orders" href="#modal4" onClick={() => viewReceipt(order)}>Detalles</button>
+                                                </div>
                                             </td>
                                         </tr>
                                     </tbody>

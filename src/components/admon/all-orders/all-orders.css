@@ -44,3 +44,7 @@
     background-color: #ffdf3c;
 }
 
+.btn-detail{
+    display: flex;
+    justify-content: center;
+}
