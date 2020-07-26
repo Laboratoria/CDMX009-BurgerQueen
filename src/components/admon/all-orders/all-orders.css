@@ -32,6 +32,15 @@
     border-style: solid;
     border-color: black;
     border-width: 1px;
+    display: flex;
+    align-items: center;
+    font-family: 'Raleway';
     padding: 5% 15%;
+    color: black;
+    text-transform: lowercase;
+}
+
+.btn-details-orders:hover{
+    background-color: #ffdf3c;
 }
 

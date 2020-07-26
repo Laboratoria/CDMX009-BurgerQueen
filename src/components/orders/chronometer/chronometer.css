@@ -18,11 +18,7 @@
 }
 
 .btn-opt-chrm:hover{
-    background-color: rgba(255, 175, 2, 0.849);
-}
-
-.btn-opt-chrm:hover{
-    background-color: rgba(255, 175, 2, 0.849);
+    background-color: rgba(170, 116, 0, 0.849);
 }
 
 .btn-update-time{
@@ -30,4 +26,8 @@
     border-style: none;
     border-radius: 2px;
     width: 20px;
+}
+
+.btn-update-time:hover{
+    background-color: rgba(170, 116, 0, 0.849);
 }
