@@ -8,18 +8,17 @@ Burger Queen es una aplicación que ofrece una alternativa en la forma de tomar 
 
 Se identificaron y aterrizaron los elementos básicos que debería de llevar la app para posteriormente integrarlos en un prototipo de alta fidelidad.
 
-<img src="public/sketch.jpeg" width="400"/>
-
-![prototype](public/sketch.jpeg)
+<img src='public/sketch.jpeg' width='400' >
 
 ## Prototipo
 
 Distribuimos los elementos propuestos en el sketch para optimizar la navegación y la experiencia de usuario, hicimos algunas modificaciones con base en el feedback recibido por coaches y compañeras.
 
-<img src="public/prototipo.png" width="500"/>
-
 ![prototype](public/prototipo.png)
 
+## Prototipo final
+
+[![Image from Gyazo](https://i.gyazo.com/b7ae24e96fef8608d9693f8932900c26.gif)](https://gyazo.com/b7ae24e96fef8608d9693f8932900c26) 
 
 ## Objetivos de aprendizaje
 
