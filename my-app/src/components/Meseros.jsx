@@ -1,14 +1,25 @@
-import React from "react"
+import React,{useState} from "react"
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link
   } from "react-router-dom";
-import Comida from "./Comida"
-import Desayuno from "./Desayuno";
+import Comida from "./comida/Comida"
+import Desayuno from "./Desayuno/Desayuno";
 
-const Meseros =() =>{
+
+const Meseros =({ProductsBF,addItemToOrder,ProductsFo}) =>{
+    const [count, setCount] = useState(0);
+
+    const handleCounter = () => {
+        setCount(count + 1);
+        console.log(count);
+    }
+
+    //quitar router y en vez de todo eso usar link to
+    //recibir el prop de ProductFo
+    //enviar el prop de ProductFo y la funcion a comida
     return(
         <Router>
         <div>
@@ -25,12 +36,14 @@ const Meseros =() =>{
                         <button className="button" id="comida"><Link to="/Comida">Comida</Link></button>
                     </div>
                     <div className="menuDes">
+
+                    
                         <Switch>
                             <Route path="/Comida">
-                                <Comida />
+                                <Comida ProductsFo={ProductsFo} addItemToOrder={addItemToOrder} handleCounter={handleCounter} />
                             </Route>
                             <Route path="/">
-                                <Desayuno />
+                                <Desayuno ProductsBF={ProductsBF} addItemToOrder={addItemToOrder} handleCounter={handleCounter}/>
                             </Route>
                         </Switch>
                     </div>

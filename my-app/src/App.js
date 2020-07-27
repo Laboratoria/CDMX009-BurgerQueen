@@ -10,20 +10,20 @@ import {
 import Home from "./components/Home"
 import Login from "./components/Login"
 import Meseros from "./components/Meseros"
-
+import {ProductsBF,ProductsFo} from './components/utils/data/Data'
 
 
 function App() {
-  let [order,setorder]=useState({
+  let [order,setOrder]=useState({
     nombreCliente:"",
     status:false,
     item:[]
   })
 
-  let setItemToOrder=()=
   function addItemToOrder(product){
-    setOrder({...order, items:[...order.items, product]}) 
+    setOrder({...order,item:[...order.item,product]}) 
  }
+ console.log(order)
 
   return (
     <div className="App">
@@ -38,7 +38,11 @@ function App() {
             <Home />
           </Route>
           <Route path="/Meseros">
-            <Meseros />
+            <Meseros 
+            ProductsBF={ProductsBF}
+            ProductsFo={ProductsFo}
+            addItemToOrder={addItemToOrder}
+             />
           </Route>
           <Route path="/">
             <Login />
