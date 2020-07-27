@@ -37,7 +37,6 @@ const Admin = () => {
                                         <th>Estación  </th>
                                     </tr>
                                 </thead>
-
                                 <tbody>
                                     {
                                         user.map(item => (

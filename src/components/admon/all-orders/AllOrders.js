@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import { firebase } from '../../firebase/firebaseConfig';
-import Navbar from '../layout/Navbar';
+import { firebase } from '../../../firebase/firebaseConfig';
+import Navbar from '../../layout/Navbar';
 import './all-orders.css';
 import DetailOrders from './detailsOrder';
 
@@ -11,7 +11,7 @@ export function useAllOrder() {
         firebase
             .firestore()
             .collection('orders')
-            .orderBy('hour', 'desc')
+            .orderBy('date', 'desc')
             .limit(30)
             .onSnapshot((snapshot) => {
                 const newOrder = snapshot.docs.map((doc) => ({
@@ -26,6 +26,22 @@ export function useAllOrder() {
 
 function AllOrders() {
     const orders = useAllOrder();
+
+    const [orderSelected, setOrderSelected] = useState({
+        id: '',
+        order: [],
+        table: '',
+        total: '',
+        people: '',
+        date: '',
+        hour: '',
+        deliveryTime: '',
+        status: 'pendiente'
+    });
+
+    const viewReceipt = (order) => {
+        setOrderSelected(order);
+    };
 
     return (
         <Fragment>
@@ -49,7 +65,7 @@ function AllOrders() {
                                     <tr className='header-table'>
                                         <th className='title-table'>Fecha y hora</th>
                                         <th className='title-table'>No. de orden</th>
-                                        <th className='title-table'>Mesero</th>
+                                        <th className='title-table'>Tiempo de entrega</th>
                                         <th className='title-table'>Total</th>
                                         <th className='title-table'>Orden</th>
                                     </tr>
@@ -59,10 +75,12 @@ function AllOrders() {
                                         <tr>
                                             <td className='title-table'>{order.date}</td>
                                             <td className='title-table'>{order.id}</td>
-                                            <td className='title-table'>Bren Carranco</td>
+                                            <td className='title-table'>{order.waitTime}</td>
                                             <td className='title-table'>${order.total}.00</td>
                                             <td className='title-table'>
-                                                <button className="waves-effect waves-light btn modal-trigger btn-details-orders" href="#modal4">Detalles</button>
+                                                <div className=' btn-detail'>
+                                                    <button className="waves-effect waves-light btn modal-trigger btn-details-orders" href="#modal4" onClick={() => viewReceipt(order)}>Detalles</button>
+                                                </div>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -70,7 +88,7 @@ function AllOrders() {
                             </table>
                         </div>
                     </div>
-                    <DetailOrders />
+                    <DetailOrders orderSelected={orderSelected} />
                 </div>
             </div>
         </Fragment>

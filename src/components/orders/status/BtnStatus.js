@@ -39,8 +39,8 @@ function BtnStatus({ orderSelected }) {
     return (
         <Fragment>
             <div className='row resume-status'>
-                <div id="modal3" class="modal status-opt">
-                    <div class="input-field col s12  status-menu">
+                <div id="modal3" className="modal status-opt">
+                    <div className="input-field col s12  status-menu">
                         <p className='title-opt-end-order'>Status del pedido</p>
                         <select>
                             <option value="" disabled selected>Pendiente</option>
@@ -49,7 +49,7 @@ function BtnStatus({ orderSelected }) {
                         </select>
                     </div>
                     <div class="modal-footer">
-                        <button href="#!" class="modal-close waves-effect waves-green btn-flat btn-update-status" onClick={updateDoc}>Cambiar</button>
+                        <button href="#!" class="modal-close waves-effect waves-yellow btn-flat btn-update-status" onClick={updateDoc}>Cambiar</button>
                     </div>
                 </div>
             </div>

@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Dashboard from './components/dashboard/Dashboard.jsx';
 import Orders from './components/orders/order/Orders';
 import SignIn from './components/auth/SignIn';
-import AllOrders from './components/admon/AllOrders.js';
+import AllOrders from './components/admon/all-orders/AllOrders';
 import Admin from './components/admon/Admin';
 import BurgerQueen from './components/BQ/BurgerQueen.jsx';
 import 'materialize-css/dist/css/materialize.min.css';
