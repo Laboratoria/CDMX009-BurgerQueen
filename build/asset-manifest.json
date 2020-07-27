@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.41769410.chunk.css",
+    "main.js": "/static/js/main.cadba0ca.chunk.js",
+    "main.js.map": "/static/js/main.cadba0ca.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.aebd6d6c.js",
+    "runtime-main.js.map": "/static/js/runtime-main.aebd6d6c.js.map",
+    "static/css/2.f0f662b8.chunk.css": "/static/css/2.f0f662b8.chunk.css",
+    "static/js/2.bb538255.chunk.js": "/static/js/2.bb538255.chunk.js",
+    "static/js/2.bb538255.chunk.js.map": "/static/js/2.bb538255.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.f4328ba274ba212e5270a610bb21edde.js": "/precache-manifest.f4328ba274ba212e5270a610bb21edde.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.f0f662b8.chunk.css.map": "/static/css/2.f0f662b8.chunk.css.map",
+    "static/css/main.41769410.chunk.css.map": "/static/css/main.41769410.chunk.css.map",
+    "static/js/2.bb538255.chunk.js.LICENSE.txt": "/static/js/2.bb538255.chunk.js.LICENSE.txt",
+    "static/media/barras.png": "/static/media/barras.b1db6d76.png",
+    "static/media/orders.css": "/static/media/dashboard-image-blur.07e4c462.PNG",
+    "static/media/edit.svg": "/static/media/edit.2927f8de.svg",
+    "static/media/initBurger.png": "/static/media/initBurger.385ae813.png",
+    "static/media/logo-receipt.png": "/static/media/logo-receipt.9f2b5b69.png",
+    "static/media/logo.svg": "/static/media/logo.1b9382a8.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.aebd6d6c.js",
+    "static/css/2.f0f662b8.chunk.css",
+    "static/js/2.bb538255.chunk.js",
+    "static/css/main.41769410.chunk.css",
+    "static/js/main.cadba0ca.chunk.js"
+  ]
+}
