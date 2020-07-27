@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import db from '../../firebase';
+//import db from '../../firebase';
 import Logo from '../Logo/Logo';
 import Boton from '../Boton/Boton'
 import styles from './styles.module.css';

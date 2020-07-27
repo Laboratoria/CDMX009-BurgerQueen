@@ -64,7 +64,7 @@ function App() {
 
   //funcion para capturar y controlar el estado de los datos de los inputs(cliente) y la orden.
   const [client, setClient] = useState(initialDataClient);
-
+  
   const [order, setOrder] = useState({
     items: []
   });
@@ -72,25 +72,21 @@ function App() {
   const addItemToOrder = (product) => {
     let newItems = [];
 
-    if (client.items.length > 0) {
-      newItems = client.items.reduce((acc, item) => {
-        return (item.id === product.id)
-          ? [...acc, { ...item, quantity: item.quantity + 1 }]
-          : [...acc, { ...product, quantity: 1 }]
-      }, [])
+    if (client.items.find((i) => i.id === product.id)) {
+      newItems = client.items.map((item) => {
+        if (item.id === product.id) {
+          return { ...item, quantity: item.quantity + 1 };
+        }
+        return item;
+      })
     } else {
-      newItems = [{ ...product, quantity: 1 }]
+      newItems = [...client.items, { ...product, quantity: 1 }]
     }
-
-    
 
     setClient({
       ...client,
       items: newItems
-    })
-  }
-
-
+    })}
   return (
     <div className="App">
 
