@@ -41,18 +41,22 @@ const ReusableTable = ({ client }) => {
                     {client.items.map(
                         (item, index) =>
                             <>
-                                <div className={styles.foodOptions}>
-                                    <span key={index}>{item.name}</span>                        
+                                <div className={styles.productsContainer}>
+                                    <div className={styles.foodOptions}>
+                                        <span key={index}>{item.name}</span>                        
+                                    </div>
+                                    <div>
+                                        <input
+                                            className={styles.stepperWrapper}
+                                            type="number"
+                                            
+                                            min={1}
+                                            max={100}
+                                            value={item.quantity}
+                                            onChange={(e) => console.log('new value', e.target.value)}
+                                        />                             </div>
+                                    <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={40} height={"auto"} /></div>
                                 </div>
-                                <div>
-                                    <input
-                                        type="number"
-                                        min={1}
-                                        max={100}
-                                        value={item.quantity}
-                                        onChange={(e) => console.log('new value', e.target.value)}
-                                    />                             </div>
-                                <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={35} height={"auto"} /></div>
                             </>
                     )}
                 </div>
