@@ -1,3 +1,16 @@
+input[type=number]::-webkit-inner-spin-button { opacity: 0 }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+
+   -webkit-appearance: "Always Show Up/Down Arrows";
+
+}
+
+
+
+
+
 .containerTable {
     border: 2px solid #ED3367;
     background: #EAEAEA;
@@ -128,7 +141,6 @@ margin-right: 30px;
 width: 100px;
 height: 60px;
 }
-
 
 .StepperStateless {
     align-self: end;
