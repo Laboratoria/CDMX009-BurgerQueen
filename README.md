@@ -14,12 +14,11 @@ Se identificaron y aterrizaron los elementos básicos que debería de llevar la 
 
 Distribuimos los elementos propuestos en el sketch para optimizar la navegación y la experiencia de usuario, hicimos algunas modificaciones con base en el feedback recibido por coaches y compañeras.
 
-![prototype](public/prototipo.png)
+<img src='public/prototipo.png' width='400' >
 
 ## Prototipo final
 
-![gyazo gif](https://gyazo.com/b7ae24e96fef8608d9693f8932900c26)
-
+[![Image from Gyazo](https://i.gyazo.com/b7ae24e96fef8608d9693f8932900c26.gif)](https://gyazo.com/b7ae24e96fef8608d9693f8932900c26) 
 
 ## Objetivos de aprendizaje
 
