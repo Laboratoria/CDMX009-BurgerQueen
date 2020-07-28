@@ -4,6 +4,13 @@
 
 Burger Queen es una aplicación que ofrece una alternativa en la forma de tomar pedidos en los restaurantes. Burger queen ofrece tomar nuevas ordenes, editarlas, borrarlas y almacenarlas permitiendo una actualización de la información en tiempo real entre cocina y meseros. 
 
+## Demo
+Puedes ingresar a la aplicación desde [aqui](https://burger-queen-xel-bren.netlify.app/)<br>
+
+Es necesario ingresar con un usuario y una contraseña, por lo que deberas utilizar los siguientes:<br>
+Correo: xel@burgerqueen.mx   o  bren@burgerqueen.mx <br>
+Contraseña: 123456
+
 ## Sketch 
 
 Se identificaron y aterrizaron los elementos básicos que debería de llevar la app para posteriormente integrarlos en un prototipo de alta fidelidad.
