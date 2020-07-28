@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 //import db from '../../firebase';
 import Logo from '../Logo/Logo';
+import db from '../../firebase';
 import Boton from '../Boton/Boton'
 import styles from './styles.module.css';
 import ReusableTable from '../ReusableTable';
@@ -11,6 +12,15 @@ import { currencyFormatter } from '../../utils'
 const BreakFast = ({ client, setClient, products, addItemToOrder }) => {
 
     console.log('aqui está la order', client);
+
+
+    const orderFood = (e) => {
+        e.preventDefault();
+        db.collection('ordersfood').add(client)
+            .then(() => {
+                console.log('orden de breakfast guardada en Firestore exitosamente')
+            });
+    }
 
     return (
 
@@ -28,7 +38,7 @@ const BreakFast = ({ client, setClient, products, addItemToOrder }) => {
 
             <div className={styles.container}>
                 <div className={styles.menuBreakfast}>
-                    {products.map((product, index )=> (
+                    {products.map((product, index) => (
                         <button
                             className={styles.bgMenu}
                             onClick={() => addItemToOrder(product)}
@@ -54,7 +64,8 @@ const BreakFast = ({ client, setClient, products, addItemToOrder }) => {
                 </Link>
 
                 <Link to="waiterregister">
-                    <Boton text={"Enviar"} allstyles={"sendToKitchen"} />
+                    {/* <Boton text={"Enviar"} allstyles={"sendToKitchen"} /> */}
+                    <button onClick={orderFood} className={styles.saveInformation}>Enviar</button>
                 </Link>
             </div>
         </div>
