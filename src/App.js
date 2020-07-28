@@ -26,7 +26,7 @@ const products = [
     id: 1,
     name: 'Cafe Americano',
     price: 5.00,
-    total: 125.00,
+    total:  0,
     image: 'american-coffe.jpg'
   },
   {
@@ -62,58 +62,32 @@ function App() {
     items: []
   }
 
-  /*   const addItem = (product, quantity = 1) => {
-  } /
-
-  // forma declarativa 
-/   const calculateTotal = (items) => items.reduce((total, item) => total + item.quantity * item.price, 0) */
-  // forma imperativa
-  // const calculateTotal = (items) => 
-  // {
-  //   let total = 0
-
-  //   items.forEach(item => {
-  //     total = total + item.quantity * item.price
-  //   })
-
-  //   return total;
-  // }
-
-
-  //FUNCION PARA BORRAR ITEMS
-  /*     const deleteItem = (productId) => {
-      const items = order.items.filter(item => item.id !== productId)
-      setOrder({ ...order, items, total: calculateTotal(items) })
-    } */
-
-
   //funcion para capturar y controlar el estado de los datos de los inputs(cliente) y la orden.
   const [client, setClient] = useState(initialDataClient);
-
+  
   const [order, setOrder] = useState({
     items: []
   });
 
   const addItemToOrder = (product) => {
-    let newItems = []
+    let newItems = [];
 
-    if (client.items.length > 0) {
-      newItems = client.items.reduce((acc, item) => {
-        return (item.id === product.id)
-          ? [...acc, { ...item, quantity: item.quantity + 1 }]
-          : [...acc, { ...product, quantity: 1 }]
-      }, [])
+    if (client.items.find((i) => i.id === product.id)) {
+      newItems = client.items.map((item) => {
+        if (item.id === product.id) {
+          return { ...item, quantity: item.quantity + 1 };
+        }
+        return item;
+      })
     } else {
-      newItems = [{ ...product, quantity: 1 }]
+      newItems = [...client.items, { ...product, quantity: 1 }]
     }
 
     setClient({
       ...client,
       items: newItems
-    })
-  }
-
-
+    })}
+    
   return (
     <div className="App">
 
@@ -132,7 +106,7 @@ function App() {
           </Route>
 
           <Route exact path="/breakfast">
-            <BreakFast client={client} setClient={setClient} products={products} addItemToOrder={addItemToOrder} order={order} setOrder={setOrder} />
+            <BreakFast client={client} setClient={setClient} products={products} addItemToOrder={addItemToOrder} /* order={order} setOrder={setOrder} */ />
           </Route>
 
           <Route exact path="/restday">
@@ -140,19 +114,19 @@ function App() {
           </Route>
 
           <Route exact path="/waiterregister">
-            <WaiterRegister client={client} setClient={setClient} order={order} setOrder={setOrder} />
+            <WaiterRegister client={client} setClient={setClient} /* order={order} setOrder={setOrder} */ />
           </Route>
 
           <Route exact path="/kitchenregister">
-            <KitchenRegister client={client} setClient={setClient} order={order} setOrder={setOrder} />
+            <KitchenRegister client={client} setClient={setClient} /* order={order} setOrder={setOrder} */ />
           </Route>
 
           <Route exact path="/waiteraccount">
-            <WaiterAccount client={client} setClient={setClient} order={order} setOrder={setOrder} />
+            <WaiterAccount client={client} setClient={setClient} /* order={order} setOrder={setOrder} */ />
           </Route>
 
           <Route exact path="/kitchen">
-            <Kitchen client={client} setClient={setClient} order={order} setOrder={setOrder} />
+            <Kitchen client={client} setClient={setClient} /* order={order} setOrder={setOrder} */ />
           </Route>
         </Switch>
       </HashRouter>
