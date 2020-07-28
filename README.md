@@ -7,6 +7,8 @@ Burger Queen es una aplicación que ofrece una alternativa en la forma de tomar 
 ## Demo
 Puedes ingresar a la aplicación desde [aqui](https://burger-queen-xel-bren.netlify.app/)<br>
 
+La aplicación esta diseñada para el uso en tablet, por lo que te sugerimos visualizarla en modo de dispositivo movil <br>
+
 Es necesario ingresar con un usuario y una contraseña, por lo que deberas utilizar los siguientes:<br>
 Correo: xel@burgerqueen.mx   o  bren@burgerqueen.mx <br>
 Contraseña: 123456
