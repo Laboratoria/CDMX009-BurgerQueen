@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
 import DateTime from '../DateTime/DateTime';
-//import Stepper from "@kiwicom/orbit-components/lib/Stepper";
+import Stepper from "@kiwicom/orbit-components/lib/Stepper";
 import StepperStateless from "@kiwicom/orbit-components/lib/Stepper/StepperStateless";
 import validateIncrement from "@kiwicom/orbit-components/lib/utils/validateIncrement";
 import validateDecrement from "@kiwicom/orbit-components/lib/utils/validateDecrement";
@@ -50,30 +50,15 @@ const ReusableTable = ({ client }) => {
                                     <div className={styles.foodOptions}>
                                         <span key={index}>{item.name}</span>                        
                                     </div>
-                                    <div>
+                                    <div>                                            
                                         <input
-                                            className={styles.stepperWrapper}
-                                            type="number"                                            
-                                            min={1}
-                                            max={100}
-                                            /* value={item.quantity} */
-                                            onChange={(e) => console.log('new value', e.target.value)}
-                                            /> 
-
-{/*                                             <div>
-                                                <StepperStateless minValue={1} maxValue={100} value={item.quantity}
-                                            />
-                                            validateDecrement( value={item.quantity}, minValue={1}, step={1} );
-                                            </div> */}
-
-                                        
-
- 
-
-
-
-                                               
-                       
+                                        className={styles.stepperWrapper}
+                                        type="number"
+                                        min={1}
+                                        max={100}
+                                        value={item.quantity}
+                                        onChange={(e) => console.log('new value', e.target.value)}
+                                        />                                
                                         </div>
                                     <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={40} height={"auto"} /></div>
                                 </div>

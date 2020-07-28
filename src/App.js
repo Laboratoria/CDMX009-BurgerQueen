@@ -87,6 +87,7 @@ function App() {
       ...client,
       items: newItems
     })}
+    
   return (
     <div className="App">
 
