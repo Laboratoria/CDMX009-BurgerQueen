@@ -66,11 +66,9 @@ const InitWaiters = ({ client, setClient, order, setOrder }) => {
               options={options}
               className={styles.nameWaiter}
               name="namewaiter"
-              //value={client.namewaiter}
-              onChange={(option) => setClient({ ...client, namewaiter: option.value })}
-              
+              placeholder="Seleccione su Nombre"
+              onChange={(option) => setClient({ ...client, namewaiter: option.value })}              
             />
-
           </div>
 
           <div className={styles.dataCostumer}>

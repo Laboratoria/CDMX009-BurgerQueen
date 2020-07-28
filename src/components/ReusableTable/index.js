@@ -2,10 +2,16 @@ import React from 'react';
 import styles from './styles.module.css';
 import DateTime from '../DateTime/DateTime';
 import Stepper from "@kiwicom/orbit-components/lib/Stepper";
+import StepperStateless from "@kiwicom/orbit-components/lib/Stepper/StepperStateless";
+import validateIncrement from "@kiwicom/orbit-components/lib/utils/validateIncrement";
+import validateDecrement from "@kiwicom/orbit-components/lib/utils/validateDecrement";
+
+
 
 import IconDelete from '../../assets/imgs/trash.png';
 
-const ReusableTable = ({ client, order }) => {
+const ReusableTable = ({ client }) => {
+    //console.log(client)
 
     return (
         <div className={styles.containerTable}>
@@ -37,27 +43,27 @@ const ReusableTable = ({ client, order }) => {
 
             <div className={styles.customerOrders}>
                 <div className={styles.Orders}>
-                    <div className={styles.foodOptions}>Café americano</div>
-                    <div className={styles.StepperStateless}><Stepper minValue={0} maxValue={100} /></div>
-                    <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={35} height={"auto"} /></div>
-                </div>
-
-                <div className={styles.Orders}>
-                    <div className={styles.foodOptions}>Hamburguesa Simple</div>
-                    <div className={styles.StepperStateless}><Stepper minValue={0} maxValue={100} /></div>
-                    <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={35} height={"auto"} /></div>
-                </div>
-
-                <div className={styles.Orders}>
-                    <div className={styles.foodOptions}>cafe con leche</div>
-                    <div className={styles.StepperStateless}><Stepper minValue={0} maxValue={100} /></div>
-                    <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={35} height={"auto"} /></div>
-                </div>
-
-                <div className={styles.Orders}>
-                    <div className={styles.foodOptions}>Café con leche</div>
-                    <div className={styles.StepperStateless}><Stepper minValue={0} maxValue={100} /></div>
-                    <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={35} height={"auto"} /></div>
+                    {client.items.map(
+                        (item, index) =>
+                            <>
+                                <div className={styles.productsContainer}>
+                                    <div className={styles.foodOptions}>
+                                        <span key={index}>{item.name}</span>                        
+                                    </div>
+                                    <div>                                            
+                                        <input
+                                        className={styles.stepperWrapper}
+                                        type="number"
+                                        min={1}
+                                        max={100}
+                                        value={item.quantity}
+                                        onChange={(e) => console.log('new value', e.target.value)}
+                                        />                                
+                                        </div>
+                                    <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={40} height={"auto"} /></div>
+                                </div>
+                            </>
+                    )}
                 </div>
             </div>
         </div>
