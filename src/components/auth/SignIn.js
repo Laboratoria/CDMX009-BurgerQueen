@@ -103,6 +103,6 @@ const SignIn = (props) => {
         </Fragment>
     );
 };
-export default withRouter(SignIn);
+export default SignIn;
 
 

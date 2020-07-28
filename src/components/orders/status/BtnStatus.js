@@ -24,7 +24,8 @@ function BtnStatus({ orderSelected }) {
                 console.error("Error updating document: ", error);
             });
 
-        toast.success('Pedido listo para entrega' + ' Mesa -->' + orderSelected.table, {
+        toast.success('Pedido listo para entrega' + ' Mesa ➞ ' + orderSelected.table, {
+            className: 'order-ready',
             position: "top-right",
             type: 'dark',
             autoClose: false,

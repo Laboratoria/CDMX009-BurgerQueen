@@ -31,3 +31,7 @@
     font-family: 'Raleway';
     text-align: center;
 }
+.order-ready{
+    border-radius: 5px;
+    font-family: sans-serif
+}
