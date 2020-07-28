@@ -43,6 +43,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    overflow: scroll;
+    height: 500px;
 }
 
 .table-info{
@@ -126,7 +128,7 @@
     background-color: orange; 
 }
   
-.kitchen{
+.kitchen-title{
     font-family: 'Raleway';
     font-style: normal;
     font-weight: bold;
