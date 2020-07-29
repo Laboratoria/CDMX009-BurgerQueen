@@ -62,7 +62,6 @@ function App() {
     items: []
   }
 
-  //funcion para capturar y controlar el estado de los datos de los inputs(cliente) y la orden.
   const [client, setClient] = useState(initialDataClient);
 
   const [order, setOrder] = useState({
@@ -100,40 +99,7 @@ function App() {
       items: client.items
     })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // if (client.items.find((i) => i.id === product.id)) {
-    //   deleteItems = client.items.map((item) => {
-    //     if (item.id === product.id) {
-    //       return { ...item, quantity: item.quantity - 1 };
-    //     }
-    //     return item;
-    //   })
-    // }
-    // setClient({
-    //   ...client,
-    //   items: deleteItems
-    // })
   }
-
-
-
-
-
-
-
 
   return (
     <div className="App">
