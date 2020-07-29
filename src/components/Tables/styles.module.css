@@ -91,9 +91,9 @@ th, td {
 }
 
 tr {
-  display: table; /* display purpose; th's border */
+  display: table;
   width: 100%;
-  box-sizing: border-box; /* because of the border (Chrome needs this line, but not FF) */
+  box-sizing: border-box;
 }
 
 td {
