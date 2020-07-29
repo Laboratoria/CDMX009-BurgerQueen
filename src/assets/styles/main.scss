@@ -10,7 +10,7 @@
 
 $backColor:  #F0E8D7;
 $pColor: rgb(255,169,2);
-$sColor: #161616;
+$sColor: rgb(22, 22, 22);
 
 $radius: 15px; 
 
@@ -198,15 +198,24 @@ div, table, td, th, p{
                 padding:5px 10px;
                 text-align: left;     
             }
-            
+
             input{
-                width: 40px;
-                height: 10px;
-                background-color: red;
+                width: 35px;
+                height: 35px;
                 border-style: none;
-                border-radius: $radius;
+                border-radius: 50%;
                 vertical-align: middle;
                 margin: 0;
+                font-family: font-card;
+                font-size: large;
+            }
+            
+            .addBtn{
+                background-color: rgb(6, 179, 6);
+            }
+
+            .subBtn{
+                background-color: rgb(243, 69, 69);
             }
         }
     }
@@ -229,3 +238,54 @@ div, table, td, th, p{
 }
 
 
+/*Modal Styles - starts*/
+.modal-container{
+    background-color: rgba(22, 22, 22, 0.6);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-box{
+    width: 500px;
+    align-self: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #E9E6E6;
+    border-radius: 15px;
+    font-family: font-text;
+    font-size: 20px;
+    hr{
+        width: 500px;
+        height: 2px;
+    }
+}
+
+.flavor-container, .extra-container{
+    display: flex;
+    flex-direction: column;
+    div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    input{
+        width: 2em;
+        height: 2em;
+        margin-right: 1em;
+    }
+}
+
+.modals-btns-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}    
+/*Modal Styles - ends*/

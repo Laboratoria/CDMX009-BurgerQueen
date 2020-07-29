@@ -1,13 +1,9 @@
-import React,  {useState, useEffect} from 'react';
+import React from 'react';
 import Logo from '../common/Logo'
 import Button from '../common/Button'
 import {NavLink} from 'react-router-dom'
 
 let MainNavBar = ({employee, statusMenu ,statusKitchen, statusOrders}) => {
- 
-  useEffect(()=>{
-   
-  })
    
     return (
       <nav className="main-nav">

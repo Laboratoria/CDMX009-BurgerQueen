@@ -1,45 +1,28 @@
 import React, {useState} from 'react'
 import Logo from '../common/Logo'
-//import {useFirebaseApp} from 'reactfire';
 import firebase from '../../config/firebase/firebase-config'
 import 'firebase/firestore'
-import { Link } from 'react-router-dom'
-import { useHistory } from 'react-router-dom'
 import '../../assets/styles/index.css';
 
 export function Login({setIslogin, setEmployee}) {
 
      const[username, setUsername] = useState("");
      const[password, setPassword] = useState(""); 
-     const [users, setUsers] = useState([]);
-     let history = useHistory();
-
+     
      let autenticar=(username)=>{
       setIslogin(true);
       setEmployee(username);
      }
-     /*
-    useEffect(()=>{
-          
-      const fetchData = async () =>{
-        const db = firebase.firestore();
-        const data = await db.collection('users').get()
-        setUsers(data.docs.map(doc => doc.data()))
-        data.docs.map(doc=>console.log(doc.data()))
-      }
-    fetchData()
-    },[])*/
-  
+     
     function enter(){
       
       console.log(username, password);
       const fetchData = async () => {
         const db = firebase.firestore();
         const data = await db.collection('users').get()
-        //setUsers(data.docs.map(doc => doc.data()))
         data.docs.map(doc => {
           console.log(doc.data().name, doc.data().password)
-          if (doc.data().name == username && doc.data().password == password ){
+          if (doc.data().name === username && doc.data().password === password ){
             
             autenticar(username)
           }else{

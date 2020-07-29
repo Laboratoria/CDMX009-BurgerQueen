@@ -1,13 +1,16 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Routes from './components/login/Routes'
-
+import { ToastProvider, useToasts } from 'react-toast-notifications'
 
 function App() {
     
   return (
-    <div>
-     <Routes/>
+  <ToastProvider>
+  <div>
+     <Routes/>     
     </div>
+  </ToastProvider>  
+    
   );
 }
 
