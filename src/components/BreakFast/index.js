@@ -14,9 +14,8 @@ const BreakFast = ({ client, setClient, products, addItemToOrder, deleteItem }) 
     console.log('aqui está la order', client);
 
 
-    const orderFood = (e) => {
-        e.preventDefault();
-        db.collection('ordersfood').add(client)
+    const orderFood = () => {
+        db.collection('ordersfoodEsther').add(client)
             .then(() => {
                 console.log('orden de breakfast guardada en Firestore exitosamente')
             });
@@ -63,9 +62,10 @@ const BreakFast = ({ client, setClient, products, addItemToOrder, deleteItem }) 
                     <Boton text={"Regresar"} allstyles={"buttonOutWaiterBreack"} />
                 </Link>
 
-                <Link to="/waiterregister">
-                    <button onClick={orderFood} className={styles.saveInformation}>Enviar</button>
+                <Link to="waiterregister">
+                    <button onClick={orderFood()} className={styles.saveInformation}>Enviar</button>
                 </Link>
+
             </div>
         </div>
 
