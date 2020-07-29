@@ -56,7 +56,7 @@
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 8px rgba(0, 0, 0, 0.25);
 }
 
-.bgMenu{
+.bgMenu {
     background: #FFE168;
     width: 300px;
     height: 300px;
@@ -82,12 +82,26 @@
 
 }
 
-.routeButtons{
+.routeButtons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.routeButtons a{
+.routeButtons a {
         align-self: center;
+}
+
+.saveInformation {
+    align-self: flex-end;
+    width: 200px;
+    height: 74px;
+    background: #ED3367;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 5px rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    font-family: 'Amaranth', sans-serif;
+    font-size: 28px;
+    text-align: center;
+    border-radius: 10px;
+    margin-right: 65px;
 }
