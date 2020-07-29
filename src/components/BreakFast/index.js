@@ -15,7 +15,7 @@ const BreakFast = ({ client, setClient, products, addItemToOrder, deleteItem }) 
 
 
     const orderFood = () => {
-        db.collection('ordersfoodEsther').add(client)
+        db.collection('ordersfood').add(client)
             .then(() => {
                 console.log('orden de breakfast guardada en Firestore exitosamente')
             });
