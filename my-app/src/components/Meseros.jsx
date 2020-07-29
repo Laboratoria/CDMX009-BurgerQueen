@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import React, { useState } from "react"
-=======
 import React,{useState} from "react"
->>>>>>> jessica
 import {
     BrowserRouter as Router,
     Switch,
@@ -12,18 +8,6 @@ import {
 import Comida from "./comida/Comida"
 import Desayuno from "./Desayuno/Desayuno";
 
-<<<<<<< HEAD
-const Meseros =() =>{
-
-    // const handleCounter = () => {
-        
-    //     return (
-    //         1+1
-    //     );
-    // };
-
-    return(
-=======
 
 const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda}) =>{
     const [count, setCount] = useState(0);
@@ -41,7 +25,6 @@ const Platillo = ({nombre, precio}) => { return (<p>nombre:{nombre} {precio}</p>
 
     const componentesComanda = comanda.map((platillo) => { return (<Platillo nombre={platillo.nameProduct} precio={platillo.price}/> )})
  return(
->>>>>>> jessica
         <Router>
         <div>
             <div className="log">
@@ -63,17 +46,10 @@ const Platillo = ({nombre, precio}) => { return (<p>nombre:{nombre} {precio}</p>
                     
                         <Switch>
                             <Route path="/Comida">
-<<<<<<< HEAD
-                                <Comida handlerCounter={handlerCounter}/>
-                            </Route>
-                            <Route path="/">
-                                <Desayuno handlerCounter={handlerCounter}/>
-=======
                                 <Comida ProductsFo={ProductsFo} addItemToOrder={addItemToOrder} handleCounter={handleCounter} />
                             </Route>
                             <Route path="/">
                                 <Desayuno ProductsBF={ProductsBF} addItemToOrder={addItemToOrder} handleCounter={handleCounter}/>
->>>>>>> jessica
                             </Route>
                         </Switch>
                     </div>

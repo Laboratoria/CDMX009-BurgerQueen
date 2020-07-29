@@ -12,23 +12,6 @@ import Login from "./components/Login"
 import Meseros from "./components/Meseros"
 import {ProductsBF,ProductsFo} from './components/utils/data/Data'
 
-<<<<<<< HEAD
-
-
-
-function App() {
-//   let [order,setorder]=useState({
-//     nombreCliente:"",
-//     status:false,
-//     item:[]
-//   })
-
-//   let setItemToOrder=()=> 
-//   function addItemToOrder(product){
-//     setOrder({...order, items:[...order.items, product]}) 
-//  }
-
-=======
 const App = () => {
   const [order,setOrder] = useState({
     nombreCliente:"",
@@ -41,7 +24,6 @@ const App = () => {
   }
   
   const {item} = order
->>>>>>> jessica
   return (
     <div className="App">
       <Router>
