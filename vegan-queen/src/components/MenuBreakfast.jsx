@@ -17,6 +17,7 @@ const MenuBreakfast = () => {
       </div>
 
       <div>Aqui se debe mostrar el menu para el desayuno</div>
+      <div>Aquí debería aparecer el nombre del empleado</div> 
     </div>
   );
 };

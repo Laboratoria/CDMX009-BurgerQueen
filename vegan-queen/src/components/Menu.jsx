@@ -4,6 +4,8 @@ import exit from "../img/salir.svg";
 import mc from "../img/m-c.svg";
 import mbreakfast from "../img/02-menu-desayuno.svg";
 import mburger from "../img/02-menu-burger.svg";
+
+
 const Menu = () => {
   return (
     <div>
@@ -17,6 +19,9 @@ const Menu = () => {
       <div>
         <Boton image={mburger} adress="/menu-burger" />
       </div>
+      <div>Aquí debería aparecer el nombre del empleado
+       {/* name ={name}; */}
+        </div> 
     </div>
   );
 };

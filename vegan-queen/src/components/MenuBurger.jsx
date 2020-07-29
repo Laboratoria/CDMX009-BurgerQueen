@@ -18,6 +18,7 @@ const MenuBurger = () => {
       </div>
 
       <div>Aqui se debe mostrar el menu de Hamburgesas</div>
+      <div>Aquí debería aparecer el nombre del empleado</div> 
     </div>
   );
 };

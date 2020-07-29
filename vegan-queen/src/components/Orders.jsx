@@ -1,10 +1,13 @@
+
 import React from "react";
 import Boton from "../components/Boton";
 import exit from "../img/salir.svg";
 import mc from "../img/m-c.svg";
 import menucocina from "../img/01-menu-cocina.svg";
 
+
 const Orders = () => {
+  
   return (
     <div>
       <Boton image={exit} adress="/" />
@@ -16,6 +19,8 @@ const Orders = () => {
       </div>
 
       <div>Aqui van las Órdenes</div>
+      <div>Aquí debería aparecer el nombre del cocinero</div> 
+      
     </div>
   );
 };
