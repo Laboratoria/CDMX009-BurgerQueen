@@ -94,11 +94,19 @@
 
 .customerOrders {
     margin: 10px;
-    margin: 10px;
     display: flex;
     justify-content: center;
     padding: 50px 10px;
 }
+
+.customerOrdersWaiter,.customerOrderskitchen{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    padding: 50px 10px;
+    flex-direction: column;
+}
+
 
 .separation {
 height: 3px;
@@ -108,6 +116,14 @@ background-color: #ED3367;
 .Orders {
     display: flex;
     flex-direction: column;
+    font-size: 1.7em;
+    font-weight: 500;
+    margin: 8px;
+}
+
+.orderWaiter, .Ordersforkitchen{
+    display: flex;
+    flex-direction: row;
     font-size: 1.7em;
     font-weight: 500;
     margin: 8px;
