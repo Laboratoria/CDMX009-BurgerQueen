@@ -11,7 +11,7 @@ import validateDecrement from "@kiwicom/orbit-components/lib/utils/validateDecre
 
 import IconDelete from '../../assets/imgs/trash.png';
 
-const ReusableTable = ({ client }) => {
+const ReusableTable = ({ client, deleteItem }) => {
     //console.log(client)
 
     // const deleteProduct = (e) => {
@@ -24,13 +24,11 @@ const ReusableTable = ({ client }) => {
     //         });
     // }
 
-    const deleteProduct = (clickInTrash) => {
-        clickInTrash.preventDefault();
-        console.log("intentando eliminar")
-    }
+    // const deleteProduct = (clickInTrash) => {
+    //     clickInTrash.preventDefault();
+    //     // console.log("intentando eliminar")
 
-
-
+    // }
 
     return (
         <div className={styles.containerTable}>
@@ -81,7 +79,7 @@ const ReusableTable = ({ client }) => {
                                     </div>
                                     {/* <div className={styles.deleteIcon}><img src={IconDelete} alt="" width={40} height={"auto"} /></div> */}
                                     {/* <div className={styles.deleteIcon}> <button onClick={deleteProduct}> <img src={IconDelete} alt="" width={40} height={"auto"} /></button></div> */}
-                                    <div className={styles.deleteIcon}> <button onClick={deleteProduct}> <img src={IconDelete} alt="" width={40} height={"auto"} /></button></div>
+                                    <div className={styles.deleteIcon}> <button onClick={() => deleteItem(index)}> <img src={IconDelete} alt="" width={40} height={"auto"} /></button></div>
 
                                 </div>
                             </>

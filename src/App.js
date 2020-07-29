@@ -26,7 +26,7 @@ const products = [
     id: 1,
     name: 'Cafe Americano',
     price: 5.00,
-    total:  0,
+    total: 0,
     image: 'american-coffe.jpg'
   },
   {
@@ -64,7 +64,7 @@ function App() {
 
   //funcion para capturar y controlar el estado de los datos de los inputs(cliente) y la orden.
   const [client, setClient] = useState(initialDataClient);
-  
+
   const [order, setOrder] = useState({
     items: []
   });
@@ -86,8 +86,55 @@ function App() {
     setClient({
       ...client,
       items: newItems
-    })}
-    
+    })
+  }
+
+  const deleteItem = (position) => {
+    if (position > -1) {
+      client.items.splice(position, 1);
+    }
+    console.log(client.items)
+
+    setClient({
+      ...client,
+      items: client.items
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // if (client.items.find((i) => i.id === product.id)) {
+    //   deleteItems = client.items.map((item) => {
+    //     if (item.id === product.id) {
+    //       return { ...item, quantity: item.quantity - 1 };
+    //     }
+    //     return item;
+    //   })
+    // }
+    // setClient({
+    //   ...client,
+    //   items: deleteItems
+    // })
+  }
+
+
+
+
+
+
+
+
   return (
     <div className="App">
 
@@ -106,7 +153,7 @@ function App() {
           </Route>
 
           <Route exact path="/breakfast">
-            <BreakFast client={client} setClient={setClient} products={products} addItemToOrder={addItemToOrder} /* order={order} setOrder={setOrder} */ />
+            <BreakFast client={client} setClient={setClient} products={products} addItemToOrder={addItemToOrder} deleteItem={deleteItem} /* order={order} setOrder={setOrder} */ />
           </Route>
 
           <Route exact path="/restday">
