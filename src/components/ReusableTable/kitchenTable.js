@@ -3,7 +3,8 @@ import styles from './styles.module.css';
 import DateTime from '../DateTime/DateTime';
 
 
-const KitchenTable = ({ client, order }) => {
+
+const KitchenTable = ({ client }) => {
 
     return (
         <div className={styles.containerTableKitchen}>

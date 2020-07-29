@@ -47,20 +47,61 @@
   height: 195px;
 }
 
-.table {
+.table,.tablekitchen {
   width: 90%;
-  margin-bottom: 1rem;
   color: #212529;
   text-align: center;
   margin: 10px auto;
-  margin-bottom: 30px;
   border: 1px solid tomato;
-  height: 650px;
-  overflow-y: scroll;
+  margin-bottom: 30px;
   font-size: 1.6em;
   font-family: 'Amaranth', sans-serif;
 
+}
+
+table {
+  width: 100%;
+}
+
+table, td {
+  border-collapse: collapse;
+  border: 1px solid #000;
+}
+
+thead {
+  display: table;
+  width: 100%;
+}
+
+tbody {
+  display: block;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+th, td {
+  width: 14%; 
+  padding: 5px;
+  word-break: break-all;
+}
+
+.tablekitchen th, .tablekitchen  td  {
+  width: 12.5%;
 
 }
+
+tr {
+  display: table; /* display purpose; th's border */
+  width: 100%;
+  box-sizing: border-box; /* because of the border (Chrome needs this line, but not FF) */
+}
+
+td {
+  text-align: center;
+  border-bottom: none;
+  border-left: none;
+}
+
+
 
 
