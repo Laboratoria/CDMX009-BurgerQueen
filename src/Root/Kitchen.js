@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-//import OrderCooking from '../components/OrderCooking/OrderCooking'
 import { db } from '../firebase-config';
-//import Order from './Order';
+import './Kitchen.css'
+
 
 function Kitchen (){
 
@@ -22,16 +22,24 @@ function Kitchen (){
         getOrder()
     },[]);
 
+    function handleSendToFinishing (e) {
+        console.log(e.target.value)
+        // const send= 
+        // const orderStatus= {
+        //     ...allOrders,
+            
+        // }
+    }
+
     return (
-        <div>
+        <div className="containerKitchen">
             {allOrders.map((order) => (
-                <div key={order.id}>
-                    <h4> Mesa {order.table}</h4>
-                    <p>Nro de orden {order.nroOrder}</p>
-                    {order.foodOrder.map((food)=>(
-                        <li>{food.name}</li>
+                <div className="orderKitchen" key={order.id}>
+                    <h4> Mesa {order.tableNumber}</h4>
+                    {order.items.map((food)=>(
+                        <li>{food.quantity} {food.nameProduct}</li>
                     ))}
-                    <button>Orden lista!</button>
+                    <button onClick={handleSendToFinishing}>Orden lista!</button>
                 </div>
             ))}
         </div>

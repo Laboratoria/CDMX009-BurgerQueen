@@ -27,7 +27,7 @@ function Order(){
       items: found ?
       order.items.map(
         item=>(
-          item.productId === product.id ? { ...Order, ...item, quantity:item.quantity+1, subTotal: product.price*item.quantity } 
+          item.productId === product.id ? {...item, quantity:item.quantity+1, subTotal: product.price*item.quantity } 
           :item
         )
       )
@@ -51,6 +51,7 @@ function Order(){
   }
 
   function substractItem (itemSubstract){
+    console.log(order)
     let found = order.items.find(({ productId })=> productId === itemSubstract.productId)
     const newItems = order.items.filter(item => item.productId !== itemSubstract.productId)
     if (found){
@@ -62,8 +63,8 @@ function Order(){
               items: newItems,
               total: calculateTotal(newItems)
             })
-          } else{
-            console.log('Aquí restamos cantindad')
+          } else if (item.quantity >=2) {
+            console.log('Aquí restamos cantidad')
             setOrder({
               ...order,
               quantity:item.quantity-1, 
@@ -78,12 +79,10 @@ function Order(){
       
     return (
         <div className= "principalContainer">
-            <div className= "containerProducts">
               <Menu
                 addItemToOrder={addItemToOrder}
                 products={products}
               />
-            </div>
             <div className= "containerOrder">
               <PreviewOrder
                 setTableNumber= {setTableNumber}
