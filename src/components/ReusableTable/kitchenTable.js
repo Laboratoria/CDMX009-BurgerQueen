@@ -3,7 +3,8 @@ import styles from './styles.module.css';
 import DateTime from '../DateTime/DateTime';
 
 
-const KitchenTable = ({ client, order }) => {
+
+const KitchenTable = ({ client }) => {
 
     return (
         <div className={styles.containerTableKitchen}>
@@ -33,23 +34,23 @@ const KitchenTable = ({ client, order }) => {
 
             <div className={styles.separation}></div>
 
-            <div className={styles.customerOrders}>
-                <div className={styles.Orders}>
+            <div className={styles.customerOrderskitchen}>
+                <div className={styles.Ordersforkitchen}>
                     <div className={styles.foodOptionsKitchen}>Café americano</div>
                     <div className={styles.foodprice}>5</div>
                 </div>
 
-                <div className={styles.Orders}>
+                <div className={styles.Ordersforkitchen}>
                     <div className={styles.foodOptionsKitchen}>Hamburguesa Simple</div>
                     <div className={styles.foodprice}>5</div>
                 </div>
 
-                <div className={styles.Orders}>
+                <div className={styles.Ordersforkitchen}>
                     <div className={styles.foodOptionsKitchen}>Café americano</div>
                     <div className={styles.foodprice}>555</div>
                 </div>
 
-                <div className={styles.Orders}>
+                <div className={styles.Ordersforkitchen}>
                     <div className={styles.foodOptionsKitchen}>Café con leche</div>
                     <div className={styles.foodprice}>5</div>
                 </div>

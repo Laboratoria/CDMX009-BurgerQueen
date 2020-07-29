@@ -25,7 +25,7 @@ const TableWaiter = ({ client, order, orders }) => {
             </div>
 
             <div className={styles.table}>
-                <Table striped bordered hover className={styles.tableLines}>
+                <Table triped bordered hover className={styles.tableLines}>
                     <thead>
                         <tr className={styles.columns}>
                             <th scope="col"> No. <br /> Orden </th>
