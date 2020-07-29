@@ -13,7 +13,6 @@ import Item from "../Desayuno/Item";
 const Comida =({ProductsFo,addItemToOrder}) =>{
     //lo mismo que desayuno
     return(
-
         <div>
             {ProductsFo.map(product =>
                 <Item
@@ -24,35 +23,6 @@ const Comida =({ProductsFo,addItemToOrder}) =>{
                 )}
 
         </div>
-        // <Router>
-        // <div>
-        //     <div className="menuDes">
-            
-               
-        //         <Link to="/Acomp"><button  className="button" id="acompanamiento"></button></Link>
-        //         <Link to="/Bebida"><button className="button" id="beber"></button></Link>
-        //         <Link to="/Burguer"><button className="button" id="burguers"></button></Link>
-        //         <button className="button" id="otro2">Otro...</button>
-               
-              
-                
-        //     </div>
-        //     <div className="choose">
-        //         <Switch>
-        //             <Route path="/Acomp">
-        //                 <Acomp />
-        //             </Route>
-        //             <Route path="/Bebida">
-        //                 <Bebida />
-        //             </Route>
-        //             <Route path="/Burguer">
-        //                 <Burguer />
-        //             </Route>
-        //         </Switch>
-        //     </div>
-        // </div>
-        // </Router>
-
     )
 }
 

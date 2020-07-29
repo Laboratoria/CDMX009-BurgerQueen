@@ -12,19 +12,18 @@ import Login from "./components/Login"
 import Meseros from "./components/Meseros"
 import {ProductsBF,ProductsFo} from './components/utils/data/Data'
 
-
-function App() {
-  let [order,setOrder]=useState({
+const App = () => {
+  const [order,setOrder] = useState({
     nombreCliente:"",
     status:false,
-    item:[]
+    item:[{nameProduct: 'test'}]
   })
 
-  function addItemToOrder(product){
-    setOrder({...order,item:[...order.item,product]}) 
- }
- console.log(order)
-
+  const addItemToOrder = (product) => {
+    setOrder({...order, item: [...order.item, product]})
+  }
+  
+  const {item} = order
   return (
     <div className="App">
       <Router>
@@ -38,10 +37,12 @@ function App() {
             <Home />
           </Route>
           <Route path="/Meseros">
-            <Meseros 
+            <Meseros
+            comanda={item} 
             ProductsBF={ProductsBF}
             ProductsFo={ProductsFo}
             addItemToOrder={addItemToOrder}
+
              />
           </Route>
           <Route path="/">
