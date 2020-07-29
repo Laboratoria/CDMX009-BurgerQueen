@@ -13,6 +13,16 @@ function Order(){
     tableNumber:""
   });
 
+  function resetOrder(){
+    setOrder({
+      total:0,
+      items:[],
+      status:false,
+      tableNumber:""
+    }
+    )
+  }
+
   function setTableNumber (tableNumber) {
     setOrder({
       ...order,
@@ -89,6 +99,7 @@ function Order(){
                 order= {order}
                 deleteItem={deleteItem}
                 substractItem={substractItem}
+                resetOrder={resetOrder}
               />
             </div>
         </div>

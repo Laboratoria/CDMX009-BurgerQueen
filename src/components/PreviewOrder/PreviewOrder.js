@@ -2,11 +2,12 @@ import React from 'react';
 import './PreviewOrder.css'
 import {db} from '../../firebase-config'
 
-const PreviewOrder = ({order,deleteItem, setTableNumber, substractItem}) => {
+const PreviewOrder = ({order,deleteItem, setTableNumber, substractItem,resetOrder}) => {
     const total = order.items.reduce((sum, item) => sum + item.quantity * item.price, 0)
 
 
     const handleEnviarACocina = async (e) => {
+    if(order.tableNumber !==""){
         const orderAEnviar = {
             ...order,
             total,
@@ -14,6 +15,8 @@ const PreviewOrder = ({order,deleteItem, setTableNumber, substractItem}) => {
         }
         await db.collection('ordenes').doc().set(orderAEnviar);
         console.log('Orden enviada satisfactoriamente');
+        resetOrder()
+    }else{console.log("llena el numero de mesa")}
     }
 
         
@@ -37,6 +40,7 @@ const PreviewOrder = ({order,deleteItem, setTableNumber, substractItem}) => {
                     value={order.tableNumber}
                     style={{width: '50px', height: '30px'}} 
                     onChange={handleChange}
+                    required
                 />
                 <div className="total">
                     <h4 className="letter">TOTAL {total}</h4>
