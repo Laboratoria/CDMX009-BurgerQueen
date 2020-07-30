@@ -4,13 +4,14 @@ function Item({product,addItemToOrder}) {
     //agregar estilos
     //imprimir precio
     return (
-        <button 
+        <button className="contentProd"
                 key={product.id}
                 onClick={()=>addItemToOrder(product)}
                 >
-<span>{product.nameProduct} {product.price}</span>
+<span className="cont"><img  class="btnImg"src={product.src} /> {product.nameProduct} {product.price}$</span>
         </button>
     );
 }
+
 
 export default Item;
