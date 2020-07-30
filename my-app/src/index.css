@@ -330,7 +330,6 @@ border-radius: 10px;
 
 .choose{
   width: 45%;
-  
   display:flex;
   flex-wrap: wrap;
   justify-content: center;

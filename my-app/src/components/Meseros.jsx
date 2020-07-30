@@ -68,6 +68,7 @@ const Platillo = ({nombre, precio}) => { return (<p>nombre:{nombre} {precio}</p>
                        
                         </p>
                     </div>
+                    
                 </div>
             </div>
         
