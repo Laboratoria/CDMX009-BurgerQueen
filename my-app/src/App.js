@@ -16,7 +16,7 @@ const App = () => {
   const [order,setOrder] = useState({
     nombreCliente:"",
     status:false,
-    item:[{nameProduct: 'test'}]
+    item:[]
   })
 
   const addItemToOrder = (product) => {

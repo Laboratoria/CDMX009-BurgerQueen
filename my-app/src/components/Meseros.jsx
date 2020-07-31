@@ -23,6 +23,12 @@ const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda}) =>{
     
 
     const componentesComanda = comanda.map((platillo) => { return (<Platillo nombre={platillo.nameProduct} precio={platillo.price}/> )})
+    
+ 
+    const sumarPrecio = (precioTotal,producto) => { return precioTotal + producto.price}
+    const precio = comanda.reduce(sumarPrecio,0)
+    console.log(comanda)
+
 
     return(
         <Router>
@@ -73,10 +79,13 @@ const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda}) =>{
 
                                 </tr>
                                 
-                                    {componentesComanda} 
+                                    {componentesComanda.length > 0 ? componentesComanda : null}
                                 <tr>
+
                                     <th>Total:</th>
-                                    <th>precio</th>
+                                    <th>
+                                        {precio}$
+                                    </th>
 
                                 </tr>
                             </table>
