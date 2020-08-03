@@ -10,11 +10,10 @@ const WaiterRegister = ({ client, setClient, order, setOrder }) => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-
-        db.collection('orders').get().then((querySnapshot) => {
+        db.collection('ordersfood').get().then((querySnapshot) => {
             const data = []
             querySnapshot.forEach(function (doc) {
-                data.push(doc.data());
+                data.push({...doc.data(), id: doc.id });
             });
             setOrders(data);
         });

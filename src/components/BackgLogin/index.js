@@ -10,7 +10,6 @@ const BackgLogin = () => (
         <Logo nameClass={"logoLogin"} />
         <div className={styles.contentWrapper}>
             <div className={styles.wraperSeccionBottons}>
-
                 <Link to="/waiter">
                     <span className={styles.iconWaiter}></span>
                     <button type="button" className={styles.buttonWaiter}>Mesero</button>
