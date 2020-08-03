@@ -1,9 +1,10 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
+
 import App from './App';
 import BreakfastMenu from './components/dashboard/menuCards/BreakfastCards';
 import DinnerCards from './components/dashboard/menuCards/DinnerCards';
-import ModalAdmin from './components/admin/ModalAdmin';
+import ModalAdmin from './components/admon/ModalAdmin';
 import SignIn from './components/auth/SignIn';
 import BurgerQueen from './components/BQ/BurgerQueen';
 import ClientInfoForm from './components/dashboard/client-Info/ClientInfo';
@@ -93,3 +94,4 @@ describe('Render client info', () => {
     expect(text).toBeInTheDocument();
   });
 });
+

@@ -1,7 +1,8 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { firebase } from '../../../firebase/firebaseConfig';
-import Navbar from '../../layout/Navbar';
 import './all-orders.css';
+
+import Navbar from '../../layout/Navbar';
 import DetailOrders from './detailsOrder';
 
 export function useAllOrder() {

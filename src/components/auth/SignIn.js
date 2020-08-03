@@ -1,11 +1,12 @@
 import React, { useState, useCallback, Fragment } from 'react';
 import { withRouter } from 'react-router-dom';
 import { firebase } from '../../firebase/firebaseConfig';
-import ModalAuth from '../auth/Modal';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import bqLogo from '../../img/logo.svg';
 import '../auth/auth.css';
+
+import ModalAuth from '../auth/Modal';
+import bqLogo from '../../img/logo.svg';
 
 const SignIn = (props) => {
 
@@ -27,7 +28,7 @@ const SignIn = (props) => {
         try {
             const res = await firebase.auth().signInWithEmailAndPassword(email, password);
             console.log(res);
-            props.history.push('/');
+            props.history.push('/dashboard');
         } catch (error) {
             console.log(error);
             if (error.code === 'auth/invalid-email') {
@@ -103,6 +104,7 @@ const SignIn = (props) => {
         </Fragment>
     );
 };
+
 export default withRouter(SignIn);
 
 

@@ -1,14 +1,13 @@
 import React, { Fragment } from 'react';
-import './btn-status.css';
 import { firebase } from '../../../firebase/firebaseConfig';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './btn-status.css';
 
 function BtnStatus({ orderSelected }) {
 
     const updateDoc = async (e) => {
         e.preventDefault();
-        console.log(orderSelected.id);
 
         await firebase
             .firestore()
@@ -24,7 +23,8 @@ function BtnStatus({ orderSelected }) {
                 console.error("Error updating document: ", error);
             });
 
-        toast.success('Pedido listo para entrega' + ' Mesa -->' + orderSelected.table, {
+        toast.success('Pedido listo para entrega' + ' Mesa ➞ ' + orderSelected.table, {
+            className: 'order-ready',
             position: "top-right",
             type: 'dark',
             autoClose: false,

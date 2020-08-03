@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import './detail-order.css';
+
 import logoBQ from '../../../img/logo-receipt.png';
 import barras from '../../../img/barras.png';
 
