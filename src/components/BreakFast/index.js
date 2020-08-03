@@ -63,7 +63,7 @@ const BreakFast = ({ client, setClient, products, addItemToOrder, deleteItem }) 
                 </Link>
 
                 <Link to="waiterregister">
-                    <button onClick={orderFood()} className={styles.saveInformation}>Enviar</button>
+                    <button onClick={() => orderFood()} className={styles.saveInformation}>Enviar</button>
                 </Link>
 
             </div>
