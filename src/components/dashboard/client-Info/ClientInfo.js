@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { firebase } from '../../../firebase/firebaseConfig';
+import { toast } from 'react-toastify';
 import 'materialize-css/dist/css/materialize.min.css';
 import '../client-Info/clientInfo.css';
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 toast.configure();

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import './resume.css';
 
-const ResumeMenu = ({ addOrder, data, deleteOrder }) => {
+const ResumeMenu = ({ data, deleteOrder, addOrder }) => {
   let allProducts = data.productos;
 
   return (
@@ -47,7 +47,7 @@ const ResumeMenu = ({ addOrder, data, deleteOrder }) => {
           <span className='total-price white-text'>TOTAL: $ {data.total}</span>
         </div>
       </div>
-    </Fragment>
+    </Fragment >
   );
 };
 

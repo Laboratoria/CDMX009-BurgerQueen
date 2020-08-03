@@ -1,4 +1,5 @@
 import React, { useState, Fragment } from 'react';
+
 import BreakfastCards from '../dashboard/menuCards/BreakfastCards';
 import DinnerCards from '../dashboard/menuCards/DinnerCards';
 import ResumeMenu from '../dashboard/resume-menu/ResumeMenu';
@@ -9,8 +10,8 @@ function Dashboard({ data, setData }) {
 
     const [visible, setVisible] = useState(true);
 
-    const calculateTotal = (items = []) => items
-        .reduce((acc, item) => console.log('calculate', acc, item) || (acc + item.price * item.quantity), 0);
+    const calculateTotal = (items = []) => items.
+        reduce((acc, item) => console.log('calculate', acc, item) || (acc + item.price * item.quantity), 0);
 
     const addOrder = (product, quantity = 1) => {
         if (data.productos.find(item => item.id === product.id)) {
@@ -32,11 +33,13 @@ function Dashboard({ data, setData }) {
     };
 
     const deleteOrder = (id) => {
+        const filterData = data.productos.filter(products => products.id !== id);
         setData({
             ...data,
-            productos: data.productos.filter(products => products.id !== id)
+            productos: filterData, total: calculateTotal(filterData)
         });
     };
+
 
     return (
         <Fragment>
@@ -48,7 +51,7 @@ function Dashboard({ data, setData }) {
                         {visible ? <BreakfastCards addOrder={addOrder} /> : <DinnerCards addOrder={addOrder} />}
                     </div>
                     <div className='col s12 m5 offset-m0'>
-                        <ResumeMenu addOrder={addOrder} data={data} deleteOrder={deleteOrder} />
+                        <ResumeMenu data={data} deleteOrder={deleteOrder} addOrder={addOrder} />
                     </div>
                 </div>
             </div>

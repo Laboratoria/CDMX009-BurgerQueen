@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
-import './edit-order.css';
 import { useBreakfast } from '../../dashboard/menuCards/BreakfastCards';
 import { useDinner } from '../../dashboard/menuCards/DinnerCards';
+import './edit-order.css';
 
 function EditOrder({ orderSelected }) {
 
@@ -69,7 +69,7 @@ function EditOrder({ orderSelected }) {
                             <tbody>
                                 {orderSelected.order.map((item) => (
                                     <tr>
-                                        <td>
+                                        <td key={item.id}>
                                             <div className='product-added'>
                                                 <button type='button' className='btn-delete-item-added'>X</button>
                                                 <p className='item-text-table'>{item.item}</p>

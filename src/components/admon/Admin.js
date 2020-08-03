@@ -1,8 +1,9 @@
 import React, { useEffect, useState, Fragment } from 'react';
 import { firebase } from '../../firebase/firebaseConfig';
+import '../admon/admin.css';
+
 import ModalAdmin from './ModalAdmin';
 import Navbar from '../layout/Navbar';
-import '../admon/admin.css';
 
 const Admin = () => {
 

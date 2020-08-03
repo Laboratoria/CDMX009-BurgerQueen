@@ -1,8 +1,8 @@
 import React, { useState, useCallback, Fragment } from 'react';
 import { firebase } from '../../firebase/firebaseConfig';
-import './admin.css';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './admin.css';
 
 const ModalAdmin = ({ user, setUser }) => {
 

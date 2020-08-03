@@ -1,12 +1,13 @@
 import React, { useEffect, useState, Fragment } from 'react';
 import './orders.css';
+import { firebase } from '../../../firebase/firebaseConfig';
+import editImage from '../images/edit.svg';
+
+import Chronometer from '../chronometer/Chronometer';
+import BtnStatus from '../status/BtnStatus';
 import Navbar from '../../layout/Navbar';
 import EditOrder from '../edit-order/EditOrder';
 import OrderFinished from '../order-finished/OrderFinished';
-import { firebase } from '../../../firebase/firebaseConfig';
-import editImage from '../images/edit.svg';
-import Chronometer from '../chronometer/Chronometer';
-import BtnStatus from '../status/BtnStatus';
 
 export function useOrder() {
     const [order, setOrder] = useState([]);

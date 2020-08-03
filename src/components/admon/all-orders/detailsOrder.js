@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import './detail-order.css';
+
 import logoBQ from '../../../img/logo-receipt.png';
 import barras from '../../../img/barras.png';
 
@@ -17,7 +18,7 @@ function DetailOrders({ orderSelected }) {
                         </div>
                         <div className='resume-receipt'>
                             <div className='header-receipt'>
-                                <img src={logoBQ} className='logo-receipt' />
+                                <img src={logoBQ} alt='logoBQ' className='logo-receipt' />
                                 <p className='text-header-receipt resume'>Resumen de pedido</p>
                                 <p className='text-header-receipt'>Av. Paseo de la Reforma 222, Juárez, Cuauhtémoc, 06600 Ciudad de México, CDMX</p>
                             </div>
@@ -81,7 +82,7 @@ function DetailOrders({ orderSelected }) {
                                 <p>Regresa pronto</p>
                             </div>
                             <div>
-                                <img src={barras} className='logo-receipt' />
+                                <img src={barras} className='logo-receipt' alt='barra' />
                             </div>
                         </div>
                     </div>

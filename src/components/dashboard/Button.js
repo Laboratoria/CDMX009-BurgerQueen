@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
-import ClientInfoForm from './client-Info/ClientInfo';
 import './dashboard.css';
+
+import ClientInfoForm from './client-Info/ClientInfo';
 
 const Button = ({ setVisible, data, setData }) => {
     return (

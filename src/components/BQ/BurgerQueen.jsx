@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import './burgerQueen.css';
+
 import logo from '../../img/initBurger.png';
 
 function BurgerQueen() {

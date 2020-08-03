@@ -1,5 +1,5 @@
 .bck-imag-orders{
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),  url('../../../img/dashboard-image-blur.PNG');
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),  url('../../../img/dashboard-image-blur.png');
     background-repeat: no-repeat;
     min-height: 100vh;
     background-attachment: fixed;

@@ -1,17 +1,18 @@
 import React, { Fragment } from 'react';
 import { withRouter } from 'react-router-dom';
-import SignedInLinks from '../layout/SignedInLinks';
-import bqLogo from '../../img/logo.svg';
+import { firebase } from '../../firebase/firebaseConfig';
 import 'firebase/auth';
 import './layout.css';
-import { firebase } from '../../firebase/firebaseConfig';
+
+import SignedInLinks from '../layout/SignedInLinks';
+import bqLogo from '../../img/logo.svg';
 
 const Navbar = (props) => {
 
     const logOut = () => {
         console.log('saliendo...');
         firebase.auth().signOut().then(function () {
-            props.history.push('/initial');
+            props.history.push('/');
         }).catch(function (error) {
         });
     };
@@ -35,7 +36,7 @@ const Navbar = (props) => {
                         </div>
                     </li>
                     <div className='opt-menu-navbar'>
-                        <li><a href='/' className='white-text text-menu'>Menu</a></li>
+                        <li><a href='/dashboard' className='white-text text-menu'>Menu</a></li>
                         <li><div><div className="divider yellow line-menu"></div></div></li>
                         <li><a href='/orders' className='white-text text-menu'>Ordenes</a></li>
                         <li><div className="divider yellow line-menu"></div></li>

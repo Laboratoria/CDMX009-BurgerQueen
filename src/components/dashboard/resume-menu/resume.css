@@ -52,6 +52,11 @@
     margin-bottom: 5px;
 }
 
+.container-quantity{
+    display: flex;
+    justify-content: space-around;
+}
+
 .btn-quantity{
     margin-top: 15px;
 }
