@@ -57,8 +57,6 @@ const Kitchen = ({ client, setClient }) => {
                         <span className={styles.firstNumberWrapper}>3:50pm</span>
                     </div>
 
-                    {/* <button onClick={hablar()}>Notificar</button> */}
-
                     <div className={styles.printAccount}>
                         <button  onClick={() => hablar(texto)} >
                             <img src={Bell} alt="" className={styles.printImg} />
@@ -66,7 +64,7 @@ const Kitchen = ({ client, setClient }) => {
                     </div>
 
                     <div className={styles.departureInTime}>
-                        <p>Hora de salidas</p>
+                        <p>Hora de Salida</p>
                         <span className={styles.firstNumberWrapper}>4:20pm</span>
                     </div>
 
