@@ -53,7 +53,9 @@ const InitWaiters = ({ client, setClient, order, setOrder }) => {
       <div className={styles.headerInitWaiter}>
         <Logo nameClass={"logoSmallInitWaiter"} />
         <div className={styles.reg_date}>
+          <Link to="waiterregister">
           <Boton text={"Registros"} allstyles={"buttonGoRgWaiter "} />
+          </Link>
           <DateTime />
         </div>
       </div>

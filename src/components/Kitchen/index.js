@@ -9,6 +9,11 @@ import Bell from '../../assets/imgs/cuadrado-bordes.png';
 
 const Kitchen = ({ client, setClient, order, setOrder, orders }) => {
 
+/*     let texto = 'la orden numero 123, de la mesa número 9 esta lista'
+    const hablar = (texto) => speechSynthesis.speak(new SpeechSynthesisUtterance(texto)); */
+    //texto.preventDefault();
+    //hablar(texto);
+
     return (
         <div>
             <div className={styles.headerWrapper}>
@@ -37,8 +42,12 @@ const Kitchen = ({ client, setClient, order, setOrder, orders }) => {
                         <span className={styles.firstNumberWrapper}>3:50pm</span>
                     </div>
 
+                    {/* <button onClick={hablar()}>Notificar</button> */}
+
                     <div className={styles.printAccount}>
-                        <img src={Bell} alt="" className={styles.printImg} />
+                        <Link to="/kitchenregister" /* onClick={hablar(texto)} */>
+                            <img src={Bell} alt="" className={styles.printImg} />
+                        </Link>   
                     </div>
 
                     <div className={styles.departureInTime}>
