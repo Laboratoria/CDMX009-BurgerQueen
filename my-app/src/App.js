@@ -22,6 +22,18 @@ const App = () => {
   const addItemToOrder = (product) => {
     setOrder({...order, item: [...order.item, product]})
   }
+
+  const deleteItem = (id) => {
+    let yaEliminado = false;
+    const newItems = order.item.filter((item) =>  {
+      if (yaEliminado) {
+        return true;
+      }
+      yaEliminado = yaEliminado || item.id === id;
+      return item.id !== id;
+    });
+    setOrder({...order, item: newItems})
+  }
   
   const {item} = order
   return (
@@ -42,6 +54,7 @@ const App = () => {
             ProductsBF={ProductsBF}
             ProductsFo={ProductsFo}
             addItemToOrder={addItemToOrder}
+            deleteItem={deleteItem}
 
              />
           </Route>

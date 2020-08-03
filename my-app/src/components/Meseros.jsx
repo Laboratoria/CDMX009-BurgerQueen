@@ -9,25 +9,42 @@ import {
 import Comida from "./comida/Comida"
 import Desayuno from "./Desayuno/Desayuno";
 
+const Platillo = ({id, nombre, precio, deleteItem}) => (
+    <tr>
+        <td>{nombre}</td>
+        <td>{precio}$</td>
+        <td><button onClick={() => deleteItem(id)}>Borrar producto</button></td>
+    </tr>
+)
 
-const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda}) =>{
+const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda, deleteItem}) =>{
     
     const [count, setCount] = useState(0);
+    const [cliente, setCliente] = useState('');
+    const [nroMesa, setNroMesa] = useState('');
 
     const handleCounter = () => {
         setCount(count + 1);
         console.log(count);
     }
+      
 
-    const Platillo = ({nombre, precio}) => { return (<tr><td>{nombre}</td><td>{precio}$</td></tr> )}
+    const componentesComanda = comanda.map((platillo, index) => (
+        <Platillo key={`platillo-${index}`} deleteItem={deleteItem} id={platillo.id} nombre={platillo.nameProduct} precio={platillo.price}/> 
+    ))
     
-
-    const componentesComanda = comanda.map((platillo) => { return (<Platillo nombre={platillo.nameProduct} precio={platillo.price}/> )})
-    
- 
     const sumarPrecio = (precioTotal,producto) => { return precioTotal + producto.price}
     const precio = comanda.reduce(sumarPrecio,0)
-    console.log(comanda)
+
+    const enviarACocina = () => {
+        console.log({
+            cliente,
+            nroMesa: nroMesa,
+            platillos: comanda,
+            precio,
+          })
+    }
+
 
 
     return(
@@ -61,14 +78,33 @@ const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda}) =>{
                 <div className="ticket">
                     <div  id="nameUser">
                         <p className="control has-icons-left has-icons-right">
-                        <input id="cliente"className="input is-info is-warning"  type="text" placeholder="Nombre cliente" />
+                        <input
+                            id="cliente"
+                            className="input is-info is-warning" 
+                            type="text"
+                            placeholder="Nombre cliente"
+                            value={cliente}
+                            onChange={(e) => {
+                                setCliente(e.target.value);
+                            }}
+                        ></input>
+                        
                         
                         </p>
                     </div>
                     <div  id="numberUser">
                         <p className="control has-icons-left has-icons-right">
-                        <input id="mesa" className="input is-info is-warning"  type="text" placeholder="Numero de mesa"/>
-                       
+                            <input 
+                            id="mesa" 
+                            className="input is-info is-warning"  
+                            type="text" 
+                            placeholder="Numero de mesa"
+                            value={nroMesa}
+                            onChange={(e)=>{
+                                setNroMesa(e.target.value);
+                            }}
+                            ></input>
+                      
                         </p>
                         </div>
                         <div>
@@ -76,6 +112,7 @@ const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda}) =>{
                                 <tr>
                                     <th>Plato</th>
                                     <th>Precio</th>
+                                    <th>Borrar</th>
 
                                 </tr>
                                 
@@ -88,6 +125,7 @@ const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda}) =>{
                                     </th>
 
                                 </tr>
+                                <tr><button onClick={enviarACocina}>Enviar a cocina</button></tr>
                             </table>
                         </div>
                     
