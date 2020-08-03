@@ -112,7 +112,7 @@ function App() {
             <WaiterAccount client={client} setClient={setClient} /* order={order} setOrder={setOrder} */ />
           </Route>
 
-          <Route exact path="/kitchen">
+          <Route exact path="/kitchen/:orderId">
             <Kitchen client={client} setClient={setClient} /* order={order} setOrder={setOrder} */ />
           </Route>
         </Switch>

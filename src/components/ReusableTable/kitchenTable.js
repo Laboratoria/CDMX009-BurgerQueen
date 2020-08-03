@@ -7,8 +7,9 @@ import {products} from '../../utils/products.js'
 
 
 
-const KitchenTable = ({ client, setClient, orders, setOrders }) => {
+const KitchenTable = ({ client, setClient, order }) => {
 
+    console.log(order)
 /*     useEffect(() => {
 
         db.collection('ordersfood').get().then((querySnapshot) => {
@@ -50,25 +51,13 @@ const KitchenTable = ({ client, setClient, orders, setOrders }) => {
             <div className={styles.separation}></div>
 
             <div className={styles.customerOrderskitchen}>
-                <div className={styles.Ordersforkitchen}>
-                    <div className={styles.foodOptionsKitchen}>{products.name}</div>
-                    <div className={styles.foodprice}>5</div>
-                </div>
+                {order.items.map((item) => (
+                    <div className={styles.Ordersforkitchen}>
+                        <div className={styles.foodOptionsKitchen}>{item.name}</div>
+                        <div className={styles.foodprice}>{item.price}</div>
+                    </div>
+                ))}
 
-                <div className={styles.Ordersforkitchen}>
-                    <div className={styles.foodOptionsKitchen}>{products.name}</div>
-                    <div className={styles.foodprice}>5</div>
-                </div>
-
-                <div className={styles.Ordersforkitchen}>
-                    <div className={styles.foodOptionsKitchen}>{products.name}</div>
-                    <div className={styles.foodprice}>555</div>
-                </div>
-
-                <div className={styles.Ordersforkitchen}>
-                    <div className={styles.foodOptionsKitchen}>{products.name}</div>
-                    <div className={styles.foodprice}>5</div>
-                </div>
             </div>
         </div>
     );

@@ -9,7 +9,6 @@ import DateTime from '../DateTime/DateTables';
 import styles from './styles.module.css';
 
 const TableWaiter = ({ client, order, orders }) => {
-
     return (
         <div>
             <div className={styles.headerWrapper}>
@@ -52,7 +51,7 @@ const TableWaiter = ({ client, order, orders }) => {
                                 <td>12:30</td>
                                 <td>14:00</td>
                                 <td>
-                                    <Link to="kitchen">
+                                    <Link to={`/Kitchen/${order.id}`}>
                                         <Boton text={"Ver"} allstyles={"buttonKitchenTable"} />
                                     </Link>
                                 </td>
