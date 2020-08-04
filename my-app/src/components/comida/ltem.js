@@ -1,9 +1,10 @@
-import React from 'react';
+import React,{Fragment} from 'react';
 
 function Item({product,addItemToOrder}) {
     //agregar estilos
     //imprimir precio
     return (
+        <Fragment>
         <button 
                 
                 key={product.id}
@@ -11,6 +12,7 @@ function Item({product,addItemToOrder}) {
                 >
 <span>{product.nameProduct} {product.price}</span>
         </button>
+        </Fragment>
     );
 }
 

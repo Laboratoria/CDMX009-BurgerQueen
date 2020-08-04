@@ -8,10 +8,13 @@ import {
   } from "react-router-dom";
 import Comida from "./comida/Comida"
 import Desayuno from "./Desayuno/Desayuno";
+import AddUserForm from "./AddUsersForm";
+
 
 
 const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda}) =>{
-    
+
+
     const [count, setCount] = useState(0);
 
     const handleCounter = () => {
@@ -19,15 +22,16 @@ const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda}) =>{
         console.log(count);
     }
 
-    const Platillo = ({nombre, precio}) => { return (<tr><td>{nombre}</td><td>{precio}$</td></tr> )}
+    const Platillo = ({nombre, precio}) => { return (<tr><td>{nombre}</td><td>{precio}$</td><td><button>Delete</button></td></tr> )}
     
 
     const componentesComanda = comanda.map((platillo) => { return (<Platillo nombre={platillo.nameProduct} precio={platillo.price}/> )})
     
- 
+
     const sumarPrecio = (precioTotal,producto) => { return precioTotal + producto.price}
     const precio = comanda.reduce(sumarPrecio,0)
     console.log(comanda)
+
 
 
     return(
@@ -59,19 +63,10 @@ const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda}) =>{
                     
                 </div>
                 <div className="ticket">
-                    <div  id="nameUser">
-                        <p className="control has-icons-left has-icons-right">
-                        <input id="cliente"className="input is-info is-warning"  type="text" placeholder="Nombre cliente" />
+                    <AddUserForm />
                         
-                        </p>
-                    </div>
-                    <div  id="numberUser">
-                        <p className="control has-icons-left has-icons-right">
-                        <input id="mesa" className="input is-info is-warning"  type="text" placeholder="Numero de mesa"/>
-                       
-                        </p>
-                        </div>
-                        <div>
+                            <div>
+                                <tbody>
                             <table>
                                 <tr>
                                     <th>Plato</th>
@@ -89,9 +84,10 @@ const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda}) =>{
 
                                 </tr>
                             </table>
-                        </div>
-                    
-                    
+                               
+                            </tbody>
+                            </div>
+                       
                 </div>
             </div>
         
