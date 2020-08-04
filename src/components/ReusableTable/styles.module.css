@@ -124,9 +124,11 @@ background-color: #ED3367;
 .orderWaiter, .Ordersforkitchen{
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
     font-size: 1.7em;
     font-weight: 500;
     margin: 8px;
+
 }
 
 .productsContainer {
@@ -166,7 +168,7 @@ background-color: #ED3367;
 .foodOptionsKitchen {
     background: #FFFFFF;
     border-radius: 10px;
-    width: 325px;
+    width: 400px;
     text-align: left;
     padding-left: 20px;
 }
@@ -174,7 +176,7 @@ background-color: #ED3367;
 .foodTotal {
     background: #FFFFFF;
     border-radius: 10px;
-    width: 325px;
+    width: 125px;
     text-align: left;
     padding-left: 20px;
     font-size: 1.2em;
@@ -186,7 +188,15 @@ background-color: #ED3367;
     border-radius: 10px;
     width: 80px;
     text-align: center;
-    margin-left: 30px;
+    margin-left: 15px;
+}
+
+.foodQuantity {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 80px;
+    text-align: center;
+    margin-right: 15px;
 
 }
 
@@ -204,4 +214,34 @@ background-color: #ED3367;
     align-self: center;
     width: 20px;
     height: auto;
+}
+
+.titles {
+    display: flex;
+    justify-content: space-between;    
+    font-size: 1.6em;
+
+}
+
+.titleCant {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 80px;
+    text-align: center;
+  
+}
+
+.titleFood {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 120px;
+    text-align: center;
+    margin-left: 30px;    
+}
+.titlePrice {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 80px;
+    text-align: center;
+    margin-left: 30px;    
 }

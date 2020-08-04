@@ -40,9 +40,6 @@ const WaiterRegister = ({ client, setClient, order, setOrder }) => {
                     </Link>
                 </div>
 
-                <Link to="waiteraccount">
-                    <Boton text={"Editar"} allstyles={"buttonWaiterTable"} />
-                </Link>
             </div>
         </Fragment>
     );

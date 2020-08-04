@@ -39,10 +39,16 @@ const WaiterTable = ({ order, calculateTotal }) => {
             <div className={styles.separation}></div>
 
             <div className={styles.customerOrdersWaiter}>
+                <div className={styles.titles}>
+                    <div className={styles.titleCant}>Cant.</div>
+                    <div className={styles.titleFood}>Platillos</div>
+                    <div className={styles.titlePrice}>Precio</div>
+                </div>
 
                 {order.items.map((item) => (
 
-                    <div className={styles.orderWaiter}>
+                    <div className={styles.orderWaiter}>                        
+                        <div className={styles.foodQuantity}>{item.quantity}</div>
                         <div className={styles.foodOptionsKitchen}>{item.name}</div>
                         <div className={styles.foodprice}>{item.price}</div>
                     </div>
