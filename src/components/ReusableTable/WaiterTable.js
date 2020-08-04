@@ -40,15 +40,15 @@ const WaiterTable = ({ order }) => {
 
             <div className={styles.customerOrdersWaiter}>
 
-                {order.item.map((item) => (
+                {order.items.map((item) => (
 
                     <div className={styles.orderWaiter}>
                         <div className={styles.foodOptionsKitchen}>{item.name}</div>
-                <div className={styles.foodprice}>{item.price}</div>
+                        <div className={styles.foodprice}>{item.price}</div>
                     </div>
                 ))}
 
-                
+
 
                 <div className={styles.orderWaiter}>
                     <div className={styles.foodTotal}>Total</div>
