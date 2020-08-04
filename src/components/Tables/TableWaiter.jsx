@@ -1,9 +1,15 @@
 import React from 'react';
 import Logo from '../Logo/Logo';
+import Boton from '../Boton/Boton'
+import { Link } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
 import DateTime from '../DateTime/DateTables';
 
 import styles from './styles.module.css';
+
+const status = [
+    { label: 'Cancelar', value: 'Cancelar' },
+]
 
 const TableWaiter = ({ client, order, orders }) => {
 
@@ -29,12 +35,13 @@ const TableWaiter = ({ client, order, orders }) => {
                     <thead>
                         <tr className={styles.columns}>
                             <th scope="col"> No. <br /> Orden </th>
-                            <th scope="col"> Fecha </th>
+                            <th scope="col"> Fecha <br /> Orden </th>
                             <th scope="col"> No. <br />  Mesa </th>
                             <th scope="col"> No. <br /> Personas </th>
                             <th scope="col"> Hora <br /> Entrada </th>
                             <th scope="col"> Hora <br /> Salida </th>
-                            <th scope="col"> Status </th>
+                            <th scope="col"> Status <br /> Orden </th>
+                            <th scope="col"> Cuenta <br /> Orden </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,12 +53,17 @@ const TableWaiter = ({ client, order, orders }) => {
                                 <td> {order.numpeople} </td>
                                 <td>12:30</td>
                                 <td>14:00</td>
-                                <td>PAGADA</td>
+                                <td>Pagado</td>
+                                <td>
+                                    <Link to="waiteraccount">
+                                        <Boton text={"Editar"} allstyles={"editWaiterTable"} />
+                                    </Link>
+                                </td>
                             </tr>
                         ))}
-
                     </tbody>
                 </Table>
+
             </div>
         </div>
     );
