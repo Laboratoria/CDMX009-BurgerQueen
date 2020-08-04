@@ -1,0 +1,107 @@
+.title-receipt{
+    font-size: x-large;
+    font-family: 'Raleway';
+    font-weight: bold;
+    color: orange;
+    margin-top: 0px;
+}
+
+.resume-receipt{
+    border: solid black 1px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway';
+}
+
+.division{
+    border-bottom: solid  1px grey;
+    margin: 10px;
+    padding: 10px;
+    width: 90%;
+}
+
+.header-receipt{
+    text-align: center;
+}
+
+.text-header-receipt{
+    font-size: 15px;
+    margin: 10px;
+    padding: 0;
+    width: 350px;
+}
+
+.resume{
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.general-info-order{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0px 15px;
+}
+
+.general-info-order p {
+    margin: 3px 10px;
+    padding: 0;
+}
+
+.goodbye{
+    font-style: oblique;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.table-resume-order-receipt{
+    margin-top: 10px;
+}
+
+.table-resume-order-receipt th{
+    padding: 3px 10px;
+}
+
+.table-resume-order-receipt td{
+    padding: 3px 10px;
+}
+
+.text-resume-order{
+    text-align: center;
+}
+
+.total-resume-order{
+    font-weight: bold;
+    text-align: center;
+}
+
+.total-receipt{
+    text-align: center ;
+}
+
+.logo-receipt{
+    width: 170px;
+    margin-top: 10px;
+}
+
+.footer-modal-receipt{
+    margin-top: 20px;
+}
+
+.btn-print-order{
+    background-color: #FBE677;
+    border-style: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: 'Raleway';
+    height: 35px;
+    float: right;
+}
+
+.btn-print-order:hover{
+    background-color: #ffdf3c;
+}

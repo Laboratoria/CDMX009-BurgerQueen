@@ -1,0 +1,44 @@
+.general{
+    background-color: rgba(0,0,0,0.7);
+    border-color: white;
+    border-radius: 10%;
+    padding: 3% !important;
+    font-size: 15px; 
+}
+    
+ .food-image{
+    margin: 0px !important;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+    
+.item{
+    width: 80px !important;
+    margin: 0px !important;
+}
+    
+.food-name{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.space{
+    display: flex;
+    justify-content: space-around;
+}
+
+.card{
+    width: 165px;
+    height: 180px;
+}
+
+.card-content{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}  

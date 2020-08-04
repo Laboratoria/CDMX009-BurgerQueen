@@ -1,0 +1,72 @@
+.resume-card{
+    background-color: rgba(0,0,0,0.8);
+    border-color: none;
+    border-radius: 5px;
+    height: 410px;
+    width: 440px;
+    margin-right: 50%;
+    margin-top: 5%;  
+}
+
+.resume-title{
+    padding-top: 10px;
+    margin-top: 2px;
+    padding-bottom: 10px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 47px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.scroll{
+    overflow: scroll;
+}
+
+.total{
+    width: 440px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.total-price{
+    padding-left: 50px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 47px;
+}
+
+.card{
+    background-color: rgba(0,0,0,0.8) !important
+}
+
+.order-info{
+    font-size: 16px;
+}
+
+.material-icons{
+    font-size: 23px !important;
+    margin-bottom: 5px;
+}
+
+.container-quantity{
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-quantity{
+    margin-top: 15px;
+}
+
+.delete-btn{
+    margin-top: 17px;
+}
+
+.btn-add{
+    background-color: none;
+    background: none;
+    border: none;
+}

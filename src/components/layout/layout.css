@@ -1,0 +1,30 @@
+.bq-text-navbar{
+    margin-top: -5px;
+    font-size: 20px;
+}
+
+.logo-burger{
+    position: relative;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 180px;
+}
+
+.opt-menu-navbar{
+    margin-top: 30px;
+}
+
+.line-menu{
+    margin: 0px 41px 10px 40px !important;
+    background-color: rgba(251, 255, 24, 0.513) !important;
+}
+
+.text-menu{
+    padding-left: 50px !important;
+}
+
+.icn{
+    margin-right: 30px;
+}

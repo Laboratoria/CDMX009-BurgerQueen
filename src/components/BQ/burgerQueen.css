@@ -1,0 +1,38 @@
+.initial-image{
+    background-image: url('../../img/imagen-fondo.JPG');
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+
+.initial-image-blur{
+    background-image: url('../../img/fondo-blur.JPG');
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+
+.logo{
+    width: 570px;
+    position: relative;
+    top: 400px;
+    left: 384px;
+}
+
+.btn-login{
+    background-color: rgba(0,0,0,0.1);
+    color: white;
+    border-radius: 5px;
+    border: 2px solid #FFFFFF;
+    width: 150px;
+    height: 50px;
+    font-family: 'Raleway';
+    font-size: 25px;
+    position: relative;
+    top: 360px;
+    right: 75px;
+}

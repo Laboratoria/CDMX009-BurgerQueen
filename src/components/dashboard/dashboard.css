@@ -1,0 +1,57 @@
+.dashboard{
+    background-image: url('../../img/dashboard-image-blur.png');
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover; 
+    background-color: black;
+}
+
+.general{
+    background-color: rgba(0,0,0,0.8);
+    border-color: none;
+    border-radius: 5px;
+}
+
+.dash-btn{
+    margin-top: 15%;
+    border: 1px solid #FFFFFF;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    border-radius: 5px;
+    width: 168px;
+    height: 50px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 520;
+    font-size: 19px;
+    margin-right: 4%;
+}
+
+.dash-btn:hover {
+    background-color:#FBE677;
+    color: black;
+}
+
+.table-select{
+    margin-top: 10%;
+}
+
+.menu-list{
+    margin-left: 5%;
+}
+
+.client-info{
+    padding-left: 50%;
+}
+
+.scroll-cards{
+    height: 570px;
+    overflow: scroll;
+}
+
+.products-order{
+    font-size: 15px;
+    margin-top: 35%;
+}

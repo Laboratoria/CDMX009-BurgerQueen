@@ -1,0 +1,73 @@
+.bg{
+    background-color: rgb(19, 17, 17);
+    min-height: 100vh;
+    padding-top: 1px;
+}
+
+.table-user{
+    margin-top: 5%;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px !important;  
+    padding: 30px 30px 30px 30px;
+}
+
+.title-admin{
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 45px;
+}
+
+.add-personal{
+    margin-top: 35px;
+}
+
+.add-btn{
+    border: 1px solid #FFFFFF;
+    background-color: #FBE677;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 170px;
+    height: 50px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-size: 18px;
+    text-transform: initial;
+    line-height: 35px;
+}
+
+.add-text{
+    font-family: 'Raleway';
+    font-style: normal;
+    padding-top: 5px;
+}
+
+.register-btn{
+    margin-top: 30px;
+    display:flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.register-text{
+    text-transform: initial;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 130px;
+    height: 40px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-size: 18px;
+    line-height: 35px;
+}
+
+.ipt{
+    padding-bottom: 10px !important;
+}
+
+.text-font{
+    font-family: 'Raleway' !important;
+    font-style: normal !important;
+    font-size: 23px;
+}

@@ -1,0 +1,37 @@
+.status-opt{
+    height: 300px;
+    top: 30% !important;
+    border-radius: 5px;
+ }
+ 
+.status-menu{
+    width: 100% !important;
+    padding: 35px !important;
+}
+
+#modal3 > div.input-field.col.s12 > div > input{
+    color: black;
+    font-weight: normal;
+    font-family: 'Raleway';
+    font-size: large;
+}
+
+.btn-update-status{
+    background-color: #FBE677 ;
+    border-style: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: 'Raleway';
+    margin-right: 40px !important;
+}
+
+.Toastify__toast--dark{
+    background-color: orange;
+    color: black;
+    font-family: 'Raleway';
+    text-align: center;
+}
+.order-ready{
+    border-radius: 5px;
+    font-family: sans-serif
+}
