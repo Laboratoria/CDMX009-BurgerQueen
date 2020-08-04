@@ -13,6 +13,7 @@ const Cocina = () => {
     return(
         <Fragment>
             <h1>hola mundo</h1>
+            
         </Fragment>
         
     )

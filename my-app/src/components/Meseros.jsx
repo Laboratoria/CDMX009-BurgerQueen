@@ -15,7 +15,7 @@ const Platillo = ({id, nombre, precio, deleteItem}) => (
     <tr>
         <td>{nombre}</td>
         <td>{precio}$</td>
-        <td><button onClick={() => deleteItem(id)}>Borrar producto</button></td>
+        <td><button onClick={() => deleteItem(id)}className="button"><i className="fas fa-trash-alt"></i></button></td>
     </tr>
 )
 
@@ -133,7 +133,7 @@ const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda, deleteItem,sendOr
                                                 nroMesa: nroMesa,
                                                 platillos: comanda,
                                                         precio,
-                                         })} }>Enviar a cocina</button></tr>
+                                         })} } className="button">Enviar a cocina</button></tr>
                             </table>
                                
                             
