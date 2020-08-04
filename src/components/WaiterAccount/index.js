@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState }  from 'react';
 import Logo from '../Logo/Logo';
+import db from '../../firebase';
 import Boton from '../Boton/Boton'
 import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
-import ReusableTable from '../ReusableTable';
+import { useParams } from 'react-router-dom';
 
 import IconPrintAccount from '../../assets/imgs/pink-circle.png';
 import WaiterTable from '../ReusableTable/WaiterTable';
 
-const WaiterAccount = ({ client, setClient, order, setOrder }) => {
+const WaiterAccount = ({ client, setClient }) => {
+
+    const [order, setOrder ] = useState();
+    
+    const { orderId } = useParams()
+    
+    useEffect(() => {
+        db.collection('ordersfood').doc(orderId).get().then((querySnapshot) => {
+                     
+        
+        setOrder(querySnapshot.data());
+ 
+        });
+    }, [])
 
     return (
         <div className={styles.containerContent}>
@@ -24,7 +38,7 @@ const WaiterAccount = ({ client, setClient, order, setOrder }) => {
                 </div>
 
                 <div className={styles.secondDivision}>
-                    <WaiterTable client={client} setClient={setClient} order={order} setOrder={setOrder} />
+                    {order && <WaiterTable client={client} setClient={setClient} order={order} />}
                 </div>
 
                 <div className={styles.thirdDivision}>

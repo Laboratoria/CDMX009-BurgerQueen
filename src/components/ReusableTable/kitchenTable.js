@@ -7,7 +7,7 @@ import {products} from '../../utils/products.js'
 
 
 
-const KitchenTable = ({ client, setClient, order }) => {
+const KitchenTable = ({ order }) => {
 
     console.log(order)
 

@@ -4,7 +4,7 @@ import Boton from '../Boton/Boton';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
 import KitchenTable from '../ReusableTable/kitchenTable';
-import { useParams} from 'react-router-dom'
+import { useParams } from 'react-router-dom';
 import db from '../../firebase';
 
 import Bell from '../../assets/imgs/cuadrado-bordes.png';
@@ -16,8 +16,7 @@ const Kitchen = ({ client, setClient }) => {
     const { orderId } = useParams()
     
     useEffect(() => {
-        db.collection('ordersfood').doc(orderId).get().then((querySnapshot) => {
-                     
+        db.collection('ordersfood').doc(orderId).get().then((querySnapshot) => {                     
         
         setOrder(querySnapshot.data());
  

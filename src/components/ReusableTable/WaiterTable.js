@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import DateTime from '../DateTime/DateTime';
 
 
-const WaiterTable = ({ client, order }) => {
+const WaiterTable = ({ order }) => {
+    console.log(order);
 
     return (
         <div className={styles.containerTableKitchen}>
 
             <div className={styles.DateOfOrderWrapprer}>
                 <div className={styles.DateOfclientWrapper}>
-                    <span className={styles.nameClient}>Pablo López</span>
+                    <span className={styles.nameClient}>{order.nameclient}</span>
                     <div className={styles.positionDatewaiter}><DateTime /> </div>
                 </div>
 
@@ -18,13 +19,13 @@ const WaiterTable = ({ client, order }) => {
                 <div className={styles.positionData}>
                     <div className={styles.numberTable}>
                         <p>No. Mesa</p>
-                        <span className={styles.firstNumberWrapper}>{client.numtable}</span>
+                        <span className={styles.firstNumberWrapper}>{order.numtable}</span>
                     </div>
 
                     <div className={styles.numberPeople}>
                         <p>No. Personas</p>
                         <span className={styles.firstNumberWrapper}>
-                            {client.numpeople}
+                            {order.numpeople}
                         </span>
                     </div>
 
@@ -38,25 +39,16 @@ const WaiterTable = ({ client, order }) => {
             <div className={styles.separation}></div>
 
             <div className={styles.customerOrdersWaiter}>
-                <div className={styles.orderWaiter}>
-                    <div className={styles.foodOptionsKitchen}>Café americano</div>
-                    <div className={styles.foodprice}>5</div>
-                </div>
 
-                <div className={styles.orderWaiter}>
-                    <div className={styles.foodOptionsKitchen}>Hamburguesa Simple</div>
-                    <div className={styles.foodprice}>5</div>
-                </div>
+                {order.item.map((item) => (
 
-                <div className={styles.orderWaiter}>
-                    <div className={styles.foodOptionsKitchen}>Café americano</div>
-                    <div className={styles.foodprice}>555</div>
-                </div>
+                    <div className={styles.orderWaiter}>
+                        <div className={styles.foodOptionsKitchen}>{item.name}</div>
+                <div className={styles.foodprice}>{item.price}</div>
+                    </div>
+                ))}
 
-                <div className={styles.orderWaiter}>
-                    <div className={styles.foodOptionsKitchen}>Café con leche</div>
-                    <div className={styles.foodprice}>5</div>
-                </div>
+                
 
                 <div className={styles.orderWaiter}>
                     <div className={styles.foodTotal}>Total</div>
