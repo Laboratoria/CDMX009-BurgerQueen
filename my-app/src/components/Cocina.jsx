@@ -8,9 +8,11 @@ import {
 
 import Meseros from "./Meseros";
 
-function Cocina () {
+
+const Cocina = () => {
     return(
-        console.log()
+        
+        console.log("pedo")
     )
 
 }

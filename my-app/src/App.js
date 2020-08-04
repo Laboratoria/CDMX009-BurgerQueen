@@ -12,15 +12,25 @@ import Login from "./components/Login"
 import Meseros from "./components/Meseros"
 import {ProductsBF,ProductsFo} from './components/utils/data/Data'
 
+
 const App = () => {
   const [order,setOrder] = useState({
     nombreCliente:"",
     status:false,
-    item:[]
+    item:[],
+    kitchen:[]
+
   })
 
   const addItemToOrder = (product) => {
     setOrder({...order, item: [...order.item, product]})
+  }
+
+  const sendOrderKitchen = (comanda) => {
+    setOrder({...order,kitchen: [...order.kitchen,comanda]})
+      console.log(order.kitchen)
+  
+
   }
 
   const deleteItem = (id) => {
@@ -55,6 +65,7 @@ const App = () => {
             ProductsFo={ProductsFo}
             addItemToOrder={addItemToOrder}
             deleteItem={deleteItem}
+            sendOrderKitchen={sendOrderKitchen}
 
              />
           </Route>

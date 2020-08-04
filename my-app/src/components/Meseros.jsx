@@ -17,7 +17,7 @@ const Platillo = ({id, nombre, precio, deleteItem}) => (
     </tr>
 )
 
-const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda, deleteItem}) =>{
+const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda, deleteItem,sendOrderKitchen}) =>{
     
     const [count, setCount] = useState(0);
     const [cliente, setCliente] = useState('');
@@ -125,7 +125,12 @@ const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda, deleteItem}) =>{
                                     </th>
 
                                 </tr>
-                                <tr><button onClick={enviarACocina}>Enviar a cocina</button></tr>
+                                <tr><button onClick = {  () => {sendOrderKitchen({
+                                                     cliente,
+                                                nroMesa: nroMesa,
+                                                platillos: comanda,
+                                                        precio,
+                                         })} }>Enviar a cocina</button></tr>
                             </table>
                         </div>
                     

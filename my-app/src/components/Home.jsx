@@ -7,6 +7,8 @@ import {
     Link
   } from "react-router-dom";
 
+import Cocina from "./Cocina";
+
 const Home =() =>{
     return(
         <div>
