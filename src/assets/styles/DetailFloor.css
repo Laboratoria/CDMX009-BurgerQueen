@@ -1,0 +1,40 @@
+body {
+    background-color : #F49A1A;
+  }
+.main-container{
+    background-color : white;
+    width: 91vw;
+    height: 93vh;
+}
+.images{
+    width: 90%;
+    height: 0%;
+}
+.numbertable {
+    margin-left: 10%;
+}
+#paragraph {
+    font-size: 25px;
+    font-weight: bold;
+}
+#edit {
+    color: #4674B9;
+    font-size: 30px;
+}
+Table {
+    width: 100%;
+}
+.check{
+    margin-right: 6%;
+    font-weight: bold;
+    font-size: (30% + 1vw + 1vh);
+    color: blue;
+    float: right;
+}
+.edit{
+    margin-left: 20%;
+    font-weight: bold;
+    font-size: 15px;
+    color: red;
+    text-decoration-line: underline;
+}

@@ -1,0 +1,38 @@
+.box {
+  background-color: white;
+  width: 100%;
+}
+.images {
+  width: 90%;
+  height: 0%;
+  margin-top: 10%;
+}
+.waiter {
+  width: 40%;
+  height: 40%;
+  margin-top: 5%;
+}
+.chef {
+  width: 40%;
+  height: 40%;
+  margin-top: 5%;
+}
+.logout {
+  width: 60%;
+  height: 60%;
+  margin-top: -20%;
+}
+body {
+  background-color: #f49a1a;
+}
+
+.main-container {
+  background-color: white;
+  width: 91vw;
+  height: 93vh;
+}
+.welcome {
+  font-weight: bold;
+  font-size: 50px;
+  margin-top: 5%;
+}

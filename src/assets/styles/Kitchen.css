@@ -1,0 +1,36 @@
+body {
+    background-color : #F49A1A;
+  }
+  
+.main-container{
+    background-color : white;
+    width: 91vw;
+    height: 93vh;
+}
+.images{
+    width: 90%;
+    height: 0%;
+}
+.table{
+  margin-left: 4%;
+  width: 100%;
+}
+th {
+  font-size: 30px;
+  width: 13%;
+}
+td {
+  font-size: 190%;
+}
+.thMesa{
+  width: 100%;
+}
+.ready-kitchen{
+  color: green;
+}
+.not-ready-kitchen {
+  color: red ;
+}
+.detailKitchen{
+    color: blue;
+  }

@@ -1,0 +1,46 @@
+body {
+    background-color : #F49A1A;
+  }
+  
+.main-container{
+    background-color : white;
+    width: 91vw;
+    height: 93vh;
+}
+.images{
+    width: 90%;
+    height: 0%;
+}
+.table{
+  margin-left: 4%;
+  width: 100%;
+}
+th{
+  font-size: 30px;
+  width: 13%;
+}
+td{
+  font-size: 190%;
+}
+.thMesa{
+  width: 100%;
+}
+.detailfloor{
+  color: blue;
+}
+.Close{
+  color: red ;
+}
+.open{
+  color: green;
+}
+.ready{
+  color: green;
+}
+.not-ready{
+  color: red ;
+}
+.trash{
+  width: 3.5vw;
+  height: 3.5vh;
+}
