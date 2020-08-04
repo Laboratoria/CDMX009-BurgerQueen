@@ -1,4 +1,4 @@
-import React, { useEffect, useState }  from 'react';
+import React, { useEffect, useState } from 'react';
 import Logo from '../Logo/Logo';
 import db from '../../firebase';
 import Boton from '../Boton/Boton'
@@ -11,16 +11,16 @@ import WaiterTable from '../ReusableTable/WaiterTable';
 
 const WaiterAccount = ({ client, setClient }) => {
 
-    const [order, setOrder ] = useState();
-    
+    const [order, setOrder] = useState();
+
     const { orderId } = useParams()
-    
+
     useEffect(() => {
         db.collection('ordersfood').doc(orderId).get().then((querySnapshot) => {
-                     
-        
-        setOrder(querySnapshot.data());
- 
+
+
+            setOrder(querySnapshot.data());
+
         });
     }, [])
 
@@ -53,11 +53,11 @@ const WaiterAccount = ({ client, setClient }) => {
             </div>
 
             <div className={styles.routeButtonsAccount}>
-                <Link to="waiterregister">
+                <Link to="/waiterregister">
                     <Boton text={"Regresar"} allstyles={"return"} />
                 </Link>
 
-                <Link to="waiter">
+                <Link to="/waiter">
                     <Boton text={"Inicio"} allstyles={"returnTwo"} />
                 </Link>
             </div>
