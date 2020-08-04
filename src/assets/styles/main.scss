@@ -211,11 +211,11 @@ div, table, td, th, p{
             }
             
             .addBtn{
-                background-color: rgb(6, 179, 6);
+                background-color: #06b306;
             }
 
             .subBtn{
-                background-color: rgb(243, 69, 69);
+                background-color: #f34545;
             }
         }
     }
@@ -261,10 +261,11 @@ div, table, td, th, p{
     border-radius: 15px;
     font-family: font-text;
     font-size: 20px;
-    hr{
-        width: 500px;
-        height: 2px;
-    }
+}
+
+hr{
+    width: 90%;
+    height: 2px;
 }
 
 .flavor-container, .extra-container{
@@ -289,3 +290,179 @@ div, table, td, th, p{
     justify-content: center;
 }    
 /*Modal Styles - ends*/
+
+/*Kitchen - starts*/
+.kitchen-cards-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+    .kitchen-cards-doing, .kitchen-cards-waiting{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        overflow: scroll;
+        width: 50%;
+        height: 570px;
+        
+        //border:1px solid black;
+    }
+}
+
+/*kitchen - ends*/
+
+
+/*Kitchen card - starts*/
+.kitchen-card-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    width: 400px;
+    //height: 200px;
+    border: 2px solid black;
+    border-radius: $radius;
+    font-family: font-text;
+    padding:10px;
+    background-color: #E9E6E6;
+    margin: 5px;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.4);
+    div, td, h3{
+        margin: 2px;
+       // border:1px solid black;
+    }
+
+    div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    span{
+        font-family: font-card;
+    }
+
+    table{
+       margin-bottom: 10px;   
+    }
+    input{
+        height:40px;
+        font-size: 20px;
+        border-style: none;
+        opacity: 1;
+        font-family: font-card;
+        border-radius: $radius;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+    }
+}
+
+.status-red{
+   color: #f34545
+}
+
+.status-green{
+    color: #06b306
+}
+
+.border-green{
+    border: 3px solid #06b306;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.7);
+}
+  
+/*Kitchen card - ends*/
+
+/*Kitchen modal - starts*/
+.modal-block{
+    
+    display: flex;
+    flex-direction: column;
+    //justify-content: center;
+    //align-items: center;
+    align-self: center;
+    width: 500px;
+    //padding: 2rem;
+    background-color: #E9E6E6;
+    border-radius: 15px;
+    font-family: font-text;
+    font-size: 18px;
+    span{
+        font-family: font-card;
+    }
+    //div{
+        //border: 1px solid black;
+    //}
+    h3{
+        margin:5px;
+        align-self: center;
+    }
+    input[type=button]{
+       margin-bottom: 2rem ;
+       margin-top: 2rem ;
+    }
+}
+
+.modal-status-on{
+    border-radius: 15px 15px 0px 0px;
+    background-color: #06b306;
+    height: 20px;
+}
+
+.modal-status-off{
+    border-radius: 15px 15px 0px 0px;
+    background-color: #f34545;
+    height: 20px;
+}
+
+.modal-header{
+    //border: 1px solid black;
+    padding: 0 2rem;
+    table{
+        width: 100%;
+        th,td{
+            padding:2px;
+           // border: 1px solid black;
+            
+        }
+    }
+    
+}
+
+.modal-body{
+    padding: 0 2rem;
+    max-height: 400px;
+    //height: 500px;
+    overflow: scroll;
+
+    
+    table{
+        input{
+            width: 2em;
+            height: 2em;
+            margin-right: 1em;
+        }
+        th,td{
+            padding:2px;
+            //border: 1px solid black;
+        }
+    }
+
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+  }
+       
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $pColor; 
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-corner{
+      opacity:1;
+  }
+
+/*Kitchen modal - ends*/

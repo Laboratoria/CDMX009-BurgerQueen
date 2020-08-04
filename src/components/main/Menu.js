@@ -8,6 +8,7 @@ import Card from '../main/Card'
 import Ticket from './Ticket';
 import Modal from '../common/Modal'
 import { useToasts } from 'react-toast-notifications'
+import actionDenied from '../common/actionDenied'
 
 
 const calcTotal = (products) => products.reduce((sum, curr) => sum + curr.price, 0);
@@ -18,14 +19,35 @@ const sendToKitchen = (addToast,employee, client, setClient, tab, setTab, total2
   let id = employee+'_'+tab+'_'+date.getTime();
   const db = firebase.firestore(); 
 
-  const fetchData = async () => {
+  const fecthCount = async () => {
   
+  }
+
+  const fetchData = async () => {
+    
+    const count = await db.collection('counter').doc('counter').get()
+     
+    const NunOrder = count.data().ordersCount + 1;
+
+    await db.collection('counter').doc('counter').update({
+      'ordersCount': NunOrder
+    })
+    
     await db.collection('orders').doc(id).set({
-        'empleado': employee,
+        'id': id,
+        'mesero': employee,
+        'cocinero': '',
         'cliente': client, 
         'mesa': tab,
         'total': total2,
-        'horaPedido': date, 
+        'horaPedido': date,
+        'horaPreparacion': '',
+        'horaEntrega': '',
+        'status': 'Por preparar',
+        'preparando': false,
+        'listo' : false,
+        'entregado': false,
+        'numOrden': NunOrder, 
         'orden':{}
     })
   }
@@ -44,18 +66,24 @@ const sendToKitchen = (addToast,employee, client, setClient, tab, setTab, total2
     })
   }).then(()=>{
     console.log('orden enviada correctamente')
-    addToast('La orden se ha enviado exitosamente', {  placement:'top-center', appearance: 'success' })
+    addToast('La orden se ha enviado exitosamente', {
+      placement:'top-center', 
+      appearance: 'success' 
+    })
     setProducts([]);
     setTab('');
     setClient('');
   }).catch(err=>{
     console.log(err);
+    addToast('Hubo un error al enviar la orden', {
+      placement:'top-center', 
+      appearance: 'error' 
+    })
   })
 }
 
-function Menu({employee}) {
+function Menu({employee, role}) {
   
-
   const { addToast } = useToasts()
   let statusMenu = "active-btn";
   let statusKitchen = "nav-btn";
@@ -210,8 +238,14 @@ function Menu({employee}) {
              
              {menuCards.map(cardItem =>
              (<Card
-               id={cardItem.id} 
-               onClick={()=> compareProduct(cardItem)} 
+              key={cardItem.id} 
+               onClick={()=> {
+                 if(role === 'cocinero'){
+                  actionDenied(addToast)
+                 }else{
+                  compareProduct(cardItem)
+                 }
+                 }} 
                name={cardItem.name}
                image={cardItem.image}
                price={cardItem.price}
@@ -230,10 +264,14 @@ function Menu({employee}) {
                 client={client}
                 tab={tab}
                 onClickSend={()=>{
-                    if(client !== '' && tab !== '' && total2 !== 0){
-                      sendToKitchen(addToast,employee, client, setClient, tab, setTab, total2,  products, setProducts)
+                    if(role === 'cocinero'){
+                      actionDenied(addToast)
                     }else{
-                      addToast('Complete todos los campos de la orden antes de enviar', { autoDismiss: true, placement:'top-center', appearance: 'warning' })
+                      if(client !== '' && tab !== '' && total2 !== 0){
+                        sendToKitchen(addToast,employee, client, setClient, tab, setTab, total2,  products, setProducts)
+                      }else{
+                        addToast('Complete todos los campos de la orden antes de enviar', { autoDismiss: true, placement:'top-center', appearance: 'warning' })
+                      }
                     }
                   }}
                 />

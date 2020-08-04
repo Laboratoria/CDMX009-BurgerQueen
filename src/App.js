@@ -1,6 +1,6 @@
 import React from 'react';
 import Routes from './components/login/Routes'
-import { ToastProvider, useToasts } from 'react-toast-notifications'
+import { ToastProvider } from 'react-toast-notifications'
 
 function App() {
     

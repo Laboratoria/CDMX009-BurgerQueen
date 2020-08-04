@@ -344,8 +344,8 @@ div, table, td, th, p{
   font-size: 20px;
 }
 
-.modal-box hr {
-  width: 500px;
+hr {
+  width: 90%;
   height: 2px;
 }
 
@@ -394,4 +394,205 @@ div, table, td, th, p{
 }
 
 /*Modal Styles - ends*/
+/*Kitchen - starts*/
+.kitchen-cards-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+}
+
+.kitchen-cards-main .kitchen-cards-doing, .kitchen-cards-main .kitchen-cards-waiting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: scroll;
+  width: 50%;
+  height: 570px;
+}
+
+/*kitchen - ends*/
+/*Kitchen card - starts*/
+.kitchen-card-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 400px;
+  border: 2px solid black;
+  border-radius: 15px;
+  font-family: font-text;
+  padding: 10px;
+  background-color: #E9E6E6;
+  margin: 5px;
+  -webkit-box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.4);
+          box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.4);
+}
+
+.kitchen-card-container div, .kitchen-card-container td, .kitchen-card-container h3 {
+  margin: 2px;
+}
+
+.kitchen-card-container div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.kitchen-card-container span {
+  font-family: font-card;
+}
+
+.kitchen-card-container table {
+  margin-bottom: 10px;
+}
+
+.kitchen-card-container input {
+  height: 40px;
+  font-size: 20px;
+  border-style: none;
+  opacity: 1;
+  font-family: font-card;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+.status-red {
+  color: #f34545;
+}
+
+.status-green {
+  color: #06b306;
+}
+
+.border-green {
+  border: 3px solid #06b306;
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.7);
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.7);
+}
+
+/*Kitchen card - ends*/
+/*Kitchen modal - starts*/
+.modal-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 500px;
+  background-color: #E9E6E6;
+  border-radius: 15px;
+  font-family: font-text;
+  font-size: 18px;
+}
+
+.modal-block span {
+  font-family: font-card;
+}
+
+.modal-block h3 {
+  margin: 5px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.modal-block input[type=button] {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.modal-status-on {
+  border-radius: 15px 15px 0px 0px;
+  background-color: #06b306;
+  height: 20px;
+}
+
+.modal-status-off {
+  border-radius: 15px 15px 0px 0px;
+  background-color: #f34545;
+  height: 20px;
+}
+
+.modal-header {
+  padding: 0 2rem;
+}
+
+.modal-header table {
+  width: 100%;
+}
+
+.modal-header table th, .modal-header table td {
+  padding: 2px;
+}
+
+.modal-body {
+  padding: 0 2rem;
+  max-height: 400px;
+  overflow: scroll;
+}
+
+.modal-body table input {
+  width: 2em;
+  height: 2em;
+  margin-right: 1em;
+}
+
+.modal-body table th, .modal-body table td {
+  padding: 2px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffa902;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-corner {
+  opacity: 1;
+}
+
+/*Kitchen modal - ends*/
 /*# sourceMappingURL=main.css.map */

@@ -4,14 +4,16 @@ import firebase from '../../config/firebase/firebase-config'
 import 'firebase/firestore'
 import '../../assets/styles/index.css';
 
-export function Login({setIslogin, setEmployee}) {
+export function Login({setIslogin, setEmployee, setRole}) {
 
      const[username, setUsername] = useState("");
-     const[password, setPassword] = useState(""); 
+     const[password, setPassword] = useState("");
+       
      
-     let autenticar=(username)=>{
+     let autenticar=(username, role)=>{
       setIslogin(true);
       setEmployee(username);
+      setRole(role);
      }
      
     function enter(){
@@ -21,10 +23,10 @@ export function Login({setIslogin, setEmployee}) {
         const db = firebase.firestore();
         const data = await db.collection('users').get()
         data.docs.map(doc => {
-          console.log(doc.data().name, doc.data().password)
-          if (doc.data().name === username && doc.data().password === password ){
-            
-            autenticar(username)
+          console.log(doc.data().name, doc.data().password, doc.data().role)
+          if (doc.data().name === username.toLowerCase() && doc.data().password === password ){
+            const role = doc.data().role
+            autenticar(username.toLowerCase(), role)
           }else{
             console.log('no entra');
           }
