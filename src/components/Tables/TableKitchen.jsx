@@ -30,14 +30,14 @@ const TableWaiter = ({ client, order, orders }) => {
                 <Table striped bordered hover className={styles.tableLines}>
                     <thead>
                         <tr className={styles.columns}>
-                            <th scope="col"> Mesero </th>
+                            <th scope="col"> Nombre <br /> Mesero </th>
                             <th scope="col"> No. <br /> Orden </th>
-                            <th scope="col"> Fecha </th>
+                            <th scope="col"> Fecha <br /> Orden </th>
                             <th scope="col"> No. <br />  Mesa </th>
                             <th scope="col"> No. <br /> Personas </th>
                             <th scope="col"> Hora <br /> Entrada </th>
                             <th scope="col"> Hora <br /> Salida </th>
-                            <th scope="col"> Status </th>
+                            <th scope="col"> Status <br /> Orden </th>
                         </tr>
                     </thead>
                     <tbody>

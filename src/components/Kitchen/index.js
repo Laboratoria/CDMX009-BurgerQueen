@@ -4,7 +4,7 @@ import Boton from '../Boton/Boton';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
 import KitchenTable from '../ReusableTable/kitchenTable';
-import { useParams} from 'react-router-dom'
+import { useParams } from 'react-router-dom';
 import db from '../../firebase';
 
 import Bell from '../../assets/imgs/cuadrado-bordes.png';
@@ -16,8 +16,7 @@ const Kitchen = ({ client, setClient }) => {
     const { orderId } = useParams()
     
     useEffect(() => {
-        db.collection('ordersfood').doc(orderId).get().then((querySnapshot) => {
-                     
+        db.collection('ordersfood').doc(orderId).get().then((querySnapshot) => {                     
         
         setOrder(querySnapshot.data());
  
@@ -57,8 +56,6 @@ const Kitchen = ({ client, setClient }) => {
                         <span className={styles.firstNumberWrapper}>3:50pm</span>
                     </div>
 
-                    {/* <button onClick={hablar()}>Notificar</button> */}
-
                     <div className={styles.printAccount}>
                         <button  onClick={() => hablar(texto)} >
                             <img src={Bell} alt="" className={styles.printImg} />
@@ -66,7 +63,7 @@ const Kitchen = ({ client, setClient }) => {
                     </div>
 
                     <div className={styles.departureInTime}>
-                        <p>Hora de salidas</p>
+                        <p>Hora de Salida</p>
                         <span className={styles.firstNumberWrapper}>4:20pm</span>
                     </div>
 

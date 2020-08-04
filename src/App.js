@@ -108,7 +108,7 @@ function App() {
             <KitchenRegister client={client} setClient={setClient} /* order={order} setOrder={setOrder} */ />
           </Route>
 
-          <Route exact path="/waiteraccount">
+          <Route exact path="/waiteraccount/:orderId">
             <WaiterAccount client={client} setClient={setClient} /* order={order} setOrder={setOrder} */ />
           </Route>
 

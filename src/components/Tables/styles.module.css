@@ -54,7 +54,7 @@
   margin: 10px auto;
   border: 1px solid tomato;
   margin-bottom: 30px;
-  font-size: 1.6em;
+  font-size: 1.5em;
   font-family: 'Amaranth', sans-serif;
 
 }
@@ -74,26 +74,32 @@ thead {
 }
 
 tbody {
-  display: block;
+  display: flex;
+  flex-direction: column;
   max-height: 500px;
   overflow-y: scroll;
 }
 
 th, td {
-  width: 14%; 
+  width: 12.5%; 
   padding: 5px;
   word-break: break-all;
+  align-items: center;
+  justify-content: center;
 }
 
-.tablekitchen th, .tablekitchen  td  {
+.tablekitchen th, .tablekitchen td  {
   width: 12.5%;
-
 }
 
-tr {
-  display: table;
+tr {  
   width: 100%;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
 }
 
 td {
@@ -101,6 +107,11 @@ td {
   border-bottom: none;
   border-left: none;
 }
+
+tbody tr {
+  margin-bottom: 20px;
+}
+
 
 
 

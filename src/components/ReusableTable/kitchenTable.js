@@ -7,20 +7,9 @@ import {products} from '../../utils/products.js'
 
 
 
-const KitchenTable = ({ client, setClient, order }) => {
+const KitchenTable = ({ order }) => {
 
     console.log(order)
-/*     useEffect(() => {
-
-        db.collection('ordersfood').get().then((querySnapshot) => {
-            const data = []
-            querySnapshot.forEach(function (doc) {
-                data.push(doc.data());
-            });
-            setClient(data);
-            
-        });        
-    }, []); */
 
     return (
         <div className={styles.containerTableKitchen}>
@@ -31,13 +20,13 @@ const KitchenTable = ({ client, setClient, order }) => {
                 <div className={styles.positionData}>
                     <div className={styles.numberTable}>
                         <p>No. Mesa</p>
-                        <span className={styles.firstNumberWrapper}>{client.numtable}</span>
+                        <span className={styles.firstNumberWrapper}>{order.numtable}</span>
                     </div>
 
                     <div className={styles.numberPeople}>
                         <p>No. Personas</p>
                         <span className={styles.firstNumberWrapper}>
-                            {client.numpeople}
+                            {order.numpeople}
                         </span>
                     </div>
 
@@ -54,7 +43,7 @@ const KitchenTable = ({ client, setClient, order }) => {
                 {order.items.map((item) => (
                     <div className={styles.Ordersforkitchen}>
                         <div className={styles.foodOptionsKitchen}>{item.name}</div>
-                        <div className={styles.foodprice}>{item.price}</div>
+                        <div className={styles.foodprice}>{item.quantity}</div>
                     </div>
                 ))}
 
