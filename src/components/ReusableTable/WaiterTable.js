@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 import DateTime from '../DateTime/DateTime';
 
 
-const WaiterTable = ({ order }) => {
+const WaiterTable = ({ order, calculateTotal }) => {
     console.log(order);
 
     return (
@@ -52,7 +52,7 @@ const WaiterTable = ({ order }) => {
 
                 <div className={styles.orderWaiter}>
                     <div className={styles.foodTotal}>Total</div>
-                    <div className={styles.foodTotalPrice}>230</div>
+                    <div className={styles.foodTotalPrice}>{calculateTotal(order.items)}</div>
                 </div>
             </div>
         </div>
