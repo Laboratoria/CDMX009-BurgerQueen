@@ -32,7 +32,7 @@ const KitchenRegister = ({ client, setClient, order, setOrder }) => {
 
             <div className={styles.butons}>
                 <Link to="login">
-                    <Boton text={"Salir"} allstyles={"buttonOutWaiter"} />
+                    <Boton text={"Salir"} allstyles={"buttonOutKitchen"} />
                 </Link>
             </div>
         </Fragment>

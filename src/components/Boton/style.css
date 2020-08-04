@@ -11,6 +11,19 @@
     margin-left: 50px;
 }
 
+.buttonOutKitchen{
+    width: 170px;
+    height: 50px;
+    background: #ED3367;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 5px rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    font-family: 'Amaranth', sans-serif;
+    font-size: 28px;
+    text-align: center;
+    border-radius: 10px;
+    
+}
+
 .buttonOutWaiterBreack{
     width: 170px;
     height: 50px;
