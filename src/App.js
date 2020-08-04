@@ -80,7 +80,7 @@ function App() {
     let total = 0;
 
     items.forEach(item => {
-      total = item.quantity * item.price
+      total = (item.quantity * item.price) + total
 
     })
     return total;
