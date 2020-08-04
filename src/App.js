@@ -19,7 +19,7 @@ import KitchenRegister from './components/KitchenRegister';
 import 'react-bootstrap/dist/react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import {products} from '../src/utils/products.js';
+import { products } from '../src/utils/products.js';
 
 
 import './App.css';
@@ -75,6 +75,18 @@ function App() {
 
   }
 
+  const calculateTotal = (items) => {
+    console.log("aqui sale item de calculatedTotal", items)
+    let total = 0;
+
+    items.forEach(item => {
+      total = (item.quantity * item.price) + total
+
+    })
+    return total;
+  }
+
+
   return (
     <div className="App">
 
@@ -109,7 +121,7 @@ function App() {
           </Route>
 
           <Route exact path="/waiteraccount/:orderId">
-            <WaiterAccount client={client} setClient={setClient} /* order={order} setOrder={setOrder} */ />
+            <WaiterAccount client={client} setClient={setClient} calculateTotal={calculateTotal} /* order={order} setOrder={setOrder} */ />
           </Route>
 
           <Route exact path="/kitchen/:orderId">
