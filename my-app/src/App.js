@@ -8,10 +8,12 @@ import {
 } from "react-router-dom";
 
 import Home from "./components/Home"
+import Cocina from "./components/Cocina"
 import Login from "./components/Login"
 import Meseros from "./components/Meseros"
 import {ProductsBF,ProductsFo} from './components/utils/data/Data'
 import {v4 as uuidv4} from "uuid";
+
 
 
 const App = () => {
@@ -20,30 +22,37 @@ const App = () => {
   const [order,setOrder] = useState({
     nombreCliente:"",
     status:false,
-    item:[]
+    item:[],
+    kitchen:[]
+
   })
 
   const addItemToOrder = (product) => {
     setOrder({...order, item: [...order.item, product]})
   }
+
+  const sendOrderKitchen = (comanda) => {
+    setOrder({...order,kitchen: [...order.kitchen,comanda]})
+      console.log(order.kitchen)
+  
+
+  }
+
+  const deleteItem = (id) => {
+    let yaEliminado = false;
+    const newItems = order.item.filter((item) =>  {
+      if (yaEliminado) {
+        return true;
+      }
+      yaEliminado = yaEliminado || item.id === id;
+      return item.id !== id;
+    });
+    setOrder({...order, item: newItems})
+  }
   
   const {item} = order
 
-  const usersData =[
-    {id:uuidv4(), name:"Shei",num:"1",ordenP:" "}
-]
-
-const {users, setUsers} =useState(usersData);
-// agregar usuario y numero de mesa en un futuro todo el pedido 
-const addUser= (user) =>{
-user.id =uuidv4()
-user.ordenP=setOrder
-setUsers([
-    ...users,
-    user
-])
-}
-
+  
 
   
   return (
@@ -55,6 +64,9 @@ setUsers([
         </ul>
 
         <Switch>
+        <Route path="/Cocina">
+            <Cocina />
+          </Route>
           <Route path="/Home">
             <Home />
           </Route>
@@ -64,7 +76,9 @@ setUsers([
             ProductsBF={ProductsBF}
             ProductsFo={ProductsFo}
             addItemToOrder={addItemToOrder}
-            addUser ={addUser}  
+            deleteItem={deleteItem}
+            sendOrderKitchen={sendOrderKitchen}
+
              />
           </Route>
           <Route path="/">

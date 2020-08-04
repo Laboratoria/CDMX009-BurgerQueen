@@ -8,29 +8,45 @@ import {
   } from "react-router-dom";
 import Comida from "./comida/Comida"
 import Desayuno from "./Desayuno/Desayuno";
-import AddUserForm from "./AddUsersForm";
 
 
 
-const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda}) =>{
+const Platillo = ({id, nombre, precio, deleteItem}) => (
+    <tr>
+        <td>{nombre}</td>
+        <td>{precio}$</td>
+        <td><button onClick={() => deleteItem(id)}>Borrar producto</button></td>
+    </tr>
+)
 
-
+const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda, deleteItem,sendOrderKitchen}) =>{
+    
     const [count, setCount] = useState(0);
+    const [cliente, setCliente] = useState('');
+    const [nroMesa, setNroMesa] = useState('');
 
     const handleCounter = () => {
         setCount(count + 1);
         console.log(count);
     }
+      
 
-    const Platillo = ({nombre, precio}) => { return (<tr><td>{nombre}</td><td>{precio}$</td><td><button>Delete</button></td></tr> )}
+    const componentesComanda = comanda.map((platillo, index) => (
+        <Platillo key={`platillo-${index}`} deleteItem={deleteItem} id={platillo.id} nombre={platillo.nameProduct} precio={platillo.price}/> 
+    ))
     
-
-    const componentesComanda = comanda.map((platillo) => { return (<Platillo nombre={platillo.nameProduct} precio={platillo.price}/> )})
-    
-
     const sumarPrecio = (precioTotal,producto) => { return precioTotal + producto.price}
     const precio = comanda.reduce(sumarPrecio,0)
-    console.log(comanda)
+
+    const enviarACocina = () => {
+        console.log({
+            cliente,
+            nroMesa: nroMesa,
+            platillos: comanda,
+            precio,
+          })
+    }
+
 
 
 
@@ -63,14 +79,43 @@ const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda}) =>{
                     
                 </div>
                 <div className="ticket">
-                    <AddUserForm />
+                    <div  id="nameUser">
+                        <p className="control has-icons-left has-icons-right">
+                        <input
+                            id="cliente"
+                            className="input is-info is-warning" 
+                            type="text"
+                            placeholder="Nombre cliente"
+                            value={cliente}
+                            onChange={(e) => {
+                                setCliente(e.target.value);
+                            }}
+                        ></input>
                         
-                            <div>
-                                <tbody>
+                        
+                        </p>
+                    </div>
+                    <div  id="numberUser">
+                        <p className="control has-icons-left has-icons-right">
+                            <input 
+                            id="mesa" 
+                            className="input is-info is-warning"  
+                            type="text" 
+                            placeholder="Numero de mesa"
+                            value={nroMesa}
+                            onChange={(e)=>{
+                                setNroMesa(e.target.value);
+                            }}
+                            ></input>
+                      
+                        </p>
+                        </div>
+                        <div>
                             <table>
                                 <tr>
                                     <th>Plato</th>
                                     <th>Precio</th>
+                                    <th>Borrar</th>
 
                                 </tr>
                                 
@@ -83,9 +128,15 @@ const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda}) =>{
                                     </th>
 
                                 </tr>
+                                <tr><button onClick = {  () => {sendOrderKitchen({
+                                                     cliente,
+                                                nroMesa: nroMesa,
+                                                platillos: comanda,
+                                                        precio,
+                                         })} }>Enviar a cocina</button></tr>
                             </table>
                                
-                            </tbody>
+                            
                             </div>
                        
                 </div>
