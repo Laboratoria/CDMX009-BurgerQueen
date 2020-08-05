@@ -54,8 +54,7 @@ const TableWaiter = ({ client, order, orders }) => {
                                 <td>12:30</td>
                                 <td>14:00</td>
                                 <td>Pagado</td>
-                                <td>
-                                
+                                <td>                                
                                     <Link to={`/waiteraccount/${order.id}`}>
                                         <Boton text={"Editar"} allstyles={"editWaiterTable"} />
                                     </Link>

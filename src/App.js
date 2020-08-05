@@ -7,6 +7,8 @@ import {
   //Link
 } from "react-router-dom";
 
+import { currencyFormatter } from '../src/utils/index'
+
 import RestDay from './components/RestDay';
 import Kitchen from './components/Kitchen';
 import BreakFast from './components/BreakFast';
@@ -19,7 +21,8 @@ import KitchenRegister from './components/KitchenRegister';
 import 'react-bootstrap/dist/react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import {products} from '../src/utils/products.js';
+
+import { products } from '../src/utils/products.js';
 
 
 import './App.css';
@@ -75,6 +78,25 @@ function App() {
 
   }
 
+  const calculateTotal = (items) => {
+    console.log("aqui sale item de calculatedTotal", items)
+    let total = 0;
+
+    items.forEach(item => {
+      total = (item.quantity * item.price) + total
+    })
+    return total;
+  }
+
+  const calculateAmount = (price, quantity) => {
+    console.log("aquí esta el calculateAmount", price)
+
+    return price * quantity
+
+
+  }
+
+
   return (
     <div className="App">
 
@@ -109,7 +131,7 @@ function App() {
           </Route>
 
           <Route exact path="/waiteraccount/:orderId">
-            <WaiterAccount client={client} setClient={setClient} /* order={order} setOrder={setOrder} */ />
+            <WaiterAccount client={client} setClient={setClient} calculateTotal={calculateTotal} calculateAmount={calculateAmount}/* order={order} setOrder={setOrder} */ />
           </Route>
 
           <Route exact path="/kitchen/:orderId">

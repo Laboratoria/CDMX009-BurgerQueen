@@ -124,9 +124,15 @@ background-color: #ED3367;
 .orderWaiter, .Ordersforkitchen{
     display: flex;
     flex-direction: row;
-    font-size: 1.7em;
+    justify-content: flex-end;
     font-weight: 500;
     margin: 8px;
+    font-size: 1.5em;
+}
+
+.Ordersforkitchen{
+    margin-top: 20px;
+    
 }
 
 .productsContainer {
@@ -166,7 +172,7 @@ background-color: #ED3367;
 .foodOptionsKitchen {
     background: #FFFFFF;
     border-radius: 10px;
-    width: 325px;
+    width: 335px;
     text-align: left;
     padding-left: 20px;
 }
@@ -174,7 +180,7 @@ background-color: #ED3367;
 .foodTotal {
     background: #FFFFFF;
     border-radius: 10px;
-    width: 325px;
+    width: 125px;
     text-align: left;
     padding-left: 20px;
     font-size: 1.2em;
@@ -184,19 +190,28 @@ background-color: #ED3367;
 .foodprice {
     background: #FFFFFF;
     border-radius: 10px;
+    width: 115px;
+    text-align: center;
+    margin-left: 15px;
+    padding: 0 10px;
+}
+
+.foodQuantity {
+    background: #FFFFFF;
+    border-radius: 10px;
     width: 80px;
     text-align: center;
-    margin-left: 30px;
+    margin-right: 15px;
 
 }
 
 .foodTotalPrice {
     background: #FFFFFF;
     border-radius: 10px;
-    width: 80px;
+    width: 173px;
     text-align: center;
-    margin-left: 30px;
-    font-size: 1.2em;
+    margin-left: 58px;
+    font-size: 1.1em;
     font-weight: bold;
 }
 
@@ -204,4 +219,46 @@ background-color: #ED3367;
     align-self: center;
     width: 20px;
     height: auto;
+}
+
+.titles {
+    display: flex;
+    justify-content: space-between;    
+    font-size: 1.6em;
+    font-weight: bold;
+
+}
+
+.titleCant {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 80px;
+    text-align: center;
+  
+}
+
+.titleFood {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 120px;
+    text-align: center;
+    margin-left: 52px;
+    margin-right: 54px; 
+}
+.titlePrice {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 80px;
+    text-align: center;
+    width: 90px;
+
+}
+
+.titleAmount {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 80px;
+    text-align: center;
+    margin-left: -15px;
+    margin-right: 18px;
 }
