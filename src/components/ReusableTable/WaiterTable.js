@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import DateTime from '../DateTime/DateTime';
+import { currencyFormatter } from '../../utils/index'
 
-
-const WaiterTable = ({ order, calculateTotal }) => {
+const WaiterTable = ({ order, calculateTotal, calculateAmount }) => {
     console.log(order);
 
     return (
@@ -43,14 +43,16 @@ const WaiterTable = ({ order, calculateTotal }) => {
                     <div className={styles.titleCant}>Cant.</div>
                     <div className={styles.titleFood}>Platillos</div>
                     <div className={styles.titlePrice}>Precio</div>
+                    <div className={styles.titleAmount}>Imp.</div>
                 </div>
 
                 {order.items.map((item) => (
 
-                    <div className={styles.orderWaiter}>                        
+                    <div className={styles.orderWaiter}>
                         <div className={styles.foodQuantity}>{item.quantity}</div>
                         <div className={styles.foodOptionsKitchen}>{item.name}</div>
-                        <div className={styles.foodprice}>{item.price}</div>
+                        <div className={styles.foodprice}>{currencyFormatter.format(item.price)}</div>
+                        <div className={styles.foodprice}>{currencyFormatter.format(calculateAmount(item.price, item.quantity))}</div>
                     </div>
                 ))}
 
@@ -58,7 +60,7 @@ const WaiterTable = ({ order, calculateTotal }) => {
 
                 <div className={styles.orderWaiter}>
                     <div className={styles.foodTotal}>Total</div>
-                    <div className={styles.foodTotalPrice}>{calculateTotal(order.items)}</div>
+                    <div className={styles.foodTotalPrice}>{currencyFormatter.format(calculateTotal(order.items))}</div>
                 </div>
             </div>
         </div>
