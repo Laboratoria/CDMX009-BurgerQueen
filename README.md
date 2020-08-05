@@ -6,7 +6,7 @@ ___    *Cocinar es amor* ___
 > Un restaurante que en esta ocasión tiene por nombre Burger Queen que recién quiere implementar técnología en su recinto, nos pasa un requerimiento en este caso quiere que realicemos una app usando una tablet para facilitar la comunicación entre cocina y meseros.
 
 ** __SI  QUIERES VER CÓMO FUNCIONA LA APP ENTRA A ESTE LINK:__ 
-Debes tener en cuenta que la app por los momentos está diseñada en **IPAD-PRO**, por lo que cuando entres al link da click al boton derecho, seleccionas inspeccionar y en en el select que dice RESPONSIVE selecciona **IPAD-PRO**.
+Debes tener en cuenta que la app por los momentos está diseñada en **IPAD-PRO**, por lo que cuando entres al link da click al boton derecho, seleccionas inspeccionar y en el select que dice RESPONSIVE selecciona **IPAD-PRO**.
 <br>
   https://esthermanrique.github.io/CDMX009-BurgerQueen
 
