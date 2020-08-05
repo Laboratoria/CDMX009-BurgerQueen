@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom';
 import IconPrintAccount from '../../assets/imgs/pink-circle.png';
 import WaiterTable from '../ReusableTable/WaiterTable';
 
-const WaiterAccount = ({ client, setClient, calculateTotal }) => {
+const WaiterAccount = ({ client, setClient, calculateTotal, calculateAmount }) => {
 
     const [order, setOrder] = useState();
 
@@ -38,7 +38,7 @@ const WaiterAccount = ({ client, setClient, calculateTotal }) => {
                 </div>
 
                 <div className={styles.secondDivision}>
-                    {order && <WaiterTable client={client} setClient={setClient} order={order} calculateTotal={calculateTotal} />}
+                    {order && <WaiterTable client={client} setClient={setClient} order={order} calculateTotal={calculateTotal} calculateAmount={calculateAmount} />}
                 </div>
 
                 <div className={styles.thirdDivision}>

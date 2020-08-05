@@ -125,10 +125,14 @@ background-color: #ED3367;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    font-size: 1.7em;
     font-weight: 500;
     margin: 8px;
+    font-size: 1.5em;
+}
 
+.Ordersforkitchen{
+    margin-top: 20px;
+    
 }
 
 .productsContainer {
@@ -168,7 +172,7 @@ background-color: #ED3367;
 .foodOptionsKitchen {
     background: #FFFFFF;
     border-radius: 10px;
-    width: 400px;
+    width: 335px;
     text-align: left;
     padding-left: 20px;
 }
@@ -186,9 +190,10 @@ background-color: #ED3367;
 .foodprice {
     background: #FFFFFF;
     border-radius: 10px;
-    width: 80px;
+    width: 115px;
     text-align: center;
     margin-left: 15px;
+    padding: 0 10px;
 }
 
 .foodQuantity {
@@ -203,10 +208,10 @@ background-color: #ED3367;
 .foodTotalPrice {
     background: #FFFFFF;
     border-radius: 10px;
-    width: 80px;
+    width: 173px;
     text-align: center;
-    margin-left: 30px;
-    font-size: 1.2em;
+    margin-left: 58px;
+    font-size: 1.1em;
     font-weight: bold;
 }
 
@@ -220,6 +225,7 @@ background-color: #ED3367;
     display: flex;
     justify-content: space-between;    
     font-size: 1.6em;
+    font-weight: bold;
 
 }
 
@@ -236,12 +242,23 @@ background-color: #ED3367;
     border-radius: 10px;
     width: 120px;
     text-align: center;
-    margin-left: 30px;    
+    margin-left: 52px;
+    margin-right: 54px; 
 }
 .titlePrice {
     background: #FFFFFF;
     border-radius: 10px;
     width: 80px;
     text-align: center;
-    margin-left: 30px;    
+    width: 90px;
+
+}
+
+.titleAmount {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 80px;
+    text-align: center;
+    margin-left: -15px;
+    margin-right: 18px;
 }

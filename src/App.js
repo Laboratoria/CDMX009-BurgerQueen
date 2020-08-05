@@ -21,6 +21,7 @@ import KitchenRegister from './components/KitchenRegister';
 import 'react-bootstrap/dist/react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 import { products } from '../src/utils/products.js';
 
 
@@ -83,21 +84,17 @@ function App() {
 
     items.forEach(item => {
       total = (item.quantity * item.price) + total
-
     })
     return total;
   }
 
-    //CON ESTA FUNCION QUEREMOS GENERAR EL NUMERO DE ORDEN
+  const calculateAmount = (price, quantity) => {
+    console.log("aquí esta el calculateAmount", price)
 
-    
-/*     const generationNumOrder = () => {
-      let orderGeneration = 535;
-      console.log('Gerando Orden', (orderGeneration) + 1);
-      
-    }
-    //return generationNumOrder;
-    console.log(generationNumOrder()) */
+    return price * quantity
+
+
+  }
 
 
   return (
@@ -134,7 +131,7 @@ function App() {
           </Route>
 
           <Route exact path="/waiteraccount/:orderId">
-            <WaiterAccount client={client} setClient={setClient} calculateTotal={calculateTotal} /* order={order} setOrder={setOrder} */ />
+            <WaiterAccount client={client} setClient={setClient} calculateTotal={calculateTotal} calculateAmount={calculateAmount}/* order={order} setOrder={setOrder} */ />
           </Route>
 
           <Route exact path="/kitchen/:orderId">
