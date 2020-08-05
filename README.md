@@ -1,7 +1,7 @@
 El nombre de la aplicación es:
     **Burguer-Queen**  
 ___    *Cocinar es amor* ___
-<img src='markdown-files/Logo_BQ.png'>
+<img src='markdown-files/Logo_BQ.jpg'>
 
 > Un restaurante que en esta ocasión tiene por nombre Burger Queen que recién quiere implementar técnología en su recinto, nos pasa un requerimiento en este caso quiere que realicemos una app usando una tablet para facilitar la comunicación entre cocina y meseros.
 
