@@ -35,9 +35,6 @@ const WaiterRegister = ({ client, setClient, order, setOrder }) => {
                         <Boton text={"Regresar"} allstyles={"buttonOutWaiter"} />
                     </Link>
 
-                    <Link to="waiter">
-                        <Boton text={"Inicio"} allstyles={"buttonOutWaiter"} />
-                    </Link>
                 </div>
 
             </div>

@@ -7,6 +7,8 @@ import {
   //Link
 } from "react-router-dom";
 
+import { currencyFormatter } from '../src/utils/index'
+
 import RestDay from './components/RestDay';
 import Kitchen from './components/Kitchen';
 import BreakFast from './components/BreakFast';
@@ -85,6 +87,17 @@ function App() {
     })
     return total;
   }
+
+    //CON ESTA FUNCION QUEREMOS GENERAR EL NUMERO DE ORDEN
+
+    
+/*     const generationNumOrder = () => {
+      let orderGeneration = 535;
+      console.log('Gerando Orden', (orderGeneration) + 1);
+      
+    }
+    //return generationNumOrder;
+    console.log(generationNumOrder()) */
 
 
   return (

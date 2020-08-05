@@ -1,4 +1,4 @@
-.buttonOutWaiter{
+.buttonOutWaiter {
     width: 170px;
     height: 50px;
     background: #ED3367;
@@ -11,7 +11,7 @@
     margin-left: 50px;
 }
 
-.buttonOutKitchen{
+.buttonOutKitchen {
     width: 170px;
     height: 50px;
     background: #ED3367;
@@ -65,7 +65,7 @@
     margin-right: 50px;
 }
 
-.pagina-3-Esther, .pagina-5-Esther {
+/* .pagina-3-Esther, .pagina-5-Esther {
     align-self: flex-end;
     width: 170px;
     height: 50px;
@@ -77,7 +77,7 @@
     text-align: center;
     border-radius: 10px;
     margin-right: 50px;
-}
+} */
 
 .sendToKitchen{
     align-self: flex-end;
