@@ -23,13 +23,11 @@ Debes tener en cuenta que la app por los momentos está diseñada en **IPAD-PRO*
 
 **2-** Con la aplicación para proyectos de diseño *FIGMA*, iniciamos realizando la versión esquemática de lo que fue nuestro sketch, planeando así previamente la estructura y los elementos de la página web.
 
-(AQUÍ VA EL WIREFRAME)
-![alt text](https://raw.githubusercontent.com/DianyelaMaldonado/CDMX009-Data-Lovers/master/imagenes/ON-Ranked02.png/)
+<img src='markdown-files/anigif.gif'>
 
 **3-** Fue el diseño final de lo que sería *Burger-Queen app* donde definimos paleta de colores, tipografía y en general el flujo de navegación de la aplicación. De esta manera poder tener una visión más detallada, precisa y global de los contenidos necesarios plasmando así el resultado final de una versión simulada en alta fidelidad.
 
-(AQUÍ VA EL Prototipo)
-![alt text](https://raw.githubusercontent.com/DianyelaMaldonado/CDMX009-Data-Lovers/master/imagenes/ON-Ranked02.png/)
+<img src='markdown-files/anigif2.gif'>
 
 **Test de usabilidad con usuarios target**
 
@@ -43,8 +41,7 @@ Debes tener en cuenta que la app por los momentos está diseñada en **IPAD-PRO*
  
  >La segunda es para el área de cocina en donde los cocineros podrán visualizar en una tabla la orden que entró, con la data del pedido, podrán ver la comanda de preparación y notificarle al mesero cuando el platillo ya está preparado.
  
-(AQUÍ VA LA IMAGEN DEL MESERO CON BARBA)
- ![alt text](https://raw.githubusercontent.com/DianyelaMaldonado/CDMX009-Data-Lovers/master/imagenes/ON-Ranked02.png/)
+<img src='markdown-files/mesero-tablet-publicidad.jpg'>
  
  **Herramientas y tecnologías usadas en la app**
  
