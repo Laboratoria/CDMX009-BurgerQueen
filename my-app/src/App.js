@@ -23,9 +23,9 @@ const App = () => {
   const [order,setOrder] = useState({
     nombreCliente:"",
     status:false,
+    state: 'placed', // placed= colocada, prepared= parepada, delivered = entregada
     item:[],
     kitchen:[]
-
   })
 
   const addItemToOrder = (product) => {
@@ -34,8 +34,8 @@ const App = () => {
 
   const sendOrderKitchen = async(comanda) => {
     console.log(comanda)
-    setOrder({...order,kitchen: [...order.kitchen,comanda]})
-    await db.collection('orders').doc().set(comanda);
+    setOrder({...order, kitchen: [...order.kitchen,comanda]})
+    await db.collection('orders').doc().set({...order, ...comanda});
       
   
 
@@ -81,7 +81,7 @@ const App = () => {
             addItemToOrder={addItemToOrder}
             deleteItem={deleteItem}
             sendOrderKitchen={sendOrderKitchen}
-            
+
 
              />
           </Route>
