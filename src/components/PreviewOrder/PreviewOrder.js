@@ -47,12 +47,12 @@ const PreviewOrder = ({order,deleteItem, setTableNumber,resetOrder}) => {
                     type="number"
                     name="tableNumber"
                     value={order.tableNumber}
-                    style={{width: '50px', height: '30px'}} 
+                    style={{width: '70px', height: '30px'}} 
                     onChange={handleChange}
                     required
                 />
                 <div className="total">
-                    <h4 className="letter">TOTAL {total}</h4>
+                    <h4 className="letter">TOTAL ${total}</h4>
                 </div>
             </div>
             <div className="itemsInOrder">
@@ -64,16 +64,19 @@ const PreviewOrder = ({order,deleteItem, setTableNumber,resetOrder}) => {
                         <div>
                             <h3 className="productInListOrder"> {elem.quantity} {elem.nameProduct}   ${elem.quantity * elem.price} </h3>
                         </div>
-                        <button onClick={()=> deleteItem(elem.productId)}> x </button>
+                        <button className="buttonDelete" onClick={()=> deleteItem(elem.productId)}> 
+                        <p> x </p>
+                        </button>
                         {/* <button onClick={()=> substractItem(elem)}> - </button> */}
                     </div>     
                 ))}
             </div>
-            <Button danger 
-               // className="sendToKitchen"
-                onClick={handleEnviarACocina}>
-                    Ordenar
-            </Button>
+            <div className="contentButtonSend">
+                <Button danger 
+                    onClick={handleEnviarACocina}>
+                        Ordenar
+                </Button>
+            </div>
         </div>
 )}
 
