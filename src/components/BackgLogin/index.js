@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-import styles from './BackgLogin.module.css'
 import Logo from '../Logo/Logo';
+import { Link } from 'react-router-dom';
+import styles from './BackgLogin.module.css';
 
 const BackgLogin = () => (
     
@@ -27,4 +26,3 @@ const BackgLogin = () => (
 );
 
 export default BackgLogin;
-

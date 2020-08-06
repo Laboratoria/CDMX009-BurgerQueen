@@ -11,4 +11,4 @@ const Logo = ({ nameClass }) => {
     );
 }
 
-export default Logo
+export default Logo;

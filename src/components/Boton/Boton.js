@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css'
+import './style.css';
 
 const Button = ({ allstyles, text }) => (
     <button className={allstyles}> 
@@ -7,4 +7,4 @@ const Button = ({ allstyles, text }) => (
     </button>
 );
 
-export default Button
+export default Button;

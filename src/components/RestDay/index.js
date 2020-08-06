@@ -1,17 +1,15 @@
 import React from 'react';
 import Logo from '../Logo/Logo';
-import Boton from '../Boton/Boton'
+import Select from 'react-select';
+import Boton from '../Boton/Boton';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
 import Products from '../Products/Products';
-import ReusableTable from '../ReusableTable/index'
-
-import Select from 'react-select';
-
+import ReusableTable from '../ReusableTable/index';
 
 const RestDay = ({ client, setClient }) => {
-    return (
 
+    return (
         <div>
             <div className={styles.headerWrapper}>
                 <div className={styles.logoRestD}>
@@ -24,7 +22,6 @@ const RestDay = ({ client, setClient }) => {
             </div>
 
             <div className={styles.containerAll}>
-
                 <div className={styles.menuWrapper}>
                     <div className={styles.firstWrapperFood}>
                         <div className={styles.burgersWrapper}>
