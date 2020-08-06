@@ -1,13 +1,12 @@
 import React, { useEffect, useState }  from 'react';
+import db from '../../firebase';
 import Logo from '../Logo/Logo';
 import Boton from '../Boton/Boton';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
-import KitchenTable from '../ReusableTable/kitchenTable';
 import { useParams } from 'react-router-dom';
-import db from '../../firebase';
-
 import Bell from '../../assets/imgs/cuadrado-bordes.png';
+import KitchenTable from '../ReusableTable/kitchenTable';
 
 const Kitchen = ({ client, setClient }) => {
 
@@ -16,17 +15,13 @@ const Kitchen = ({ client, setClient }) => {
     const { orderId } = useParams()
     
     useEffect(() => {
-        db.collection('ordersfood').doc(orderId).get().then((querySnapshot) => {                     
-        
-        setOrder(querySnapshot.data());
- 
+        db.collection('ordersfood').doc(orderId).get().then((querySnapshot) => {       
+            setOrder(querySnapshot.data()); 
         });
     }, [])
 
     let texto = 'la orden está lista, enviando notificación a mesero'
     const hablar = (texto) => speechSynthesis.speak(new SpeechSynthesisUtterance(texto));
-    //texto.preventDefault();
-    //hablar(texto);
 
     return (
         <div>
@@ -50,7 +45,6 @@ const Kitchen = ({ client, setClient }) => {
                 </div>
 
                 <div className={styles.thirdDivision}>
-
                     <div className={styles.checkInTime}>
                         <p>Hora de Entrada</p>
                         <span className={styles.firstNumberWrapper}>3:50pm</span>
@@ -70,7 +64,6 @@ const Kitchen = ({ client, setClient }) => {
                 </div>
             </div>
 
-
             <div className={styles.routeButtonsAccount}>
 
                 <Link to="/kitchenregister">
@@ -78,11 +71,9 @@ const Kitchen = ({ client, setClient }) => {
                 </Link>
 
                 <div>
-                    <span className={styles.imageDecorationtwo}>
-                    </span>
+                    <span className={styles.imageDecorationtwo}></span>
                 </div>
             </div>
-
         </div>
     );
 }

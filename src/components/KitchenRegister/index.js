@@ -2,9 +2,8 @@ import React, { Fragment, useEffect, useState } from 'react';
 import db from '../../firebase';
 import Boton from '../Boton/Boton'
 import { Link } from 'react-router-dom';
-import TableKitchen from '../Tables/TableKitchen';
-
 import styles from './styles.module.css';
+import TableKitchen from '../Tables/TableKitchen';
 
 const KitchenRegister = ({ client, setClient, order, setOrder }) => {
     const [orders, setOrders] = useState([])
@@ -14,7 +13,6 @@ const KitchenRegister = ({ client, setClient, order, setOrder }) => {
             const data = []
             querySnapshot.forEach(function (doc) {
                 data.push({...doc.data(), id: doc.id });
-
             });
             setOrders(data);
         });
@@ -32,7 +30,10 @@ const KitchenRegister = ({ client, setClient, order, setOrder }) => {
 
             <div className={styles.butons}>
                 <Link to="login">
-                    <Boton text={"Salir"} allstyles={"buttonOutKitchen"} />
+                    <Boton
+                    text={"Salir"} 
+                    allstyles={"buttonOutKitchen"}
+                    />
                 </Link>
             </div>
         </Fragment>

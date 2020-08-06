@@ -5,9 +5,8 @@ import Boton from '../Boton/Boton'
 import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
 import { useParams } from 'react-router-dom';
-
-import IconPrintAccount from '../../assets/imgs/pink-circle.png';
 import WaiterTable from '../ReusableTable/WaiterTable';
+import IconPrintAccount from '../../assets/imgs/pink-circle.png';
 
 const WaiterAccount = ({ client, setClient, calculateTotal, calculateAmount }) => {
 
@@ -17,10 +16,7 @@ const WaiterAccount = ({ client, setClient, calculateTotal, calculateAmount }) =
 
     useEffect(() => {
         db.collection('ordersfood').doc(orderId).get().then((querySnapshot) => {
-
-
             setOrder(querySnapshot.data());
-
         });
     }, [])
 
@@ -38,7 +34,12 @@ const WaiterAccount = ({ client, setClient, calculateTotal, calculateAmount }) =
                 </div>
 
                 <div className={styles.secondDivision}>
-                    {order && <WaiterTable client={client} setClient={setClient} order={order} calculateTotal={calculateTotal} calculateAmount={calculateAmount} />}
+                    {order && <WaiterTable 
+                    client={client} setClient={setClient} 
+                    order={order} 
+                    calculateTotal={calculateTotal} 
+                    calculateAmount={calculateAmount} 
+                    />}
                 </div>
 
                 <div className={styles.thirdDivision}>
@@ -62,7 +63,6 @@ const WaiterAccount = ({ client, setClient, calculateTotal, calculateAmount }) =
                 </Link>
             </div>
         </div>
-
     );
 }
 
