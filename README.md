@@ -19,21 +19,21 @@ Debes tener en cuenta que la app por el momento está diseñada para **IPAD-PRO*
  **Desarrollo y planificación de la app**
  
 **1-** Realizamos un boceto a lápiz y papel de la idea general de lo que queríamos que se convirtiera nuestra aplicación.
-<br>
+<br><br>
 #SKETCH
-<br>
+<br><br>
 <img src='markdown-files/sketch-bq.jpg'>
 
 **2-** Con la aplicación para proyectos de diseño *FIGMA*, iniciamos realizando la versión esquemática de lo que fue nuestro sketch, planeando así previamente la estructura y los elementos de la página web.
-<br>
+<br><br>
 #WIREFRAME
-<br>
+<br><br>
 <img src='markdown-files/anigif.gif'>
 
 **3-** Fue el diseño final de lo que sería *Burger-Queen app* donde definimos paleta de colores, tipografía y en general el flujo de navegación de la aplicación. De esta manera poder tener una visión más detallada, precisa y global de los contenidos necesarios plasmando así el resultado final de una versión simulada en alta fidelidad.
-<br>
+<br><br>
 #PROTOTIPO
-<br>
+<br><br>
 <img src='markdown-files/anigif2.gif'>
 
 **Test de usabilidad con usuarios target**
