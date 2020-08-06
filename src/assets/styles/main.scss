@@ -306,8 +306,15 @@ hr{
         overflow: scroll;
         width: 50%;
         height: 570px;
-        
         //border:1px solid black;
+        //position: absolute;
+        //height: 300px;
+        //width: 600px;
+        //top: 30%;
+        //left: calc(50% - 300px);
+        //display: flex;
+        //flex-direction: column;
+        //border: 1px solid red;
     }
 }
 
@@ -319,16 +326,27 @@ hr{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
     width: 400px;
     //height: 200px;
-    border: 2px solid black;
+    //border: 2px solid black;
     border-radius: $radius;
     font-family: font-text;
     padding:10px;
     background-color: #E9E6E6;
     margin: 5px;
-    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 6px 6px 12px 6px rgba(0, 0, 0, 0.4);
+
+    //display: flex;
+    //height: 280px;
+    //width: 200px;
+    //background-color: #17141d;
+    //border-radius: 10px;
+    //box-shadow: -1rem 0 3rem #000;
+    margin-top: 35px; 
+    transition: 0.7s ease-out;
+    position: relative;
+    //left: 0%;
+
     div, td, h3{
         margin: 2px;
        // border:1px solid black;
@@ -358,6 +376,28 @@ hr{
     }
 }
 
+
+.kitchen-card-container:not(:first-child) {
+    margin-top: -50px;
+    
+}
+
+.kitchen-card-container:hover {
+  transform: translateY(-20px);
+  transition: 0.5s ease-out;
+  
+}
+
+.kitchen-card-container:hover ~ .kitchen-card-container {
+  position: relative;
+  top: 80px;
+  transition: 0.7s ease-out;
+  
+}
+
+
+
+
 .status-red{
    color: #f34545
 }
@@ -368,6 +408,11 @@ hr{
 
 .border-green{
     border: 3px solid #06b306;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.7);
+}
+
+.border-red{
+    border: 3px solid #f34545;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.7);
 }
   
@@ -445,6 +490,14 @@ hr{
         th,td{
             padding:2px;
             //border: 1px solid black;
+        }
+    }
+    tfoot{
+        .table-total{
+            text-align: right;
+        }
+        .table-total-cant{
+            text-align: left;
         }
     }
 

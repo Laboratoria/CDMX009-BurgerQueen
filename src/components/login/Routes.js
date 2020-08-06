@@ -7,8 +7,8 @@ import Orders from '../main/Orders'
 
 export default function Routes(){
     let [islogin,setIslogin]=useState(true)
-    let [employee, setEmployee]= useState("Osvaldo");
-    let [role, setRole] = useState('mesero');
+    let [employee, setEmployee]= useState("");
+    let [role, setRole] = useState('');
 
     return (
         <Switch>

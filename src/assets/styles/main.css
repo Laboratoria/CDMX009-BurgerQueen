@@ -444,14 +444,17 @@ hr {
       -ms-flex-pack: center;
           justify-content: center;
   width: 400px;
-  border: 2px solid black;
   border-radius: 15px;
   font-family: font-text;
   padding: 10px;
   background-color: #E9E6E6;
   margin: 5px;
-  -webkit-box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.4);
-          box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 6px 6px 12px 6px rgba(0, 0, 0, 0.4);
+          box-shadow: 6px 6px 12px 6px rgba(0, 0, 0, 0.4);
+  margin-top: 35px;
+  -webkit-transition: 0.7s ease-out;
+  transition: 0.7s ease-out;
+  position: relative;
 }
 
 .kitchen-card-container div, .kitchen-card-container td, .kitchen-card-container h3 {
@@ -490,6 +493,24 @@ hr {
           box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
 }
 
+.kitchen-card-container:not(:first-child) {
+  margin-top: -50px;
+}
+
+.kitchen-card-container:hover {
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+
+.kitchen-card-container:hover ~ .kitchen-card-container {
+  position: relative;
+  top: 80px;
+  -webkit-transition: 0.7s ease-out;
+  transition: 0.7s ease-out;
+}
+
 .status-red {
   color: #f34545;
 }
@@ -500,6 +521,12 @@ hr {
 
 .border-green {
   border: 3px solid #06b306;
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.7);
+          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.7);
+}
+
+.border-red {
+  border: 3px solid #f34545;
   -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.7);
           box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.7);
 }
@@ -577,6 +604,14 @@ hr {
 
 .modal-body table th, .modal-body table td {
   padding: 2px;
+}
+
+.modal-body tfoot .table-total {
+  text-align: right;
+}
+
+.modal-body tfoot .table-total-cant {
+  text-align: left;
 }
 
 /* width */

@@ -28,7 +28,8 @@ let MainNavBar = ({employee, statusMenu ,statusKitchen, statusOrders}) => {
             />
           </NavLink>  
         </div>
-        <p>Empleado: {employee}</p>
+        <p>Usuario: {employee}</p>
+        
         
       </nav>
     );

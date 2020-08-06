@@ -24,9 +24,9 @@ export function Login({setIslogin, setEmployee, setRole}) {
         const data = await db.collection('users').get()
         data.docs.map(doc => {
           console.log(doc.data().name, doc.data().password, doc.data().role)
-          if (doc.data().name === username.toLowerCase() && doc.data().password === password ){
+          if (doc.data().user === username.toLowerCase() && doc.data().password === password ){
             const role = doc.data().role
-            autenticar(username.toLowerCase(), role)
+            autenticar(doc.data().name, role)
           }else{
             console.log('no entra');
           }

@@ -6,6 +6,55 @@ import KitchenCard from './KitchenCard';
 import KitchenModal from './KitchenModal';
 import { useToasts } from 'react-toast-notifications';
 import actionDenied from '../common/actionDenied';
+import dbDate from '../common/dbDate'
+
+function updateDeliverOrder(id, entregado, employee, addToast, setOpened){
+  
+  const db = firebase.firestore();
+  if(entregado){
+      console.log('entregado') 
+      db.collection('orders').doc(id).update({
+        'horaPago': new Date(),
+        'pagado': true,
+        'status': 'Pagado'
+      }).then(()=>{
+         console.log('orden enviada correctamente')
+         addToast('La orden se ha enviado exitosamente', {
+         placement:'top-center', 
+         appearance: 'success' 
+         })
+        setOpened(false)
+      }).catch(err=>{
+         console.log(err);
+         addToast('Hubo un error al enviar la orden', {
+         placement:'top-center', 
+         appearance: 'error' 
+         })
+      })  
+      
+  }else{
+      console.log('Entregando')
+      db.collection('orders').doc(id).update({
+          'horaEntrega': new Date(),
+          'entregado': true,
+          'status': 'Entregado'           
+      }).then(()=>{
+          console.log('orden enviada correctamente')
+          addToast('La orden se ha enviado exitosamente', {
+            placement:'top-center', 
+            appearance: 'success' 
+          })
+          setOpened(false)
+        }).catch(err=>{
+          console.log(err);
+          addToast('Hubo un error al enviar la orden', {
+              placement:'top-center', 
+              appearance: 'error' 
+            })
+        })    
+  }
+}
+
 
 function Orders({employee, role}) {
   const { addToast } = useToasts()
@@ -13,6 +62,7 @@ function Orders({employee, role}) {
   let statusKitchen = "nav-btn";
   let statusOrders = "active-btn"; 
   let [orderDone, setOrderDone] = useState([]);
+  let [orderDelivered, setOrderDelivered] = useState([]);
   let [isOpened, setOpened] = useState(false);
   let [orderSelected, setOrderSelected] = useState('');
   let [] = useState();
@@ -22,8 +72,10 @@ function Orders({employee, role}) {
    
     const db = firebase.firestore();
     db.collection('orders').onSnapshot((data)=>{
-      const done = data.docs.filter(doc => doc.data().listo === true)
-      setOrderDone(done.map(w => w.data()));     
+      const done = data.docs.filter(doc => doc.data().listo === true && doc.data().entregado === false)
+      const delivered = data.docs.filter(doc => doc.data().entregado === true && doc.data().pagado === false)
+      setOrderDone(done.map(w => w.data())); 
+      setOrderDelivered(delivered.map(w => w.data()));     
     })
   },[])
 
@@ -32,7 +84,8 @@ function Orders({employee, role}) {
       setOrderSelected(item);
     }  
 
-    console.log('done=>',orderDone)
+    //console.log('waiting=>',orderWaiting)
+    //console.log('doing=>',orderDoing)
         
     return (
       <div  className="main-container">
@@ -42,13 +95,12 @@ function Orders({employee, role}) {
          statusKitchen={statusKitchen}
          statusOrders={statusOrders}  
          />
-        <div className="kitchen-cards-main">
-          
-            {orderDone.map(item=> 
+       
+       <div className="kitchen-cards-main">
+          <div className="kitchen-cards-doing">
+            {orderDelivered.map(item=> 
             <KitchenCard
                item={item}
-               value='Listo'
-               employee={employee}
                borderClass={item.mesero === employee ? 'border-green' : ''}
                statusClass={'status-green'}
                onClickOrder={()=>{
@@ -60,7 +112,23 @@ function Orders({employee, role}) {
                 }  
                }
             />)}
-         
+          </div>
+          <div className="kitchen-cards-waiting">
+          {orderDone.map(item=> 
+            <KitchenCard
+               item={item}
+               borderClass={item.mesero === employee ? 'border-red' : ''}
+               statusClass={'status-red'}
+               onClickOrder={()=>{
+                  if(role === 'cocinero'){
+                    actionDenied(addToast);
+                  }else{
+                    renderOrder(item)
+                  }
+                 }
+               }
+              />)}
+          </div>
         </div>
         <div>
             <KitchenModal
@@ -68,12 +136,18 @@ function Orders({employee, role}) {
             addToast={addToast}
             isOpened={isOpened} 
             setOpened={setOpened}
-            value={orderSelected.preparando === false ? "Preparar" : "Listo"}
+            modalStatusClass={orderSelected.entregado === false ? "modal-status-off" : "modal-status-on"}
+            orderStatusClass={orderSelected.entregado === false ? 'status-red' : 'status-green'}
+            updateOrder={()=> {updateDeliverOrder(orderSelected.id, orderSelected.entregado, employee, addToast, setOpened)}}
+            
+            value={orderSelected.entregado === false ? "Entregar" : "Pagado"}
             orderSelected={orderSelected}             
             />
-        </div>   
+        </div> 
       </div>
+         
     );
+         
   }
 
 export default Orders;  

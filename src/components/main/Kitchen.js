@@ -6,6 +6,74 @@ import KitchenCard from './KitchenCard';
 import KitchenModal from './KitchenModal';
 import { useToasts } from 'react-toast-notifications';
 import actionDenied from '../common/actionDenied';
+import dbDate from '../common/dbDate'
+
+function updateKitchenOrder(id, preparando, employee, addToast, setOpened){
+  console.log(id, preparando)
+  const db = firebase.firestore();
+  if(preparando){
+     console.log('preparando') 
+     let orderNotDone = 0;
+     document.querySelectorAll('.orderDone').forEach((e)=>{
+          if(e.checked === false){
+              orderNotDone ++
+          }
+      })
+      console.log(orderNotDone);
+      if(orderNotDone !== 0){
+          addToast('Aún faltan platillos por preparar', {
+              autoDismiss: true,
+              placement:'top-center', 
+              appearance: 'warning' 
+            })
+      }else{
+          
+          db.collection('orders').doc(id).update({
+              'horaListo': new Date(),
+              'preparando': false,
+              'listo': true,
+              'entregado':false, 
+              'pagado': false,
+              'status': 'Por entregar'
+          }).then(()=>{
+              console.log('orden enviada correctamente')
+              addToast('La orden se ha enviado exitosamente', {
+                placement:'top-center', 
+                appearance: 'success' 
+              })
+              setOpened(false)
+            }).catch(err=>{
+              console.log(err);
+              addToast('Hubo un error al enviar la orden', {
+                  placement:'top-center', 
+                  appearance: 'error' 
+                })
+            })  
+      }
+  }else{
+      console.log('iniciando preparacion')
+      db.collection('orders').doc(id).update({
+          'horaPreparacion': new Date(),
+          'preparando': true,
+          'status': 'Preparando',
+          'cocinero': employee 
+      }).then(()=>{
+          console.log('orden enviada correctamente')
+          addToast('La orden se ha enviado exitosamente', {
+            placement:'top-center', 
+            appearance: 'success' 
+          })
+          setOpened(false)
+        }).catch(err=>{
+          console.log(err);
+          addToast('Hubo un error al enviar la orden', {
+              placement:'top-center', 
+              appearance: 'error' 
+            })
+        })    
+  }
+}
+
 
 function Kitchen({employee, role}) {
   const { addToast } = useToasts()
@@ -51,10 +119,9 @@ function Kitchen({employee, role}) {
             {orderDoing.map(item=> 
             <KitchenCard
                item={item}
-               value='Listo'
-               employee={employee}
                borderClass={item.cocinero === employee ? 'border-green' : ''}
                statusClass={'status-green'}
+               horaPreparacion={item.preparando === false ? null : dbDate(item.horaPreparacion) }
                onClickOrder={()=>{
                   if(role === 'mesero'){
                     actionDenied(addToast);
@@ -83,10 +150,12 @@ function Kitchen({employee, role}) {
         </div>
         <div>
             <KitchenModal
-            employee={employee}
             addToast={addToast}
             isOpened={isOpened} 
             setOpened={setOpened}
+            modalStatusClass={orderSelected.preparando === false ? "modal-status-off" : "modal-status-on"}
+            orderStatusClass={orderSelected.preparando === false ? 'status-red' : 'status-green'}
+            updateOrder={()=> {updateKitchenOrder(orderSelected.id, orderSelected.preparando, employee, addToast, setOpened)}}
             value={orderSelected.preparando === false ? "Preparar" : "Listo"}
             orderSelected={orderSelected}             
             />

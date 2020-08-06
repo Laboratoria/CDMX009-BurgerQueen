@@ -1,77 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import ReactDOM from 'react-dom';
 import dbDate from '../common/dbDate'
-import firebase from '../../config/firebase/firebase-config'
-import 'firebase/firestore'
 import { useToasts } from 'react-toast-notifications'
 
 const modal = document.querySelector('#modal-root');
 
-function updateOrder(id, preparando, employee, addToast, setOpened){
-    console.log(id, preparando)
-    const db = firebase.firestore();
-    if(preparando){
-       console.log('preparando') 
-       let orderNotDone = 0;
-       document.querySelectorAll('.orderDone').forEach((e)=>{
-            if(e.checked === false){
-                orderNotDone ++
-            }
-        })
-        console.log(orderNotDone);
-        if(orderNotDone !== 0){
-            addToast('Aún faltan platillos por preparar', {
-                autoDismiss: true,
-                placement:'top-center', 
-                appearance: 'warning' 
-              })
-        }else{
-            
-            db.collection('orders').doc(id).update({
-                'horaListo': new Date(),
-                'preparando': false,
-                'listo': true,
-                'status': 'Listo para entregar'
-            }).then(()=>{
-                console.log('orden enviada correctamente')
-                addToast('La orden se ha enviado exitosamente', {
-                  placement:'top-center', 
-                  appearance: 'success' 
-                })
-                setOpened(false)
-              }).catch(err=>{
-                console.log(err);
-                addToast('Hubo un error al enviar la orden', {
-                    placement:'top-center', 
-                    appearance: 'error' 
-                  })
-              })  
-        }
-    }else{
-        console.log('iniciando preparacion')
-        db.collection('orders').doc(id).update({
-            'horaPreparacion': new Date(),
-            'preparando': true,
-            'status': 'Preparando',
-            'cocinero': employee 
-        }).then(()=>{
-            console.log('orden enviada correctamente')
-            addToast('La orden se ha enviado exitosamente', {
-              placement:'top-center', 
-              appearance: 'success' 
-            })
-            setOpened(false)
-          }).catch(err=>{
-            console.log(err);
-            addToast('Hubo un error al enviar la orden', {
-                placement:'top-center', 
-                appearance: 'error' 
-              })
-          })    
-    }
-}
-
-const KitchenModal = ({isOpened, setOpened, orderSelected, value, employee}) => {
+const KitchenModal = ({isOpened, setOpened, orderSelected, value, updateOrder, modalStatusClass, orderStatusClass}) => {
     
     const { addToast } = useToasts();
     //let [sec, setSec] = useState(50);
@@ -87,15 +21,55 @@ const KitchenModal = ({isOpened, setOpened, orderSelected, value, employee}) => 
         
     },[])
     */
-     
+   function employeeElement(){
+        if(orderSelected.listo === true){
+            return <td><span>Mesero: </span>{orderSelected.mesero}</td>
+        } else{
+            return <td><span>Cocinero: </span>{orderSelected.cocinero}</td>
+        }
+   }    
+   
+    function timeDoneElement(){
+        if(orderSelected.listo === true){
+            return <td><span>Listo: </span> {dbDate(orderSelected.horaListo)}</td>
+        } else{
+            return <td><span>Preparación: </span> {orderSelected.preparando === false ? null : dbDate(orderSelected.horaPreparacion) }</td>
+        }
+    } 
+    
+    function customerElement(){
+        if(orderSelected.listo === true){
+            return <tr>
+                     <td><span>Cliente: </span> {orderSelected.cliente}</td>
+                     <td><span>Mesa: </span> {orderSelected.mesa}</td>
+                   </tr>
+        } else{
+            return 
+        }
+    } 
+
+    function totalElement(){
+        if(orderSelected.listo === true){
+            return  <tfoot>
+                        <tr>
+                            <td></td> 
+                            <td></td>    
+                            <td className="table-total"><span>Total: </span></td>
+                            <td className="table-total-cant"><span>$ {orderSelected.total}</span></td>          
+                        </tr>                       
+                    </tfoot> 
+        } else{
+            return 
+        }
+   } 
 
     if(isOpened){
-    return ReactDOM.createPortal(
+        return ReactDOM.createPortal(
         <div className="modal-container" >
             <div className="modal-block">
-                <div className={orderSelected.preparando === false ? "modal-status-off" : "modal-status-on"}>
+                <div className={modalStatusClass}>
                 </div>
-                <h3 className={orderSelected.preparando === false ? 'status-red' : 'status-green'}>
+                <h3 className={orderStatusClass}>
                             {orderSelected.status}</h3>
                 <hr/>
                 <div className="modal-header">
@@ -108,9 +82,10 @@ const KitchenModal = ({isOpened, setOpened, orderSelected, value, employee}) => 
                     </thead>
                     <tbody> 
                         <tr>
-                            <td><span>Cocinero: </span>{orderSelected.cocinero}</td>
-                            <td><span>Preparación: </span> {orderSelected.preparando === false ? null : dbDate(orderSelected.horaPreparacion) }</td>
+                            {employeeElement()}
+                            {timeDoneElement()}
                         </tr>
+                        {customerElement()}
                     </tbody>      
                 </table>
                 </div>
@@ -122,26 +97,29 @@ const KitchenModal = ({isOpened, setOpened, orderSelected, value, employee}) => 
                                 <th></th>
                                 <th>Cant.</th>
                                 <th>Orden</th>
+                                <th>{orderSelected.listo === true ? 'Precio' : null }</th>
                             </tr>
                         </thead> 
                         <tbody> 
                             {Object.values(orderSelected.orden).map((orderItem, index) =>
                                 (<tr key={index}>
-                                    <td>{orderSelected.preparando === false ? <span></span> : <input className="orderDone" type="checkbox"/>}
+                                    <td>{orderSelected.preparando === false ? null : <input className="orderDone" type="checkbox"/>}
                                     </td>
                                     <td>{orderItem.number}</td>
                                     <td>{orderItem.name}</td>
+                                    {orderSelected.listo === true ?  <td> $ {orderItem.price}</td> : null }
                                 </tr>
                                 )
                             )}
-                        </tbody>     
+                        </tbody> 
+                        {totalElement()}   
                     </table>
                 </div>
                 <div className="modals-btns-container">
                     <input className="active-menu-btn" 
                             type="button" 
                             value={value} 
-                            onClick={()=> {updateOrder(orderSelected.id, orderSelected.preparando, employee, addToast, setOpened)}}/>
+                            onClick={updateOrder}/>
                     <input className="menu-nav-btn" 
                             type="button" 
                             value="Cancelar" 
