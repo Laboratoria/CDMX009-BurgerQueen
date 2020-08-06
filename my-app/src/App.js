@@ -13,6 +13,7 @@ import Login from "./components/Login"
 import Meseros from "./components/Meseros"
 import {ProductsBF,ProductsFo} from './components/utils/data/Data'
 import {v4 as uuidv4} from "uuid";
+import {db} from "./components/firebase"
 
 
 
@@ -31,9 +32,11 @@ const App = () => {
     setOrder({...order, item: [...order.item, product]})
   }
 
-  const sendOrderKitchen = (comanda) => {
+  const sendOrderKitchen = async(comanda) => {
+    console.log(comanda)
     setOrder({...order,kitchen: [...order.kitchen,comanda]})
-      console.log(order.kitchen)
+    await db.collection('orders').doc().set(comanda);
+      
   
 
   }
@@ -78,6 +81,7 @@ const App = () => {
             addItemToOrder={addItemToOrder}
             deleteItem={deleteItem}
             sendOrderKitchen={sendOrderKitchen}
+            
 
              />
           </Route>

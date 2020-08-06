@@ -129,10 +129,10 @@ const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda, deleteItem,sendOr
 
                                 </tr>
                                 <tr><button onClick = {  () => {sendOrderKitchen({
-                                                     cliente,
-                                                nroMesa: nroMesa,
-                                                platillos: comanda,
-                                                        precio,
+                                                    cliente,
+                                                    nroMesa: nroMesa,
+                                                    platillos: comanda,
+                                                    precio,
                                          })} } className="button">Enviar a cocina</button></tr>
                             </table>
                                
