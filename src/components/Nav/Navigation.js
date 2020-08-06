@@ -9,13 +9,13 @@ const Navigation = (props) =>{
         <React.Fragment>
             <div className="contentHeader">
                 <nav className="navigation">
-                    <button onClick={() => history.push('/')}>
+                    <button className="buttonNav" onClick={() => history.push('/')}>
                         Ordenar
                     </button>
-                    <button onClick={() => history.push('/Kitchen')}>
+                    <button className="buttonNav" onClick={() => history.push('/Kitchen')}>
                         Cocina
                     </button>
-                    <button onClick={() => history.push('/Finish')}>
+                    <button className="buttonNav" onClick={() => history.push('/Finish')}>
                         Finalizar
                     </button>
                 </nav>

@@ -6,21 +6,28 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
 }
 
 .navigation button {
   background-color: transparent;
+  color: black;
   border: none;
   font-weight: 900;
+  font-size: 1.5em;
+  margin-top: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .ContentLogo {
-  margin-left: 550px;
+  margin-left: 310px;
 }
 
 .logo {
-  width: 150px;
+  width: 180px;
+}
+
+.buttonNav:focus, .buttonNav:active {
+  color: #FF5959;
 }
 /*# sourceMappingURL=StyleNavigation.css.map */
