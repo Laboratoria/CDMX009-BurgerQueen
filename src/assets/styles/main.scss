@@ -1,0 +1,521 @@
+@font-face {
+    font-family: font-text;
+    src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: font-card;
+    src: url(../fonts/Montserrat/Montserrat-Bold.ttf);
+  }
+
+$backColor:  #F0E8D7;
+$pColor: rgb(255,169,2);
+$sColor: rgb(22, 22, 22);
+
+$radius: 15px; 
+
+/*
+div, table, td, th, p{
+    border: 1px solid black;
+}*/
+
+.main-container{
+    background-color: #F0E8D7;
+    width: 100vw;
+    height: 100vh;
+    /*padding: 10px;*/
+}
+
+.main-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid black;
+    font-family: font-text;
+    margin:0 10px;
+}
+
+.nav-btn{
+    box-sizing: border-box;
+    margin: 7px;
+    padding: 10px;
+    width: 150px;
+    height: 50px;
+    border-radius: $radius;
+    font-size: x-large;
+    border-style: none;
+    font-family: font-text; 
+    background-color: $sColor;
+    color: $pColor;
+}
+
+.nav-logo{
+    border-radius: 50%;
+    background-color: $pColor;
+    /*opacity: 0.8;*/
+    width: 100px;
+    img{
+        width: 100px;
+    }
+}
+
+.active-btn{
+    box-sizing: border-box;
+    margin: 7px;
+    padding: 10px;
+    width: 150px;
+    height: 50px;
+    border-radius: $radius;
+    font-size: x-large;
+    border-style: none;
+    font-family: font-text;
+    background-color: $pColor;
+    color: $sColor; 
+}
+
+.menu-container{
+    display: flex;
+    flex-direction: row;
+    .cards-container{
+        width: 50%;
+        height: 400px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    .order-container{
+        width: 50%;
+    }
+}
+
+.menu-nav{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.menu-nav-btn{
+    box-sizing: border-box;
+    margin: 7px;
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    border-radius: $radius;
+    font-size: 20px;
+    border-style: none;
+    font-family: font-text; 
+    background-color: $sColor;
+    color: $pColor;
+}
+
+.active-menu-btn{
+    box-sizing: border-box;
+    margin: 7px;
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    border-radius: $radius;
+    font-size: 20px;
+    border-style: none;
+    font-family: font-text;
+    background-color: $pColor;
+    color: $sColor; 
+}
+
+.card-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 180px;
+    border-radius: $radius;
+    border: 2px solid $pColor;
+    background-color: #E9E6E6;
+    margin: 15px;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.4);
+    p{
+        font-family: font-card;
+        font-size: 16px;
+        margin:2px;
+        text-align: center;
+    }    
+    img{
+       margin:0; 
+    }
+}
+
+.ticket-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin:  15px 25px 15px 15px;
+    font-family: font-text;
+    font-size: 16px;
+    border-radius: $radius;
+    border: 2px solid $pColor;
+    padding:5px;
+    background-color: #E9E6E6;
+    height: 500px;
+    .ticket-head{
+        display: flex;
+        justify-content: space-around;
+        input{
+            height: 25px;
+            margin:5px;
+            padding: 5px;
+            border-radius: 10px;
+            border-style: none;
+            font-family: font-text;
+            font-size: 16px;
+            opacity: 0.5;
+        }
+        .client-container input{
+            width:200px;
+        }
+        .tab-container input{
+            width:50px;
+        }
+        
+    }
+    .table-container{
+        display: flex;
+        justify-content: center; 
+        overflow: scroll;
+        height: 320px;
+        
+        table{
+            width: 90%;
+            th{
+                text-align: center;  
+            }
+            td{
+                padding:5px 10px;
+                text-align: left;     
+            }
+
+            input{
+                width: 35px;
+                height: 35px;
+                border-style: none;
+                border-radius: 50%;
+                vertical-align: middle;
+                margin: 0;
+                font-family: font-card;
+                font-size: large;
+            }
+            
+            .addBtn{
+                background-color: #06b306;
+            }
+
+            .subBtn{
+                background-color: #f34545;
+            }
+        }
+    }
+    .total-container{
+        display: flex;
+        justify-content: flex-end; 
+        p{
+            width: 150px;
+            margin-right: 20px;
+            span{
+                font-family: font-card;
+            }
+            
+        }
+    } 
+    .btn-container{
+        display: flex;
+        justify-content: center; 
+    }
+}
+
+
+/*Modal Styles - starts*/
+.modal-container{
+    background-color: rgba(22, 22, 22, 0.6);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-box{
+    width: 500px;
+    align-self: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #E9E6E6;
+    border-radius: 15px;
+    font-family: font-text;
+    font-size: 20px;
+}
+
+hr{
+    width: 90%;
+    height: 2px;
+}
+
+.flavor-container, .extra-container{
+    display: flex;
+    flex-direction: column;
+    div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    input{
+        width: 2em;
+        height: 2em;
+        margin-right: 1em;
+    }
+}
+
+.modals-btns-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}    
+/*Modal Styles - ends*/
+
+/*Kitchen - starts*/
+.kitchen-cards-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+    .kitchen-cards-doing, .kitchen-cards-waiting{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        overflow: scroll;
+        width: 50%;
+        height: 570px;
+        //border:1px solid black;
+        //position: absolute;
+        //height: 300px;
+        //width: 600px;
+        //top: 30%;
+        //left: calc(50% - 300px);
+        //display: flex;
+        //flex-direction: column;
+        //border: 1px solid red;
+    }
+}
+
+/*kitchen - ends*/
+
+
+/*Kitchen card - starts*/
+.kitchen-card-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    //height: 200px;
+    //border: 2px solid black;
+    border-radius: $radius;
+    font-family: font-text;
+    padding:10px;
+    background-color: #E9E6E6;
+    margin: 5px;
+    box-shadow: 6px 6px 12px 6px rgba(0, 0, 0, 0.4);
+
+    //display: flex;
+    //height: 280px;
+    //width: 200px;
+    //background-color: #17141d;
+    //border-radius: 10px;
+    //box-shadow: -1rem 0 3rem #000;
+    margin-top: 35px; 
+    transition: 0.7s ease-out;
+    position: relative;
+    //left: 0%;
+
+    div, td, h3{
+        margin: 2px;
+       // border:1px solid black;
+    }
+
+    div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    span{
+        font-family: font-card;
+    }
+
+    table{
+       margin-bottom: 10px;   
+    }
+    input{
+        height:40px;
+        font-size: 20px;
+        border-style: none;
+        opacity: 1;
+        font-family: font-card;
+        border-radius: $radius;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+    }
+}
+
+
+.kitchen-card-container:not(:first-child) {
+    margin-top: -50px;
+    
+}
+
+.kitchen-card-container:hover {
+  transform: translateY(-20px);
+  transition: 0.5s ease-out;
+  
+}
+
+.kitchen-card-container:hover ~ .kitchen-card-container {
+  position: relative;
+  top: 80px;
+  transition: 0.7s ease-out;
+  
+}
+
+
+
+
+.status-red{
+   color: #f34545
+}
+
+.status-green{
+    color: #06b306
+}
+
+.border-green{
+    border: 3px solid #06b306;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.7);
+}
+
+.border-red{
+    border: 3px solid #f34545;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.7);
+}
+  
+/*Kitchen card - ends*/
+
+/*Kitchen modal - starts*/
+.modal-block{
+    
+    display: flex;
+    flex-direction: column;
+    //justify-content: center;
+    //align-items: center;
+    align-self: center;
+    width: 500px;
+    //padding: 2rem;
+    background-color: #E9E6E6;
+    border-radius: 15px;
+    font-family: font-text;
+    font-size: 18px;
+    span{
+        font-family: font-card;
+    }
+    //div{
+        //border: 1px solid black;
+    //}
+    h3{
+        margin:5px;
+        align-self: center;
+    }
+    input[type=button]{
+       margin-bottom: 2rem ;
+       margin-top: 2rem ;
+    }
+}
+
+.modal-status-on{
+    border-radius: 15px 15px 0px 0px;
+    background-color: #06b306;
+    height: 20px;
+}
+
+.modal-status-off{
+    border-radius: 15px 15px 0px 0px;
+    background-color: #f34545;
+    height: 20px;
+}
+
+.modal-header{
+    //border: 1px solid black;
+    padding: 0 2rem;
+    table{
+        width: 100%;
+        th,td{
+            padding:2px;
+           // border: 1px solid black;
+            
+        }
+    }
+    
+}
+
+.modal-body{
+    padding: 0 2rem;
+    max-height: 400px;
+    //height: 500px;
+    overflow: scroll;
+
+    
+    table{
+        input{
+            width: 2em;
+            height: 2em;
+            margin-right: 1em;
+        }
+        th,td{
+            padding:2px;
+            //border: 1px solid black;
+        }
+    }
+    tfoot{
+        .table-total{
+            text-align: right;
+        }
+        .table-total-cant{
+            text-align: left;
+        }
+    }
+
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+  }
+       
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $pColor; 
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-corner{
+      opacity:1;
+  }
+
+/*Kitchen modal - ends*/
