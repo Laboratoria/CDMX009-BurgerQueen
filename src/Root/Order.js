@@ -13,7 +13,11 @@ function Order(){
     status:false,
     tableNumber:""
   });
-
+let[temporalH,setTemporalH]=useState()
+let[extraTemporal,setExtra]=useState({
+  quesillo:false,
+  huevo:false,
+})
   function resetOrder(){
     setOrder({
       total:0,
@@ -30,12 +34,16 @@ function Order(){
   })
 
   function addExtras (extra){ //AQUÍ AÚN NO ME QUEDA AGREGAR EXTRA
-    setOrder({
-      ...order,
-      extra 
-
-    })
-    console.log(order)
+    console.log(extra,"un comentario random")
+    if(extra==="Quesillo"){
+      console.log('ya se está agregando Quesillo!')
+      setExtra({...extraTemporal,quesillo:true})
+    }else if(extra==="Huevo"){
+      setExtra({...extraTemporal,huevo:true})
+    }
+  }
+  function reloadExtra(extraTemporal){
+    return extraTemporal
   }
 
   const showModal = () => { //MODAL
@@ -46,7 +54,7 @@ function Order(){
 
   function onChange(e) { //CHECK
     console.log({ [e.target.name]: e.target.value });
-    addExtras({ [e.target.name]: e.target.value })
+    addExtras( e.target.value )
   }
 
   function setTableNumber (tableNumber) {
@@ -59,9 +67,9 @@ function Order(){
   function addItemToOrder (product){
     if (product.extra === true){
       showModal()
-    }
-    //Aquí va ventana modal sólo para hamburgesas
-    let found = order.items.find(({ productId })=> productId === product.id)
+      setTemporalH(product)
+    }else if(product.extra === false){
+      let found = order.items.find(({ productId })=> productId === product.id)
     setOrder({
       ...order,
       items: found ?
@@ -74,6 +82,8 @@ function Order(){
       : 
       order.items.concat({ productId:product.id, subTotal:product.price, quantity:1, nameProduct:product.name, typeProduct:product.type, price:product.price })
     })
+    }
+    
   }
 
   function calculateTotal (items = []) {
@@ -121,10 +131,31 @@ function Order(){
     setTimeout(() => {
       setModalState({ loading: false, visible: false });
     }, 3000);
+    
+    let objetoTemporal={
+      productId:temporalH.id,
+      subTotal:temporalH.price,
+      quantity:1,
+      nameProduct:temporalH.name,
+      typeProduct:temporalH.type,
+      price:temporalH.price,
+      extra:reloadExtra(extraTemporal)
+    }
+    console.log(objetoTemporal,"Si sirve")
+    setOrder({
+      ...order,
+      items:order.items.concat(objetoTemporal)
+    })
+    setTemporalH()
+    setExtra({
+      quesillo:false,
+      huevo:false,
+    })
   };
 
   const handleCancel = () => {  //MODAL
     setModalState({ visible: false });
+    setTemporalH()
   };
 
       

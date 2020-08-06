@@ -2,10 +2,14 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-left: 150px;
 }
 
 .orderKitchen {
@@ -17,14 +21,53 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 650px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .orderKitchen li {
-  margin-left: 370px;
   list-style: none;
 }
 
 .orderKitchen h4 {
   text-align: center;
+  background-color: #ffab92;
+  color: #000000;
+  height: 60px;
+  font-size: 1.2em;
+}
+
+.contentButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 15px;
+}
+
+.buttonKitchenSend {
+  width: 300px;
+  height: 60px;
+  border: none;
+  border-radius: 50px;
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 1.2em;
+}
+
+.itemsKitchen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 200px;
 }
 /*# sourceMappingURL=Kitchen.css.map */

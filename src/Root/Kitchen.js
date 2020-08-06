@@ -40,10 +40,14 @@ function Kitchen (){
             {allOrders.map((order) => (
                 <div className="orderKitchen" key={order.id}>
                     <h4> Mesa {order.tableNumber}</h4>
-                    {order.items.map((food)=>(
-                        <li>{food.quantity} {food.nameProduct}</li>
-                    ))}
-                    <button name={order.id} onClick={handleSendToFinishing}>Orden lista!</button>
+                    <div className="itemsKitchen">
+                        {order.items.map((food)=>(
+                            <li>{food.quantity} {food.nameProduct}</li>
+                        ))}
+                    </div>
+                    <div className="contentButton">
+                        <button className="buttonKitchenSend" name={order.id} onClick={handleSendToFinishing}>Orden lista!</button>
+                    </div>
                 </div>
             ))}
         </div>

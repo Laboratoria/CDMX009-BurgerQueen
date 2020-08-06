@@ -8,8 +8,9 @@ function ResumeOrder ({resume, handlerOrderPay}){
         <Fragment>
                 {resume.length === 0
                 ?
-                    <p>Aún no hay una mesa seleccionada</p>
-
+                    <div className="messageResume">
+                        <p>Aún no hay una mesa seleccionada</p>
+                    </div>
                 :
                 <div className="resume">
                     <div className="headerResume">
