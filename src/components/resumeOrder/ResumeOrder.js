@@ -1,31 +1,35 @@
 import React from 'react'
-import {db} from '../../firebase-config'
 
-function ResumeOrder (){
+function ResumeOrder ({resume, handlerOrderPay}){
 
+    const resumeOrder = resume[0];
 
     return (
-        <div className="order">
-            <div className="header">
-                <p className="Table">Mesa</p>
-                <p>Number</p> //INGRESAR NÚMERO DE MESA
-                <div className="total">
-                    <h4 className="letter">TOTAL</h4> //AQUÍ VA TOTAL
+        <div className="resumeOrderContainer">
+            <div className="headerResume">
+                {resume.length === 0
+                ?
+                    <p>Aún no hay una mesa seleccionada</p>
+
+                :
+                <div>
+                    <p className="tableResume">Mesa</p>
+                    <p className="numberResume">{resumeOrder.order.tableNumber}</p>
+                    <div className="totalResume">
+                        <h4 className="letterResume">TOTAL ${resumeOrder.order.total}</h4>
+                        {resumeOrder.order.items.map((food)=>(
+                            <div className="itemsInOrderResume">
+                                <div>
+                                    <h3 className="productInListOrder">{food.quantity} {food.nameProduct} ${food.subTotal} </h3>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    <button key={resumeOrder.order.id} onClick={() => handlerOrderPay(resumeOrder.order.id)}> Pagar </button> 
                 </div>
+                }
             </div>
-            <div className="itemsInOrder">
-                {/* {ordersFinished.map( order => ( //AQUI ITERAR LO OBTENIDO DE FIRESTORE
-                    <div key={order.id}>
-                        <div>
-                            <h3 className="productInListOrder"> {order.quantity} {order.nameProduct}   ${order.subTotal} </h3>
-                        </div>
-                    </div>     
-                ))} */}
-            </div>
-            <button 
-                onClick={console.log("Holi aquí se cambia de estado a pay")}>//PASAR FUNCIÓN QUE CAMBIE EL ESTADO EN FIREBASE
-                    Ordenar
-            </button>
+            {/* PASAR FUNCIÓN QUE CAMBIE EL ESTADO EN FIREBASE */}
         </div>
     )
 }

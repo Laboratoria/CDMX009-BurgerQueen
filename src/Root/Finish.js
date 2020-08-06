@@ -22,12 +22,51 @@ function Finish (){
         getOrder()
     },[]);
 
+    const [resume, setResume] = useState ([]);
+
+    function handlerOrderFinish(id) {
+        const food = [];
+        ordersFinish.map((order =>{
+            if(id === order.id){
+                food.push({order})
+            }
+        }))
+        console.log(food)
+        setResume(food);
+    }
+
+    function resetResume (){
+        setResume([]);
+    }
+
+    function handlerOrderPay (id){
+        ordersFinish.map((resume =>{
+            if (resume.id === id){
+                db.collection("ordenes").doc(resume.id).update({
+                    status:"Pay"
+                }).then(function() {
+                    console.log("cambio de estado hecho :)");
+                    resetResume()
+                  }); 
+            }
+        }))
+    }
+
     return(
         <div className="finishContainer">
             <div className="buttonsTableNumbers">
-                {ordersFinish.map((order)=> (
-                    <button>{order.tableNumber}</button>
-                ))}
+                <p>Mesas con órdenes activas</p>
+                <div>
+                    {ordersFinish.map((order)=> (
+                        <button key={order.id} onClick={()=>handlerOrderFinish(order.id)}>{order.tableNumber}</button>
+                    ))}
+                </div>
+            </div>
+            <div className="containerResumeOrder">
+                <ResumeOrder
+                    resume={resume}
+                    handlerOrderPay={handlerOrderPay}
+                />
             </div>
         </div>
     )
