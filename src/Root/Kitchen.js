@@ -8,7 +8,7 @@ function Kitchen (){
     const [allOrders, setAllOrders] = useState([])
 
     const getOrder = async () => {
-     db.collection('ordenes').onSnapshot((querySnapshot) => {
+     db.collection('ordenes').where("status", "==", "inKitchen" ).onSnapshot((querySnapshot) => {
          const orders = [];
             querySnapshot.forEach(doc =>{
                 orders.push({...doc.data(), id:doc.id})
@@ -23,12 +23,16 @@ function Kitchen (){
     },[]);
 
     function handleSendToFinishing (e) {
-        console.log(e.target.value)
-        // const send= 
-        // const orderStatus= {
-        //     ...allOrders,
-            
-        // }
+        allOrders.map((order)=>{
+            if(e.target.name === order.id){
+                db.collection("ordenes").doc(order.id).update({
+                    status:"Finish"
+                }).then(function() {
+                    console.log("cambio de estado hecho :)");
+                    console.log(allOrders)
+                  }); 
+            }
+        })
     }
 
     return (
@@ -39,7 +43,7 @@ function Kitchen (){
                     {order.items.map((food)=>(
                         <li>{food.quantity} {food.nameProduct}</li>
                     ))}
-                    <button onClick={handleSendToFinishing}>Orden lista!</button>
+                    <button name={order.id} onClick={handleSendToFinishing}>Orden lista!</button>
                 </div>
             ))}
         </div>
@@ -47,7 +51,3 @@ function Kitchen (){
 }
 
 export default Kitchen;
-
-/*{allOrders.map((order) => (
-    <p>{order.id}</p>
-    ))}*/

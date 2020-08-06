@@ -1,13 +1,20 @@
 import React from 'react';
 import './PreviewOrder.css'
 import {db} from '../../firebase-config'
+import { Button, notification } from 'antd';
 
-const PreviewOrder = ({order,deleteItem, setTableNumber, substractItem,resetOrder}) => {
+const PreviewOrder = ({order,deleteItem, setTableNumber,resetOrder}) => {
     const total = order.items.reduce((sum, item) => sum + item.quantity * item.price, 0)
 
+    const openNotificationWithIcon = () => {
+        notification["error"]({
+          message: 'No llenaste el número de mesa o no tienes productos en tu orden'
+        });
+      };
 
     const handleEnviarACocina = async (e) => {
-    if(order.tableNumber !==""){
+        console.log(e)
+    if(order.tableNumber !=="" && order.tableNumber <= 10 && order.items.length !== 0){ //AQUÍ YA NO ME DEJA INGRESAR NÚMERO DE MESA
         const orderAEnviar = {
             ...order,
             total,
@@ -16,7 +23,7 @@ const PreviewOrder = ({order,deleteItem, setTableNumber, substractItem,resetOrde
         await db.collection('ordenes').doc().set(orderAEnviar);
         console.log('Orden enviada satisfactoriamente');
         resetOrder()
-    }else{console.log("llena el numero de mesa")}
+    }else{openNotificationWithIcon()}
     }
 
         
@@ -32,8 +39,10 @@ const PreviewOrder = ({order,deleteItem, setTableNumber, substractItem,resetOrde
     
         <div className="order">
             <div className="header">
-                <h3>Mesa</h3>
+                <p className="Table">Mesa</p>
                 <input
+                    min="1"
+                    max="10"
                     className="inputTable" 
                     type="number"
                     name="tableNumber"
@@ -56,15 +65,15 @@ const PreviewOrder = ({order,deleteItem, setTableNumber, substractItem,resetOrde
                             <h3 className="productInListOrder"> {elem.quantity} {elem.nameProduct}   ${elem.quantity * elem.price} </h3>
                         </div>
                         <button onClick={()=> deleteItem(elem.productId)}> x </button>
-                        <button onClick={()=> substractItem(elem)}> - </button>
+                        {/* <button onClick={()=> substractItem(elem)}> - </button> */}
                     </div>     
                 ))}
             </div>
-            <button 
-                className="sendToKitchen"
+            <Button danger 
+               // className="sendToKitchen"
                 onClick={handleEnviarACocina}>
-                    <h1>Ordenar</h1>
-            </button>
+                    Ordenar
+            </Button>
         </div>
 )}
 
