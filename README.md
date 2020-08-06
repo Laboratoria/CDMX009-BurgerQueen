@@ -1,68 +1,64 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+El nombre de la aplicación es: <br>  
+    
+<img src='markdown-files/Logo_BQ.jpg'> <br>
+*Cocinar es amor*
 
-## Available Scripts
 
-In the project directory, you can run:
+> Un restaurante que en esta ocasión tiene por nombre Burger Queen que recién quiere implementar técnología en su recinto, nos pasa un requerimiento en este caso quiere que realicemos una app usando una tablet para facilitar la comunicación entre cocina y meseros.
 
-### `npm start`
+** __SI  QUIERES VER CÓMO FUNCIONA LA APP ENTRA A ESTE LINK:__ 
+<br>
+Debes tener en cuenta que la app por el momento está diseñada para **IPAD-PRO**, por lo que cuando entres al link da click al boton derecho, seleccionas inspeccionar y en el select que dice RESPONSIVE selecciona **IPAD-PRO**.
+<br>
+  https://esthermanrique.github.io/CDMX009-BurgerQueen
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**La finalidad de la aplicación**
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+ Es hacer el proceso de los pedidos más eficiente y por lo tanto menos tiempo de espera para los clientes, así como una comunicación más ágil entre _**cocineros y meseros**._
+ 
+ **Desarrollo y planificación de la app**
+ 
+**1-** Realizamos un boceto a lápiz y papel de la idea general de lo que queríamos que se convirtiera nuestra aplicación.
+<br><br>
+#SKETCH
+<br><br>
+<img src='markdown-files/sketch-bq.jpg'>
 
-### `npm test`
+**2-** Con la aplicación para proyectos de diseño *FIGMA*, iniciamos realizando la versión esquemática de lo que fue nuestro sketch, planeando así previamente la estructura y los elementos de la página web.
+<br><br>
+#WIREFRAME
+<br><br>
+<img src='markdown-files/anigif.gif'>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**3-** Fue el diseño final de lo que sería *Burger-Queen app* donde definimos paleta de colores, tipografía y en general el flujo de navegación de la aplicación. De esta manera poder tener una visión más detallada, precisa y global de los contenidos necesarios plasmando así el resultado final de una versión simulada en alta fidelidad.
+<br><br>
+#PROTOTIPO
+<br><br>
+<img src='markdown-files/anigif2.gif'>
 
-### `npm run build`
+**Test de usabilidad con usuarios target**
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ Al inicio del diseño de la aplicacion construimos una idea de acuerdo a nuestras creencias y creyendo que habíamos tomando buenas decisiones sin embargo al recibir los comentarios de parte de los usuarios a quien le solicitamos el testeo de usabilidad de la app, tomando en cuenta sus recomendaciones decidimos aplicar mejoras, volviendo a solicitar feedback y dejando al usuario satisfecho con lo que implementamos en la app.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+ **¿Cómo funciona la app?**
+ 
+ _Tendrá dos secciones:_
+ 
+ >La primera es para el área de los meseros, en donde podrán entrar a su turno, al momento de atender tendrán opción para ingresar su nombre, número de mesa, de clientes y de esta manera tomar pedidos, poder enviar lo que el cliente pidió a cocina y llevar el orden de los pagos, mesas atendidas y en espera.
+ 
+ >La segunda es para el área de cocina en donde los cocineros podrán visualizar en una tabla la orden que entró, con la data del pedido, podrán ver la comanda de preparación y notificarle al mesero cuando el platillo ya está preparado.
+ 
+<img src='markdown-files/mesero-tablet-publicidad.jpg'>
+ 
+ **Herramientas y tecnologías usadas en la app**
+ 
+ |  **Herramientas y tecnologías usadas en la app**     | 
+| :-------------: |
+|Figma |
+| HTML | 
+| CSS |
+|Bootstrap|
+| Javascript|
+|React JS|
+|Firebase (Firestore)|
+|Git & Github (Projects -Issues- Labels)|
