@@ -1,30 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-//import db from '../../firebase';
-import Logo from '../Logo/Logo';
 import db from '../../firebase';
-import Boton from '../Boton/Boton'
+import Logo from '../Logo/Logo';
+import Boton from '../Boton/Boton';
+import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
 import ReusableTable from '../ReusableTable';
-import { currencyFormatter } from '../../utils'
+import { currencyFormatter } from '../../utils';
 
 const BreakFast = ({ client, setClient, products, addItemToOrder, deleteItem }) => {
-
-    console.log('aqui está la order', client);
-
-
     const orderFood = () => {
         db.collection('ordersfood').add(client)
             .then(() => {
-                console.log('orden de breakfast guardada en Firestore exitosamente')
+                console.log('orden de breakfast guardada en Firestore exitosamente');
             });
-    }
+    };
 
     return (
 
         <div className={styles.breakFastPage}>
-
             <div className={styles.headerWrapper}>
                 <div className={styles.logoBreakFast}>
                     <Logo nameClass={"logoSmallLunch"} />
@@ -50,10 +43,12 @@ const BreakFast = ({ client, setClient, products, addItemToOrder, deleteItem }) 
                 </div>
 
                 <div className={styles.order}>
-
-                    <ReusableTable client={client} setClient={setClient} products={products} addItemToOrder={addItemToOrder} deleteItem={deleteItem}
+                    <ReusableTable 
+                    client={client} setClient={setClient} 
+                    products={products} 
+                    addItemToOrder={addItemToOrder} 
+                    deleteItem={deleteItem}
                     />
-
                 </div>
             </div>
 
@@ -65,12 +60,9 @@ const BreakFast = ({ client, setClient, products, addItemToOrder, deleteItem }) 
                 <Link to="waiterregister">
                     <button onClick={() => orderFood()} className={styles.saveInformation}>Enviar</button>
                 </Link>
-
             </div>
         </div>
-
     );
-
 }
 
 export default BreakFast;

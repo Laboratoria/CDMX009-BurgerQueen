@@ -2,13 +2,12 @@ import React from 'react';
 import Logo from '../Logo/Logo';
 import Boton from '../Boton/Boton'
 import { Link } from 'react-router-dom';
+import styles from './styles.module.css';
 import Table from 'react-bootstrap/Table';
 import DateTime from '../DateTime/DateTables';
 
+const TableWaiter = ({ orders }) => {
 
-import styles from './styles.module.css';
-
-const TableWaiter = ({ client, order, orders }) => {
     return (
         <div>
             <div className={styles.headerWrapper}>
@@ -40,6 +39,7 @@ const TableWaiter = ({ client, order, orders }) => {
                             <th scope="col"> Status <br /> Orden </th>
                         </tr>
                     </thead>
+                    
                     <tbody>
                         {orders.map((order, index) => (
                             <tr key={index}>

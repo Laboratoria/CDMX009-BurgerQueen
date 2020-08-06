@@ -2,6 +2,7 @@ import React from 'react';
 import './style.css';
 
 const ReusableProducts = ({ img, text, price, allStyles }) => {
+
     return (
         <div className={allStyles}>
             <img src={img} height="200" width="200px" />
@@ -10,5 +11,6 @@ const ReusableProducts = ({ img, text, price, allStyles }) => {
         </div>
     );
 }
+
 export default ReusableProducts;
 

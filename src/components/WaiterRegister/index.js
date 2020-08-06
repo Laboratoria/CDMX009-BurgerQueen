@@ -2,9 +2,8 @@ import React, { Fragment, useEffect, useState } from 'react';
 import db from '../../firebase';
 import Boton from '../Boton/Boton'
 import { Link } from 'react-router-dom';
-import TableWaiter from '../Tables/TableWaiter';
-
 import styles from './styles.module.css';
+import TableWaiter from '../Tables/TableWaiter';
 
 const WaiterRegister = ({ client, setClient, order, setOrder }) => {
     const [orders, setOrders] = useState([])
@@ -34,9 +33,7 @@ const WaiterRegister = ({ client, setClient, order, setOrder }) => {
                     <Link to="waiter">
                         <Boton text={"Regresar"} allstyles={"buttonOutWaiter"} />
                     </Link>
-
                 </div>
-
             </div>
         </Fragment>
     );

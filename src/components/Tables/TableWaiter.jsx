@@ -2,10 +2,9 @@ import React from 'react';
 import Logo from '../Logo/Logo';
 import Boton from '../Boton/Boton'
 import { Link } from 'react-router-dom';
+import styles from './styles.module.css';
 import Table from 'react-bootstrap/Table';
 import DateTime from '../DateTime/DateTables';
-
-import styles from './styles.module.css';
 
 const status = [
     { label: 'Cancelar', value: 'Cancelar' },
@@ -44,6 +43,7 @@ const TableWaiter = ({ client, order, orders }) => {
                             <th scope="col"> Cuenta <br /> Orden </th>
                         </tr>
                     </thead>
+
                     <tbody>
                         {orders.map((order, index) => (
                             <tr key={index}>
@@ -63,7 +63,6 @@ const TableWaiter = ({ client, order, orders }) => {
                         ))}
                     </tbody>
                 </Table>
-
             </div>
         </div>
     );
