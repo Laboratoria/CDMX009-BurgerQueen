@@ -47,7 +47,7 @@ const TableWaiter = ({ client, order, orders }) => {
                     <tbody>
                         {orders.map((order, index) => (
                             <tr key={index}>
-                                <td> {index} </td>
+                                <td> {index + 1} </td>
                                 <td> <DateTime /> </td>
                                 <td> {order.numtable} </td>
                                 <td> {order.numpeople} </td>

@@ -26,7 +26,7 @@ const ReusableTable = ({ client, deleteItem }) => {
 
                     <div className={styles.numberOrder}>
                         <p>No. Órden</p>
-                        <span className={styles.firstNumberWrapper}>123</span>
+                        <span className={styles.firstNumberWrapper}>{client.numorder}</span>
                     </div>
                 </div>
             </div>

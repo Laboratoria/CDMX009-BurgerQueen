@@ -20,7 +20,7 @@ const options = [
   { label: 'Gilberto M.', value: 'Gilberto M.' }
 ]
 
-const InitWaiters = ({ client, setClient }) => {
+const InitWaiters = ({ client, setClient, setNumorder }) => {
 
   const handleInputsClient = (e) => {
     const { name, value } = e.target;
@@ -31,8 +31,13 @@ const InitWaiters = ({ client, setClient }) => {
     e.preventDefault();
     db.collection('orders').add(client)
     .then(() => {
-      console.log('orden guardada en Firestore exitosamente')
-    });
+      console.log('orden de initwaiter guardada en Firestore exitosamente');
+      return db.collection('ordersfood').get()
+  })
+  .then((snapshot) => {
+      console.log('Generando No. Orden');
+      setNumorder(snapshot.size +1)
+  })
   }
 
   return (
