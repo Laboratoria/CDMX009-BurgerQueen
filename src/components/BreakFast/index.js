@@ -7,12 +7,18 @@ import styles from './styles.module.css';
 import ReusableTable from '../ReusableTable';
 import { currencyFormatter } from '../../utils';
 
-const BreakFast = ({ client, setClient, products, addItemToOrder, deleteItem }) => {
+const BreakFast = ({ client, setClient, products, addItemToOrder, deleteItem, setNumorder }) => {
+    
     const orderFood = () => {
         db.collection('ordersfood').add(client)
             .then(() => {
                 console.log('orden de breakfast guardada en Firestore exitosamente');
-            });
+                return db.collection('ordersfood').get()
+            })
+            .then((snapshot) => {
+                console.log('Generando No. Orden');
+                setNumorder(snapshot.size +1)
+            })
     };
 
     return (
@@ -48,6 +54,7 @@ const BreakFast = ({ client, setClient, products, addItemToOrder, deleteItem }) 
                     products={products} 
                     addItemToOrder={addItemToOrder} 
                     deleteItem={deleteItem}
+                    
                     />
                 </div>
             </div>

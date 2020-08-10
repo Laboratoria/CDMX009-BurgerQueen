@@ -9,24 +9,19 @@ const WaiterRegister = ({ client, setClient, order, setOrder }) => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        db.collection('ordersfood').get().then((querySnapshot) => {
+        db.collection('ordersfood').orderBy('numorder', 'desc').get().then((querySnapshot) => {
             const data = []
             querySnapshot.forEach(function (doc) {
                 data.push({...doc.data(), id: doc.id });
             });
+            
             setOrders(data);
         });
     }, []);
 
     return (
         <Fragment>
-            <TableWaiter
-                client={client}
-                setClient={setClient}
-                order={order}
-                setOrder={setOrder}
-                orders={orders}
-            />
+            <TableWaiter orders={orders} />
 
             <div className={styles.butons}>
                 <div className={styles.butons1}>
