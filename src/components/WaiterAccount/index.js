@@ -39,6 +39,7 @@ const WaiterAccount = ({ client, setClient, calculateTotal, calculateAmount }) =
                     order={order} 
                     calculateTotal={calculateTotal} 
                     calculateAmount={calculateAmount} 
+                    
                     />}
                 </div>
 

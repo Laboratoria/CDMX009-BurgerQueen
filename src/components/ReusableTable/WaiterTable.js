@@ -31,7 +31,7 @@ const WaiterTable = ({ order, calculateTotal, calculateAmount }) => {
 
                     <div className={styles.numberOrder}>
                         <p>No. Órden</p>
-                        <span className={styles.firstNumberWrapper}>123</span>
+                        <span className={styles.firstNumberWrapper}>{order.numorder}</span>
                     </div>
                 </div>
             </div>

@@ -28,6 +28,7 @@ function App() {
   const [order, setOrder] = useState({
     items: []
   });
+  const setNumorder = (numorder) => setClient ({...client, numorder})
 
   const addItemToOrder = (product) => {
     let newItems = [];
@@ -86,6 +87,7 @@ function App() {
             <InitWaiters 
             client={client} setClient={setClient} 
             order={order} setOrder={setOrder}
+            setNumorder={setNumorder}
             />
           </Route>
 
@@ -98,6 +100,7 @@ function App() {
             products={products} 
             addItemToOrder={addItemToOrder} 
             deleteItem={deleteItem} 
+            setNumorder={setNumorder}
             />
           </Route>
 
@@ -129,7 +132,8 @@ function App() {
 
           <Route exact path="/kitchen/:orderId">
             <Kitchen 
-            client={client} setClient={setClient} 
+            client={client} setClient={setClient}
+            order={order} setOrder={setOrder}
             />
           </Route>
         </Switch>

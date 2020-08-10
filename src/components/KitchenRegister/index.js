@@ -9,7 +9,7 @@ const KitchenRegister = ({ client, setClient, order, setOrder }) => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        db.collection('ordersfood').get().then((querySnapshot) => {
+        db.collection('ordersfood').orderBy('numorder', 'desc').get().then((querySnapshot) => {
             const data = []
             querySnapshot.forEach(function (doc) {
                 data.push({...doc.data(), id: doc.id });

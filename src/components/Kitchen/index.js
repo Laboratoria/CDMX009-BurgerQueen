@@ -19,10 +19,16 @@ const Kitchen = ({ client, setClient }) => {
             setOrder(querySnapshot.data()); 
         });
     }, [])
-
-    let texto = 'la orden está lista, enviando notificación a mesero'
+    
+    console.log('Este es el log', order);
     const hablar = (texto) => speechSynthesis.speak(new SpeechSynthesisUtterance(texto));
-
+    
+    if (!order) {
+        return <div>Loading...</div>
+    }
+    
+    let texto = `La orden número ${order.numorder} de la mesa ${order.numtable} está lista enviando notificación a ${order.namewaiter}`
+    
     return (
         <div>
             <div className={styles.headerWrapper}>
