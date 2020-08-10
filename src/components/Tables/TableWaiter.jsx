@@ -10,7 +10,7 @@ const status = [
     { label: 'Cancelar', value: 'Cancelar' },
 ]
 
-const TableWaiter = ({ client, order, orders }) => {
+const TableWaiter = ({ orders }) => {
 
     return (
         <div>
@@ -47,7 +47,7 @@ const TableWaiter = ({ client, order, orders }) => {
                     <tbody>
                         {orders.map((order, index) => (
                             <tr key={index}>
-                                <td> {index + 1} </td>
+                                <td> {order.numorder} </td>
                                 <td> <DateTime /> </td>
                                 <td> {order.numtable} </td>
                                 <td> {order.numpeople} </td>
