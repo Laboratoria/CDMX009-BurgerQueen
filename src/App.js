@@ -132,7 +132,8 @@ function App() {
 
           <Route exact path="/kitchen/:orderId">
             <Kitchen 
-            client={client} setClient={setClient} 
+            client={client} setClient={setClient}
+            order={order} setOrder={setOrder}
             />
           </Route>
         </Switch>

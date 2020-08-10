@@ -9,6 +9,8 @@ import Bell from '../../assets/imgs/cuadrado-bordes.png';
 import KitchenTable from '../ReusableTable/kitchenTable';
 
 const Kitchen = ({ client, setClient }) => {
+    
+
 
     const [order, setOrder ] = useState();
     
@@ -19,10 +21,16 @@ const Kitchen = ({ client, setClient }) => {
             setOrder(querySnapshot.data()); 
         });
     }, [])
-
-    let texto = 'la orden está lista, enviando notificación a mesero'
+    
+    console.log('Este es el log', order);
     const hablar = (texto) => speechSynthesis.speak(new SpeechSynthesisUtterance(texto));
-
+    
+    if (!order) {
+        return <div>Loading...</div>
+    }
+    
+    let texto = `La orden ${order.numorder} de la mesa  ${order.numtable}`
+    
     return (
         <div>
             <div className={styles.headerWrapper}>
