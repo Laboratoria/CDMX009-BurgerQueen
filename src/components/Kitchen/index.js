@@ -9,8 +9,6 @@ import Bell from '../../assets/imgs/cuadrado-bordes.png';
 import KitchenTable from '../ReusableTable/kitchenTable';
 
 const Kitchen = ({ client, setClient }) => {
-    
-
 
     const [order, setOrder ] = useState();
     
@@ -29,7 +27,7 @@ const Kitchen = ({ client, setClient }) => {
         return <div>Loading...</div>
     }
     
-    let texto = `La orden ${order.numorder} de la mesa  ${order.numtable}`
+    let texto = `La orden número ${order.numorder} de la mesa ${order.numtable} está lista enviando notificación a ${order.namewaiter}`
     
     return (
         <div>

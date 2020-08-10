@@ -20,7 +20,7 @@ const WaiterRegister = ({ client, setClient, order, setOrder }) => {
     }, []);
 
     return (
-        <>
+        <Fragment>
             <TableWaiter orders={orders} />
 
             <div className={styles.butons}>
@@ -30,7 +30,7 @@ const WaiterRegister = ({ client, setClient, order, setOrder }) => {
                     </Link>
                 </div>
             </div>
-        </>
+        </Fragment>
     );
 };
 
