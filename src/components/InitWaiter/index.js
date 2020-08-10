@@ -36,7 +36,7 @@ const InitWaiters = ({ client, setClient, setNumorder }) => {
   })
   .then((snapshot) => {
       console.log('Generando No. Orden');
-      setNumorder(snapshot.size +1)
+      setNumorder(snapshot.size + 1)
   })
   }
 
