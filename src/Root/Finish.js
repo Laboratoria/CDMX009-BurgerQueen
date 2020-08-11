@@ -14,7 +14,6 @@ function Finish (){
                    orders.push({...doc.data(), id:doc.id})
                })
                setOrdersFinish(orders);
-               console.log(orders);
           });
     }
 
@@ -31,7 +30,6 @@ function Finish (){
                 food.push({order})
             }
         }))
-        console.log(food)
         setResume(food);
     }
 
@@ -45,7 +43,6 @@ function Finish (){
                 db.collection("ordenes").doc(resume.id).update({
                     status:"Pay"
                 }).then(function() {
-                    console.log("cambio de estado hecho :)");
                     resetResume()
                   }); 
             }
