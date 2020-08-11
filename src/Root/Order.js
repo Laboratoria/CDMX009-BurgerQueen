@@ -13,11 +13,14 @@ function Order(){
     status:false,
     tableNumber:""
   });
-let[temporalH,setTemporalH]=useState()
-let[extraTemporal,setExtra]=useState({
-  quesillo:false,
-  huevo:false,
-})
+
+  let[productExtra,setProductExtra]=useState()
+
+  let[extra,setExtra]=useState({
+    quesillo:false,
+    huevo:false,
+  })
+
   function resetOrder(){
     setOrder({
       total:0,
@@ -33,15 +36,14 @@ let[extraTemporal,setExtra]=useState({
     visible: false,
   })
 
-  function addExtras (extra){ //AQUÍ AÚN NO ME QUEDA AGREGAR EXTRA
-    console.log(extra,"un comentario random")
+  function addExtras (extra){
     if(extra==="Quesillo"){
-      console.log('ya se está agregando Quesillo!')
-      setExtra({...extraTemporal,quesillo:true})
+      setExtra({...extra,quesillo:true})
     }else if(extra==="Huevo"){
-      setExtra({...extraTemporal,huevo:true})
+      setExtra({...extra,huevo:true})
     }
   }
+
   function reloadExtra(extraTemporal){
     return extraTemporal
   }
@@ -53,7 +55,6 @@ let[extraTemporal,setExtra]=useState({
   };
 
   function onChange(e) { //CHECK
-    console.log({ [e.target.name]: e.target.value });
     addExtras( e.target.value )
   }
 
@@ -67,7 +68,7 @@ let[extraTemporal,setExtra]=useState({
   function addItemToOrder (product){
     if (product.extra === true){
       showModal()
-      setTemporalH(product)
+      setProductExtra(product)
     }else if(product.extra === false){
       let found = order.items.find(({ productId })=> productId === product.id)
     setOrder({
@@ -83,7 +84,6 @@ let[extraTemporal,setExtra]=useState({
       order.items.concat({ productId:product.id, subTotal:product.price, quantity:1, nameProduct:product.name, typeProduct:product.type, price:product.price })
     })
     }
-    
   }
 
   function calculateTotal (items = []) {
@@ -100,53 +100,26 @@ let[extraTemporal,setExtra]=useState({
     })
   }
 
-  // function substractItem (itemSubstract){
-  //   console.log(order)
-  //   let found = order.items.find(({ productId })=> productId === itemSubstract.productId)
-  //   const newItems = order.items.filter(item => item.productId !== itemSubstract.productId)
-  //   if (found){
-  //     order.items.map( item => {
-  //       if (itemSubstract.productId === item.productId){
-  //         if (item.quantity === 1){
-  //           setOrder({
-  //             ...order,
-  //             items: newItems,
-  //             total: calculateTotal(newItems)
-  //           })
-  //         } else if (item.quantity >=2) {
-  //           console.log('Aquí restamos cantidad')
-  //           setOrder({
-  //             ...order,
-  //             quantity:item.quantity-1, 
-  //             subTotal: itemSubstract.price*item.quantity
-  //           })
-  //         }
-  //       }
-  //     })
-  //   }
-  // }
-
   const handleOk = () => {  //MODAL
     setModalState({ loading: true });
     setTimeout(() => {
       setModalState({ loading: false, visible: false });
     }, 3000);
     
-    let objetoTemporal={
-      productId:temporalH.id,
-      subTotal:temporalH.price,
+    let newObject={
+      productId:productExtra.id,
+      subTotal:productExtra.price,
       quantity:1,
-      nameProduct:temporalH.name,
-      typeProduct:temporalH.type,
-      price:temporalH.price,
-      extra:reloadExtra(extraTemporal)
+      nameProduct:productExtra.name,
+      typeProduct:productExtra.type,
+      price: productExtra.price,
+      extra:reloadExtra(extra)
     }
-    console.log(objetoTemporal,"Si sirve")
     setOrder({
       ...order,
-      items:order.items.concat(objetoTemporal)
+      items:order.items.concat(newObject)
     })
-    setTemporalH()
+    setProductExtra()
     setExtra({
       quesillo:false,
       huevo:false,
@@ -155,7 +128,7 @@ let[extraTemporal,setExtra]=useState({
 
   const handleCancel = () => {  //MODAL
     setModalState({ visible: false });
-    setTemporalH()
+    setProductExtra()
   };
 
       
@@ -170,7 +143,6 @@ let[extraTemporal,setExtra]=useState({
                 setTableNumber= {setTableNumber}
                 order= {order}
                 deleteItem={deleteItem}
-                // substractItem={substractItem}
                 resetOrder={resetOrder}
               />
               <Modal
@@ -186,7 +158,7 @@ let[extraTemporal,setExtra]=useState({
                     Submit
                   </Button>,
                 ]}
-              >
+                >
                 <Checkbox onChange={onChange} name="extra" value="Quesillo">Quesillo</Checkbox>
                 <Checkbox onChange={onChange} name="extra" value="Huevo">Huevo</Checkbox>
                 <Checkbox onChange={onChange} name="extra" value={false}>Ninguno</Checkbox>
