@@ -13,7 +13,6 @@ const PreviewOrder = ({order,deleteItem, setTableNumber,resetOrder}) => {
       };
 
     const handleEnviarACocina = async (e) => {
-        console.log(e)
     if(order.tableNumber !=="" && order.tableNumber <= 10 && order.items.length !== 0){ //AQUÍ YA NO ME DEJA INGRESAR NÚMERO DE MESA
         const orderAEnviar = {
             ...order,
@@ -21,7 +20,6 @@ const PreviewOrder = ({order,deleteItem, setTableNumber,resetOrder}) => {
             status: "inKitchen"
         }
         await db.collection('ordenes').doc().set(orderAEnviar);
-        console.log('Orden enviada satisfactoriamente');
         resetOrder()
     }else{openNotificationWithIcon()}
     }

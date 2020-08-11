@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import './menu.css'
-import product from '../../data/products';
 
 
 const Menu = ({products,addItemToOrder}) => {
