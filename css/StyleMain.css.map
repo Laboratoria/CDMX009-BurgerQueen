@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,YAAY,AAAC,CACT,KAAK,CAAE,IAAI,CACX,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,KAAK,CACb,gBAAgB,CAAE,OAAO,CAAG",
+    "sources": [
+        "../src/components/Main/StyleMain.sass"
+    ],
+    "names": [],
+    "file": "StyleMain.css"
+}

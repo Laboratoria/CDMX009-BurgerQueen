@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,cAAc,AAAC,CACX,OAAO,CAAE,IAAI,CACb,gBAAgB,CAAE,MAAM,CAAG",
+    "sources": [
+        "../src/components/Footer/StyleFooter.sass"
+    ],
+    "names": [],
+    "file": "StyleFooter.css"
+}
