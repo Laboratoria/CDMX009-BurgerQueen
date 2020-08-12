@@ -21,6 +21,7 @@ const Home =() =>{
             <div className="contentBtns">
                 <Link to="/Meseros"><button id="meseros" className="button" >Meseros</button></Link>
                 <Link to="/Cocina"><button id="cocina" className="button"> Cocina </button></Link> 
+                <Link to="/Caja"><button id="caja" className="button"> Caja</button></Link> 
             </div>
         </div>
     )

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Meseros from "./Meseros";
 import { db } from "./firebase";
+import Fecha from "./Fecha"
 
 const Cocina = () => {
   const [count, setCount] = useState([]);
@@ -38,9 +39,11 @@ const Cocina = () => {
 
     
     <tr>
+      
     <th>Cliente:{order.cliente}</th>
     <th>Numero de mesa:{order.nroMesa}</th>
     </tr>
+   
    
     
     <tr>{order.platillos.map((platillo, idx) => (
@@ -63,6 +66,7 @@ const Cocina = () => {
     <tr>
     <th>Cliente:{order.cliente}</th>
     <th>Numero de mesa:{order.nroMesa}</th>
+    <th> <Fecha/> </th>
     </tr>
    
     

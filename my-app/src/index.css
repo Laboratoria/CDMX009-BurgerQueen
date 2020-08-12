@@ -259,7 +259,7 @@ border-radius: 50px;
 width: 30%;
 height: 100px;
 top:330px;
-left: 200px;
+left: 900px;
 color: #FAA91F;
   font-family: Roboto Mono;
 font-style: normal;
@@ -276,7 +276,7 @@ border-radius: 10px;
 width: 30%;
 height: 100px;
 top:330px;
-left: 700px;
+left: 50px;
 color: #FAA91F;
   font-family: Roboto Mono;
 font-style: normal;
@@ -284,6 +284,22 @@ font-weight: normal;
 font-size: 40px;
 line-height: 75px;
 background-color : #000000;
+border-radius: 10px;
+
+}
+#caja{
+  position: absolute;
+width: 30%;
+height: 100px;
+top:330px;
+left: 500px;
+color: #FAA91F;
+  font-family: Roboto Mono;
+font-style: normal;
+font-weight: normal;
+font-size: 40px;
+line-height: 75px;
+background-color: #000000;
 border-radius: 10px;
 
 }

@@ -11,6 +11,7 @@ import Desayuno from "./Desayuno/Desayuno";
 
 
 
+
 const Platillo = ({id, nombre, precio, deleteItem}) => (
     <tr>
         <td>{nombre}</td>
@@ -111,6 +112,7 @@ const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda, deleteItem,sendOr
                         </p>
                         </div>
                         <div>
+        
                             <table>
                                 <tr>
                                     <th>Plato</th>
