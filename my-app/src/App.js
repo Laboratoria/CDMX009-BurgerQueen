@@ -23,8 +23,7 @@ const App = () => {
   
   const [order,setOrder] = useState({
     nombreCliente:"",
-    status:false,
-    state: 'placed', // placed= colocada, prepared= parepada, delivered = entregada
+    status: 'placed', // placed= colocada, prepared= parepada, delivered = entregada
     item:[],
     kitchen:[]
   })
