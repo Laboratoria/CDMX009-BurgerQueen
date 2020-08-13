@@ -81,6 +81,7 @@ const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda, deleteItem,sendOr
                 <div className="ticket">
                     <div  id="nameUser">
                         <p className="control has-icons-left has-icons-right">
+                        <label id="clienteL">Nombre cliente:</label>
                         <input
                             id="cliente"
                             className="input is-info is-warning" 
@@ -97,6 +98,7 @@ const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda, deleteItem,sendOr
                     </div>
                     <div  id="numberUser">
                         <p className="control has-icons-left has-icons-right">
+                        <label id="mesaL">Numero de mesa:</label>
                             <input 
                             id="mesa" 
                             className="input is-info is-warning"  
@@ -129,14 +131,14 @@ const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda, deleteItem,sendOr
                                     </th>
 
                                 </tr>
-                                <tr><button onClick = {  () => {sendOrderKitchen({
+                                
+                            </table>
+                            <button onClick = {  () => {sendOrderKitchen({
                                                     cliente,
                                                     nroMesa: nroMesa,
                                                     platillos: comanda,
                                                     precio,
-                                         })} } className="button">Enviar a cocina</button></tr>
-                            </table>
-                               
+                                         })} } className="button">Enviar a cocina</button>
                             
                             </div>
                        

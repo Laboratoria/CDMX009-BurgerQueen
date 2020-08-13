@@ -311,7 +311,7 @@ border-radius: 10px;
 #cliente{
   background: #000000;
   border-radius: 10px;
-   
+  width: 60%;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -322,11 +322,20 @@ border-radius: 10px;
   top: 8px;
   right: 16px;
   font-size: 18px;}
+  #clienteL{
+    font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 42px;
+  border-radius: 10px;
+    width: 50%;
+  
+  }
 
 #mesa{
   background: #000000;
   border-radius: 10px;
-   
+   width: 60%;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
@@ -339,7 +348,23 @@ border-radius: 10px;
   font-size: 18px;
   
   }
-
+  #mesaL{
+  
+    
+     left: 0PX;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+   
+    line-height: 42px;
+    
+    position: absolute;
+    top: 60px;
+    right: 16px;
+    font-size: 18px;
+    
+    }
+  
 
 
 .choose{
