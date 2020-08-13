@@ -11,16 +11,12 @@ import Home from "./components/Home"
 import Cocina from "./components/Cocina"
 import Login from "./components/Login"
 import Meseros from "./components/Meseros"
-import Caja from "./components/Caja"
+
 import {ProductsBF,ProductsFo} from './components/utils/data/Data'
 import {v4 as uuidv4} from "uuid";
-import {db} from "./components/firebase"
+import db from "./firebase"
 
-
-
-const App = () => {
-
-  
+const App = () => {  
   const [order,setOrder] = useState({
     nombreCliente:"",
     status: 'placed', // placed= colocada, prepared= parepada, delivered = entregada

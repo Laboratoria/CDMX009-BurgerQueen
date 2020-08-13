@@ -1,3 +1,6 @@
+import firebase from 'firebase';
+import 'firebase/firestore';
+
 let firebaseConfig = {
     apiKey: "AIzaSyCemCHgLVYbAlEf6RIlSrXf8hNsXSTxWVA",
     authDomain: "burgerqueen-77cb0.firebaseapp.com",
@@ -12,19 +15,8 @@ let firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 
-   const firebase = require("firebase");
 // Required for side-effects
-require("firebase/firestore");
-var db = firebase.firestore();
 
-db.collection("users").add({
-    first: "Ada",
-    last: "Lovelace",
-    born: 1815
-})
-.then(function(docRef) {
-    console.log("Document written with ID: ", docRef.id);
-})
-.catch(function(error) {
-    console.error("Error adding document: ", error);
-});
+ const db = firebase.firestore();
+
+export default db;

@@ -2,9 +2,8 @@ import React, { useEffect, useState, Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Meseros from "./Meseros";
-import { db } from "./firebase";
+import db from "../firebase";
 import Fecha from "./Fecha";
-
 
 const Cocina = () => {
   // TODO: Cambiar de nombre a  "orders", "setOrders"
@@ -56,7 +55,6 @@ const Cocina = () => {
                 <th>Cliente:{order.cliente}</th>
                 <th>Numero de mesa:{order.nroMesa}</th>
               </tr>
-
               <tr>
                 {order.platillos.map((platillo, idx) => (
                   <tr key={`${order.id}-${platillo.nameProduct}-${idx}`}>
@@ -81,7 +79,6 @@ const Cocina = () => {
                   <Fecha />{" "}
                 </th>
               </tr>
-
               <tr>
                 {order.platillos.map((platillo, idx) => (
                   <tr key={`${order.id}-${platillo.nameProduct}-${idx}`}>
