@@ -68,9 +68,6 @@ const App = () => {
         </ul>
 
         <Switch>
-        <Route path="/Caja">
-            <Caja/>
-            </Route>
         <Route path="/Cocina">
             <Cocina />
           </Route>

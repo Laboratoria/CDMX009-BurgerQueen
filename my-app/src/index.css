@@ -248,18 +248,16 @@ border-radius: 50px;
   color: #FAA91F;
 }
 .contentBtns{
+  display: flex;
+  flex-wrap: wrap;
   
-  display:flex;
-  justify-content:center;
-  align-items: center;
- 
 }
 #meseros{
   position: absolute;
 width: 30%;
 height: 100px;
 top:330px;
-left: 900px;
+right: 55%;
 color: #FAA91F;
   font-family: Roboto Mono;
 font-style: normal;
@@ -276,7 +274,7 @@ border-radius: 10px;
 width: 30%;
 height: 100px;
 top:330px;
-left: 50px;
+left:55%;
 color: #FAA91F;
   font-family: Roboto Mono;
 font-style: normal;
