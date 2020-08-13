@@ -259,7 +259,7 @@ border-radius: 50px;
 width: 30%;
 height: 100px;
 top:330px;
-left: 200px;
+left: 900px;
 color: #FAA91F;
   font-family: Roboto Mono;
 font-style: normal;
@@ -276,7 +276,7 @@ border-radius: 10px;
 width: 30%;
 height: 100px;
 top:330px;
-left: 700px;
+left: 50px;
 color: #FAA91F;
   font-family: Roboto Mono;
 font-style: normal;
@@ -284,6 +284,22 @@ font-weight: normal;
 font-size: 40px;
 line-height: 75px;
 background-color : #000000;
+border-radius: 10px;
+
+}
+#caja{
+  position: absolute;
+width: 30%;
+height: 100px;
+top:330px;
+left: 500px;
+color: #FAA91F;
+  font-family: Roboto Mono;
+font-style: normal;
+font-weight: normal;
+font-size: 40px;
+line-height: 75px;
+background-color: #000000;
 border-radius: 10px;
 
 }
@@ -369,3 +385,35 @@ th, td {
 }
 
 tr:hover {background-color:#f5f5f5;}
+
+.showComponents{
+  width: 30%;
+  margin : 3%;
+  background-color: #FAA91F;
+
+}
+.showComponents-verde{
+  width: 30%;
+  margin : 3%;
+  background-color: #00bb2d ;
+}
+.contentKitchen{
+  width: 90%;
+  margin:5%;
+  top: 120px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+ 
+}
+.eachOrder{
+  text-align: center;
+  width: 40%;
+  margin:5%;
+  background: #FFFFFF;
+border: 5px solid #000000;
+box-sizing: border-box;
+border-radius: 10px;
+padding: 5%;
+}

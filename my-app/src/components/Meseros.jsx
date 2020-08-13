@@ -10,6 +10,7 @@ import Desayuno from "./Desayuno/Desayuno";
 
 
 
+
 const Platillo = ({id, nombre, precio, deleteItem}) => (
     <tr>
         <td>{nombre}</td>
@@ -110,6 +111,7 @@ const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda, deleteItem,sendOr
                         </p>
                         </div>
                         <div>
+        
                             <table>
                                 <tr>
                                     <th>Plato</th>
@@ -128,10 +130,10 @@ const Meseros =({ProductsBF,addItemToOrder,ProductsFo,comanda, deleteItem,sendOr
 
                                 </tr>
                                 <tr><button onClick = {  () => {sendOrderKitchen({
-                                                     cliente,
-                                                nroMesa: nroMesa,
-                                                platillos: comanda,
-                                                        precio,
+                                                    cliente,
+                                                    nroMesa: nroMesa,
+                                                    platillos: comanda,
+                                                    precio,
                                          })} } className="button">Enviar a cocina</button></tr>
                             </table>
                                
