@@ -17,6 +17,7 @@ let firebaseConfig = {
 require("firebase/firestore");
 var db = firebase.firestore();
 
+<<<<<<< HEAD
 db.collection("users").add({
     first: "Ada",
     last: "Lovelace",
@@ -28,3 +29,7 @@ db.collection("users").add({
 .catch(function(error) {
     console.error("Error adding document: ", error);
 });
+=======
+  const fb = firebase.initializeApp(firebaseConfig);
+  export const db = fb.firestore();
+>>>>>>> 30191cf35fb5befc6dd9ad2aa5f5820ccad49298
