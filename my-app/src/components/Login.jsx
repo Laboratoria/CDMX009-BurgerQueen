@@ -8,7 +8,7 @@ import {
 
 const Login =() =>{
     return(
-        <div>
+        <div className="bodyL">
             <div className="contentLogin">
                 <div className="contentB"></div>
                 <div className="contentY"></div>
