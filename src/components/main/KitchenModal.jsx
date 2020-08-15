@@ -1,75 +1,21 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom';
 import dbDate from '../common/dbDate'
-import { useToasts } from 'react-toast-notifications'
+import {timerRender, employeeElement, cancelOrderBtn, timeDoneElement, customerElement, totalElement} from '../common/kitchenModalFunctions'
 
 const modal = document.querySelector('#modal-root');
 
-const KitchenModal = ({isOpened, setOpened, orderSelected, value, updateOrder, modalStatusClass, orderStatusClass}) => {
-    
-    const { addToast } = useToasts();
-    //let [sec, setSec] = useState(50);
-    
-    /*
-    useEffect(() => {
-        
-        setInterval(() => { 
-            
-            return sec === 59 ? setSec(0) : setSec(sec=>sec+1);
-                
-        }, 1000);
-        
-    },[])
-    */
-   function employeeElement(){
-        if(orderSelected.listo === true){
-            return <td><span>Mesero: </span>{orderSelected.mesero}</td>
-        } else{
-            return <td><span>Cocinero: </span>{orderSelected.cocinero}</td>
-        }
-   }    
-   
-    function timeDoneElement(){
-        if(orderSelected.listo === true){
-            return <td><span>Listo: </span> {dbDate(orderSelected.horaListo)}</td>
-        } else{
-            return <td><span>Preparación: </span> {orderSelected.preparando === false ? null : dbDate(orderSelected.horaPreparacion) }</td>
-        }
-    } 
-    
-    function customerElement(){
-        if(orderSelected.listo === true){
-            return <tr>
-                     <td><span>Cliente: </span> {orderSelected.cliente}</td>
-                     <td><span>Mesa: </span> {orderSelected.mesa}</td>
-                   </tr>
-        } else{
-            return 
-        }
-    } 
-
-    function totalElement(){
-        if(orderSelected.listo === true){
-            return  <tfoot>
-                        <tr>
-                            <td></td> 
-                            <td></td>    
-                            <td className="table-total"><span>Total: </span></td>
-                            <td className="table-total-cant"><span>$ {orderSelected.total}</span></td>          
-                        </tr>                       
-                    </tfoot> 
-        } else{
-            return 
-        }
-   } 
-
+const KitchenModal = ({isOpened, setOpened, orderSelected, 
+    value, updateOrder, modalStatusClass, orderStatusClass, 
+    sec, setSec, min, setMin, hour, setHour}) => {
+ 
     if(isOpened){
         return ReactDOM.createPortal(
         <div className="modal-container" >
             <div className="modal-block">
                 <div className={modalStatusClass}>
                 </div>
-                <h3 className={orderStatusClass}>
+                <h3 className={orderSelected.status === 'CANCELADO' ? 'order-canceled' : orderStatusClass}>
                             {orderSelected.status}</h3>
                 <hr/>
                 <div className="modal-header">
@@ -82,12 +28,13 @@ const KitchenModal = ({isOpened, setOpened, orderSelected, value, updateOrder, m
                     </thead>
                     <tbody> 
                         <tr>
-                            {employeeElement()}
-                            {timeDoneElement()}
+                            {employeeElement(orderSelected)}
+                            {timeDoneElement(orderSelected)}
                         </tr>
-                        {customerElement()}
+                        {customerElement(orderSelected)}
                     </tbody>      
                 </table>
+                
                 </div>
                 <hr/>
                 <div className="modal-body">
@@ -112,9 +59,10 @@ const KitchenModal = ({isOpened, setOpened, orderSelected, value, updateOrder, m
                                 )
                             )}
                         </tbody> 
-                        {totalElement()}   
+                        {totalElement(orderSelected)}   
                     </table>
                 </div>
+                {timerRender(orderSelected, sec, setSec, min, setMin, hour, setHour)}
                 <div className="modals-btns-container">
                     <input className="active-menu-btn" 
                             type="button" 
@@ -124,7 +72,8 @@ const KitchenModal = ({isOpened, setOpened, orderSelected, value, updateOrder, m
                             type="button" 
                             value="Cancelar" 
                             onClick={()=> {setOpened(false)}}/>
-                </div>   
+                </div> 
+                {cancelOrderBtn(orderSelected, setOpened)}  
             </div>    
         </div>,
         modal

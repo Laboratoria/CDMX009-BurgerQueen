@@ -2,10 +2,12 @@ import React from 'react';
 import Logo from '../common/Logo'
 import Button from '../common/Button'
 import {NavLink} from 'react-router-dom'
+import ordersAlertNum from '../common/ordersAlertNum'
 
-let MainNavBar = ({employee, statusMenu ,statusKitchen, statusOrders}) => {
-   
-    return (
+
+let MainNavBar = ({employee, statusMenu ,statusKitchen, statusOrders, rol, ordersAlert}) => {
+  
+  return (
       <nav className="main-nav">
         <Logo className="nav-logo"/>
         <div>
@@ -21,19 +23,19 @@ let MainNavBar = ({employee, statusMenu ,statusKitchen, statusOrders}) => {
             value="Cocina"
             />
           </NavLink>
-          <NavLink  to='/ordenes'>  
-            <Button 
-            className={statusOrders} 
-            value="Órdenes"
-            />
-          </NavLink>  
+          <div className='orders-btn'>
+            <NavLink  to='/ordenes'>  
+              <Button 
+              className={statusOrders} 
+              value="Órdenes"
+              />
+            </NavLink>
+            {ordersAlertNum(ordersAlert, employee)}
+          </div>  
         </div>
-        <p>Usuario: {employee}</p>
-        
-        
+        <p>{rol.toUpperCase()}: {employee}</p> 
       </nav>
     );
-
 }
  
 export default MainNavBar;
