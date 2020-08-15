@@ -7,75 +7,12 @@ import KitchenModal from './KitchenModal';
 import { useToasts } from 'react-toast-notifications';
 import actionDenied from '../common/actionDenied';
 import dbDate from '../common/dbDate'
-
-function updateKitchenOrder(id, preparando, employee, addToast, setOpened){
-  console.log(id, preparando)
-  const db = firebase.firestore();
-  if(preparando){
-     console.log('preparando') 
-     let orderNotDone = 0;
-     document.querySelectorAll('.orderDone').forEach((e)=>{
-          if(e.checked === false){
-              orderNotDone ++
-          }
-      })
-      console.log(orderNotDone);
-      if(orderNotDone !== 0){
-          addToast('Aún faltan platillos por preparar', {
-              autoDismiss: true,
-              placement:'top-center', 
-              appearance: 'warning' 
-            })
-      }else{
-          
-          db.collection('orders').doc(id).update({
-              'horaListo': new Date(),
-              'preparando': false,
-              'listo': true,
-              'entregado':false, 
-              'pagado': false,
-              'status': 'Por entregar'
-          }).then(()=>{
-              console.log('orden enviada correctamente')
-              addToast('La orden se ha enviado exitosamente', {
-                placement:'top-center', 
-                appearance: 'success' 
-              })
-              setOpened(false)
-            }).catch(err=>{
-              console.log(err);
-              addToast('Hubo un error al enviar la orden', {
-                  placement:'top-center', 
-                  appearance: 'error' 
-                })
-            })  
-      }
-  }else{
-      console.log('iniciando preparacion')
-      db.collection('orders').doc(id).update({
-          'horaPreparacion': new Date(),
-          'preparando': true,
-          'status': 'Preparando',
-          'cocinero': employee 
-      }).then(()=>{
-          console.log('orden enviada correctamente')
-          addToast('La orden se ha enviado exitosamente', {
-            placement:'top-center', 
-            appearance: 'success' 
-          })
-          setOpened(false)
-        }).catch(err=>{
-          console.log(err);
-          addToast('Hubo un error al enviar la orden', {
-              placement:'top-center', 
-              appearance: 'error' 
-            })
-        })    
-  }
-}
+import timer from '../common/timer'
+import sortOrders from '../common/sortOrders'
+import updateKitchenOrder from '../common/updateKitchenOrder'
 
 
-function Kitchen({employee, role}) {
+function Kitchen({employee, role, ordersAlert}) {
   const { addToast } = useToasts()
   let statusMenu = "nav-btn";
   let statusKitchen = "active-btn";
@@ -84,8 +21,9 @@ function Kitchen({employee, role}) {
   let [orderDoing, setOrderDoing] = useState([]);
   let [isOpened, setOpened] = useState(false);
   let [orderSelected, setOrderSelected] = useState('');
-  let [] = useState();
-
+  let [sec, setSec] = useState(0);
+  let [min, setMin] = useState(0);
+  let [hour, setHour] = useState(0);
 
   useEffect(() => {
    
@@ -93,32 +31,39 @@ function Kitchen({employee, role}) {
     db.collection('orders').onSnapshot((data)=>{
       const waiting = data.docs.filter(doc => doc.data().preparando === false && doc.data().listo === false)
       const doing = data.docs.filter(doc => doc.data().preparando === true && doc.data().listo === false)
-      setOrderWaiting(waiting.map(w => w.data())); 
-      setOrderDoing(doing.map(w => w.data()));     
+      
+      setOrderWaiting(sortOrders(waiting)); 
+      setOrderDoing(sortOrders(doing));     
     })
   },[])
 
     function renderOrder(item){
       setOpened(true);
       setOrderSelected(item);
+      if(item.preparando==true){
+        let timerData = timer(item.horaPreparacion)
+        setHour(timerData.hours);
+        setMin(timerData.minutes);
+        setSec(timerData.seconds);
+      }
     }  
 
-    console.log('waiting=>',orderWaiting)
-    console.log('doing=>',orderDoing)
-    
     return (
       <div  className="main-container">
          <MainNavBar 
          employee={employee}
+         rol={role}
          statusMenu={statusMenu}
          statusKitchen={statusKitchen}
-         statusOrders={statusOrders}  
+         statusOrders={statusOrders}
+         ordersAlert={ordersAlert}  
          />
         <div className="kitchen-cards-main">
           <div className="kitchen-cards-doing">
             {orderDoing.map(item=> 
             <KitchenCard
                item={item}
+               role={role}
                borderClass={item.cocinero === employee ? 'border-green' : ''}
                statusClass={'status-green'}
                horaPreparacion={item.preparando === false ? null : dbDate(item.horaPreparacion) }
@@ -136,6 +81,7 @@ function Kitchen({employee, role}) {
           {orderWaiting.map(item=> 
             <KitchenCard
                item={item}
+               role={role}
                statusClass={'status-red'}
                onClickOrder={()=>{
                   if(role === 'mesero'){
@@ -157,7 +103,13 @@ function Kitchen({employee, role}) {
             orderStatusClass={orderSelected.preparando === false ? 'status-red' : 'status-green'}
             updateOrder={()=> {updateKitchenOrder(orderSelected.id, orderSelected.preparando, employee, addToast, setOpened)}}
             value={orderSelected.preparando === false ? "Preparar" : "Listo"}
-            orderSelected={orderSelected}             
+            orderSelected={orderSelected}   
+            sec={sec}
+            setSec={setSec}
+            min={min}
+            setMin={setMin}
+            hour={hour}
+            setHour={setHour}  
             />
         </div>   
       </div>

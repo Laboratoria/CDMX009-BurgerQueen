@@ -6,9 +6,10 @@ import Kitchen from '../main/Kitchen'
 import Orders from '../main/Orders'
 
 export default function Routes(){
-    let [islogin,setIslogin]=useState(true)
+    let [islogin,setIslogin]=useState(false)
     let [employee, setEmployee]= useState("");
     let [role, setRole] = useState('');
+    let [ordersAlert, setOrdersAlert] = useState();
 
     return (
         <Switch>
@@ -18,18 +19,23 @@ export default function Routes(){
                         <Menu 
                         employee={employee}
                         role={role}
+                        ordersAlert={ordersAlert}
+                        setOrdersAlert={setOrdersAlert}
                         />} 
                     /> 
                     <Route exact path="/cocina" render = {() => 
                         <Kitchen 
                         employee={employee}
                         role={role}
+                        ordersAlert={ordersAlert}
                         />} 
                     />
                     <Route exact path="/ordenes" render = {() => 
                         <Orders 
                         employee={employee}
                         role={role}
+                        setOrdersAlert={setOrdersAlert}
+                        ordersAlert={ordersAlert}
                         />} 
                     />  
                 </Fragment>

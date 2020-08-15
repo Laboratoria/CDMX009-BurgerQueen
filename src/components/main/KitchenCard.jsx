@@ -1,30 +1,10 @@
 import React from 'react'
 import dbDate from '../common/dbDate'
+import {cancelOrderBtn, timeDoneElement, timeDeliveredElement} from '../common/kitchenCardFunctions'
 
 
-
-const KitchenCard = ({item, onClickOrder, borderClass, statusClass, horaPreparacion}) => {
- 
-function timeDoneElement(){
-    if(item.listo === true){
-        return <td><span>Listo: </span> {dbDate(item.horaListo)}</td>
-    } else{
-        return <td><span>Preparación: </span> {horaPreparacion}</td>
-    }
-}  
-
-function timeDeliveredElement(){
-    if(item.listo === true){
-        return <tr>
-                 <td></td>
-                 <td><span>Entregado: </span> {item.entregado === true ? dbDate(item.horaEntrega) : null}</td>
-               </tr>
-    }else{
-        return 
-    }
-} 
- 
- 
+const KitchenCard = ({item, role, onClickOrder, borderClass, statusClass, horaPreparacion}) => {
+  
     return (
         <div className={`kitchen-card-container ${borderClass} `}>
             <div>
@@ -33,7 +13,7 @@ function timeDeliveredElement(){
                         <tr>
                             <td><span>No. de Orden: </span> {item.numOrden}</td>
                             <td><h3 
-                            className={statusClass}>
+                            className={item.status === 'CANCELADO' ? 'order-canceled' : statusClass}>
                             {item.status}</h3></td>
                         </tr>
                     </thead>
@@ -45,13 +25,13 @@ function timeDeliveredElement(){
                         </tr>
                         <tr>
                             <td><span>Mesero: </span>{item.mesero}</td>
-                            {timeDoneElement()}
+                            {timeDoneElement(item, horaPreparacion)}
                         </tr>
                         <tr>
                             <td><span>Cliente: </span> {item.cliente}</td>
                             <td><span>Mesa: </span> {item.mesa}</td>
                         </tr>
-                        { timeDeliveredElement() }
+                        { timeDeliveredElement(item) }
                     </tbody>      
                 </table>
                            
@@ -61,7 +41,9 @@ function timeDeliveredElement(){
                     value="Ver"
                     onClick={onClickOrder} 
                 />
+                 
             </div>
+            {cancelOrderBtn(item, role)} 
         </div>
     )
 }
