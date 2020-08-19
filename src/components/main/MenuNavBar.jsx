@@ -8,11 +8,7 @@ let MenuNavBar = ({setMenuBtn}) => {
    let [statusDrinks,setStatusDrinks] = useState("menu-nav-btn");
    let [statusSides,setStatusSides] = useState("menu-nav-btn"); 
 
-  useEffect(()=>{
-      
-  })
-
-  function clickBtn(statusBtn, menuBtn){
+   function clickBtn(statusBtn, menuBtn){
     setStatusBreakfast("menu-nav-btn");
     setStatusHamburgers("menu-nav-btn");
     setStatusDrinks("menu-nav-btn");

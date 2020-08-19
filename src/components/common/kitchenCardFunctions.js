@@ -28,20 +28,17 @@ export function cancelOrderBtn(item, role){
 }
 
 export function timeDoneElement(item, horaPreparacion){
-    if(item.listo === true){
-        return <td><span>Listo: </span> {dbDate(item.horaListo)}</td>
-    } else{
-        return <td><span>Preparación: </span> {horaPreparacion}</td>
-    }
+    return item.listo 
+     ? <td><span>Listo: </span> {dbDate(item.horaListo)}</td>
+     : <td><span>Preparación: </span> {horaPreparacion}</td>
 }  
 
 export function timeDeliveredElement(item){
-    if(item.listo === true){
-        return <tr>
-                 <td></td>
-                 <td><span>Entregado: </span> {item.entregado === true ? dbDate(item.horaEntrega) : null}</td>
-               </tr>
-    }else{
-        return 
-    }
+    return item.listo ?  (
+        <tr>
+          <td></td>
+          <td><span>Entregado: </span> {item.entregado === true ? dbDate(item.horaEntrega) : null}</td>
+        </tr>
+        ) : null
 } 
+

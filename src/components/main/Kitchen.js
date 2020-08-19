@@ -66,7 +66,7 @@ function Kitchen({employee, role, ordersAlert}) {
                role={role}
                borderClass={item.cocinero === employee ? 'border-green' : ''}
                statusClass={'status-green'}
-               horaPreparacion={item.preparando === false ? null : dbDate(item.horaPreparacion) }
+               horaPreparacion={item.preparando && dbDate(item.horaPreparacion)}
                onClickOrder={()=>{
                   if(role === 'mesero'){
                     actionDenied(addToast);
@@ -102,7 +102,7 @@ function Kitchen({employee, role, ordersAlert}) {
             modalStatusClass={orderSelected.preparando === false ? "modal-status-off" : "modal-status-on"}
             orderStatusClass={orderSelected.preparando === false ? 'status-red' : 'status-green'}
             updateOrder={()=> {updateKitchenOrder(orderSelected.id, orderSelected.preparando, employee, addToast, setOpened)}}
-            value={orderSelected.preparando === false ? "Preparar" : "Listo"}
+            value={orderSelected.preparando ? 'Listo' : 'Preparar'}
             orderSelected={orderSelected}   
             sec={sec}
             setSec={setSec}

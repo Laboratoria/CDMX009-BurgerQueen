@@ -5,7 +5,7 @@ import {NavLink} from 'react-router-dom'
 import ordersAlertNum from '../common/ordersAlertNum'
 
 
-let MainNavBar = ({employee, statusMenu ,statusKitchen, statusOrders, rol, ordersAlert}) => {
+const MainNavBar = ({employee, statusMenu ,statusKitchen, statusOrders, rol, ordersAlert}) => {
   
   return (
       <nav className="main-nav">

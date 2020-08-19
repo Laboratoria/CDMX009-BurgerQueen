@@ -6,9 +6,7 @@ function App() {
     
   return (
   <ToastProvider>
-  <div>
-     <Routes/>     
-    </div>
+    <Routes/>     
   </ToastProvider>  
     
   );

@@ -46,26 +46,22 @@ export function Login({setIslogin, setEmployee, setRole}) {
         <Logo className={"logo-circle"}/>
         <div className='login-input'>
           <input type="text" 
-          id="loginUser" 
-          name="" 
-          placeholder='Username'
-          onChange={(e)=>setUsername(e.target.value)}  
+            id="loginUser" 
+            name="" 
+            placeholder='Username'
+            onChange={(e)=>setUsername(e.target.value)}  
           />
           <input type="password" 
-          id="loginPsw" name="" 
-          placeholder='Password'
-          onChange={(e)=>setPassword(e.target.value)}  
+            id="loginPsw" name="" 
+            placeholder='Password'
+            onChange={(e)=>setPassword(e.target.value)}  
           />
           <input type="button" 
-          id="loginBtn" 
-          value="Enter" 
-          onClick={enter}/>
+            id="loginBtn" 
+            value="Enter" 
+            onClick={enter}
+          />
         </div>
       </div>  
     );
   }
-  
-  
-  
-  
-  
