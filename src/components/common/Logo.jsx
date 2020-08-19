@@ -6,8 +6,6 @@ export default function Logo({className}) {
          <div className={className}>
           <img src={logoImage} className={className} alt="logo" />
         </div>
-      
-      
     );
   }
 

@@ -28,8 +28,6 @@ export function addProduct(cardItem, products, setProducts){
 }
 
 export function subtractProduct(orderItem,  products, setProducts){
-   
-  console.log('quita producto', orderItem);
   
   if(orderItem.number > 1){
     const newProducts = products.map((newItem) => {
@@ -60,9 +58,6 @@ export function compareProduct(cardItem, setOpened, setBurger, products, setProd
 } 
 
 export function addBurger(burger, flavor, setFlavor, products, setProducts ){
-  console.log('se mando sabor y extra', burger);
-  console.log(flavor);
- // console.log(extra);
   let cardItem = {
     id: burger.id+flavor.id,
     name: `${burger.name} ${flavor.name}`,
@@ -81,7 +76,6 @@ export function addBurger(burger, flavor, setFlavor, products, setProducts ){
     }  
  })
 
-  console.log(extras);
   if(extras.length !== 0){
     for(let i in extras){
       cardItem = {
@@ -96,7 +90,6 @@ export function addBurger(burger, flavor, setFlavor, products, setProducts ){
     id: 'f1',
     name: 'res' 
   });
-  
+
   addProduct(cardItem, products, setProducts);
-  console.log(cardItem);
 }
