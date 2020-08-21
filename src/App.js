@@ -8,7 +8,6 @@ function App() {
   <ToastProvider>
     <Routes/>     
   </ToastProvider>  
-    
   );
 }
 
