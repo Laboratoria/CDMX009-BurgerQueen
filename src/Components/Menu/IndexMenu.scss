@@ -1,0 +1,88 @@
+@font-face{
+    font-family: Victoria Melody;
+    src: url('../../Assets/fonts/Victoria\ Melody.otf')
+}
+$bqcream: #FCFAE3;
+$bqpink: #FF7BAC;
+$bqgreen: #1EBC9E;
+$btMenu: '../Assets/btnMenu.png';
+$fontTitles: Victoria Melody;
+$medium: futura medium bt;
+
+@mixin container {
+    border-radius: 10px;
+    border: solid $bqgreen 5pt;
+    background-color: $bqcream;
+}
+
+@font-face{
+    font-family: futura medium bt;
+    src: url('../../Assets/fonts/futura\ medium\ bt.ttf');
+}
+
+.card {
+    margin: 1rem;
+}
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ant-modal-content{
+    @include container;
+
+}
+.ant-modal-close-x{
+    position: relative;
+    width: 3rem;
+    height: 1rem;
+    line-height: 20px;
+    color: $bqpink;
+    display:none;
+}
+.order{
+    display: flex;
+    flex-direction: column;
+}
+.btnMenu{
+    position: fixed;
+    margin: 0rem 4rem;
+
+}
+.menu{
+    margin-top: 6rem;
+    overflow: scroll;
+}
+.btnAgregar{
+    font-size: 25px;
+}
+.quantityDiv{
+    display: flex;
+    flex-direction: row;
+    button{
+        background: none;
+        border: none;
+        color: $bqpink;
+        font-size: 22pt;
+        font-weight: bold;
+    }
+    h5{
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        margin-bottom: 0px;
+        margin-right: 10px;
+        padding-top: 15px;;
+    }
+}
+.inputQuantity{
+    width: 40px;
+    background: none;
+    border: none;
+    font-size: 15pt;
+    padding-left: 15px;
+}
+.ant-card-meta-title{
+    font-family: $medium;
+}

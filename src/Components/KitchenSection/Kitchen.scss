@@ -1,0 +1,29 @@
+$bqcream: #FCFAE3;
+$bqpink: #FF7BAC;
+$bqgreen: #1EBC9E;
+$btMenu: '../Assets/btnMenu.png';
+
+.pendings {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: scroll;
+}
+.pendingOrders {
+    width: 100%;
+    margin: 1rem;
+}
+.pendingOrderButton {
+    width: 100%;
+    height: 50px;
+    background-color: $bqpink;
+    border-radius: 10px;
+    border: none;
+}
+.ant-btn-primary:focus{
+    background-color: $bqgreen;
+}
+h3{
+    display: flex;
+    justify-content: center;
+}

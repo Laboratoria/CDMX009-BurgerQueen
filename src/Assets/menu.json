@@ -1,0 +1,84 @@
+{
+    "desayuno": [
+        {
+            "id": 1,
+            "item": "Café americano",
+            "precio": 5,
+            "imagen": "./Products/cafe.png"
+        },
+        {
+            "id": 2,
+            "item": "Café con leche",
+            "precio": 7,
+            "imagen": "./Products/cafeLeche.png"
+        },
+        {
+            "id": 3,
+            "item": "Sandwich de jamón y queso",
+            "precio": 10,
+            "imagen": "./Products/sandwich.png"
+
+        },
+        {
+            "id": 4,
+            "item": "Jugo de frutas natural",
+            "precio": 7,
+            "imagen": "./Products/jugo.png"
+        }
+    ],
+    "comida": [
+        {
+            "id": 5,
+            "item": "Hamburguesa simple",
+            "precio": 10,
+            "opciones": ["res", "pollo", "vegetariana"],
+            "extras": ["queso", "huevo"],
+            "imagen": "../Products/burger.png"
+        },
+        {
+            "id": 6,
+            "item": "Hamburguesa doble",
+            "precio": 15,
+            "opciones": ["res", "pollo", "vegetariana"],
+            "extras": ["queso", "huevo"],
+            "imagen": "../Products/doble.png"
+        },
+        {
+            "id": 7,
+            "item": "Papas fritas",
+            "precio": 5,
+            "imagen":"../Products/papas.png"
+        },
+        {
+            "id": 8,
+            "item": "Aros de cebolla",
+            "precio": 5,
+            "imagen": "../Products/cebolla.png"
+        },
+        {
+            "id": 9,
+            "item": "Agua 500ml",
+            "precio": 5,
+            "imagen":"../Products/jugo.png"
+        },
+        {
+            "id": 10,
+            "item": "Agua 750ml",
+            "precio": 7,
+            "imagen":"../Products/jugo.png"
+        },
+        {
+            "id": 11,
+            "item": "Bebida/gaseosa 500ml",
+            "precio": 7,
+            "imagen":"../Products/refresco.png"
+        },
+        {
+            "id": 12,
+            "item": "Bebida/gaseosa 750ml",
+            "precio": 10,
+            "imagen":"../Products/refresco.png"
+        }
+
+    ]
+}
