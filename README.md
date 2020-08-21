@@ -4,7 +4,7 @@ BurgerIxtli es una single page application (**SPA**) desarrollada para un restau
 
 Demo: https://burger-queen-e24cd.web.app/
 
-<img src="readme_images/burgerixtli.gif" alt="burgerixtli" width="200"/>
+<img src="readme_images/burgerixtli.gif" alt="burgerixtli" width="500"/>
 
 ## Desarrollo
 
@@ -13,15 +13,15 @@ Esta aplicación fue diseñada para usarse en un dispositivo tablet y está desa
 ### Mockup
 
 <img src="readme_images/logoBurgerixtli.png" alt="burgerixtli" width="200"/>
-<img src="readme_images/burgerixtli_login.png" alt="burgerixtli" width="200"/>
-<img src="readme_images/burgerixtli_menu.png" alt="burgerixtli" width="200"/>
-<img src="readme_images/burgerixtli_menu_modal.png" alt="burgerixtli" width="200"/>
-<img src="readme_images/burgerixtli_mesero_alerta.png" alt="burgerixtli" width="200"/>
-<img src="readme_images/burgerixtli_cocina.png" alt="burgerixtli" width="200"/>
-<img src="readme_images/burgerixtli_cocina_modal.png" alt="burgerixtli" width="200"/>
-<img src="readme_images/burgerixtli_cocina_cancel_alert.png" alt="burgerixtli" width="200"/>
-<img src="readme_images/burgerixtli_ordenes.png" alt="burgerixtli" width="200"/>
-<img src="readme_images/burgerixtli_ordenes_modal.png" alt="burgerixtli" width="200"/>
+<img src="readme_images/burgerixtli_login.png" alt="burgerixtli" width="500"/>
+<img src="readme_images/burgerixtli_menu.png" alt="burgerixtli" width="500"/>
+<img src="readme_images/burgerixtli_menu_modal.png" alt="burgerixtli" width="500"/>
+<img src="readme_images/burgerixtli_mesero_alerta.png" alt="burgerixtli" width="500"/>
+<img src="readme_images/burgerixtli_cocina.png" alt="burgerixtli" width="500"/>
+<img src="readme_images/burgerixtli_cocina_modal.png" alt="burgerixtli" width="500"/>
+<img src="readme_images/burgerixtli_cocina_cancel_alert.png" alt="burgerixtli" width="500"/>
+<img src="readme_images/burgerixtli_ordenes.png" alt="burgerixtli" width="500"/>
+<img src="readme_images/burgerixtli_ordenes_modal.png" alt="burgerixtli" width="500"/>
  
 ## Criterios de aceptación del proyecto
 
