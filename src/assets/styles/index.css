@@ -1,0 +1,76 @@
+@font-face {
+  font-family: font-text;
+  src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+div{
+    border: 1px solid red;
+}*/
+.login-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../images/background.png);
+  /*margin-top: 10%;*/
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.logo-circle {
+  border-radius: 50%;
+  background-color: #ffa902;
+  /*opacity: 0.8;*/
+  width: 300px;
+}
+
+.logo-circle img {
+  width: 300px;
+}
+
+.login-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 40px;
+}
+
+.login-input input {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 7px;
+  padding: 10px;
+  width: 350px;
+  height: 50px;
+  border-radius: 15px;
+  font-size: x-large;
+  border-style: none;
+  font-family: font-text;
+}
+
+.login-input #loginBtn {
+  color: #ffa902;
+  background-color: #161616;
+}
+/*# sourceMappingURL=index.css.map */
