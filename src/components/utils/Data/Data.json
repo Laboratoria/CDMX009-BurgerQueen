@@ -1,0 +1,140 @@
+{
+  "breakfast": [
+    {
+      "id": 1,
+      "productName": "Sandwitch de hummus",
+      "kind": "Breakfast",
+      "image": "sandwich-hummus",
+      "cost": 70
+    },
+    {
+      "id": 2,
+      "productName": "Té chai",
+      "kind": "Breakfast",
+      "image": "te-chai-breakfast",
+      "cost": 60
+    },
+    {
+      "id": 3,
+      "productName": "Café americano",
+      "kind": "Breakfast",
+      "image": "american-coffee",
+      "cost": 40
+    },
+    {
+      "id": 4,
+      "productName": "Jugo natural",
+      "kind": "Breakfast",
+      "image": "natural-juice",
+      "cost": 35
+    }
+  ],
+  "hamburger": [
+    {
+      "id": 5,
+      "productName": "Hamburguesa sencilla",
+      "kind": "burger",
+      "image": "simple-burger",
+      "cost": 80
+    },
+    {
+      "id": 6,
+      "productName": "Hamburguesa doble",
+      "kind": "burger",
+      "image": "double-burger",
+      "cost": 130
+    }
+  ],
+  "ingredients": [
+    {
+      "id": 7,
+      "productName": "Ingrediente portobello",
+      "kind": "ingredient",
+      "image": "portobello",
+      "cost": 0
+    },
+    {
+      "id": 8,
+      "productName": "Ingrediente soya",
+      "kind": "ingredient",
+      "image": "soya",
+      "cost": 0
+    },
+    {
+      "id": 9,
+      "productName": "Ingrediente granos",
+      "kind": "ingredient",
+      "image": "grains",
+      "cost": 0
+    }
+  ],
+  "extras": [
+    {
+      "id": 10,
+      "productName": "Guacamole",
+      "kind": "extras",
+      "image": "guacamole",
+      "cost": 50
+    },
+    {
+      "id": 11,
+      "productName": "Veganesa",
+      "kind": "extras",
+      "image": "veganessa",
+      "cost": 20
+    }
+  ],
+  "drinks": [
+    {
+      "id": 12,
+      "productName": "Tapioca",
+      "kind": "drinks",
+      "image": "tapioca",
+      "cost": 80
+    },
+    {
+      "id": 13,
+      "productName": "Agua del día",
+      "kind": "drinks",
+      "image": "water",
+      "cost": 30
+    },
+    {
+      "id": 14,
+      "productName": "Leche de coco",
+      "kind": "drinks",
+      "image": "milk-coconut",
+      "cost": 20
+    },
+    {
+      "id": 15,
+      "productName": "Té chai",
+      "kind": "drinks",
+      "image": "te-chai-burger",
+      "cost": 60
+    }
+  ],
+  "accompaniments": [
+    {
+      "id": 16,
+      "productName": "Hummus",
+      "kind": "accompaniment",
+      "image": "hummus",
+      "cost": 50
+    },
+    {
+      "id": 17,
+      "productName": "Papas",
+      "kind": "accompaniment",
+      "image": "fries",
+      "cost": 5
+    },
+    {
+      "id": 18,
+      "productName": "Ensalada",
+      "kind": "accompaniment",
+      "image": "salad",
+      "cost": 70
+    }
+  ]
+}

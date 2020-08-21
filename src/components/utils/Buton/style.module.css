@@ -1,0 +1,32 @@
+.btnNav {
+	margin: 10px;
+}
+
+.btnNav:hover {
+	opacity: 0.8;
+	transform: scale(1.02);
+	cursor: pointer;
+}
+
+.containerItem {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.iconProduct {
+	cursor: pointer;
+	color: #f5c6c6;
+	font-size: 25px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.containerIcons {
+	display: flex;
+	justify-content: space-around;
+}
+
+p {
+	margin: 0px;
+}

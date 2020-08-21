@@ -1,0 +1,17 @@
+.buttonNext {
+    color: #ffffff;
+    background: #F5C6C6;
+   /*  #AADAD2 */
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+    padding: 5px;
+    color: rgb(56, 57, 58);
+    text-decoration: none;
+    width: 150px;
+
+}
+
+.buttonNext:hover{
+    /* prueba */
+    opacity: 0.8;
+}

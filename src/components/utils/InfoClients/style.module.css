@@ -1,0 +1,39 @@
+.clientData {
+  margin-top: 40px;
+  margin-left: 50px;
+  margin-right: 50px;
+  display: flex;
+  justify-content: space-around;
+  color: #ffffff;
+  margin-bottom: 40px;
+}
+
+.paragraph {
+  text-align: center;
+  margin-left: 120px;
+  margin-right: 120px;
+  margin-bottom: -20px;
+}
+
+.contentButtonNext {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 70px;
+}
+
+.buttonNext {
+  color: #ffffff;
+  background: #f5c6c6;
+  /*  #AADAD2 */
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  padding: 5px;
+  color: rgb(56, 57, 58);
+  text-decoration: none;
+  width: 180px;
+}
+
+.buttonNext:hover {
+  /* prueba */
+  opacity: 0.8;
+}

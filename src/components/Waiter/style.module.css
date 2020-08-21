@@ -1,0 +1,22 @@
+
+.containerPrincipal{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  margin-top: 150px;
+}
+
+.containerEmployee{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 30px;
+  margin-left: 70px;
+  margin-right: 70px;
+  margin-bottom: 30px;
+  text-align: center;
+  height: 200px;
+}
+
+
