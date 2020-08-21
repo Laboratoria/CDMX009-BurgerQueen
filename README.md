@@ -1,8 +1,16 @@
 # Proyecto: BurgerIxtli
 
-BurgerIxtli es una single page application (**SPA**) desarrollada para un restaurante 24 horas de comida rápida. Esta construída para dos roles de empleados, el mesero y el cocinero. Gestiona el pedido, la preparación y la entrega de alimentos a los comensales disminuyendo los tiempos de logística dentro del establecimiento. 
+BurgerIxtli es una single page application (**SPA**) desarrollada para un restaurante 24 horas de comida rápida. Gestiona el pedido, la preparación y la entrega de alimentos a los comensales disminuyendo los tiempos de logística dentro del establecimiento. Esta construída para dos roles de empleado, el mesero y el cocinero, que tienen diferentes oermisos de acciones dentro de la app y pueden ingresar mediante un usuario y contraseña generados por un administrador o gerente. 
 
 Demo: https://burger-queen-e24cd.web.app/
+
+Para ingresar se puede hacer uso de las siguientes validaciones de usuario: 
+
+**Mesero** - **Username**: fabiola
+             **Password**: 123456
+
+**Cocinero** - **Username**: antonio
+               **Password**: 098765
 
 <img src="readme_images/burgerixtli.gif" alt="burgerixtli" width="500"/>
 
