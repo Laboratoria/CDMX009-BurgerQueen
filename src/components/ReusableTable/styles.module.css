@@ -1,0 +1,264 @@
+.containerTable {
+    border: 2px solid #ED3367;
+    background: #EAEAEA;
+    border-radius: 14px;
+    margin-right: 20px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 8px rgba(0, 0, 0, 0.25);
+}
+
+.containerTableKitchen  {
+    border: 2px solid #ED3367;
+    background: #FFE168;
+    border-radius: 14px;
+    margin-right: 20px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 8px rgba(0, 0, 0, 0.25);
+}
+
+.DateOfOrderWrapprer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+ 
+}
+
+.DateOfclientWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.firstNumberWrapper,
+.secondNumberWrapper,
+.thirdNumberWrapper {
+    background: #FFFFFF;
+    border: 2px solid #ED3367;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-family: 'Amaranth', sans-serif;
+    padding: 10px;
+    margin: 40px;
+}
+
+.nameClient {
+    background: #FFFFFF;
+    border: 2px solid #ED3367;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-family: 'Amaranth', sans-serif;
+    padding: 10px;
+    width: 350px;
+    height: 54px;
+    margin-left: 30px;
+}
+
+.numberTableData,
+.numberPeopleData {
+    width: 80px;
+    height: 60px;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.numberPeople,
+.numberTable,
+.numberOrder {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+.positionDate {
+    align-self: center;
+    margin-left: 80px;
+    margin-top: 20px;
+}
+
+.positionDatewaiter {
+    align-self: center;
+    margin-top: 20px;
+}
+
+.positionData {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+
+.customerOrders {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    padding: 50px 10px;
+}
+
+.customerOrdersWaiter,.customerOrderskitchen{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    padding: 50px 10px;
+    flex-direction: column;
+}
+
+
+.separation {
+height: 3px;
+background-color: #ED3367;
+}
+
+.Orders {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.7em;
+    font-weight: 500;
+    margin: 8px;
+}
+
+.orderWaiter, .Ordersforkitchen{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-weight: 500;
+    margin: 8px;
+    font-size: 1.5em;
+}
+
+.Ordersforkitchen{
+    margin-top: 20px;
+    
+}
+
+.productsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.stepperWrapper {
+    border: 2px solid #ED3367;
+    border-radius: 10px;
+    margin-right: 30px;
+    width: 100px;
+    height: 60px;
+    text-align: center;
+}
+
+.StepperStateless {
+    align-self: end;
+    width: 30%;
+    height: auto;
+    border: 2px solid #ED3367;
+    border-radius: 12px;
+    padding: 15px;
+    margin-right: 10px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 8px rgba(0, 0, 0, 0.25);
+}
+
+.foodOptions {
+    width: 100%;
+    margin-right: 20px;
+    text-align: right;
+}
+
+.foodOptionsKitchen {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 335px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.foodTotal {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 125px;
+    text-align: left;
+    padding-left: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.foodprice {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 115px;
+    text-align: center;
+    margin-left: 15px;
+    padding: 0 10px;
+}
+
+.foodQuantity {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 80px;
+    text-align: center;
+    margin-right: 15px;
+
+}
+
+.foodTotalPrice {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 173px;
+    text-align: center;
+    margin-left: 58px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.deleteIcon {
+    align-self: center;
+    width: 20px;
+    height: auto;
+}
+
+.titles {
+    display: flex;
+    justify-content: space-between;    
+    font-size: 1.6em;
+    font-weight: bold;
+
+}
+
+.titleCant {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 80px;
+    text-align: center;
+  
+}
+
+.titleFood {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 120px;
+    text-align: center;
+    margin-left: 52px;
+    margin-right: 54px; 
+}
+.titlePrice {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 80px;
+    text-align: center;
+    width: 90px;
+
+}
+
+.titleAmount {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 80px;
+    text-align: center;
+    margin-left: -15px;
+    margin-right: 18px;
+}

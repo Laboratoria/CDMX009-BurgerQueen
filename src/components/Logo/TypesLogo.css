@@ -1,0 +1,25 @@
+.logoLogin {
+    width: 56%;
+    height: auto;
+    padding-top: 6%;
+}
+
+.logoSmallInitWaiter {
+    width: 100%;
+    height: auto;
+    max-width: 35%; 
+}
+
+.logoSmallLunch {
+    width: 100%;
+    height: auto;
+    max-width: 90%;
+    padding-top: 6%;
+}
+
+.logoAccountWaiter {
+     width: 100%;
+    height: auto;
+    max-width: 100%;
+    padding-top: 6;
+}

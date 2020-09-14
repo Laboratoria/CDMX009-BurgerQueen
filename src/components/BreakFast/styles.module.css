@@ -1,0 +1,107 @@
+.headerWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.logoBreakFast {
+    width: 30%;
+}
+
+
+.titleBreakfast {
+    display: flex;
+    align-items: center;
+    font-size: 4em;
+    font-family: 'Amaranth', sans-serif;
+    margin-left: -100px; 
+}
+
+.iconHeader {
+    display: flex;
+    flex-direction: row;
+    font-size: 2.2em;
+    align-items: center;
+    justify-content: space-around;    
+}
+
+.iconWaiterBreakFast {
+    background: url('../../assets/imgs/waiter.png') no-repeat;
+    width: 205px;
+    height: 195px;
+    padding-right: 100px;    
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    max-height: 690px;
+}
+
+.menuBreakfast {
+    width: 60vw;
+    height: auto;
+    padding: 20px;
+}
+
+.breakfast {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.menuBreakfast img {
+    width: 70%;  
+    border-radius: 12px;  
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 8px rgba(0, 0, 0, 0.25);
+}
+
+.bgMenu {
+    background: #FFE168;
+    width: 300px;
+    height: 300px;
+    margin-block-end: 20px;
+    margin-right: 20px;
+    text-align: center;
+    border-radius: 14px;
+    font-size: 1.5em;
+    border: 1px solid hsl(0,0%,20%);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 8px rgba(0, 0, 0, 0.25);
+}
+
+.bgMenu h3 {
+    text-align: center;
+    margin-top: 18px;
+
+}
+
+.order {
+    width: 50vw;
+    height: auto;
+    padding: 20px;
+
+}
+
+.routeButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.routeButtons a {
+        align-self: center;
+}
+
+.saveInformation {
+    align-self: flex-end;
+    width: 200px;
+    height: 74px;
+    background: #ED3367;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 5px rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    font-family: 'Amaranth', sans-serif;
+    font-size: 28px;
+    text-align: center;
+    border-radius: 10px;
+    margin-right: 65px;
+}

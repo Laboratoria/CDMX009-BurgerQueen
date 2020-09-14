@@ -1,0 +1,59 @@
+.headerWrapperAccount {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.logoWaiterAccoun {
+    width: 30%;
+}
+
+.contentDivision {
+    display: flex;
+    flex-direction: row;
+}
+
+.firstDivision {
+    width: 30%;
+    height: auto;
+}
+
+.imageDecoration {
+    background: url('../../assets/imgs/fondo-sarten.png')no-repeat;
+    display: inline-block;
+    width: 400px;
+    height: 538px;
+}
+
+.secondDivision {
+width: 50%;
+height: auto;
+}
+
+.thirdDivision {
+    width: 20%;
+    height: auto;
+    align-self: center;
+    text-align: center;
+}
+
+.printImg {
+width: 50%;
+height: auto;
+text-align: center;
+margin-bottom: 50px;
+}
+
+.buttonPay {
+    display: inline;
+}
+
+.routeButtonsAccount {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.routeButtonsAccount a {
+        align-self: center;
+}

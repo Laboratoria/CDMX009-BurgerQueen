@@ -1,0 +1,212 @@
+.headerInitWaiter {
+    display: flex;
+    align-items: center;
+}
+
+.initWaiter {
+    display: flex;
+    flex-direction: row;
+}
+
+.logoSmall {
+    justify-content: flex-start;
+    width: 20%;
+    height: auto;
+    padding-left: 50px;
+    padding-top: 10px;
+    padding-right: 38%;
+}
+
+.buttonRegister {
+    align-self: flex-end;
+    width: 170px;
+    height: 45px;
+    right: -200px;
+    top: 70px;
+    background: #ED3367;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 5px rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    font-family: 'Amaranth', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    border-radius: 10px;
+    margin-right: 50px;
+}
+
+.reg_date {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.dataWaiter,
+.dataCostumer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.imgWaiter {
+    padding-left: 50px;
+    padding-right: 20px;
+}
+
+.nameWaiter {
+    width: 400px;
+    height: 60px;
+    background: #FFFFFF;
+    border: 2px solid #ED3367;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.imgUtensils {
+    width: 80%;
+    height: auto;
+}
+
+.imgCostumer {
+    width: 22%;
+    height: auto;
+    margin-left: 12%;
+    margin-right: 8%;
+}
+
+.nameCostumer {
+    width: 400px;
+    height: 60px;
+    background: #FFFFFF;
+    border: 2px solid #ED3367;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.dataUtensils {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dataTable {
+    display: flex;
+    flex-direction: row;
+    padding-left: 80px;
+    justify-content: space-between;
+}
+
+.imgTable {
+    width: 28%;
+    height: auto;
+    padding-right: 22px;
+}
+
+.numberTable {
+    display: flex;
+    flex-direction: column;
+}
+
+.dataTable p {
+    font-family: 'Amaranth', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.dataTableLabel {
+    display: flex;
+    flex-direction: row;
+    padding-left: 60px;
+    padding-right: 70px;
+}
+
+.numberTableData,
+.numberPeopleData {
+    width: 80px;
+    height: 60px;
+    background: #FFFFFF;
+    border: 1px solid #ED3367;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.numberPeople,
+.numberTable {
+    text-align: center;
+}
+
+.peopleFood {
+    width: 35%;
+    height: auto;
+    padding-left: 125px;
+}
+
+.containerFood {
+    display: flex;
+    flex-direction: column;
+     padding: 0 3rem;
+}   
+
+.imageFood {
+    width: 100%;
+    height: auto;
+    max-width: 575px;
+    border-radius: 12px;
+}
+
+.bgFoodBreak {
+    background: rgba(255, 225, 104, 0.85);
+    text-align: center;
+    margin-bottom: 60px;
+    border-radius: 12px;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25), inset 8px 8px 8px rgba(0, 0, 0, 0.25);
+    font-family: 'Amaranth', sans-serif;
+    font-size: 3em;
+}
+
+.bgFoodLunch {
+    background: rgba(255, 225, 104, 0.85);
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25), inset 8px 8px 8px rgba(0, 0, 0, 0.25);
+    font-family: 'Amaranth', sans-serif;
+    font-size: 3em;
+}
+
+.titleMenu {
+    margin: 0;
+    color: #000000;
+    list-style: none;
+}
+
+.footerWaiter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 51px;
+}
+
+.lineLinks {
+    text-decoration: none;
+}
+
+.SaveInformation {
+    width: 200px;
+    height: 70px;
+    background: #ED3367;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 5px rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    font-family: 'Amaranth', sans-serif;
+    font-size: 28px;
+    text-align: center;
+    border-radius: 10px;
+}

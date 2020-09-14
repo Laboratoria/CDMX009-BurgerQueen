@@ -1,0 +1,111 @@
+.headerWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logoBreakFast {
+  width: 30%;
+}
+
+.titleBreakfast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -70px;
+}
+
+.titleBreakfast h2 {
+  font-style: normal;
+  font-size: 3em;
+  line-height: 100px;
+  color: #000000;
+  font-family: 'Amaranth', sans-serif;
+}
+
+.titleBreakfast h3 {
+  font-size: 2em;
+  width: 180px;
+  background: #E5E5E5;
+  border: 2px solid #ED3367;
+  border-radius: 10px;
+}
+
+.iconHeader {
+  display: flex;
+  flex-direction: row;
+  font-size: 2.2em;
+  align-items: center;
+  justify-content: space-around;    
+}
+
+.iconWaiterBreakFast {
+  background: url(/CDMX009-BurgerQueen/static/media/waiter.6d902638.png) no-repeat;
+  width: 205px;
+  height: 195px;
+}
+
+.table,.tablekitchen {
+  width: 90%;
+  color: #212529;
+  text-align: center;
+  margin: 10px auto;
+  border: 1px solid tomato;
+  margin-bottom: 30px;
+  font-size: 1.5em;
+  font-family: 'Amaranth', sans-serif;
+}
+
+table {
+  width: 100%;
+}
+
+table, td {
+  border-collapse: collapse;
+  border: 1px solid #000;
+}
+
+thead {
+  display: table;
+  width: 100%;
+}
+
+tbody {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+th, td {
+  width: 12.5%; 
+  padding: 5px;
+  word-break: break-all;
+  align-items: center;
+  justify-content: center;
+}
+
+.tablekitchen th, .tablekitchen td  {
+  width: 12.5%;
+}
+
+tr {  
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+td {
+  text-align: center;
+  border-bottom: none;
+  border-left: none;
+}
+
+tbody tr {
+  margin-bottom: 20px;
+}

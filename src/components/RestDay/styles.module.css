@@ -1,0 +1,85 @@
+.headerWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.logoRestD {
+    width: 30%;
+}
+
+.iconHeader {
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+}
+
+.iconHeader h2 {
+    padding-right: 150px;
+    padding-left: 30px;
+    font-family: 'Amaranth', sans-serif;
+    font-size: 4em;
+} 
+
+.iconWaiterRestDay {
+    background: url('../../assets/imgs/waiter.png') no-repeat;
+    width: 205px;
+    height: 195px;
+    zoom: 1;
+    display: inline-block;
+}
+
+.containerAll {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    max-height: 680px;    
+}
+
+.menuWrapper {
+    flex-direction: row;
+    width: 60%;
+    height: auto;    
+}
+
+.firstWrapperFood {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 20%;
+    margin-top: 10%;
+}
+
+.secondWrapperFood {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+     margin-bottom: 20%;
+}
+
+.accountWrapper {
+    width: 40%;
+}
+
+.burgersWrapper,.add,.drinks, .additional {
+    background: #FFE168;
+    width: 260px;
+    padding: 15px;
+    height: auto;
+    text-align: center;
+    border-radius: 14px;
+    font-size: 1.5em;
+    border: 1px solid hsl(0,0%,20%);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 8px 8px 8px rgba(0, 0, 0, 0.25);
+}
+
+.routeButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.routeButtons a {
+        align-self: center;
+}

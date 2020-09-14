@@ -1,0 +1,110 @@
+.headerWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.logoRestD {
+    width: 30%;
+}
+
+.iconHeader {
+    display: flex;
+    flex-direction: row;
+    font-size: 2.7em;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.iconHeader h2 {
+    font-size: 2em;
+    font-family: 'Amaranth', sans-serif;
+    margin-left: 150px;
+}
+
+.iconWaiterRestDay {
+    background: url('../../assets/imgs/kitchen-hat-chef.png') no-repeat;
+    width: 205px;
+    height: 195px;
+    zoom: 1;
+    display: inline-block;
+    margin-top: 40px;
+    margin-left: 230px;
+    margin-right: 80px;
+}
+
+.contentDivision {
+    display: flex;
+    flex-direction: row;
+}
+
+.firstDivision {
+      width: 30%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.imageDecoration {
+    background: url('../../assets/imgs/ketchup.png') no-repeat;
+    display: inline-block;
+    width: 472px;
+    height: 333px;
+}
+
+.secondDivision { 
+width: 40%;
+height: auto;
+}
+
+.thirdDivision {
+    width: 30%;
+    height: auto;
+    align-self: center;
+    text-align: center;    
+}
+
+.checkInTime,
+.departureInTime {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+.firstNumberWrapper {
+    background: #FFFFFF;
+    border: 2px solid #ED3367;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-family: 'Amaranth', sans-serif;
+    padding: 10px;
+    margin: 40px;
+}
+
+.printAccount button {
+    border-style: none;
+    background: none;
+    padding: 0;
+}
+
+.printImg {
+    height: auto;
+    text-align: center;
+    margin-top: 20%;
+    margin-bottom: 6%;
+}
+
+.routeButtonsAccount {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.imageDecorationtwo {
+     background: url('../../assets/imgs/salsas.png') no-repeat;
+    display: inline-block;
+    width: 300px;
+    height: 161px;
+}
